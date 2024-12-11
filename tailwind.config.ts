@@ -1,19 +1,18 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}", // Relume-specific content
   ],
+  presets: [require("@relume_io/relume-tailwind")],
+
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+    extend: {}, // Your theme customizations
   },
-  plugins: [],
-};
-export default config;
+  plugins: [], // Additional plugins if needed
+} satisfies Config;
