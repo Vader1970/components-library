@@ -111,8 +111,8 @@ const job = {
   contractType: "Contract Type",
   button: {
     title: "Apply Now",
-    variant: "secondary",
-    size: "sm",
+    variant: "secondary" as const,
+    size: "sm" as const,
   },
 };
 

@@ -11,7 +11,7 @@ type PositionProps = {
   description: string;
   location: string;
   contractType: string;
-  button: ButtonProps;
+  button: ButtonProps & { title: string };
 };
 
 type PositionCardProps = {
@@ -115,7 +115,12 @@ const position = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
   location: "Location",
   contractType: "Contract Type",
-  button: { title: "Apply Now", variant: "link", size: "link", iconRight: <RxChevronRight /> },
+  button: {
+    title: "Apply Now",
+    variant: "link" as const,
+    size: "link" as const,
+    iconRight: <RxChevronRight />,
+  },
 };
 
 export const Career19Defaults: Props = {
