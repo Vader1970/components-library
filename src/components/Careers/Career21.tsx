@@ -117,7 +117,7 @@ const position = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
   location: "Location",
   contractType: "Contract Type",
-  button: { title: "Apply Now", variant: "link", size: "link", iconRight: <RxChevronRight /> },
+  button: { title: "Apply Now", variant: "link" as const, size: "link" as const, iconRight: <RxChevronRight /> },
 };
 
 export const Career21Defaults: Props = {
