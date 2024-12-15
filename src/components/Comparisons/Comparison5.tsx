@@ -6,7 +6,7 @@ import { RxChevronRight } from "react-icons/rx";
 
 type Feature = {
   text: string;
-  items: React.ReactNode[];
+  items: React.ReactNode[]; // This should handle JSX elements properly
 };
 
 type ImageProps = {
@@ -53,6 +53,8 @@ export const Comparison5 = (props: Comparison5Props) => {
           <div className='grid grid-cols-2 border-b border-border-primary  md:grid-cols-[1.5fr_1fr_1fr]'>
             {comparisonProducts.map((comparison, index) => (
               <React.Fragment key={index}>
+                {" "}
+                {/* Add a key here */}
                 <div className='hidden h-full flex-col items-start justify-end py-4 pr-4 sm:py-6 sm:pr-6 md:flex lg:py-6 lg:pr-6'>
                   <h2 className='text-md font-bold leading-[1.4] md:text-xl'>{comparison.title}</h2>
                 </div>
@@ -94,17 +96,17 @@ const ProductPlan = ({ index, ...product }: Product & { index: number }) => {
 const FeaturesSection = ({ features }: { features: Feature[] }) => {
   return (
     <div>
-      {features.map((feature, index) => (
-        <div key={index}>
-          <div key={index} className='grid grid-cols-2 border-b border-border-primary md:grid-cols-[1.5fr_1fr_1fr]'>
+      {features.map((feature, featureIndex) => (
+        <div key={featureIndex}>
+          <div className='grid grid-cols-2 border-b border-border-primary md:grid-cols-[1.5fr_1fr_1fr]'>
             <p className='col-span-3 row-span-1 border-b border-border-primary py-4 pr-4 md:col-span-1 md:border-none md:pr-6'>
               {feature.text}
             </p>
-            {feature.items.map((item, index) => (
+            {feature.items.map((item, itemIndex) => (
               <div
-                key={index}
+                key={itemIndex} // Add unique key for each item
                 className={clsx("flex items-center justify-center px-4 py-4 text-center font-semibold md:px-6", {
-                  "bg-background-secondary": index === 0,
+                  "bg-background-secondary": itemIndex === 0,
                 })}
               >
                 <span>{item}</span>
@@ -151,21 +153,22 @@ export const comparison5Defaults: Props = {
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />],
+      items: [<BiCheck key='check-1' className='size-6' />, <BiCheck key='check-2' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />],
+      items: [<BiCheck key='check-3' className='size-6' />, <BiCheck key='check-4' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiX className='size-6' />],
+      items: [<BiCheck key='check-5' className='size-6' />, <BiX key='x-1' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiX className='size-6' />],
+      items: [<BiCheck key='check-6' className='size-6' />, <BiX key='x-2' className='size-6' />],
     },
   ],
+
   buttons: [
     {
       title: "Button",

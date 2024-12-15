@@ -147,19 +147,19 @@ export const comparison6Defaults: Props = {
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />],
+      items: [<BiCheck key='check-1' className='size-6' />, <BiCheck key='check-2' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />],
+      items: [<BiCheck key='check-3' className='size-6' />, <BiCheck key='check-4' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiX className='size-6' />],
+      items: [<BiCheck key='check-5' className='size-6' />, <BiX key='x-1' className='size-6' />],
     },
     {
       text: "Feature text goes here",
-      items: [<BiCheck className='size-6' />, <BiX className='size-6' />],
+      items: [<BiCheck key='check-6' className='size-6' />, <BiX key='x-2' className='size-6' />],
     },
   ],
   buttons: [
