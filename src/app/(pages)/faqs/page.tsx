@@ -5,6 +5,10 @@ import { Faq4 } from "@/components/FAQs/Faq4";
 import { Faq5 } from "@/components/FAQs/Faq5";
 import { Faq6 } from "@/components/FAQs/Faq6";
 import { Faq11 } from "@/components/FAQs/Faq11";
+import { Faq7 } from "@/components/FAQs/Faq7";
+import { Faq13 } from "@/components/FAQs/Faq13";
+import { Faq14 } from "@/components/FAQs/Faq14";
+import { Faq8 } from "@/components/FAQs/Faq8";
 
 const faqComponents = [
   { component: Faq1, title: "FAQ 1" },
@@ -13,7 +17,11 @@ const faqComponents = [
   { component: Faq4, title: "FAQ 4" },
   { component: Faq5, title: "FAQ 5" },
   { component: Faq6, title: "FAQ 6" },
+  { component: Faq7, title: "FAQ 7" },
+  { component: Faq8, title: "FAQ 8" },
   { component: Faq11, title: "FAQ 11" },
+  { component: Faq13, title: "FAQ 13" },
+  { component: Faq14, title: "FAQ 14" },
 
   // Add more FAQs as necessary
 ];
