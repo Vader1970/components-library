@@ -1,3 +1,4 @@
+import { Career1 } from "@/components/Careers/Career1";
 import { Career10 } from "@/components/Careers/Career10";
 import { Career11 } from "@/components/Careers/Career11";
 import { Career12 } from "@/components/Careers/Career12";
@@ -8,6 +9,7 @@ import { Career16 } from "@/components/Careers/Career16";
 import { Career17 } from "@/components/Careers/Career17";
 import { Career18 } from "@/components/Careers/Career18";
 import { Career19 } from "@/components/Careers/Career19";
+import { Career2 } from "@/components/Careers/Career2";
 import { Career20 } from "@/components/Careers/Career20";
 import { Career21 } from "@/components/Careers/Career21";
 import { Career22 } from "@/components/Careers/Career22";
@@ -25,6 +27,8 @@ import { Career8 } from "@/components/Careers/Career8";
 import { Career9 } from "@/components/Careers/Career9";
 
 const careersComponents = [
+  { component: Career1, title: "Careers 1" },
+  { component: Career2, title: "Careers 2" },
   { component: Career3, title: "Careers 3" },
   { component: Career4, title: "Careers 4" },
   { component: Career5, title: "Careers 5" },
@@ -57,16 +61,18 @@ const careersComponents = [
 const CareersPage = () => {
   return (
     <div>
-      <h1 className='text-2xl font-bold mb-4'>Careers</h1>
-      <section className='mb-4'>
-        {careersComponents.map(({ component: CareerComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='text-xl mt-20 mb-5'>{title}</h2>
-            {/* Render the component */}
-            <CareerComponent />
-          </div>
-        ))}
+      <h1 className="text-2xl font-bold mb-4">Careers</h1>
+      <section className="mb-4">
+        {careersComponents.map(
+          ({ component: CareerComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="text-xl mt-20 mb-5">{title}</h2>
+              {/* Render the component */}
+              <CareerComponent />
+            </div>
+          )
+        )}
       </section>
     </div>
   );

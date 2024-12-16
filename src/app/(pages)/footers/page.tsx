@@ -9,8 +9,13 @@ import { Footer14 } from "@/components/Footers/Footer14";
 import { Footer15 } from "@/components/Footers/Footer15";
 import { Footer16 } from "@/components/Footers/Footer16";
 import { Footer17 } from "@/components/Footers/Footer17";
+import { Footer1 } from "@/components/Footers/Footer1";
+import { Footer9 } from "@/components/Footers/Footer9";
+import { Footer10 } from "@/components/Footers/Footer10";
+import { Footer11 } from "@/components/Footers/Footer11";
 
 const footerComponents = [
+  { component: Footer1, title: "Footer 1" },
   { component: Footer2, title: "Footer 2" },
   { component: Footer3, title: "Footer 3" },
   { component: Footer4, title: "Footer 4" },
@@ -18,6 +23,9 @@ const footerComponents = [
   { component: Footer6, title: "Footer 6" },
   { component: Footer7, title: "Footer 7" },
   { component: Footer8, title: "Footer 8" },
+  { component: Footer9, title: "Footer 9" },
+  { component: Footer10, title: "Footer 10" },
+  { component: Footer11, title: "Footer 11" },
   { component: Footer14, title: "Footer 14" },
   { component: Footer15, title: "Footer 15" },
   { component: Footer16, title: "Footer 16" },

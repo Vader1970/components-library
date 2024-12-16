@@ -55,6 +55,19 @@ import { Header115 } from "@/components/Headers/Header115";
 import { Header127 } from "@/components/Headers/Header127";
 import { Header137 } from "@/components/Headers/Header137";
 import { Header142 } from "@/components/Headers/Header142";
+import { Header44 } from "@/components/Headers/Header44";
+import { Header64 } from "@/components/Headers/Header64";
+import { Header62 } from "@/components/Headers/Header62";
+import { Header73 } from "@/components/Headers/Header73";
+import { Header105 } from "@/components/Headers/Header105";
+import { Header116 } from "@/components/Headers/Header116";
+import { Header118 } from "@/components/Headers/Header118";
+import { Header110 } from "@/components/Headers/Header110";
+import { Header11 } from "@/components/Headers/Header11";
+import { Header12 } from "@/components/Headers/Header12";
+import { Header16 } from "@/components/Headers/Header16";
+import { Header18 } from "@/components/Headers/Header18";
+// import { Header83 } from "@/components/Headers/Header83";
 
 const headerComponents = [
   { component: Header1, title: "Header 1" },
@@ -67,8 +80,12 @@ const headerComponents = [
   { component: Header8, title: "Header 8" },
   { component: Header9, title: "Header 9" },
   { component: Header10, title: "Header 10" },
+  { component: Header11, title: "Header 11" },
+  { component: Header12, title: "Header 12" },
   { component: Header13, title: "Header 13" },
   { component: Header14, title: "Header 14" },
+  { component: Header16, title: "Header 16" },
+  { component: Header18, title: "Header 18" },
   { component: Header19, title: "Header 19" },
   { component: Header20, title: "Header 20" },
   { component: Header21, title: "Header 21" },
@@ -81,16 +98,20 @@ const headerComponents = [
   { component: Header37, title: "Header 37" },
   { component: Header39, title: "Header 39" },
   { component: Header40, title: "Header 40" },
+  { component: Header44, title: "Header 44" },
   { component: Header56, title: "Header 56" },
   { component: Header57, title: "Header 57" },
   { component: Header58, title: "Header 58" },
   { component: Header59, title: "Header 59" },
   { component: Header60, title: "Header 60" },
   { component: Header61, title: "Header 61" },
+  { component: Header62, title: "Header 62" },
+  { component: Header64, title: "Header 64" },
   { component: Header65, title: "Header 65" },
   { component: Header66, title: "Header 66" },
   { component: Header71, title: "Header 71" },
   { component: Header72, title: "Header 72" },
+  { component: Header73, title: "Header 73" },
   { component: Header74, title: "Header 74" },
   { component: Header76, title: "Header 76" },
   { component: Header77, title: "Header 77" },
@@ -99,18 +120,23 @@ const headerComponents = [
   { component: Header80, title: "Header 80" },
   { component: Header81, title: "Header 81" },
   // { component: Header82, title: "Header 82" },
+  // { component: Header83, title: "Header 83" },
   { component: Header88, title: "Header 88" },
   { component: Header102, title: "Header 102" },
   { component: Header103, title: "Header 103" },
   { component: Header104, title: "Header 104" },
+  { component: Header105, title: "Header 105" },
   // { component: Header106, title: "Header 106" },
   // { component: Header108, title: "Header 108" },
   // { component: Header109, title: "Header 109" },
+  { component: Header110, title: "Header 110" },
   { component: Header111, title: "Header 111" },
   { component: Header112, title: "Header 112" },
   { component: Header113, title: "Header 113" },
   { component: Header114, title: "Header 114" },
   { component: Header115, title: "Header 115" },
+  { component: Header116, title: "Header 116" },
+  { component: Header118, title: "Header 118" },
   { component: Header127, title: "Header 127" },
   { component: Header137, title: "Header 137" },
   { component: Header142, title: "Header 142" },

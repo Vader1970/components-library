@@ -7,96 +7,121 @@ export const metadata: Metadata = {
   description: "Component Library for Rapid Development",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
-        <nav className='p-4 bg-gray-800 text-white'>
-          <ul className='flex flex-wrap space-x-4'>
+        <nav className="p-4 bg-gray-800 text-white">
+          <ul className="flex flex-wrap space-x-4">
             <li>
-              <Link href='/'>Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href='/navbars'>Navbars</Link>
+              <Link href="/navbars">Navbars</Link>
             </li>
             <li>
-              <Link href='/headers'>Headers</Link>
+              <Link href="/headers">Headers</Link>
             </li>
             <li>
-              <Link href='/portfolios'>Portfolios</Link>
+              <Link href="/portfolios">Portfolios</Link>
             </li>
             <li>
-              <Link href='/layouts'>Layouts</Link>
+              <Link href="/layouts">Layouts</Link>
             </li>
             <li>
-              <Link href='/faqs'>FAQS</Link>
+              <Link href="/faqs">FAQS</Link>
             </li>
             <li>
-              <Link href='/testimonials'>Testimonials</Link>
+              <Link href="/testimonials">Testimonials</Link>
             </li>
             <li>
-              <Link href='/signups'>Sign Ups</Link>
+              <Link href="/signups">Sign Ups</Link>
             </li>
             <li>
-              <Link href='/gallerys'>Gallery</Link>
+              <Link href="/gallerys">Gallery</Link>
             </li>
             <li>
-              <Link href='/contacts'>Contacts</Link>
+              <Link href="/contacts">Contacts</Link>
             </li>
             <li>
-              <Link href='/blogs'>Blogs</Link>
+              <Link href="/blogs">Blogs</Link>
             </li>
             <li>
-              <Link href='/modals'>Modals</Link>
+              <Link href="/modals">Modals</Link>
             </li>
             <li>
-              <Link href='/ctas'>CTAs</Link>
+              <Link href="/ctas">CTAs</Link>
             </li>
             <li>
-              <Link href='/footers'>Footers</Link>
+              <Link href="/footers">Footers</Link>
             </li>
             <li>
-              <Link href='/timelines'>Timelines</Link>
+              <Link href="/timelines">Timelines</Link>
             </li>
             <li>
-              <Link href='/logos'>Logos</Link>
+              <Link href="/logos">Logos</Link>
             </li>
             <li>
-              <Link href='/teams'>Teams</Link>
+              <Link href="/teams">Teams</Link>
             </li>
             <li>
-              <Link href='/banners'>Banners</Link>
+              <Link href="/banners">Banners</Link>
             </li>
             <li>
-              <Link href='/events'>Events</Link>
+              <Link href="/links">Links</Link>
             </li>
             <li>
-              <Link href='/contents'>Contents</Link>
+              <Link href="/events">Events</Link>
             </li>
             <li>
-              <Link href='/pricings'>Pricings</Link>
+              <Link href="/logins">Log Ins</Link>
             </li>
             <li>
-              <Link href='/applicationshells'>Application Shells</Link>
+              <Link href="/products">Products</Link>
             </li>
             <li>
-              <Link href='/descriptionlists'>Description Lists</Link>
+              <Link href="/stats">Stats</Link>
             </li>
             <li>
-              <Link href='/statcards'>Stat Cards</Link>
+              <Link href="/applicationshells">Application Shells</Link>
             </li>
             <li>
-              <Link href='/tables'>Tables</Link>
+              <Link href="/careers">Careers</Link>
             </li>
             <li>
-              <Link href='/careers'>Careers</Link>
+              <Link href="/comparisons">Comparisons</Link>
             </li>
             <li>
-              <Link href='/comparisons'>Comparisons</Link>
+              <Link href="/contents">Contents</Link>
+            </li>
+            <li>
+              <Link href="/descriptionlists">Description Lists</Link>
+            </li>
+            <li>
+              <Link href="/pricings">Pricings</Link>
+            </li>
+            <li>
+              <Link href="/statcards">Stat Cards</Link>
+            </li>
+            <li>
+              <Link href="/tables">Tables</Link>
+            </li>
+            <li>
+              <Link href="/forms">Forms</Link>
+            </li>
+            <li>
+              <Link href="/gridlists">Grid Lists</Link>
+            </li>
+            <li>
+              <Link href="/stackedlists">Stacked Lists</Link>
             </li>
           </ul>
         </nav>
-        <main className='p-10'>{children}</main>
+        <main className="p-10">{children}</main>
       </body>
     </html>
   );

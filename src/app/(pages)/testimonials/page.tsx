@@ -20,6 +20,22 @@ import { Testimonial23 } from "@/components/Testimonials/Testimonials23";
 import { Testimonial29 } from "@/components/Testimonials/Testimonial29";
 import { Testimonial34 } from "@/components/Testimonials/Testimonial34";
 import { Testimonial35 } from "@/components/Testimonials/Testimonial35";
+import { Testimonial19 } from "@/components/Testimonials/Testimonial19";
+import { Testimonial20 } from "@/components/Testimonials/Testimonial20";
+import { Testimonial22 } from "@/components/Testimonials/Testimonial22";
+import { Testimonial24 } from "@/components/Testimonials/Testimonial24";
+import { Testimonial25 } from "@/components/Testimonials/Testimonial25";
+import { Testimonial26 } from "@/components/Testimonials/Testimonial26";
+import { Testimonial36 } from "@/components/Testimonials/Testimonial36";
+import { Testimonial37 } from "@/components/Testimonials/Testimonial37";
+import { Testimonial38 } from "@/components/Testimonials/Testimonial38";
+import { Testimonial39 } from "@/components/Testimonials/Testimonial39";
+import { Testimonial32 } from "@/components/Testimonials/Testimonial32";
+import { Testimonial27 } from "@/components/Testimonials/Teatimonial27";
+import { Testimonial28 } from "@/components/Testimonials/Testimonial28";
+import { Testimonial30 } from "@/components/Testimonials/Testimonial30";
+import { Testimonial31 } from "@/components/Testimonials/Testimonial31";
+// import { Testimonial33 } from "@/components/Testimonials/Testimonial33";
 
 const testimonialComponents = [
   { component: Testimonial1, title: "Testimonial 1" },
@@ -39,11 +55,27 @@ const testimonialComponents = [
   { component: Testimonial15, title: "Testimonial 15" },
   { component: Testimonial16, title: "Testimonial 16" },
   { component: Testimonial17, title: "Testimonial 17" },
+  { component: Testimonial19, title: "Testimonial 19" },
+  { component: Testimonial20, title: "Testimonial 20" },
   { component: Testimonial21, title: "Testimonial 21" },
+  { component: Testimonial22, title: "Testimonial 22" },
   { component: Testimonial23, title: "Testimonial 23" },
+  { component: Testimonial24, title: "Testimonial 24" },
+  { component: Testimonial25, title: "Testimonial 25" },
+  { component: Testimonial26, title: "Testimonial 26" },
+  { component: Testimonial27, title: "Testimonial 27" },
+  { component: Testimonial28, title: "Testimonial 28" },
   { component: Testimonial29, title: "Testimonial 29" },
+  { component: Testimonial30, title: "Testimonial 30" },
+  { component: Testimonial31, title: "Testimonial 31" },
+  { component: Testimonial32, title: "Testimonial 32" },
+  // { component: Testimonial33, title: "Testimonial 33" },
   { component: Testimonial34, title: "Testimonial 34" },
   { component: Testimonial35, title: "Testimonial 35" },
+  { component: Testimonial36, title: "Testimonial 36" },
+  { component: Testimonial37, title: "Testimonial 37" },
+  { component: Testimonial38, title: "Testimonial 38" },
+  { component: Testimonial39, title: "Testimonial 39" },
 
   // Add more testimonials as necessary
 ];
