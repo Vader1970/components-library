@@ -16,6 +16,9 @@ import { Timeline19 } from "@/components/Timelines/Timeline19";
 import { Timeline21 } from "@/components/Timelines/Timeline21";
 import { Timeline1 } from "@/components/Timelines/Timeline1";
 import { Timeline3 } from "@/components/Timelines/Timeline3";
+import { Timeline7 } from "@/components/Timelines/Timeline7";
+import { Timeline11 } from "@/components/Timelines/Timeline11";
+import { Timeline13 } from "@/components/Timelines/Timeline13";
 
 const timelineComponents = [
   { component: Timeline1, title: "Timeline 1" },
@@ -24,10 +27,13 @@ const timelineComponents = [
   { component: Timeline4, title: "Timeline 4" },
   { component: Timeline5, title: "Timeline 5" },
   { component: Timeline6, title: "Timeline 6" },
+  { component: Timeline7, title: "Timeline 7" },
   { component: Timeline8, title: "Timeline 8" },
   { component: Timeline9, title: "Timeline 9" },
   { component: Timeline10, title: "Timeline 10" },
+  { component: Timeline11, title: "Timeline 11" },
   { component: Timeline12, title: "Timeline 12" },
+  { component: Timeline13, title: "Timeline 13" },
   { component: Timeline14, title: "Timeline 14" },
   { component: Timeline15, title: "Timeline 15" },
   { component: Timeline16, title: "Timeline 16" },

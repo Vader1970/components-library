@@ -9,6 +9,9 @@ import { Faq7 } from "@/components/FAQs/Faq7";
 import { Faq13 } from "@/components/FAQs/Faq13";
 import { Faq14 } from "@/components/FAQs/Faq14";
 import { Faq8 } from "@/components/FAQs/Faq8";
+import { Faq9 } from "@/components/FAQs/Faq9";
+import { Faq10 } from "@/components/FAQs/Faq10";
+import { Faq12 } from "@/components/FAQs/Faq12";
 
 const faqComponents = [
   { component: Faq1, title: "FAQ 1" },
@@ -19,7 +22,10 @@ const faqComponents = [
   { component: Faq6, title: "FAQ 6" },
   { component: Faq7, title: "FAQ 7" },
   { component: Faq8, title: "FAQ 8" },
+  { component: Faq9, title: "FAQ 9" },
+  { component: Faq10, title: "FAQ 10" },
   { component: Faq11, title: "FAQ 11" },
+  { component: Faq12, title: "FAQ 12" },
   { component: Faq13, title: "FAQ 13" },
   { component: Faq14, title: "FAQ 14" },
 

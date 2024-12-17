@@ -1,4 +1,13 @@
+import { Stats1 } from "@/components/Stats/Stats1";
+import { Stats10 } from "@/components/Stats/Stats10";
+import { Stats11 } from "@/components/Stats/Stats11";
+import { Stats12 } from "@/components/Stats/Stats12";
 import { Stats13 } from "@/components/Stats/Stats13";
+import { Stats14 } from "@/components/Stats/Stats14";
+import { Stats15 } from "@/components/Stats/Stats15";
+import { Stats16 } from "@/components/Stats/Stats16";
+import { Stats17 } from "@/components/Stats/Stats17";
+import { Stats18 } from "@/components/Stats/Stats18";
 import { Stats19 } from "@/components/Stats/Stats19";
 import { Stats2 } from "@/components/Stats/Stats2";
 import { Stats20 } from "@/components/Stats/Stats20";
@@ -11,6 +20,7 @@ import { Stats26 } from "@/components/Stats/Stats26";
 import { Stats27 } from "@/components/Stats/Stats27";
 import { Stats28 } from "@/components/Stats/Stats28";
 import { Stats29 } from "@/components/Stats/Stats29";
+import { Stats3 } from "@/components/Stats/Stats3";
 import { Stats30 } from "@/components/Stats/Stats30";
 import { Stats31 } from "@/components/Stats/Stats31";
 import { Stats32 } from "@/components/Stats/Stats32";
@@ -32,6 +42,7 @@ import { Stats46 } from "@/components/Stats/Stats46";
 import { Stats47 } from "@/components/Stats/Stats47";
 import { Stats48 } from "@/components/Stats/Stats48";
 import { Stats49 } from "@/components/Stats/Stats49";
+import { Stats5 } from "@/components/Stats/Stats5";
 import { Stats50 } from "@/components/Stats/Stats50";
 import { Stats51 } from "@/components/Stats/Stats51";
 import { Stats52 } from "@/components/Stats/Stats52";
@@ -42,14 +53,31 @@ import { Stats56 } from "@/components/Stats/Stats56";
 import { Stats57 } from "@/components/Stats/Stats57";
 import { Stats58 } from "@/components/Stats/Stats58";
 import { Stats59 } from "@/components/Stats/Stats59";
+import { Stats6 } from "@/components/Stats/Stats6";
 import { Stats60 } from "@/components/Stats/Stats60";
+import { Stats7 } from "@/components/Stats/Stats7";
 import { Stats8 } from "@/components/Stats/Stats8";
+import { Stats9 } from "@/components/Stats/Stats9";
 
 const statComponents = [
+  { component: Stats1, title: "Stats 1" },
   { component: Stats2, title: "Stats 2" },
+  { component: Stats3, title: "Stats 3" },
   { component: Stats4, title: "Stats 4" },
+  { component: Stats5, title: "Stats 5" },
+  { component: Stats6, title: "Stats 6" },
+  { component: Stats7, title: "Stats 7" },
   { component: Stats8, title: "Stats 8" },
+  { component: Stats9, title: "Stats 9" },
+  { component: Stats10, title: "Stats 10" },
+  { component: Stats11, title: "Stats 11" },
+  { component: Stats12, title: "Stats 12" },
   { component: Stats13, title: "Stats 13" },
+  { component: Stats14, title: "Stats 14" },
+  { component: Stats15, title: "Stats 15" },
+  { component: Stats16, title: "Stats 16" },
+  { component: Stats17, title: "Stats 17" },
+  { component: Stats18, title: "Stats 18" },
   { component: Stats19, title: "Stats 19" },
   { component: Stats20, title: "Stats 20" },
   { component: Stats21, title: "Stats 21" },
