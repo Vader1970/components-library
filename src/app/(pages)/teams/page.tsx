@@ -12,6 +12,14 @@ import { Team3 } from "@/components/Teams/Team3";
 import { Team4 } from "@/components/Teams/Team4";
 import { Team6 } from "@/components/Teams/Team6";
 import { Team7 } from "@/components/Teams/Team7";
+import { Team15 } from "@/components/Teams/Team15";
+import { Team17 } from "@/components/Teams/Team17";
+import { Team9 } from "@/components/Teams/Team9";
+import { Team11 } from "@/components/Teams/Team11";
+import { Team12 } from "@/components/Teams/Team12";
+import { Team13 } from "@/components/Teams/Team13";
+import { Team19 } from "@/components/Teams/Team19";
+import { Team20 } from "@/components/Teams/Team20";
 
 const teamsComponents = [
   { component: Team1, title: "Team 1" },
@@ -22,10 +30,18 @@ const teamsComponents = [
   { component: Team6, title: "Team 6" },
   { component: Team7, title: "Team 7" },
   { component: Team8, title: "Team 8" },
+  { component: Team9, title: "Team 9" },
   { component: Team10, title: "Team 10" },
+  { component: Team11, title: "Team 11" },
+  { component: Team12, title: "Team 12" },
+  { component: Team13, title: "Team 13" },
   { component: Team14, title: "Team 14" },
+  { component: Team15, title: "Team 15" },
   { component: Team16, title: "Team 16" },
+  { component: Team17, title: "Team 17" },
   { component: Team18, title: "Team 18" },
+  { component: Team19, title: "Team 19" },
+  { component: Team20, title: "Team 20" },
   { component: Team21, title: "Team 21" },
   { component: Team22, title: "Team 22" },
 

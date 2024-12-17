@@ -46,6 +46,11 @@ import { EventHeader5 } from "@/components/Events/EventHeader5";
 import { EventHeader6 } from "@/components/Events/EventHeader6";
 import { EventItemHeader4 } from "@/components/Events/EventItemHeader4";
 import { EventItemHeader2 } from "@/components/Events/EventItemHeader2";
+import { EventItemHeader6 } from "@/components/Events/EventItemHeader6";
+import { EventItemHeader7 } from "@/components/Events/EventItemHeader7";
+import { EventItemHeader8 } from "@/components/Events/EventItemHeader8";
+import { EventItemHeader9 } from "@/components/Events/EventItemHeader9";
+import { EventItemHeader10 } from "@/components/Events/EventItemHeader10";
 
 const eventComponents = [
   { component: Event1, title: "Event 1" },
@@ -96,6 +101,11 @@ const eventComponents = [
   { component: EventItemHeader3, title: "Event Item Header 3" },
   { component: EventItemHeader4, title: "Event Item Header 4" },
   { component: EventItemHeader5, title: "Event Item Header 5" },
+  { component: EventItemHeader6, title: "Event Item Header 6" },
+  { component: EventItemHeader7, title: "Event Item Header 7" },
+  { component: EventItemHeader8, title: "Event Item Header 8" },
+  { component: EventItemHeader9, title: "Event Item Header 9" },
+  { component: EventItemHeader10, title: "Event Item Header 10" },
 
   // Add more eventss as necessary
 ];

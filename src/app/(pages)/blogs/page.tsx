@@ -25,6 +25,48 @@ import { Blog17 } from "@/components/Blogs/Blog17";
 import { Blog18 } from "@/components/Blogs/Blog18";
 import { Blog19 } from "@/components/Blogs/Blog19";
 import { Blog20 } from "@/components/Blogs/Blog20";
+import { Blog21 } from "@/components/Blogs/Blog21";
+import { Blog22 } from "@/components/Blogs/Blog22";
+import { Blog23 } from "@/components/Blogs/Blog23";
+import { Blog24 } from "@/components/Blogs/Blog24";
+import { Blog25 } from "@/components/Blogs/Blog25";
+import { Blog26 } from "@/components/Blogs/Blog26";
+import { Blog27 } from "@/components/Blogs/Blog27";
+import { Blog28 } from "@/components/Blogs/Blog28";
+import { Blog29 } from "@/components/Blogs/Blog29";
+import { Blog30 } from "@/components/Blogs/Blog30";
+import { BlogPostHeader3 } from "@/components/Blogs/BlogPostHeader3";
+import { BlogPostHeader4 } from "@/components/Blogs/BlogPostHeader4";
+import { Blog31 } from "@/components/Blogs/Blog31";
+import { Blog32 } from "@/components/Blogs/Blog32";
+import { Blog35 } from "@/components/Blogs/Blog35";
+import { Blog36 } from "@/components/Blogs/Blog36";
+import { Blog37 } from "@/components/Blogs/Blog37";
+import { Blog38 } from "@/components/Blogs/Blog38";
+import { Blog39 } from "@/components/Blogs/Blog39";
+import { Blog40 } from "@/components/Blogs/Blog40";
+import { Blog42 } from "@/components/Blogs/Blog42";
+import { Blog43 } from "@/components/Blogs/Blog43";
+import { Blog45 } from "@/components/Blogs/Blog45";
+import { Blog46 } from "@/components/Blogs/Blog46";
+import { Blog47 } from "@/components/Blogs/Blog47";
+import { Blog48 } from "@/components/Blogs/Blog48";
+import { Blog49 } from "@/components/Blogs/Blog49";
+import { Blog50 } from "@/components/Blogs/Blog50";
+import { Blog51 } from "@/components/Blogs/Blog51";
+import { Blog53 } from "@/components/Blogs/Blog53";
+import { Blog54 } from "@/components/Blogs/Blog54";
+import { Blog55 } from "@/components/Blogs/Blog55";
+import { Blog57 } from "@/components/Blogs/Blog57";
+import { Blog58 } from "@/components/Blogs/Blog58";
+import { Blog59 } from "@/components/Blogs/Blog59";
+import { Blog60 } from "@/components/Blogs/Blog60";
+import { Blog61 } from "@/components/Blogs/Blog61";
+import { Blog62 } from "@/components/Blogs/Blog62";
+import { Blog63 } from "@/components/Blogs/Blog63";
+import { Blog64 } from "@/components/Blogs/Blog64";
+import { Blog65 } from "@/components/Blogs/Blog65";
+import { Blog66 } from "@/components/Blogs/Blog66";
 
 const blogComponents = [
   { component: Blog1, title: "Blog 1" },
@@ -47,13 +89,55 @@ const blogComponents = [
   { component: Blog18, title: "Blog 18" },
   { component: Blog19, title: "Blog 19" },
   { component: Blog20, title: "Blog 20" },
+  { component: Blog21, title: "Blog 21" },
+  { component: Blog22, title: "Blog 22" },
+  { component: Blog23, title: "Blog 23" },
+  { component: Blog24, title: "Blog 24" },
+  { component: Blog25, title: "Blog 25" },
+  { component: Blog26, title: "Blog 26" },
+  { component: Blog27, title: "Blog 27" },
+  { component: Blog28, title: "Blog 28" },
+  { component: Blog29, title: "Blog 29" },
+  { component: Blog30, title: "Blog 30" },
+  { component: Blog31, title: "Blog 31" },
+  { component: Blog32, title: "Blog 32" },
   { component: Blog33, title: "Blog 33" },
+  { component: Blog35, title: "Blog 35" },
+  { component: Blog36, title: "Blog 36" },
+  { component: Blog37, title: "Blog 37" },
+  { component: Blog38, title: "Blog 38" },
+  { component: Blog39, title: "Blog 39" },
+  { component: Blog40, title: "Blog 40" },
   { component: Blog41, title: "Blog 41" },
+  { component: Blog42, title: "Blog 42" },
+  { component: Blog43, title: "Blog 43" },
   { component: Blog44, title: "Blog 44" },
+  { component: Blog45, title: "Blog 45" },
+  { component: Blog46, title: "Blog 46" },
+  { component: Blog47, title: "Blog 47" },
+  { component: Blog48, title: "Blog 48" },
+  { component: Blog49, title: "Blog 49" },
+  { component: Blog50, title: "Blog 50" },
+  { component: Blog51, title: "Blog 51" },
   { component: Blog52, title: "Blog 52" },
+  { component: Blog53, title: "Blog 53" },
+  { component: Blog54, title: "Blog 54" },
+  { component: Blog55, title: "Blog 55" },
   { component: Blog56, title: "Blog 56" },
+  { component: Blog57, title: "Blog 57" },
+  { component: Blog58, title: "Blog 58" },
+  { component: Blog59, title: "Blog 59" },
+  { component: Blog60, title: "Blog 60" },
+  { component: Blog61, title: "Blog 61" },
+  { component: Blog62, title: "Blog 62" },
+  { component: Blog63, title: "Blog 63" },
+  { component: Blog64, title: "Blog 64" },
+  { component: Blog65, title: "Blog 65" },
+  { component: Blog66, title: "Blog 66" },
   { component: Blog67, title: "Blog 67" },
   { component: Blog68, title: "Blog 68" },
+  { component: BlogPostHeader3, title: "Blog Post Header 3" },
+  { component: BlogPostHeader4, title: "Blog Post Header 4" },
 
   // Add more blogs as necessary
 ];

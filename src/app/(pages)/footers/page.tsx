@@ -13,6 +13,8 @@ import { Footer1 } from "@/components/Footers/Footer1";
 import { Footer9 } from "@/components/Footers/Footer9";
 import { Footer10 } from "@/components/Footers/Footer10";
 import { Footer11 } from "@/components/Footers/Footer11";
+import { Footer12 } from "@/components/Footers/Footer12";
+import { Footer13 } from "@/components/Footers/Footer13";
 
 const footerComponents = [
   { component: Footer1, title: "Footer 1" },
@@ -26,6 +28,8 @@ const footerComponents = [
   { component: Footer9, title: "Footer 9" },
   { component: Footer10, title: "Footer 10" },
   { component: Footer11, title: "Footer 11" },
+  { component: Footer12, title: "Footer 12" },
+  { component: Footer13, title: "Footer 13" },
   { component: Footer14, title: "Footer 14" },
   { component: Footer15, title: "Footer 15" },
   { component: Footer16, title: "Footer 16" },
