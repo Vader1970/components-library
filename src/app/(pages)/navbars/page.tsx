@@ -17,7 +17,8 @@ import { Navbar11 } from "@/components/Navbars/Navbar11";
 import { Navbar4 } from "@/components/Navbars/Navbar4";
 import { Navbar6 } from "@/components/Navbars/Navbar6";
 import { Navbar13 } from "@/components/Navbars/Navbar13";
-import { Navbar14 } from "@/components/Navbars/Navbar14";
+//Navbar14 sticky nav
+// import { Navbar14 } from "@/components/Navbars/Navbar14";
 import { Navbar15 } from "@/components/Navbars/Navbar15";
 import { Navbar9 } from "@/components/Navbars/Navbar9";
 
@@ -35,7 +36,8 @@ const navComponents = [
   { component: Navbar11, title: "Navbar 11" },
   { component: Navbar12, title: "Navbar 12" },
   { component: Navbar13, title: "Navbar 13" },
-  { component: Navbar14, title: "Navbar 14" },
+  //Navbar 14 stcky nav
+  // { component: Navbar14, title: "Navbar 14" },
   { component: Navbar15, title: "Navbar 15" },
   { component: Navbar16, title: "Navbar 16" },
   { component: Navbar17, title: "Navbar 17" },
@@ -49,11 +51,13 @@ const navComponents = [
 const NavbarPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Navbars</h1>
+      <h1 className="text-8xl text-center font-bold mb-4">Navbars</h1>
       <section className="mb-4">
         {navComponents.map(({ component: NavComponent, title }, index) => (
-          <div key={index}>
-            <h2 className="text-xl mb-2">{title}</h2>
+          <div key={index} className="mb-[700px]">
+            <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+              {title}
+            </h2>
             {/* Render the component directly */}
             <NavComponent />
           </div>

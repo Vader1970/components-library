@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
@@ -37,22 +37,31 @@ export const Header75 = (props: Header75Props) => {
 
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
-  const halfViewportHeight =
-    typeof window !== "undefined" ? window.innerHeight * 0.5 : 100;
-  const { scrollY } = useScroll();
+  // Ref for the section
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const contentMotion = {
-    scale: useTransform(scrollY, [0, halfViewportHeight], [1, 0.95]),
-    opacity: useTransform(scrollY, [0, halfViewportHeight], [1, 0]),
-  };
+  // Scroll tracking within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef, // Track scroll relative to this section
+    offset: ["start end", "end start"], // Start when the section enters, end when it leaves
+  });
+
+  // Animation values
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section id="relume" className="px-[5%]">
+    <section ref={sectionRef} id="relume" className="relative px-[5%]">
       <div className="container">
         <div className="relative flex h-[300vh] flex-col">
+          {/* Animated Heading, Description, and Buttons */}
           <motion.div
-            className="sticky top-0 z-0 mx-auto flex min-h-[80vh] max-w-lg items-center justify-center py-16 text-center md:py-24 lg:py-28"
-            style={contentMotion}
+            className="sticky top-0 z-20 mx-auto flex min-h-[80vh] max-w-lg items-center justify-center py-16 text-center md:py-24 lg:py-28"
+            style={{
+              scale,
+              opacity,
+              transformOrigin: "center",
+            }}
           >
             <div className="w-full max-w-xl text-center">
               <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
@@ -68,6 +77,8 @@ export const Header75 = (props: Header75Props) => {
               </div>
             </div>
           </motion.div>
+
+          {/* Sticky Video */}
           <div className="sticky top-0 z-10 flex h-screen flex-col justify-center lg:top-[10vh] lg:justify-start">
             <Dialog>
               <DialogTrigger asChild>
@@ -101,7 +112,6 @@ export const Header75 = (props: Header75Props) => {
               </DialogContent>
             </Dialog>
           </div>
-          <div className="absolute inset-0 -z-10 mt-[100vh]" />
         </div>
       </div>
     </section>

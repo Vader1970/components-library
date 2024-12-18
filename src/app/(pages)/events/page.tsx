@@ -7,10 +7,10 @@ import { Event16 } from "@/components/Events/Event16";
 import { Event20 } from "@/components/Events/Event20";
 import { Event26 } from "@/components/Events/Event26";
 import { Event28 } from "@/components/Events/Event28";
-import { Event30 } from "@/components/Events/Event.30";
+import { Event30 } from "@/components/Events/Event30";
 import { Event31 } from "@/components/Events/Event31";
 import { Event32 } from "@/components/Events/Event32";
-import { Event33 } from "@/components/Events/Event.33";
+import { Event33 } from "@/components/Events/Event33";
 import { Event34 } from "@/components/Events/Event34";
 import { Event36 } from "@/components/Events/Event36";
 import { EventHeader2 } from "@/components/Events/EventHeader2";
@@ -113,12 +113,14 @@ const eventComponents = [
 const EventsPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Events</h1>
+      <h1 className="text-8xl text-center font-bold mb-4">Events</h1>
       <section className="mb-4">
         {eventComponents.map(({ component: EventComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="text-xl mb-2">{title}</h2>
+            <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+              {title}
+            </h2>
             {/* Render the component */}
             <EventComponent />
           </div>

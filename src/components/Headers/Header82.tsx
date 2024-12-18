@@ -37,17 +37,25 @@ export const Header82 = (props: Header82Props) => {
 
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
-  const transformRef = useRef(null);
-  const { scrollY, scrollYProgress } = useScroll({ target: transformRef });
+  // Ref for the section
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Localized scroll tracking
+  const { scrollYProgress } = useScroll({
+    target: sectionRef, // Attach scroll tracking to this section
+    offset: ["start start", "end start"], // Measure scroll progress when section enters viewport
+  });
+
+  // Smooth out scroll progress
   const animatedScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
     bounce: 0,
   });
 
-  const halfViewportHeight =
-    typeof window !== "undefined" ? window.innerHeight * 0.5 : 100;
-  const fadeOut = useTransform(scrollY, [0, halfViewportHeight], [1, 0]);
-  const scaleDown = useTransform(scrollY, [0, halfViewportHeight], [1, 0.95]);
-
+  // Animation transforms
+  const fadeOut = useTransform(animatedScrollYProgress, [0, 0.5], [1, 0]);
+  const scaleDown = useTransform(animatedScrollYProgress, [0, 0.5], [1, 0.95]);
   const width = useTransform(
     animatedScrollYProgress,
     [0.3, 1],
@@ -62,12 +70,19 @@ export const Header82 = (props: Header82Props) => {
 
   return (
     <section
-      ref={transformRef}
+      ref={sectionRef}
       className="relative flex h-[300vh] flex-col items-center"
     >
       <div className="px-[5%]">
+        {/* Animated Heading, Description, and Buttons */}
         <div className="sticky top-0 z-0 mx-auto flex min-h-[80vh] max-w-lg items-center justify-center py-16 text-center md:py-24 lg:py-28">
-          <motion.div style={{ opacity: fadeOut, scale: scaleDown }}>
+          <motion.div
+            style={{
+              opacity: fadeOut,
+              scale: scaleDown,
+              transformOrigin: "center",
+            }}
+          >
             <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
               {heading}
             </h1>
@@ -82,6 +97,8 @@ export const Header82 = (props: Header82Props) => {
           </motion.div>
         </div>
       </div>
+
+      {/* Sticky Video */}
       <motion.div
         style={{ width, height, y }}
         className="sticky top-[10vh] z-10 mb-[-10vh] flex flex-col justify-start"

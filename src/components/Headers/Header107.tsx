@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -25,36 +26,58 @@ export const Header107 = (props: Header107Props) => {
     ...props,
   };
 
+  // Ref for the section to localize scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Media query for mobile screens
   const isMobile = useMediaQuery("(max-width: 767px)");
-  const { scrollYProgress } = useScroll();
 
-  const createTransform = (mobileValues: string[], desktopValues: string[]) =>
-    useTransform(
-      scrollYProgress,
-      [0, 1],
-      isMobile ? mobileValues : desktopValues
-    );
+  // Track scroll progress relative to the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
-  const containerHeight = {
-    height: createTransform(["60vh", "100vh"], ["70vh", "100vh"]),
-  };
+  // Transforms for animations (adjusted for mobile and desktop)
+  const containerHeight = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["60vh", "100vh"] : ["70vh", "100vh"]
+  );
 
-  const leftImageGroup = {
-    x: createTransform(["0vw", "-25vw"], ["0vw", "-50vw"]),
-  };
+  const leftImageGroupX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]
+  );
 
-  const centerImageContainer = {
-    x: createTransform(["0vw", "-25vw"], ["0vw", "-50vw"]),
-    width: createTransform(["50vw", "100vw"], ["30vw", "100vw"]),
-    height: createTransform(["50vh", "100vh"], ["70vh", "100vh"]),
-  };
+  const centerImageX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]
+  );
 
-  const rightImage = {
-    x: createTransform(["0vw", "25vw"], ["0vw", "20vw"]),
-  };
+  const centerImageWidth = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["50vw", "100vw"] : ["30vw", "100vw"]
+  );
+
+  const centerImageHeight = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["50vh", "100vh"] : ["70vh", "100vh"]
+  );
+
+  const rightImageX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "25vw"] : ["0vw", "20vw"]
+  );
 
   return (
-    <section id="relume" className="relative h-[250vh]">
+    <section ref={sectionRef} id="relume" className="relative h-[250vh]">
+      {/* Content */}
       <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
         <div className="container">
           <div className="w-full max-w-lg">
@@ -73,14 +96,16 @@ export const Header107 = (props: Header107Props) => {
         </div>
       </div>
 
+      {/* Sticky Images */}
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
         <motion.div
           className="z-10 grid w-full grid-flow-col grid-cols-[25%_50%_25%] justify-center md:grid-cols-[50%_30%_20%]"
-          style={containerHeight}
+          style={{ height: containerHeight }}
         >
+          {/* Left Image Group */}
           <motion.div
             className="grid grid-flow-col grid-cols-1 justify-items-end gap-4 justify-self-end px-4"
-            style={leftImageGroup}
+            style={{ x: leftImageGroupX }}
           >
             <div className="relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
               <img
@@ -88,7 +113,6 @@ export const Header107 = (props: Header107Props) => {
                 {...images[0]}
               />
             </div>
-
             <div className="relative top-[-5%] flex flex-col gap-4 self-center">
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
                 <img
@@ -103,22 +127,24 @@ export const Header107 = (props: Header107Props) => {
                 />
               </div>
             </div>
-
-            <div className="relative top-[15%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
-              <img
-                className="aspect-square w-full object-cover"
-                {...images[3]}
-              />
-            </div>
           </motion.div>
 
-          <motion.div className="relative" style={centerImageContainer}>
+          {/* Center Image */}
+          <motion.div
+            className="relative"
+            style={{
+              x: centerImageX,
+              width: centerImageWidth,
+              height: centerImageHeight,
+            }}
+          >
             <img className="size-full object-cover" {...images[4]} />
           </motion.div>
 
+          {/* Right Image */}
           <motion.div
             className="grid grid-flow-col grid-cols-1 gap-4 justify-self-start px-4"
-            style={rightImage}
+            style={{ x: rightImageX }}
           >
             <div className="relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]">
               <img
@@ -150,27 +176,27 @@ export const Header107Defaults: Props = {
   images: [
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 1",
+      alt: "Placeholder image 1",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      alt: "Placeholder image 2",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 3",
+      alt: "Placeholder image 3",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 4",
+      alt: "Placeholder image 4",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 5",
+      alt: "Placeholder image 5",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 6",
+      alt: "Placeholder image 6",
     },
   ],
 };

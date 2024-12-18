@@ -9,12 +9,14 @@ const tablesComponents = [
 const TablesPage = () => {
   return (
     <div>
-      <h1 className='text-2xl font-bold mb-4'>Tables</h1>
-      <section className='mb-4'>
+      <h1 className="text-8xl text-center font-bold mb-4">Tables</h1>
+      <section className="mb-4">
         {tablesComponents.map(({ component: TableComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className='text-xl mt-20 mb-5'>{title}</h2>
+            <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+              {title}
+            </h2>
             {/* Render the component */}
             <TableComponent />
           </div>

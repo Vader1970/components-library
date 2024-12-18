@@ -16,10 +16,15 @@ import { Portfolio7 } from "@/components/Portfolios/Portfolio7";
 import { Portfolio8 } from "@/components/Portfolios/Portfolio8";
 import { Portfolio9 } from "@/components/Portfolios/Portfolio9";
 import { PortfolioHeader1 } from "@/components/Portfolios/PortfolioHeader1";
+import { PortfolioHeader10 } from "@/components/Portfolios/PortfolioHeader10";
+import { PortfolioHeader11 } from "@/components/Portfolios/PortfolioHeader11";
+import { PortfolioHeader12 } from "@/components/Portfolios/PortfolioHeader12";
 import { PortfolioHeader2 } from "@/components/Portfolios/PortfolioHeader2";
 import { PortfolioHeader3 } from "@/components/Portfolios/PortfolioHeader3";
 import { PortfolioHeader4 } from "@/components/Portfolios/PortfolioHeader4";
 import { PortfolioHeader5 } from "@/components/Portfolios/PortfolioHeader5";
+import { PortfolioHeader8 } from "@/components/Portfolios/PortfolioHeader8";
+import { PortfolioHeader9 } from "@/components/Portfolios/PortfolioHeader9";
 
 const portfolioComponents = [
   { component: Portfolio1, title: "Portfolio 1" },
@@ -44,6 +49,11 @@ const portfolioComponents = [
   { component: PortfolioHeader3, title: "Portfolio Header 3" },
   { component: PortfolioHeader4, title: "Portfolio Header 4" },
   { component: PortfolioHeader5, title: "Portfolio Header 5" },
+  { component: PortfolioHeader8, title: "Portfolio Header 8" },
+  { component: PortfolioHeader9, title: "Portfolio Header 9" },
+  { component: PortfolioHeader10, title: "Portfolio Header 10" },
+  { component: PortfolioHeader11, title: "Portfolio Header 11" },
+  { component: PortfolioHeader12, title: "Portfolio Header 12" },
 
   // Add more portfolios as necessary
 ];
@@ -51,13 +61,15 @@ const portfolioComponents = [
 const PortfoliosPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Portfolios</h1>
+      <h1 className="text-8xl text-center font-bold mb-4">Portfolios</h1>
       <section className="mb-4">
         {portfolioComponents.map(
           ({ component: PortfolioComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="text-xl mb-2">{title}</h2>
+              <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+                {title}
+              </h2>
               {/* Render the component */}
               <PortfolioComponent />
             </div>
