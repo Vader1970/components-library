@@ -443,6 +443,82 @@ import { Layout204 } from "@/components/Layouts/Layout204";
 import { Layout209 } from "@/components/Layouts/Layout209";
 import { Layout212 } from "@/components/Layouts/Layout212";
 import { Layout215 } from "@/components/Layouts/Layout215";
+import { Layout218 } from "@/components/Layouts/Layout218";
+import { Layout227 } from "@/components/Layouts/Layout227";
+import { Layout240 } from "@/components/Layouts/Layout240";
+import { Layout244 } from "@/components/Layouts/Layout244";
+import { Layout246 } from "@/components/Layouts/Layout246";
+import { Layout248 } from "@/components/Layouts/Layout248";
+import { Layout250 } from "@/components/Layouts/Layout250";
+import { Layout252 } from "@/components/Layouts/Layout252";
+import { Layout255 } from "@/components/Layouts/Layout255";
+import { Layout258 } from "@/components/Layouts/Layout258";
+import { Layout259 } from "@/components/Layouts/Layout259";
+import { Layout260 } from "@/components/Layouts/Layout260";
+import { Layout261 } from "@/components/Layouts/Layout261";
+import { Layout262 } from "@/components/Layouts/Layout262";
+import { Layout263 } from "@/components/Layouts/Layout263";
+import { Layout264 } from "@/components/Layouts/Layout264";
+import { Layout265 } from "@/components/Layouts/Layout265";
+import { Layout266 } from "@/components/Layouts/Layout266";
+import { Layout269 } from "@/components/Layouts/Layout269";
+import { Layout270 } from "@/components/Layouts/Layout270";
+import { Layout271 } from "@/components/Layouts/Layout271";
+import { Layout272 } from "@/components/Layouts/Layout272";
+import { Layout273 } from "@/components/Layouts/Layout273";
+import { Layout274 } from "@/components/Layouts/Layout274";
+import { Layout279 } from "@/components/Layouts/Layout279";
+import { Layout280 } from "@/components/Layouts/Layout280";
+import { Layout283 } from "@/components/Layouts/Layout283";
+import { Layout284 } from "@/components/Layouts/Layout284";
+import { Layout288 } from "@/components/Layouts/Layout288";
+import { Layout291 } from "@/components/Layouts/Layout291";
+import { Layout293 } from "@/components/Layouts/Layout293";
+import { Layout296 } from "@/components/Layouts/Layout296";
+import { Layout297 } from "@/components/Layouts/Layout297";
+import { Layout299 } from "@/components/Layouts/Layout299";
+import { Layout301 } from "@/components/Layouts/Layout301";
+import { Layout303 } from "@/components/Layouts/Layout303";
+import { Layout305 } from "@/components/Layouts/Layout305";
+import { Layout307 } from "@/components/Layouts/Layout307";
+import { Layout309 } from "@/components/Layouts/Layout309";
+import { Layout316 } from "@/components/Layouts/Layout316";
+import { Layout317 } from "@/components/Layouts/Layout317";
+import { Layout319 } from "@/components/Layouts/Layout319";
+import { Layout322 } from "@/components/Layouts/Layout322";
+import { Layout323 } from "@/components/Layouts/Layout323";
+import { Layout324 } from "@/components/Layouts/Layout324";
+import { Layout325 } from "@/components/Layouts/Layout325";
+import { Layout326 } from "@/components/Layouts/Layout326";
+import { Layout327 } from "@/components/Layouts/Layout327";
+import { Layout330 } from "@/components/Layouts/Layout330";
+import { Layout331 } from "@/components/Layouts/Layout331";
+import { Layout334 } from "@/components/Layouts/Layout334";
+import { Layout335 } from "@/components/Layouts/Layout335";
+import { Layout338 } from "@/components/Layouts/Layout338";
+import { Layout339 } from "@/components/Layouts/Layout339";
+import { Layout342 } from "@/components/Layouts/Layout342";
+import { Layout343 } from "@/components/Layouts/Layout343";
+import { Layout346 } from "@/components/Layouts/Layout346";
+import { Layout347 } from "@/components/Layouts/Layout347";
+import { Layout363 } from "@/components/Layouts/Layout363";
+import { Layout367 } from "@/components/Layouts/Layout367";
+import { Layout369 } from "@/components/Layouts/Layout369";
+import { Layout371 } from "@/components/Layouts/Layout371";
+import { Layout377 } from "@/components/Layouts/Layout377";
+import { Layout399 } from "@/components/Layouts/Layout399";
+import { Layout407 } from "@/components/Layouts/Layout407";
+import { Layout416 } from "@/components/Layouts/Layout416";
+import { Layout418 } from "@/components/Layouts/Layout418";
+import { Layout463 } from "@/components/Layouts/Layout463";
+import { Layout464 } from "@/components/Layouts/Layout464";
+import { Layout485 } from "@/components/Layouts/Layout485";
+import { Layout489 } from "@/components/Layouts/Layout489";
+import { Layout491 } from "@/components/Layouts/Layout491";
+import { Layout492 } from "@/components/Layouts/Layout492";
+import { Layout497 } from "@/components/Layouts/Layout497";
+import { Layout498 } from "@/components/Layouts/Layout498";
+// import { Layout352 } from "@/components/Layouts/Layout352";
 // import { Layout421 } from "@/components/Layouts/Layout421";
 
 const layoutComponents = [
@@ -659,6 +735,7 @@ const layoutComponents = [
   { component: Layout215, title: "Layout 215" },
   { component: Layout216, title: "Layout 216" },
   { component: Layout217, title: "Layout 217" },
+  { component: Layout218, title: "Layout 218" },
   { component: Layout219, title: "Layout 219" },
   { component: Layout220, title: "Layout 220" },
   { component: Layout221, title: "Layout 221" },
@@ -667,6 +744,7 @@ const layoutComponents = [
   { component: Layout224, title: "Layout 224" },
   { component: Layout225, title: "Layout 225" },
   { component: Layout226, title: "Layout 226" },
+  { component: Layout227, title: "Layout 227" },
   { component: Layout228, title: "Layout 228" },
   { component: Layout230, title: "Layout 230" },
   { component: Layout231, title: "Layout 231" },
@@ -678,62 +756,119 @@ const layoutComponents = [
   { component: Layout237, title: "Layout 237" },
   { component: Layout238, title: "Layout 238" },
   { component: Layout239, title: "Layout 239" },
+  { component: Layout240, title: "Layout 240" },
   { component: Layout241, title: "Layout 241" },
   { component: Layout242, title: "Layout 242" },
   { component: Layout243, title: "Layout 243" },
+  { component: Layout244, title: "Layout 244" },
   { component: Layout245, title: "Layout 245" },
+  { component: Layout246, title: "Layout 246" },
   { component: Layout247, title: "Layout 247" },
+  { component: Layout248, title: "Layout 248" },
   { component: Layout249, title: "Layout 249" },
+  { component: Layout250, title: "Layout 250" },
   { component: Layout251, title: "Layout 251" },
+  { component: Layout252, title: "Layout 252" },
   { component: Layout253, title: "Layout 253" },
   { component: Layout254, title: "Layout 254" },
+  { component: Layout255, title: "Layout 255" },
   { component: Layout256, title: "Layout 256" },
   { component: Layout257, title: "Layout 257" },
+  { component: Layout258, title: "Layout 258" },
+  { component: Layout259, title: "Layout 259" },
+  { component: Layout260, title: "Layout 260" },
+  { component: Layout261, title: "Layout 261" },
+  { component: Layout262, title: "Layout 262" },
+  { component: Layout263, title: "Layout 263" },
+  { component: Layout264, title: "Layout 264" },
+  { component: Layout265, title: "Layout 265" },
+  { component: Layout266, title: "Layout 266" },
   { component: Layout267, title: "Layout 267" },
   { component: Layout268, title: "Layout 268" },
+  { component: Layout269, title: "Layout 269" },
+  { component: Layout270, title: "Layout 270" },
+  { component: Layout271, title: "Layout 271" },
+  { component: Layout272, title: "Layout 272" },
+  { component: Layout273, title: "Layout 273" },
+  { component: Layout274, title: "Layout 274" },
   { component: Layout275, title: "Layout 275" },
   { component: Layout276, title: "Layout 276" },
   { component: Layout277, title: "Layout 277" },
   { component: Layout278, title: "Layout 278" },
+  { component: Layout279, title: "Layout 279" },
+  { component: Layout280, title: "Layout 280" },
   { component: Layout281, title: "Layout 281" },
   { component: Layout282, title: "Layout 282" },
+  { component: Layout283, title: "Layout 283" },
+  { component: Layout284, title: "Layout 284" },
   { component: Layout285, title: "Layout 285" },
   { component: Layout286, title: "Layout 286" },
   { component: Layout287, title: "Layout 287" },
+  { component: Layout288, title: "Layout 288" },
   { component: Layout289, title: "Layout 289" },
   { component: Layout290, title: "Layout 290" },
+  { component: Layout291, title: "Layout 291" },
   { component: Layout292, title: "Layout 292" },
+  { component: Layout293, title: "Layout 293" },
   { component: Layout294, title: "Layout 294" },
   { component: Layout295, title: "Layout 295" },
+  { component: Layout296, title: "Layout 296" },
+  { component: Layout297, title: "Layout 297" },
   { component: Layout298, title: "Layout 298" },
+  { component: Layout299, title: "Layout 299" },
   { component: Layout300, title: "Layout 300" },
+  { component: Layout301, title: "Layout 301" },
   { component: Layout302, title: "Layout 302" },
+  { component: Layout303, title: "Layout 303" },
   { component: Layout304, title: "Layout 304" },
+  { component: Layout305, title: "Layout 305" },
   { component: Layout306, title: "Layout 306" },
+  { component: Layout307, title: "Layout 307" },
   { component: Layout308, title: "Layout 308" },
+  { component: Layout309, title: "Layout 309" },
   { component: Layout310, title: "Layout 310" },
   { component: Layout311, title: "Layout 311" },
   { component: Layout312, title: "Layout 312" },
   { component: Layout313, title: "Layout 313" },
   { component: Layout314, title: "Layout 314" },
   { component: Layout315, title: "Layout 315" },
+  { component: Layout316, title: "Layout 316" },
+  { component: Layout317, title: "Layout 317" },
   { component: Layout318, title: "Layout 318" },
+  { component: Layout319, title: "Layout 319" },
   { component: Layout320, title: "Layout 320" },
   { component: Layout321, title: "Layout 321" },
+  { component: Layout322, title: "Layout 322" },
+  { component: Layout323, title: "Layout 323" },
+  { component: Layout324, title: "Layout 324" },
+  { component: Layout325, title: "Layout 325" },
+  { component: Layout326, title: "Layout 326" },
+  { component: Layout327, title: "Layout 327" },
   { component: Layout328, title: "Layout 328" },
   { component: Layout329, title: "Layout 329" },
+  { component: Layout330, title: "Layout 330" },
+  { component: Layout331, title: "Layout 331" },
   { component: Layout332, title: "Layout 332" },
   { component: Layout333, title: "Layout 333" },
+  { component: Layout334, title: "Layout 334" },
+  { component: Layout335, title: "Layout 335" },
   { component: Layout336, title: "Layout 336" },
   { component: Layout337, title: "Layout 337" },
+  { component: Layout338, title: "Layout 338" },
+  { component: Layout339, title: "Layout 339" },
   { component: Layout340, title: "Layout 340" },
   { component: Layout341, title: "Layout 341" },
+  { component: Layout342, title: "Layout 342" },
+  { component: Layout343, title: "Layout 343" },
   { component: Layout344, title: "Layout 344" },
   { component: Layout345, title: "Layout 345" },
+  { component: Layout346, title: "Layout 346" },
+  { component: Layout347, title: "Layout 347" },
   // { component: Layout348, title: "Layout 348" },
   // { component: Layout349, title: "Layout 349" },
   { component: Layout350, title: "Layout 350" },
   // { component: Layout351, title: "Layout 351" },
+  // { component: Layout352, title: "Layout 352" },
   { component: Layout353, title: "Layout 353" },
   { component: Layout354, title: "Layout 354" },
   { component: Layout355, title: "Layout 355" },
@@ -744,16 +879,21 @@ const layoutComponents = [
   { component: Layout360, title: "Layout 360" },
   { component: Layout361, title: "Layout 361" },
   { component: Layout362, title: "Layout 362" },
+  { component: Layout363, title: "Layout 363" },
   { component: Layout364, title: "Layout 364" },
   { component: Layout365, title: "Layout 365" },
   { component: Layout366, title: "Layout 366" },
+  { component: Layout367, title: "Layout 367" },
   { component: Layout368, title: "Layout 368" },
+  { component: Layout369, title: "Layout 369" },
   { component: Layout370, title: "Layout 370" },
+  { component: Layout371, title: "Layout 371" },
   { component: Layout372, title: "Layout 372" },
   { component: Layout373, title: "Layout 373" },
   { component: Layout374, title: "Layout 374" },
   { component: Layout375, title: "Layout 375" },
   { component: Layout376, title: "Layout 376" },
+  { component: Layout377, title: "Layout 377" },
   { component: Layout378, title: "Layout 378" },
   { component: Layout379, title: "Layout 379" },
   { component: Layout380, title: "Layout 380" },
@@ -775,6 +915,7 @@ const layoutComponents = [
   { component: Layout396, title: "Layout 396" },
   { component: Layout397, title: "Layout 397" },
   { component: Layout398, title: "Layout 398" },
+  { component: Layout399, title: "Layout 399" },
   { component: Layout400, title: "Layout 400" },
   { component: Layout401, title: "Layout 401" },
   { component: Layout402, title: "Layout 402" },
@@ -782,6 +923,7 @@ const layoutComponents = [
   { component: Layout404, title: "Layout 404" },
   { component: Layout405, title: "Layout 405" },
   { component: Layout406, title: "Layout 406" },
+  { component: Layout407, title: "Layout 407" },
   { component: Layout408, title: "Layout 408" },
   { component: Layout409, title: "Layout 409" },
   { component: Layout410, title: "Layout 410" },
@@ -790,7 +932,9 @@ const layoutComponents = [
   { component: Layout413, title: "Layout 413" },
   { component: Layout414, title: "Layout 414" },
   { component: Layout415, title: "Layout 415" },
+  { component: Layout416, title: "Layout 416" },
   { component: Layout417, title: "Layout 417" },
+  { component: Layout418, title: "Layout 418" },
   { component: Layout419, title: "Layout 419" },
   { component: Layout420, title: "Layout 420" },
   // { component: Layout421, title: "Layout 421" },
@@ -835,6 +979,8 @@ const layoutComponents = [
   { component: Layout460, title: "Layout 460" },
   { component: Layout461, title: "Layout 461" },
   { component: Layout462, title: "Layout 462" },
+  { component: Layout463, title: "Layout 463" },
+  { component: Layout464, title: "Layout 464" },
   { component: Layout465, title: "Layout 465" },
   { component: Layout466, title: "Layout 466" },
   { component: Layout467, title: "Layout 467" },
@@ -855,14 +1001,20 @@ const layoutComponents = [
   { component: Layout482, title: "Layout 482" },
   { component: Layout483, title: "Layout 483" },
   { component: Layout484, title: "Layout 484" },
+  { component: Layout485, title: "Layout 485" },
   { component: Layout486, title: "Layout 486" },
   { component: Layout487, title: "Layout 487" },
   // { component: Layout488, title: "Layout 488" },
+  { component: Layout489, title: "Layout 489" },
   { component: Layout490, title: "Layout 490" },
+  { component: Layout491, title: "Layout 491" },
+  { component: Layout492, title: "Layout 492" },
   { component: Layout493, title: "Layout 493" },
   { component: Layout494, title: "Layout 494" },
   { component: Layout495, title: "Layout 495" },
   { component: Layout496, title: "Layout 496" },
+  { component: Layout497, title: "Layout 497" },
+  { component: Layout498, title: "Layout 498" },
   { component: Layout499, title: "Layout 499" },
   { component: Layout500, title: "Layout 500" },
   { component: Layout501, title: "Layout 501" },
@@ -899,13 +1051,15 @@ const layoutComponents = [
 const LayoutsPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">LAYOUTS</h1>
+      <h1 className="text-8xl text-center font-bold mb-4">LAYOUTS</h1>
       <section className="mb-4">
         {layoutComponents.map(
           ({ component: LayoutComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="text-xl text-center mt-20 mb-5">{title}</h2>
+              <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+                {title}
+              </h2>
               {/* Render the component */}
               <LayoutComponent />
             </div>

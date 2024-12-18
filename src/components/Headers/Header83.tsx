@@ -1,9 +1,10 @@
 "use client";
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 type ImageProps = {
   src: string;
@@ -26,14 +27,24 @@ export const Header83 = (props: Header83Props) => {
     ...props,
   };
 
-  const { scrollYProgress } = useScroll();
+  // Ref for the section to track localized scroll
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Use scroll progress relative to this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef, // Scroll tracking is scoped to this section
+    offset: ["start start", "end start"], // Progress starts when section enters viewport
+  });
+
+  // Transform animations based on the section's scroll progress
   const opacityContent = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const opacityOverlay = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [3.2, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [3.2, 1]);
 
   return (
-    <section id="relume" className="relative h-[300vh]">
+    <section ref={sectionRef} id="relume" className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
+        {/* Header Content */}
         <motion.div
           className="flex h-full items-center justify-center"
           style={{ opacity: opacityContent }}
@@ -54,11 +65,16 @@ export const Header83 = (props: Header83Props) => {
             </div>
           </div>
         </motion.div>
+
+        {/* Grid of Images */}
         <div className="absolute inset-0 -z-10">
+          {/* Overlay with opacity animation */}
           <motion.div
             className="absolute inset-0 z-10 bg-black/50"
             style={{ opacity: opacityOverlay }}
           />
+
+          {/* Image Grid Scaling Animation */}
           <motion.div
             style={{ scale }}
             className="grid size-full auto-cols-fr grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3"
@@ -68,7 +84,7 @@ export const Header83 = (props: Header83Props) => {
                 key={index}
                 className={clsx(
                   "relative",
-                  [0, 2, 3, 5, 6, 8].indexOf(index) !== -1 && "hidden md:block"
+                  [0, 2, 3, 5, 6, 8].includes(index) && "hidden md:block" // Hide certain images on smaller screens
                 )}
               >
                 <img

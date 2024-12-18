@@ -40,7 +40,7 @@ export const Header34 = (props: Header34Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%]">
+    <section id="relume" className="relative px-[5%]">
       <div className="container">
         <div className="mx-auto flex max-h-[60rem] min-h-svh w-full max-w-lg flex-col items-center justify-center overflow-x-auto text-center">
           <div className="py-16 md:py-24 lg:py-28">

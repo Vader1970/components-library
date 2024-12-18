@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
@@ -26,12 +27,19 @@ export const Header106 = (props: Header106Props) => {
     ...props,
   };
 
-  const { scrollYProgress } = useScroll();
+  // Ref for the section to localize scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Track scroll progress relative to this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"], // Start when section enters viewport
+  });
 
   // Container motion (global transformation)
   const containerMotion = {
     y: useTransform(scrollYProgress, [0, 1], ["0%", "5%"]),
-    scale: useTransform(scrollYProgress, [0, 1], [1, 0]),
+    scale: useTransform(scrollYProgress, [0, 1], [1, 0.9]),
     opacity: useTransform(scrollYProgress, [0, 1], [1, 0]),
   };
 
@@ -57,9 +65,10 @@ export const Header106 = (props: Header106Props) => {
   ];
 
   return (
-    <section id="relume">
+    <section ref={sectionRef} id="relume">
       <div className="relative h-[110vh] md:h-[500vh]">
         <div className="sticky top-0 min-h-screen overflow-hidden">
+          {/* Text Content */}
           <div className="px-[5%] py-16 md:py-24 lg:py-28">
             <div className="container max-w-lg">
               <div className="relative z-20 text-center">
@@ -77,6 +86,8 @@ export const Header106 = (props: Header106Props) => {
               </div>
             </div>
           </div>
+
+          {/* Motion Container */}
           <motion.div
             style={containerMotion}
             className="absolute inset-0 z-10 flex origin-bottom items-end justify-center"
@@ -85,10 +96,8 @@ export const Header106 = (props: Header106Props) => {
               <motion.div
                 key={index}
                 style={{
-                  ...imageMotions[index],
-                  // Ensure an initial visible state
-                  x: imageMotions[index].x?.get() || "0vw",
-                  y: imageMotions[index].y?.get() || "0%",
+                  x: imageMotions[index]?.x,
+                  y: imageMotions[index]?.y,
                 }}
                 className={clsx(
                   "absolute w-full max-w-[9rem] sm:max-w-[15rem] lg:max-w-xs",
