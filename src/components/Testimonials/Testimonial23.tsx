@@ -149,8 +149,8 @@ export const Testimonial23Defaults: Props = {
   testimonials: [
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Testimonial logo 1",
+        src: "/logo.png",
+        alt: "logo 1",
       },
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -170,8 +170,8 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Testimonial logo 2",
+        src: "/logo.png",
+        alt: "logo 2",
       },
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -191,8 +191,8 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Testimonial logo 3",
+        src: "/logo.png",
+        alt: "logo 3",
       },
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -212,8 +212,8 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Testimonial logo 4",
+        src: "/logo.png",
+        alt: "logo 4",
       },
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -233,8 +233,8 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Testimonial logo 5",
+        src: "/logo.png",
+        alt: "logo 5",
       },
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -254,7 +254,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
+        src: "/logo.png",
         alt: "Testimonial logo 6",
       },
       quote:

@@ -131,9 +131,10 @@ export const Header18Defaults: Props = {
           <a href='#' class='underline'>Terms and Conditions</a>.
         </p>
         `,
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
 };

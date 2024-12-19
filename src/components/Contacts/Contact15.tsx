@@ -102,7 +102,7 @@ export const Contact15Defaults: Props = {
       icon: <BiEnvelope className="size-6" />,
       title: "Email",
       link: {
-        label: "hello@relume.io",
+        label: "hello@email.io",
         url: "#",
       },
     },
@@ -117,7 +117,7 @@ export const Contact15Defaults: Props = {
     {
       icon: <BiMap className="size-6" />,
       title: "Office",
-      description: "123 Sample St, Sydney NSW 2000 AU",
+      description: "123 Sample St, Christchurch NZ",
     },
   ],
   image: {

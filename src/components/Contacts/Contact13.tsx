@@ -94,7 +94,7 @@ export const Contact13Defaults: Props = {
       title: "Email",
       description: "Lorem ipsum dolor sit amet.",
       link: {
-        label: "hello@relume.io",
+        label: "hello@email.io",
         url: "#",
       },
     },
@@ -110,7 +110,7 @@ export const Contact13Defaults: Props = {
     {
       icon: <BiMap className="size-8" />,
       title: "Office",
-      description: "123 Sample St, Sydney NSW 2000 AU",
+      description: "123 Sample St, Christchurch NZ",
       button: {
         title: "Get Directions",
         variant: "link",

@@ -184,7 +184,7 @@ export const Testimonial38Defaults: Props = {
       props: {
         backgroundImage: {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-          alt: "Relume placeholder image 1",
+          alt: "placeholder image 1",
         },
         heading: "Short heading goes here",
         button: {
@@ -199,8 +199,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-          alt: "Relume logo 1",
+          src: "/logo.png",
+          alt: "logo 1",
         },
       },
     },
@@ -209,7 +209,7 @@ export const Testimonial38Defaults: Props = {
       props: {
         backgroundImage: {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-          alt: "Relume placeholder image 2",
+          alt: "placeholder image 2",
         },
         heading: "Short heading goes here",
         button: {
@@ -224,8 +224,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-          alt: "Webflow logo 1",
+          src: "/logo.png",
+          alt: "logo 1",
         },
       },
     },
@@ -233,8 +233,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-          alt: "Webflow logo 2",
+          src: "/logo.png",
+          alt: "logo 2",
         },
       },
     },
@@ -257,8 +257,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-          alt: "Relume logo 2",
+          src: "/logo.png",
+          alt: "logo 2",
         },
       },
     },
@@ -266,8 +266,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-          alt: "Webflow logo 3",
+          src: "/logo.png",
+          alt: "logo 3",
         },
       },
     },
@@ -276,7 +276,7 @@ export const Testimonial38Defaults: Props = {
       props: {
         backgroundImage: {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-          alt: "Relume placeholder image 4",
+          alt: "placeholder image 4",
         },
         heading: "Short heading goes here",
         button: {
@@ -291,8 +291,8 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-          alt: "Relume logo 3",
+          src: "/logo.png",
+          alt: "logo 3",
         },
       },
     },
@@ -301,7 +301,7 @@ export const Testimonial38Defaults: Props = {
       props: {
         backgroundImage: {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-          alt: "Relume placeholder image 3",
+          alt: "placeholder image 3",
         },
         heading: "Short heading goes here",
         button: {

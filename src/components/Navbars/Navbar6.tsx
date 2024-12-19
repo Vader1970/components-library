@@ -455,7 +455,7 @@ export const Navbar6Defaults: Props = {
           url: "#",
           image: {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-            alt: "Relume placeholder image 2",
+            alt: "placeholder image 2",
           },
           title: "Article Title",
           description: "Lorem ipsum dolor sit amet consectetur elit",

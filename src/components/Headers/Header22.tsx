@@ -121,7 +121,8 @@ export const Header22Defaults: Props = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   inputPlaceholder: "Enter your email",
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   button: { title: "Sign up" },
   termsAndConditions: `
   <p class='text-xs'>
@@ -131,6 +132,6 @@ export const Header22Defaults: Props = {
   `,
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
 };

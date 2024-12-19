@@ -45,24 +45,24 @@ export const Logo2Defaults: Props = {
   heading: "Used by the world's leading companies",
   logos: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Webflow logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Webflow logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Webflow logo 3",
+      src: "/logo.png",
+      alt: "logo 3",
     },
   ],
 };

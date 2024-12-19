@@ -337,7 +337,7 @@ export const Navbar22Defaults: Props = {
   logo: {
     url: "#",
     src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
-    alt: "Relume placeholder logo",
+    alt: "placeholder logo",
   },
   navLinks: [
     { title: "Link One", url: "#" },
@@ -389,7 +389,7 @@ export const Navbar22Defaults: Props = {
   ],
   address: {
     phone: "1800 123 4567",
-    email: "info@relume.io",
+    email: "info@email.io",
     location: "Level 1, 12 Sample St, Sydney NSW 2000",
   },
   socialMediaLinks: [

@@ -120,12 +120,13 @@ export const Testimonial14Defaults: Props = {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
     alt: "Relume placeholder image",
   },
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   name: "Name Surname",
   position: "Position",
   companyName: "Company name",
   logo: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-    alt: "Webflow logo 1",
+    src: "/logo.png",
+    alt: "logo 1",
   },
 };

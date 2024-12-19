@@ -141,8 +141,8 @@ export const Testimonial7Defaults: Props = {
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."',
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Webflow logo 1",
+        src: "/logo.png",
+        alt: "logo 1",
       },
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
@@ -156,8 +156,8 @@ export const Testimonial7Defaults: Props = {
       quote:
         '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."',
       logo: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Webflow logo 2",
+        src: "/logo.png",
+        alt: "logo 2",
       },
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",

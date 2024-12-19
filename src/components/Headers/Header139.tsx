@@ -9,7 +9,7 @@ import {
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 import { FaCirclePlay } from "react-icons/fa6";
 
@@ -38,8 +38,14 @@ export const Header139 = (props: Header139Props) => {
 
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
-  const { scrollYProgress } = useScroll();
+  // Ref for localized scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
+  // Motion transforms
   const containerMotion = {
     y: useTransform(scrollYProgress, [0, 0.4], ["0vh", "-5vh"]),
     width: useTransform(scrollYProgress, [0, 0.4], ["90%", "100%"]),
@@ -56,13 +62,16 @@ export const Header139 = (props: Header139Props) => {
 
   return (
     <section
+      ref={sectionRef}
       id="relume"
       className="relative flex h-[150vh] flex-col items-center"
     >
+      {/* Motion Container */}
       <motion.div
         className="sticky top-[5vh] z-10 mb-[-5vh] mt-[5vh] flex h-[90vh] w-[90%] flex-col items-start justify-center overflow-hidden"
         style={containerMotion}
       >
+        {/* Content */}
         <div className="px-[5%] py-16 md:py-24 lg:py-28">
           <div className="container">
             <div className="max-w-md">
@@ -80,6 +89,8 @@ export const Header139 = (props: Header139Props) => {
             </div>
           </div>
         </div>
+
+        {/* Background Image */}
         <motion.div className="absolute inset-0 -z-10" style={imageTranslate}>
           <img
             src={image.src}
@@ -88,10 +99,12 @@ export const Header139 = (props: Header139Props) => {
           />
           <div className="absolute inset-0 bg-black/50" />
         </motion.div>
+
+        {/* Video Dialog */}
         <Dialog>
-          <DialogTrigger className="hidden md:flex" asChild>
+          <DialogTrigger className="flex" asChild>
             <motion.button
-              className="absolute bottom-[5%] right-[5%] flex w-full items-center justify-center md:max-w-[14rem] lg:max-w-xxs"
+              className="absolute bottom-[5%] right-[5%] flex w-full items-center justify-center sm:max-w-[10rem] md:max-w-[14rem] lg:max-w-xxs"
               style={videoDialogTranslate}
             >
               <img
@@ -122,6 +135,8 @@ export const Header139 = (props: Header139Props) => {
           </DialogContent>
         </Dialog>
       </motion.div>
+
+      {/* Extra Scroll Space */}
       <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
@@ -134,19 +149,12 @@ export const Header139Defaults: Props = {
   buttons: [{ title: "Button" }, { title: "Button", variant: "secondary-alt" }],
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   videoImage: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
 };
-
-{
-  /* 
-        <motion.div
-          className="absolute inset-0 -z-10 h-full bg-[repeat,no-repeat] bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg)] bg-[size:auto,cover] bg-fixed bg-[position:0_0,50%]"
-          style={imageTranslate}
-        /> */
-}

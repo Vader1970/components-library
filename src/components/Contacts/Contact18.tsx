@@ -58,7 +58,7 @@ export const Contact18Defaults: Props = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
       link: {
-        label: "hello@relume.io",
+        label: "hello@email.io",
         url: "#",
       },
     },
@@ -78,7 +78,7 @@ export const Contact18Defaults: Props = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero.",
       link: {
-        label: "123 Sample St, Sydney NSW 2000 AU",
+        label: "123 Sample St, Christchurch NZ",
         url: "#",
       },
     },

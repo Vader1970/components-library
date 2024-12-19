@@ -108,62 +108,62 @@ const Heading = ({ title, image }: Heading) => {
 export const Banner16Defaults: Props = {
   headingsTop: [
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 1",
+        alt: "Library 1",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 2",
+        alt: "Library 2",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 3",
+        alt: "Library 3",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 4",
+        alt: "Library 4",
       },
     },
   ],
 
   headingsBottom: [
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 5",
+        alt: "Library 5",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 6",
+        alt: "Library 6",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 7",
+        alt: "Library 7",
       },
     },
     {
-      title: "Relume Library",
+      title: "Lorem Ipsum Dolor",
       image: {
         src: "https://relume-assets.s3.us-east-1.amazonaws.com/placeholder-image-tiny.png",
-        alt: "Relume Library 8",
+        alt: "Library 8",
       },
     },
   ],

@@ -77,8 +77,8 @@ export const Contact28Defaults: Props = {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
         alt: "Relume placeholder image",
       },
-      title: "Sydney",
-      address: "123 Sample St, Sydney NSW 2000 AU",
+      title: "Christchurch",
+      address: "123 Sample St, Christchurch NZ",
       button: {
         title: "Get Directions",
         variant: "link",
@@ -91,8 +91,8 @@ export const Contact28Defaults: Props = {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
         alt: "Relume placeholder image",
       },
-      title: "New York",
-      address: "123 Sample St, New York NY 10000 USA",
+      title: "Rangiora",
+      address: "123 Sample St, Rangiora NZ",
       button: {
         title: "Get Directions",
         variant: "link",

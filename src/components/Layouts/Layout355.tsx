@@ -126,5 +126,6 @@ export const Layout355Defaults: Props = {
   ],
   video: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video.mp4",
   videoType: "video/mp4",
-  videoDialog: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  videoDialog:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
 };

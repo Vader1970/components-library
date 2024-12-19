@@ -235,8 +235,8 @@ export const Contact6Defaults: Props = {
   tagline: "Tagline",
   heading: "Contact us",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  email: "hello@relume.io",
+  email: "hello@email.io",
   phone: "+1 (555) 000-0000",
-  address: "123 Sample St, Sydney NSW 2000 AU",
+  address: "123 Sample St, Christchurch NZ",
   button: { title: "Submit" },
 };

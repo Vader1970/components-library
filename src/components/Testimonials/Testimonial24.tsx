@@ -149,8 +149,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const testimonial1 = {
   logo: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-    alt: "Webflow logo 1",
+    src: "/logo.png",
+    alt: "logo 1",
   },
   quote:
     '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',
@@ -171,8 +171,8 @@ const testimonial1 = {
 
 const testimonial2 = {
   logo: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-    alt: "Relume logo 2",
+    src: "/logo.png",
+    alt: "logo 2",
   },
   quote:
     '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."',

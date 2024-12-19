@@ -11,6 +11,7 @@ import {
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaCirclePlay } from "react-icons/fa6";
+import { useRef } from "react";
 
 type ImageProps = {
   src: string;
@@ -34,45 +35,66 @@ export const Header109 = (props: Header109Props) => {
     ...props,
   };
 
+  // Ref for the section to localize scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Media queries
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 991px)");
 
-  const { scrollYProgress } = useScroll();
+  // Scroll tracking
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
-  const createTransform = (
-    mobileValues: string[],
-    tabletValues: string[] | null,
-    desktopValues: string[]
-  ) =>
-    useTransform(
-      scrollYProgress,
-      [0, 1],
-      isMobile
-        ? mobileValues
-        : isTablet && tabletValues
-        ? tabletValues
-        : desktopValues
-    );
-
-  const videoDialogMotion = {
-    y: useTransform(scrollYProgress, [0.5, 1], ["0vh", "40vh"]),
-    width: createTransform(["100%", "50%"], ["100%", "25%"], ["100%", "10%"]),
-    height: createTransform(["100%", "25%"], ["100%", "30%"], ["100%", "20%"]),
-    top: createTransform(["0%", "37.5%"], ["0%", "35%"], ["0%", "40%"]),
-    left: createTransform(["0%", "25%"], ["0%", "37.5%"], ["0%", "45%"]),
-  };
+  // Adjusted Video dialog transforms for quicker shrinking
+  const videoDialogY = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    ["0vh", "40vh"]
+  );
+  const videoDialogWidth = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    isMobile ? ["100%", "50%"] : isTablet ? ["100%", "25%"] : ["100%", "10%"]
+  );
+  const videoDialogHeight = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    isMobile ? ["100%", "25%"] : isTablet ? ["100%", "30%"] : ["100%", "20%"]
+  );
+  const videoDialogTop = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    isMobile ? ["0%", "37.5%"] : isTablet ? ["0%", "35%"] : ["0%", "40%"]
+  );
+  const videoDialogLeft = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    isMobile ? ["0%", "25%"] : isTablet ? ["0%", "37.5%"] : ["0%", "45%"]
+  );
 
   return (
     <section
+      ref={sectionRef}
       id="relume"
       className="relative flex h-[300vh] flex-col items-center"
     >
+      {/* Sticky Container: Video + Content */}
       <div className="sticky top-0 flex w-full flex-col items-center justify-center">
+        {/* Video */}
         <div className="relative z-10 flex h-screen w-full items-center justify-center">
           <Dialog>
             <DialogTrigger asChild>
               <motion.button
-                style={videoDialogMotion}
+                style={{
+                  y: videoDialogY,
+                  width: videoDialogWidth,
+                  height: videoDialogHeight,
+                  top: videoDialogTop,
+                  left: videoDialogLeft,
+                }}
                 className="absolute inset-0 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center"
               >
                 <img
@@ -89,26 +111,24 @@ export const Header109 = (props: Header109Props) => {
             </DialogContent>
           </Dialog>
         </div>
-        <div className="relative py-16 md:py-24 lg:pb-28 lg:pt-6">
-          <div className="px-[5%]">
-            <div className="container max-w-lg">
-              <div className="mx-auto w-full max-w-lg text-center">
-                <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
-                  {title}
-                </h1>
-                <p className="md:text-md">{description}</p>
-                <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
-                  {buttons.map((button, index) => (
-                    <Button key={index} {...button}>
-                      {button.title}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </div>
+
+        {/* Content (Positioned under video) */}
+        <div className="relative w-full max-w-lg px-[5%] text-center">
+          <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+            {title}
+          </h1>
+          <p className="md:text-md">{description}</p>
+          <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
+            {buttons.map((button, index) => (
+              <Button key={index} {...button}>
+                {button.title}
+              </Button>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Extra Scroll Space */}
       <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
@@ -127,9 +147,10 @@ export const Header109Defaults: Props = {
       variant: "secondary",
     },
   ],
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
 };

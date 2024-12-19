@@ -375,7 +375,7 @@ export const Navbar5Defaults: Props = {
               url: "#",
               image: {
                 src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 1",
+                alt: "placeholder image 1",
               },
               title: "Article Title",
               description: "Lorem ipsum dolor sit amet consectetur elit",
@@ -385,7 +385,7 @@ export const Navbar5Defaults: Props = {
               url: "#",
               image: {
                 src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 2",
+                alt: "placeholder image 2",
               },
               title: "Article Title",
               description: "Lorem ipsum dolor sit amet consectetur elit",

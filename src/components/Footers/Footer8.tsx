@@ -147,7 +147,7 @@ export const Footer8Defaults: Props = {
       ],
     },
   ],
-  footerText: "© 2024 Relume. All rights reserved.",
+  footerText: "© 2024 Company. All rights reserved.",
   footerLinks: [
     { title: "Privacy Policy", url: "#" },
     { title: "Terms of Service", url: "#" },

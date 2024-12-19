@@ -94,8 +94,8 @@ const project = {
   url: "#",
   button: {
     title: "View project",
-    variant: "link",
-    size: "link",
+    variant: "link" as const,
+    size: "link" as const,
     iconRight: <RxChevronRight />,
   },
 };

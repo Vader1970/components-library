@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -25,32 +26,52 @@ export const Header108 = (props: Header108Props) => {
     ...props,
   };
 
+  // Ref for the section to localize scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Media query for mobile screens
   const isMobile = useMediaQuery("(max-width: 767px)");
-  const { scrollYProgress } = useScroll();
 
-  const createTransform = (mobileValues: string[], desktopValues: string[]) =>
-    useTransform(
-      scrollYProgress,
-      [0, 1],
-      isMobile ? mobileValues : desktopValues
-    );
+  // Track scroll progress relative to the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
-  const leftImageGroup = {
-    x: createTransform(["0vw", "-25vw"], ["0vw", "-32vw"]),
-  };
+  // Transforms for animations (adjusted for mobile and desktop)
+  const leftImageGroupX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-32vw"]
+  );
 
-  const centerImageContainer = {
-    x: createTransform(["0vw", "-25vw"], ["0vw", "-32vw"]),
-    width: createTransform(["50vw", "100vw"], ["36vw", "100vw"]),
-    height: createTransform(["60vh", "100vh"], ["80vh", "100vh"]),
-  };
+  const centerImageX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-32vw"]
+  );
 
-  const rightImageGroup = {
-    x: createTransform(["0vw", "25vw"], ["0vw", "32vw"]),
-  };
+  const centerImageWidth = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["50vw", "100vw"] : ["36vw", "100vw"]
+  );
+
+  const centerImageHeight = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["60vh", "100vh"] : ["80vh", "100vh"]
+  );
+
+  const rightImageGroupX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["0vw", "25vw"] : ["0vw", "32vw"]
+  );
 
   return (
-    <section id="relume" className="relative h-[250vh]">
+    <section ref={sectionRef} id="relume" className="relative h-[250vh]">
+      {/* Content */}
       <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
         <div className="container">
           <div className="mx-auto w-full max-w-lg text-center">
@@ -69,11 +90,13 @@ export const Header108 = (props: Header108Props) => {
         </div>
       </div>
 
+      {/* Sticky Images */}
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
-        <div className="z-10 grid h-[60vh] w-full grid-flow-col grid-cols-[25%_50%_25%]  content-center items-center justify-center md:h-[70vh] md:grid-cols-[32%_36%_32%] lg:h-[80vh]">
+        <div className="z-10 grid h-[60vh] w-full grid-flow-col grid-cols-[25%_50%_25%] content-center items-center justify-center md:h-[70vh] md:grid-cols-[32%_36%_32%] lg:h-[80vh]">
+          {/* Left Image Group */}
           <motion.div
             className="grid grid-flow-col grid-cols-1 items-center justify-items-end gap-4 justify-self-end px-4"
-            style={leftImageGroup}
+            style={{ x: leftImageGroupX }}
           >
             <div className="relative hidden md:block md:w-[25vw] lg:w-[20vw]">
               <img
@@ -98,13 +121,22 @@ export const Header108 = (props: Header108Props) => {
             </div>
           </motion.div>
 
-          <motion.div className="relative" style={centerImageContainer}>
+          {/* Center Image */}
+          <motion.div
+            className="relative"
+            style={{
+              x: centerImageX,
+              width: centerImageWidth,
+              height: centerImageHeight,
+            }}
+          >
             <img className="size-full object-cover" {...images[3]} />
           </motion.div>
 
+          {/* Right Image Group */}
           <motion.div
             className="grid grid-flow-col items-center justify-items-start gap-4 justify-self-start px-4"
-            style={rightImageGroup}
+            style={{ x: rightImageGroupX }}
           >
             <div className="relative grid w-[40vw] grid-cols-1 grid-rows-[auto_auto] gap-4 self-center md:w-[18vw]">
               <div className="relative w-[40vw] sm:w-auto">
@@ -139,47 +171,35 @@ export const Header108Defaults: Props = {
   title: "Medium length hero heading goes here",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-  buttons: [
-    {
-      title: "Button",
-    },
-    {
-      title: "Button",
-      variant: "secondary",
-    },
-  ],
+  buttons: [{ title: "Button" }, { title: "Button", variant: "secondary" }],
   images: [
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 1",
+      alt: "Image 1",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      alt: "Image 2",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 3",
+      alt: "Image 3",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 4",
+      alt: "Image 4",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 5",
+      alt: "Image 5",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 6",
+      alt: "Image 6",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 7",
-    },
-    {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 8",
+      alt: "Image 7",
     },
   ],
 };

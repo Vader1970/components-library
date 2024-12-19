@@ -87,20 +87,20 @@ export const Layout189Defaults: Props = {
   ],
   logos: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
-      alt: "Webflow logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo-white.svg",
-      alt: "Relume logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
-      alt: "Webflow logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo-white.svg",
-      alt: "Relume logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
   ],
   video: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video.mp4",

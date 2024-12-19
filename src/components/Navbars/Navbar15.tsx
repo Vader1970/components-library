@@ -220,7 +220,7 @@ export const Navbar15Defaults: Props = {
   logo: {
     url: "#",
     src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
-    alt: "Relume placeholder logo",
+    alt: "placeholder logo",
   },
   navLinks: [
     {

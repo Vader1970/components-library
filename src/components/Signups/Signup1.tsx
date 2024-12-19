@@ -160,5 +160,5 @@ export const Signup1Defaults: Props = {
     title: "Sign up with Google",
     iconLeft: <BiLogoGoogle className="size-6" />,
   },
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };

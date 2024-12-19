@@ -108,8 +108,8 @@ const project = {
   url: "#",
   button: {
     title: "View project",
-    variant: "link",
-    size: "link",
+    variant: "link" as const,
+    size: "link" as const,
     iconRight: <RxChevronRight />,
   },
   tags: [
@@ -135,7 +135,7 @@ export const Portfolio13Defaults: Props = {
   projects: [project, project, project],
   button: {
     title: "View all",
-    variant: "secondary",
-    size: "primary",
+    variant: "secondary" as const,
+    size: "primary" as const,
   },
 };

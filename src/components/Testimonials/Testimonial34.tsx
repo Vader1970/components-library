@@ -122,8 +122,8 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-1",
       trigger: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Webflow logo 1",
+        src: "/logo.png",
+        alt: "logo 1",
       },
       content: {
         numberOfStars: 5,
@@ -141,8 +141,8 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-2",
       trigger: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Relume logo 2",
+        src: "/logo.png",
+        alt: "logo 2",
       },
       content: {
         numberOfStars: 5,
@@ -160,8 +160,8 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-3",
       trigger: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-        alt: "Webflow logo 3",
+        src: "/logo.png",
+        alt: "logo 3",
       },
       content: {
         numberOfStars: 5,
@@ -179,8 +179,8 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-4",
       trigger: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Relume logo 4",
+        src: "/logo.png",
+        alt: "logo 4",
       },
       content: {
         numberOfStars: 5,

@@ -175,5 +175,5 @@ export const Signup7Defaults: Props = {
     text: "Log In",
     url: "#",
   },
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };
