@@ -116,7 +116,7 @@ export const Layout28Defaults: Props = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder image 1",
+        alt: "placeholder image 1",
       },
     },
     {
@@ -127,9 +127,9 @@ export const Layout28Defaults: Props = {
       video: {
         image: {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
-          alt: "Relume placeholder image 2",
+          alt: "placeholder image 2",
         },
-        url: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+        url: "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
       },
     },
     {
@@ -139,7 +139,7 @@ export const Layout28Defaults: Props = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder image 3",
+        alt: "placeholder image 3",
       },
     },
   ],

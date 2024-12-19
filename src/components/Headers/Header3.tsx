@@ -108,7 +108,8 @@ export const Header3Defaults: Props = {
     { title: "Button", href: "/about" },
     { title: "Button", variant: "secondary", href: "/contact" },
   ],
-  video: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",

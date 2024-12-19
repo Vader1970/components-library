@@ -232,7 +232,7 @@ export const Links10Defaults: Props = {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
-            src: "relume-icon.svg",
+            src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
             alt: "Relume placeholder image 1",
           },
         },
@@ -246,7 +246,7 @@ export const Links10Defaults: Props = {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
-            src: "relume-icon.svg",
+            src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
             alt: "Relume placeholder image 2",
           },
         },

@@ -142,8 +142,8 @@ export const Contact29Defaults: Props = {
             alt: "Relume placeholder map image",
           },
         },
-        title: "New York",
-        address: { line1: "123 Sample St,", line2: "New York NY 10000 USA" },
+        title: "Christchurch",
+        address: { line1: "123 Sample St,", line2: "Christchurch NZ" },
         button: {
           title: "View Map",
         },
@@ -159,10 +159,10 @@ export const Contact29Defaults: Props = {
             alt: "Relume placeholder map image",
           },
         },
-        title: "London",
+        title: "Rangiora",
         address: {
           line1: "123 Sample St,",
-          line2: "London W1C 1DE, United Kingdom",
+          line2: "Rangiora NZ",
         },
         button: {
           title: "View Map",

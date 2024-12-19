@@ -60,10 +60,10 @@ export const Banner14 = (props: Banner14Props) => {
 
 export const Banner14Defaults: Props = {
   headings: [
-    "Relume Library",
-    "Relume Library",
-    "Relume Library",
-    "Relume Library",
-    "Relume Library",
+    "Lorem Ipsum Dolor",
+    "Lorem Ipsum Dolor",
+    "Lorem Ipsum Dolor",
+    "Lorem Ipsum Dolor",
+    "Lorem Ipsum Dolor",
   ],
 };

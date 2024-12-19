@@ -87,8 +87,8 @@ export const Contact25Defaults: Props = {
           alt: "Relume placeholder map image",
         },
       },
-      title: "Sydney",
-      address: "123 Sample St, Sydney NSW 2000 AU",
+      title: "Christchurch",
+      address: "123 Sample St, Christchurch NZ",
       button: {
         title: "Get Directions",
         variant: "link",
@@ -104,8 +104,8 @@ export const Contact25Defaults: Props = {
           alt: "Relume placeholder map image",
         },
       },
-      title: "New York",
-      address: "123 Sample St, New York NY 10000 USA",
+      title: "Rangiora",
+      address: "123 Sample St, Rangiora NZ",
       button: {
         title: "Get Directions",
         variant: "link",

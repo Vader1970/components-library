@@ -78,7 +78,7 @@ export const Testimonial13Defaults: Props = {
   position: "Position",
   companyName: "Company name",
   logo: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-    alt: "Webflow logo 1",
+    src: "/logo.png",
+    alt: "logo 1",
   },
 };

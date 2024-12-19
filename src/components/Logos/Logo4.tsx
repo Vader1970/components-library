@@ -74,36 +74,36 @@ export const Logo4Defaults: Props = {
   ],
   logos: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume placeholder image",
+      src: "/logo.png",
+      alt: "placeholder image",
     },
   ],
 };

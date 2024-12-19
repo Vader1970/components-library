@@ -45,20 +45,20 @@ export const Layout139Defaults: Props = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   logos: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Webflow logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume logo 1",
+      src: "/logo.png",
+      alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
-      alt: "Webflow logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-      alt: "Relume logo 2",
+      src: "/logo.png",
+      alt: "logo 2",
     },
   ],
 };

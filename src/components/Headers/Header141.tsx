@@ -3,6 +3,7 @@
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 type ImageProps = {
   src: string;
@@ -28,11 +29,18 @@ export const Header141 = (props: Header141Props) => {
       ...props,
     };
 
-  const { scrollYProgress } = useScroll();
+  // Ref for localized scroll tracking
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
+  // Media queries for responsive transforms
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isTablet = useMediaQuery("(max-width: 991px)");
 
+  // Motion transforms
   const leftImageTranslate = {
     y: useTransform(
       scrollYProgress,
@@ -52,15 +60,20 @@ export const Header141 = (props: Header141Props) => {
   const rightImageTranslate = {
     y: useTransform(
       scrollYProgress,
-      [0, 0.5],
+      [0, 1],
       isMobile ? ["26%", "-20%"] : isTablet ? ["8%", "-20%"] : ["12%", "-20%"]
     ),
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section
+      ref={sectionRef}
+      id="relume"
+      className="relative px-[5%] py-16 md:py-24 lg:py-28"
+    >
       <div className="container">
-        <div className="rb-12 mb-12 text-center md:mb-18 lg:mb-20">
+        {/* Header Content */}
+        <div className="mb-12 text-center md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg">
             <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
               {heading}
@@ -75,9 +88,12 @@ export const Header141 = (props: Header141Props) => {
             </div>
           </div>
         </div>
+
+        {/* Images */}
         <div className="relative flex justify-center gap-6 sm:gap-8 md:gap-0">
+          {/* Left Image */}
           <motion.div
-            className="absolute bottom-0 left-0 z-10 w-2/5"
+            className="relative w-1/3 sm:w-2/5"
             style={leftImageTranslate}
           >
             <img
@@ -86,8 +102,10 @@ export const Header141 = (props: Header141Props) => {
               className="aspect-square size-full object-cover"
             />
           </motion.div>
+
+          {/* Center Image */}
           <motion.div
-            className="mx-[10%] mb-[10%] w-1/2"
+            className="relative w-1/3 sm:w-1/2"
             style={centerImageTranslate}
           >
             <img
@@ -96,8 +114,10 @@ export const Header141 = (props: Header141Props) => {
               className="aspect-square size-full object-cover"
             />
           </motion.div>
+
+          {/* Right Image */}
           <motion.div
-            className="absolute right-0 top-[10%] w-2/5"
+            className="relative w-1/3 sm:w-2/5"
             style={rightImageTranslate}
           >
             <img

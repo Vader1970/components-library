@@ -334,7 +334,7 @@ export const Navbar10Defaults: Props = {
             url: "#",
             image: {
               src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-              alt: "Relume placeholder image 2",
+              alt: "placeholder image 2",
             },
             title: "Article Title",
             description:
@@ -345,7 +345,7 @@ export const Navbar10Defaults: Props = {
             url: "#",
             image: {
               src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-              alt: "Relume placeholder image 3",
+              alt: "placeholder image 3",
             },
             title: "Article Title",
             description:
@@ -356,7 +356,7 @@ export const Navbar10Defaults: Props = {
             url: "#",
             image: {
               src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-              alt: "Relume placeholder image 4",
+              alt: "placeholder image 4",
             },
             title: "Article Title",
             description:
@@ -367,7 +367,7 @@ export const Navbar10Defaults: Props = {
             url: "#",
             image: {
               src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-              alt: "Relume placeholder image 5",
+              alt: "placeholder image 5",
             },
             title: "Article Title",
             description:
@@ -378,7 +378,7 @@ export const Navbar10Defaults: Props = {
             url: "#",
             image: {
               src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-              alt: "Relume placeholder image 6",
+              alt: "placeholder image 6",
             },
             title: "Article Title",
             description:

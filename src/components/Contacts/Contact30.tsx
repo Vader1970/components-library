@@ -131,8 +131,8 @@ export const Contact30Defaults: Props = {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
           alt: "Relume placeholder image 2",
         },
-        title: "New York",
-        address: { line1: "123 Sample St,", line2: "New York NY 10000 USA" },
+        title: "Christchurch",
+        address: { line1: "123 Sample St,", line2: "Christchurch NZ" },
         button: {
           title: "View Office",
         },
@@ -145,10 +145,10 @@ export const Contact30Defaults: Props = {
           src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
           alt: "Relume placeholder image 3",
         },
-        title: "London",
+        title: "Rangiora",
         address: {
           line1: "123 Sample St,",
-          line2: "London W1C 1DE, United Kingdom",
+          line2: "Rangiora NZ",
         },
         button: {
           title: "View Office",

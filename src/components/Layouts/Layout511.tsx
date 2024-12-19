@@ -191,7 +191,7 @@ export const Layout511Defaults: Props = {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
             alt: "Relume placeholder image 2",
           },
-          url: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+          url: "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
         },
       },
     },

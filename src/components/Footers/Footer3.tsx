@@ -130,12 +130,12 @@ export const Footer3Defaults: Props = {
   },
   address: {
     label: "Address:",
-    value: "Level 1, 12 Sample St, Sydney NSW 2000",
+    value: "Level 1, 12 Sample St, Rangiora NZ",
   },
   contact: {
     label: "Contact:",
     phone: "1800 123 4567",
-    email: "info@relume.io",
+    email: "info@email.io",
   },
   columnLinks: [
     {
@@ -164,7 +164,7 @@ export const Footer3Defaults: Props = {
     { url: "#", icon: <BiLogoLinkedinSquare className="size-6" /> },
     { url: "#", icon: <BiLogoYoutube className="size-6" /> },
   ],
-  footerText: "© 2024 Relume. All rights reserved.",
+  footerText: "© 2024 Company. All rights reserved.",
   footerLinks: [
     { title: "Privacy Policy", url: "#" },
     { title: "Terms of Service", url: "#" },

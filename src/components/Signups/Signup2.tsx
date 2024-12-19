@@ -154,5 +154,5 @@ export const Signup2Defaults: Props = {
       iconLeft: <BiLogoApple className="size-6" />,
     },
   ],
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };
