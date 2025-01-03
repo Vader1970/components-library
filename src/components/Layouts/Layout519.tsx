@@ -7,12 +7,17 @@ type ImageProps = {
   alt?: string;
 };
 
+// Extended ButtonProps to allow custom variants
+type ExtendedButtonProps = ButtonProps & {
+  variant?: "link-alt" | "secondary-alt" | ButtonProps["variant"];
+};
+
 type CardProps = {
   image: ImageProps;
   logo: ImageProps;
   heading: string;
   description: string;
-  buttons: ButtonProps[];
+  buttons: ExtendedButtonProps[];
 };
 
 type Props = {
@@ -22,8 +27,7 @@ type Props = {
   cards: CardProps[];
 };
 
-export type Layout519Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Layout519Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout519 = (props: Layout519Props) => {
   const { tagline, heading, description, cards } = {
@@ -32,18 +36,16 @@ export const Layout519 = (props: Layout519Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="mx-auto max-w-lg text-center">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              {heading}
-            </h2>
-            <p className="md:text-md">{description}</p>
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container'>
+        <div className='mb-12 md:mb-18 lg:mb-20'>
+          <div className='mx-auto max-w-lg text-center'>
+            <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
+            <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
+            <p className='md:text-md'>{description}</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8'>
           {cards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
@@ -53,28 +55,20 @@ export const Layout519 = (props: Layout519Props) => {
   );
 };
 
-const Card: React.FC<CardProps> = ({
-  image,
-  logo,
-  heading,
-  description,
-  buttons,
-}) => (
-  <div className="relative p-6 text-text-alternative md:p-8 lg:p-12">
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute inset-0 bg-black/50" />
-      <img src={image.src} className="size-full object-cover" alt={image.alt} />
+const Card: React.FC<CardProps> = ({ image, logo, heading, description, buttons }) => (
+  <div className='relative p-6 text-text-alternative md:p-8 lg:p-12'>
+    <div className='absolute inset-0 -z-10'>
+      <div className='absolute inset-0 bg-black/50' />
+      <img src={image.src} className='size-full object-cover' alt={image.alt} />
     </div>
     <div>
-      <div className="mb-5 md:mb-6">
-        <img src={logo.src} className="size-12" alt={logo.alt} />
+      <div className='mb-5 md:mb-6'>
+        <img src={logo.src} className='size-12' alt={logo.alt} />
       </div>
-      <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
-        {heading}
-      </h3>
+      <h3 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{heading}</h3>
       <p>{description}</p>
     </div>
-    <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+    <div className='mt-6 flex flex-wrap items-center gap-4 md:mt-8'>
       {buttons.map((button, index) => (
         <Button key={index} {...button}>
           {button.title}
@@ -84,7 +78,7 @@ const Card: React.FC<CardProps> = ({
   </div>
 );
 
-const card = {
+const card: CardProps = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "Relume placeholder image",

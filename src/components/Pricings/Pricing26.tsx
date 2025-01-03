@@ -241,45 +241,27 @@ export const Pricing26Defaults: Props = {
         },
         {
           text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: [
+            <BiCheck className='size-6' key='check1' />,
+            <BiCheck className='size-6' key='check2' />,
+            <BiCheck className='size-6' key='check3' />,
+          ],
         },
         {
           text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: [
+            <BiCheck className='size-6' key='check4' />,
+            <BiCheck className='size-6' key='check5' />,
+            <BiCheck className='size-6' key='check6' />,
+          ],
         },
         {
           text: "Feature text goes here",
-          items: ["", <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: ["", <BiCheck className='size-6' key='check7' />, <BiCheck className='size-6' key='check8' />],
         },
         {
           text: "Feature text goes here",
-          items: ["", "", <BiCheck className='size-6' />],
-        },
-      ],
-    },
-
-    {
-      title: "Feature Category",
-      features: [
-        {
-          text: "Feature text goes here",
-          items: ["10", "25", "Unlimited"],
-        },
-        {
-          text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
-        },
-        {
-          text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", <BiCheck className='size-6' />, <BiCheck className='size-6' />],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", "", <BiCheck className='size-6' />],
+          items: ["", "", <BiCheck className='size-6' key='check9' />],
         },
       ],
     },
@@ -293,19 +275,61 @@ export const Pricing26Defaults: Props = {
         },
         {
           text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: [
+            <BiCheck className='size-6' key='check10' />,
+            <BiCheck className='size-6' key='check11' />,
+            <BiCheck className='size-6' key='check12' />,
+          ],
         },
         {
           text: "Feature text goes here",
-          items: [<BiCheck className='size-6' />, <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: [
+            <BiCheck className='size-6' key='check13' />,
+            <BiCheck className='size-6' key='check14' />,
+            <BiCheck className='size-6' key='check15' />,
+          ],
         },
         {
           text: "Feature text goes here",
-          items: ["", <BiCheck className='size-6' />, <BiCheck className='size-6' />],
+          items: ["", <BiCheck className='size-6' key='check16' />, <BiCheck className='size-6' key='check17' />],
         },
         {
           text: "Feature text goes here",
-          items: ["", "", <BiCheck className='size-6' />],
+          items: ["", "", <BiCheck className='size-6' key='check18' />],
+        },
+      ],
+    },
+
+    {
+      title: "Feature Category",
+      features: [
+        {
+          text: "Feature text goes here",
+          items: ["10", "25", "Unlimited"],
+        },
+        {
+          text: "Feature text goes here",
+          items: [
+            <BiCheck className='size-6' key='check19' />,
+            <BiCheck className='size-6' key='check20' />,
+            <BiCheck className='size-6' key='check21' />,
+          ],
+        },
+        {
+          text: "Feature text goes here",
+          items: [
+            <BiCheck className='size-6' key='check22' />,
+            <BiCheck className='size-6' key='check23' />,
+            <BiCheck className='size-6' key='check24' />,
+          ],
+        },
+        {
+          text: "Feature text goes here",
+          items: ["", <BiCheck className='size-6' key='check25' />, <BiCheck className='size-6' key='check26' />],
+        },
+        {
+          text: "Feature text goes here",
+          items: ["", "", <BiCheck className='size-6' key='check27' />],
         },
       ],
     },

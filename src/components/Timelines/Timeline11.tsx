@@ -34,8 +34,7 @@ type Props = {
   timelineItems: TimelineItem[];
 };
 
-export type Timeline11Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Timeline11Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Timeline11 = (props: Timeline11Props) => {
   const { tagline, heading, description, buttons, timelineItems } = {
@@ -44,17 +43,15 @@ export const Timeline11 = (props: Timeline11Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="flex flex-col items-center">
-          <div className="mb-12 text-center md:mb-18 lg:mb-20">
-            <div className="relative z-10 w-full max-w-lg">
-              <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-                {heading}
-              </h2>
-              <p className="md:text-md">{description}</p>
-              <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container'>
+        <div className='flex flex-col items-center'>
+          <div className='mb-12 text-center md:mb-18 lg:mb-20'>
+            <div className='relative z-10 w-full max-w-lg'>
+              <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
+              <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
+              <p className='md:text-md'>{description}</p>
+              <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
@@ -63,13 +60,13 @@ export const Timeline11 = (props: Timeline11Props) => {
               </div>
             </div>
           </div>
-          <div className="relative grid grid-cols-1 justify-items-center gap-20">
-            <div className="absolute flex h-full w-8 flex-col items-center justify-self-start md:justify-self-auto">
-              <div className="absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent" />
-              <div className="sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black" />
-              <div className="h-full w-[3px] bg-neutral-lighter" />
-              <div className="absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary" />
-              <div className="absolute top-[-50vh] h-[50vh] w-full bg-background-primary" />
+          <div className='relative grid grid-cols-1 justify-items-center gap-20'>
+            <div className='absolute flex h-full w-8 flex-col items-center justify-self-start md:justify-self-auto'>
+              <div className='absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent' />
+              <div className='sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black' />
+              <div className='h-full w-[3px] bg-neutral-lighter' />
+              <div className='absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary' />
+              <div className='absolute top-[-50vh] h-[50vh] w-full bg-background-primary' />
             </div>
             <React.Fragment>
               {timelineItems.map((item, index) => (
@@ -83,13 +80,7 @@ export const Timeline11 = (props: Timeline11Props) => {
   );
 };
 
-const TimelineItem = ({
-  item,
-  index,
-}: {
-  item: TimelineItem;
-  index: number;
-}) => {
+const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) => {
   const isEven = index % 2 === 0;
   const circleRef = useRef<HTMLDivElement>(null);
 
@@ -103,67 +94,50 @@ const TimelineItem = ({
   };
 
   return (
-    <div className="grid grid-cols-[max-content_1fr] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-12">
+    <div className='grid grid-cols-[max-content_1fr] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-12'>
       {isEven ? (
         <React.Fragment>
-          <div className="hidden w-full md:block" />
+          <div className='hidden w-full md:block' />
           <TimelineCircle ref={circleRef} backgroundColor={backgroundColor} />
           <TimelineContent item={item} />
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <TimelineContent item={item} alignment="right" />
-          <TimelineCircle
-            ref={circleRef}
-            backgroundColor={backgroundColor}
-            className="order-first md:order-none"
-          />
-          <div className="hidden w-full md:block" />
+          <TimelineContent item={item} alignment='right' />
+          <TimelineCircle ref={circleRef} backgroundColor={backgroundColor} className='order-first md:order-none' />
+          <div className='hidden w-full md:block' />
         </React.Fragment>
       )}
     </div>
   );
 };
 
-const TimelineCircle = React.forwardRef<HTMLDivElement, TimelineCircleProps>(
-  ({ backgroundColor, className }, ref) => (
-    <div className={clsx("flex h-full w-8 justify-center", className)}>
-      <motion.div
-        ref={ref}
-        style={backgroundColor}
-        className="z-20 mt-8 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white]"
-      />
-    </div>
-  )
-);
+const TimelineCircle = React.forwardRef<HTMLDivElement, TimelineCircleProps>(({ backgroundColor, className }, ref) => (
+  <div className={clsx("flex h-full w-8 justify-center", className)}>
+    <motion.div
+      ref={ref}
+      style={backgroundColor}
+      className='z-20 mt-8 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white]'
+    />
+  </div>
+));
 
-const TimelineContent = ({
-  item,
-  alignment = "left",
-}: {
-  item: TimelineItem;
-  alignment?: "left" | "right";
-}) => (
+// Set the displayName for the TimelineCircle component
+TimelineCircle.displayName = "TimelineCircle";
+
+const TimelineContent = ({ item, alignment = "left" }: { item: TimelineItem; alignment?: "left" | "right" }) => (
   <div
     className={clsx(
       "mt-4 grid grid-cols-1 gap-8 md:gap-12",
-      alignment === "right" &&
-        "items-start text-left md:items-end md:text-right"
+      alignment === "right" && "items-start text-left md:items-end md:text-right"
     )}
   >
     <div>
-      <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
-        {item.heading}
-      </h3>
-      <h4 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
-        {item.title}
-      </h4>
+      <h3 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{item.heading}</h3>
+      <h4 className='mb-3 text-xl font-bold md:mb-4 md:text-2xl'>{item.title}</h4>
       <p>{item.description}</p>
       <div
-        className={clsx(
-          "mt-6 flex flex-wrap items-center gap-4 md:mt-8",
-          alignment === "right" && "md:justify-end"
-        )}
+        className={clsx("mt-6 flex flex-wrap items-center gap-4 md:mt-8", alignment === "right" && "md:justify-end")}
       >
         {item.buttons.map((button, index) => (
           <Button key={index} {...button}>
@@ -172,8 +146,8 @@ const TimelineContent = ({
         ))}
       </div>
     </div>
-    <div className="overflow-hidden">
-      <img src={item.image.src} alt={item.image.alt} className="w-full" />
+    <div className='overflow-hidden'>
+      <img src={item.image.src} alt={item.image.alt} className='w-full' />
     </div>
   </div>
 );

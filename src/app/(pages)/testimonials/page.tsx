@@ -35,7 +35,7 @@ import { Testimonial27 } from "@/components/Testimonials/Testimonial27";
 import { Testimonial28 } from "@/components/Testimonials/Testimonial28";
 import { Testimonial30 } from "@/components/Testimonials/Testimonial30";
 import { Testimonial31 } from "@/components/Testimonials/Testimonial31";
-// import { Testimonial33 } from "@/components/Testimonials/Testimonial33";
+import { Testimonial33 } from "@/components/Testimonials/Testimonial33";
 
 const testimonialComponents = [
   { component: Testimonial1, title: "Testimonial 1" },
@@ -69,7 +69,7 @@ const testimonialComponents = [
   { component: Testimonial30, title: "Testimonial 30" },
   { component: Testimonial31, title: "Testimonial 31" },
   { component: Testimonial32, title: "Testimonial 32" },
-  // { component: Testimonial33, title: "Testimonial 33" },
+  { component: Testimonial33, title: "Testimonial 33" },
   { component: Testimonial34, title: "Testimonial 34" },
   { component: Testimonial35, title: "Testimonial 35" },
   { component: Testimonial36, title: "Testimonial 36" },
@@ -83,20 +83,16 @@ const testimonialComponents = [
 const TestimonialsPage = () => {
   return (
     <div>
-      <h1 className="text-8xl text-center font-bold mb-4">Testimonials</h1>
-      <section className="mb-4">
-        {testimonialComponents.map(
-          ({ component: TestimonialComponent, title }, index) => (
-            <div key={index}>
-              {/* Render the title as an h2 element */}
-              <h2 className="text-4xl font-bold text-center mt-20 mb-5">
-                {title}
-              </h2>
-              {/* Render the component */}
-              <TestimonialComponent />
-            </div>
-          )
-        )}
+      <h1 className='text-8xl text-center font-bold mb-4'>Testimonials</h1>
+      <section className='mb-4'>
+        {testimonialComponents.map(({ component: TestimonialComponent, title }, index) => (
+          <div key={index}>
+            {/* Render the title as an h2 element */}
+            <h2 className='text-4xl font-bold text-center mt-20 mb-5'>{title}</h2>
+            {/* Render the component */}
+            <TestimonialComponent />
+          </div>
+        ))}
       </section>
     </div>
   );

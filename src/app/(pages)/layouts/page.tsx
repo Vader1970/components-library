@@ -132,10 +132,10 @@ import { Layout340 } from "@/components/Layouts/Layout340";
 import { Layout341 } from "@/components/Layouts/Layout341";
 import { Layout344 } from "@/components/Layouts/Layout344";
 import { Layout345 } from "@/components/Layouts/Layout345";
-// import { Layout348 } from "@/components/Layouts/Layout348";
-// import { Layout349 } from "@/components/Layouts/Layout349";
+import { Layout348 } from "@/components/Layouts/Layout348";
+import { Layout349 } from "@/components/Layouts/Layout349";
 import { Layout350 } from "@/components/Layouts/Layout350";
-// import { Layout351 } from "@/components/Layouts/Layout351";
+import { Layout351 } from "@/components/Layouts/Layout351";
 import { Layout354 } from "@/components/Layouts/Layout354";
 import { Layout355 } from "@/components/Layouts/Layout355";
 import { Layout356 } from "@/components/Layouts/Layout356";
@@ -192,8 +192,8 @@ import { Layout419 } from "@/components/Layouts/Layout419";
 import { Layout420 } from "@/components/Layouts/Layout420";
 import { Layout422 } from "@/components/Layouts/Layout422";
 import { Layout423 } from "@/components/Layouts/Layout423";
-// import { Layout424 } from "@/components/Layouts/Layout424";
-// import { Layout425 } from "@/components/Layouts/Layout425";
+import { Layout424 } from "@/components/Layouts/Layout424";
+import { Layout425 } from "@/components/Layouts/Layout425";
 import { Layout426 } from "@/components/Layouts/Layout426";
 import { Layout427 } from "@/components/Layouts/Layout427";
 import { Layout428 } from "@/components/Layouts/Layout428";
@@ -246,7 +246,7 @@ import { Layout477 } from "@/components/Layouts/Layout477";
 import { Layout478 } from "@/components/Layouts/Layout478";
 import { Layout484 } from "@/components/Layouts/Layout484";
 import { Layout486 } from "@/components/Layouts/Layout486";
-// import { Layout488 } from "@/components/Layouts/Layout488";
+import { Layout488 } from "@/components/Layouts/Layout488";
 import { Layout493 } from "@/components/Layouts/Layout493";
 import { Layout502 } from "@/components/Layouts/Layout502";
 import { Layout505 } from "@/components/Layouts/Layout505";
@@ -518,8 +518,8 @@ import { Layout491 } from "@/components/Layouts/Layout491";
 import { Layout492 } from "@/components/Layouts/Layout492";
 import { Layout497 } from "@/components/Layouts/Layout497";
 import { Layout498 } from "@/components/Layouts/Layout498";
-// import { Layout352 } from "@/components/Layouts/Layout352";
-// import { Layout421 } from "@/components/Layouts/Layout421";
+import { Layout352 } from "@/components/Layouts/Layout352";
+import { Layout421 } from "@/components/Layouts/Layout421";
 
 const layoutComponents = [
   { component: Layout1, title: "Layout 1" },
@@ -864,11 +864,11 @@ const layoutComponents = [
   { component: Layout345, title: "Layout 345" },
   { component: Layout346, title: "Layout 346" },
   { component: Layout347, title: "Layout 347" },
-  // { component: Layout348, title: "Layout 348" },
-  // { component: Layout349, title: "Layout 349" },
+  { component: Layout348, title: "Layout 348" },
+  { component: Layout349, title: "Layout 349" },
   { component: Layout350, title: "Layout 350" },
-  // { component: Layout351, title: "Layout 351" },
-  // { component: Layout352, title: "Layout 352" },
+  { component: Layout351, title: "Layout 351" },
+  { component: Layout352, title: "Layout 352" },
   { component: Layout353, title: "Layout 353" },
   { component: Layout354, title: "Layout 354" },
   { component: Layout355, title: "Layout 355" },
@@ -937,11 +937,11 @@ const layoutComponents = [
   { component: Layout418, title: "Layout 418" },
   { component: Layout419, title: "Layout 419" },
   { component: Layout420, title: "Layout 420" },
-  // { component: Layout421, title: "Layout 421" },
+  { component: Layout421, title: "Layout 421" },
   { component: Layout422, title: "Layout 422" },
   { component: Layout423, title: "Layout 423" },
-  // { component: Layout425, title: "Layout 425" },
-  // { component: Layout424, title: "Layout 424" },
+  { component: Layout424, title: "Layout 424" },
+  { component: Layout425, title: "Layout 425" },
   { component: Layout426, title: "Layout 426" },
   { component: Layout427, title: "Layout 427" },
   { component: Layout428, title: "Layout 428" },
@@ -1004,7 +1004,7 @@ const layoutComponents = [
   { component: Layout485, title: "Layout 485" },
   { component: Layout486, title: "Layout 486" },
   { component: Layout487, title: "Layout 487" },
-  // { component: Layout488, title: "Layout 488" },
+  { component: Layout488, title: "Layout 488" },
   { component: Layout489, title: "Layout 489" },
   { component: Layout490, title: "Layout 490" },
   { component: Layout491, title: "Layout 491" },
@@ -1051,20 +1051,16 @@ const layoutComponents = [
 const LayoutsPage = () => {
   return (
     <div>
-      <h1 className="text-8xl text-center font-bold mb-4">LAYOUTS</h1>
-      <section className="mb-4">
-        {layoutComponents.map(
-          ({ component: LayoutComponent, title }, index) => (
-            <div key={index}>
-              {/* Render the title as an h2 element */}
-              <h2 className="text-4xl font-bold text-center mt-20 mb-5">
-                {title}
-              </h2>
-              {/* Render the component */}
-              <LayoutComponent />
-            </div>
-          )
-        )}
+      <h1 className='text-8xl text-center font-bold mb-4'>LAYOUTS</h1>
+      <section>
+        {layoutComponents.map(({ component: LayoutComponent, title }, index) => (
+          <div key={index}>
+            {/* Render the title as an h2 element */}
+            <h2 className='text-4xl font-bold text-center mt-20 mb-5'>{title}</h2>
+            {/* Render the component */}
+            <LayoutComponent />
+          </div>
+        ))}
       </section>
     </div>
   );

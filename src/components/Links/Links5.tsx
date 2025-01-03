@@ -1,28 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  Input,
-  VideoIframe,
-} from "@relume_io/relume-ui";
+import { Button, Dialog, DialogContent, DialogTrigger, Input, VideoIframe } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { MdLocationOn } from "react-icons/md";
 import { FaCirclePlay, FaXTwitter } from "react-icons/fa6";
-import {
-  BiEnvelope,
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import { BiEnvelope, BiLogoFacebookCircle, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoYoutube } from "react-icons/bi";
 
 type ImageProps = {
   src: string;
   alt?: string;
+};
+
+// Extend ButtonProps to allow custom variants
+type ExtendedButtonProps = ButtonProps & {
+  variant?: "secondary" | ButtonProps["variant"];
 };
 
 type AuthorDetailsProps = {
@@ -32,10 +24,9 @@ type AuthorDetailsProps = {
   location: string;
 };
 
-type CategoryLinkProps = {
+type CategoryLinkProps = ExtendedButtonProps & {
   url: string;
   title: string;
-  variant?: string;
 };
 
 type CategoryProps = {
@@ -66,15 +57,13 @@ type Props = {
   socialLinks: SocialLinkProps[];
 };
 
-export type Links5Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Links5Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Links5 = (props: Links5Props) => {
-  const { video, author, image, categories, button, newsLetter, socialLinks } =
-    {
-      ...Links5Defaults,
-      ...props,
-    };
+  const { video, author, image, categories, button, newsLetter, socialLinks } = {
+    ...Links5Defaults,
+    ...props,
+  };
   const [emailInput, setEmailInput] = useState<string>("");
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -83,25 +72,23 @@ export const Links5 = (props: Links5Props) => {
     });
   };
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container max-w-md">
-        <div className="mb-10 flex flex-col items-center text-center md:mb-14 lg:mb-16">
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container max-w-md'>
+        <div className='mb-10 flex flex-col items-center text-center md:mb-14 lg:mb-16'>
           <img
             src={author.avatar.src}
             alt={author.avatar.alt}
-            className="mb-5 size-24 rounded-full object-cover md:mb-6"
+            className='mb-5 size-24 rounded-full object-cover md:mb-6'
           />
-          <h2 className="mb-2 text-xl font-bold md:text-2xl">
-            {author.fullName}
-          </h2>
+          <h2 className='mb-2 text-xl font-bold md:text-2xl'>{author.fullName}</h2>
           <p>{author.position}</p>
-          <div className="mt-3 flex items-center justify-center gap-2 md:mt-4">
-            <MdLocationOn className="size-5" />
+          <div className='mt-3 flex items-center justify-center gap-2 md:mt-4'>
+            <MdLocationOn className='size-5' />
             <p>{author.location}</p>
           </div>
         </div>
-        <div className="space-y-8">
-          <div className="flex flex-wrap justify-center gap-3">
+        <div className='space-y-8'>
+          <div className='flex flex-wrap justify-center gap-3'>
             {socialLinks.map((link, index) => (
               <a key={index} href={link.href}>
                 {link.icon}
@@ -110,14 +97,10 @@ export const Links5 = (props: Links5Props) => {
           </div>
           <Dialog>
             <DialogTrigger asChild>
-              <button className="relative flex size-full items-center justify-center">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="aspect-[3/2] size-full object-cover"
-                />
-                <span className="absolute inset-0 z-10 bg-black/50" />
-                <FaCirclePlay className="absolute z-20 size-16 text-white" />
+              <button className='relative flex size-full items-center justify-center'>
+                <img src={image.src} alt={image.alt} className='aspect-[3/2] size-full object-cover' />
+                <span className='absolute inset-0 z-10 bg-black/50' />
+                <FaCirclePlay className='absolute z-20 size-16 text-white' />
               </button>
             </DialogTrigger>
             <DialogContent>
@@ -130,35 +113,30 @@ export const Links5 = (props: Links5Props) => {
           <Dialog>
             <DialogTrigger asChild>
               <Button
-                className="w-full gap-4 whitespace-normal border border-border-primary p-4 text-left"
+                className='w-full gap-4 whitespace-normal border border-border-primary p-4 text-left'
                 {...button}
               />
             </DialogTrigger>
             <DialogContent
-              closeIconPosition="inside"
-              overlayClassName="bg-black/25"
-              className="flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm"
+              closeIconPosition='inside'
+              overlayClassName='bg-black/25'
+              className='flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm'
             >
-              <div className="mb-8 text-center md:mb-12">
-                <h2 className="mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+              <div className='mb-8 text-center md:mb-12'>
+                <h2 className='mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>
                   {newsLetter.heading}
                 </h2>
                 <p>{newsLetter.description}</p>
               </div>
-              <form
-                className="mb-4 flex flex-col gap-y-4"
-                onSubmit={handleSubmit}
-              >
+              <form className='mb-4 flex flex-col gap-y-4' onSubmit={handleSubmit}>
                 <Input
-                  id="email"
-                  type="email"
+                  id='email'
+                  type='email'
                   placeholder={newsLetter.inputPlaceholder}
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                 />
-                <Button {...newsLetter.submitButton}>
-                  {newsLetter.submitButton.title}
-                </Button>
+                <Button {...newsLetter.submitButton}>{newsLetter.submitButton.title}</Button>
               </form>
               <div
                 dangerouslySetInnerHTML={{
@@ -175,12 +153,8 @@ export const Links5 = (props: Links5Props) => {
 
 const Category = (category: CategoryProps) => {
   return (
-    <div className="flex flex-col gap-4 text-center">
-      {category.heading && (
-        <h3 className="text-md font-bold leading-[1.4] md:text-xl">
-          {category.heading}
-        </h3>
-      )}
+    <div className='flex flex-col gap-4 text-center'>
+      {category.heading && <h3 className='text-md font-bold leading-[1.4] md:text-xl'>{category.heading}</h3>}
       {category.links.map((link, index) => (
         <Button key={index} {...link} asChild>
           <a href={link.url}>{link.title}</a>
@@ -255,12 +229,10 @@ export const Links5Defaults: Props = {
     variant: "secondary",
     children: (
       <>
-        <BiEnvelope className="size-8 shrink-0" />
-        <span className="flex grow flex-col items-start">
-          <span className="font-semibold md:text-md">Join our newsletter</span>
-          <span className="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </span>
+        <BiEnvelope className='size-8 shrink-0' />
+        <span className='flex grow flex-col items-start'>
+          <span className='font-semibold md:text-md'>Join our newsletter</span>
+          <span className='text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </span>
       </>
     ),
@@ -280,10 +252,10 @@ export const Links5Defaults: Props = {
   `,
   },
   socialLinks: [
-    { href: "#", icon: <BiLogoFacebookCircle className="size-8" /> },
-    { href: "#", icon: <BiLogoInstagram className="size-8" /> },
-    { href: "#", icon: <FaXTwitter className="size-8" /> },
-    { href: "#", icon: <BiLogoLinkedinSquare className="size-8" /> },
-    { href: "#", icon: <BiLogoYoutube className="size-8" /> },
+    { href: "#", icon: <BiLogoFacebookCircle className='size-8' /> },
+    { href: "#", icon: <BiLogoInstagram className='size-8' /> },
+    { href: "#", icon: <FaXTwitter className='size-8' /> },
+    { href: "#", icon: <BiLogoLinkedinSquare className='size-8' /> },
+    { href: "#", icon: <BiLogoYoutube className='size-8' /> },
   ],
 };

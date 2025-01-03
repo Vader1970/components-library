@@ -29,6 +29,10 @@ type ImageProps = {
   alt?: string;
 };
 
+type ExtendedButtonProps = ButtonProps & {
+  url?: string;
+};
+
 type BreadcrumbProps = {
   url: string;
   title: string;
@@ -63,7 +67,7 @@ type Props = {
   rating: RatingProps;
   addToCartbutton: ButtonProps;
   buyNowButtons: ButtonProps;
-  options: ButtonProps[];
+  options: ExtendedButtonProps[]; // Updated
   quantityInputPlaceholder: string;
   freeShipping: string;
   defaultTabValue: string;
@@ -71,8 +75,7 @@ type Props = {
   selectVariants: SelectVariant[];
 };
 
-export type ProductHeader6Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type ProductHeader6Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const ProductHeader6 = (props: ProductHeader6Props) => {
   const {
@@ -105,48 +108,42 @@ export const ProductHeader6 = (props: ProductHeader6Props) => {
     });
   };
   return (
-    <header id="relume">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+    <header id='relume'>
+      <div className='grid grid-cols-1 lg:grid-cols-2'>
         <Gallery images={images} />
         <div>
-          <div className="px-[5%] pb-20 pt-8 md:pt-12 lg:sticky lg:top-0 lg:py-20 lg:pl-20 lg:pr-[5vw]">
-            <div className="lg:max-w-md">
-              <Breadcrumb className="mb-6 flex flex-wrap items-center text-sm">
+          <div className='px-[5%] pb-20 pt-8 md:pt-12 lg:sticky lg:top-0 lg:py-20 lg:pl-20 lg:pr-[5vw]'>
+            <div className='lg:max-w-md'>
+              <Breadcrumb className='mb-6 flex flex-wrap items-center text-sm'>
                 <BreadcrumbList>
                   {breadcrumbs.map((item, index) => (
                     <React.Fragment key={index}>
                       <BreadcrumbItem>
-                        <BreadcrumbLink href={item.url}>
-                          {item.title}
-                        </BreadcrumbLink>
+                        <BreadcrumbLink href={item.url}>{item.title}</BreadcrumbLink>
                       </BreadcrumbItem>
-                      {index < breadcrumbs.length - 1 && (
-                        <BreadcrumbSeparator />
-                      )}
+                      {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
                     </React.Fragment>
                   ))}
                 </BreadcrumbList>
               </Breadcrumb>
               <div>
-                <h1 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
-                  {heading}
-                </h1>
-                <div className="mb-5 flex flex-col flex-wrap sm:flex-row sm:items-center md:mb-6">
-                  <p className="text-xl font-bold md:text-2xl">{price}</p>
-                  <div className="mx-4 hidden w-px self-stretch bg-background-alternative sm:block"></div>
-                  <div className="flex flex-wrap items-center gap-3">
+                <h1 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{heading}</h1>
+                <div className='mb-5 flex flex-col flex-wrap sm:flex-row sm:items-center md:mb-6'>
+                  <p className='text-xl font-bold md:text-2xl'>{price}</p>
+                  <div className='mx-4 hidden w-px self-stretch bg-background-alternative sm:block'></div>
+                  <div className='flex flex-wrap items-center gap-3'>
                     <Star rating={rating.starsNumber} />
-                    <p className="text-sm">{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
+                    <p className='text-sm'>{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
                   </div>
                 </div>
-                <p className="mb-5 md:mb-6">{description}</p>
-                <form onSubmit={handleSubmit} className="mb-8">
-                  <div className="grid grid-cols-1 gap-6">
-                    <div className="flex flex-col">
-                      <Label className="mb-2">Variant</Label>
+                <p className='mb-5 md:mb-6'>{description}</p>
+                <form onSubmit={handleSubmit} className='mb-8'>
+                  <div className='grid grid-cols-1 gap-6'>
+                    <div className='flex flex-col'>
+                      <Label className='mb-2'>Variant</Label>
                       <Select onValueChange={setVariantInput}>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select" />
+                          <SelectValue placeholder='Select' />
                         </SelectTrigger>
                         <SelectContent>
                           {selectVariants.map((item, index) => (
@@ -157,13 +154,13 @@ export const ProductHeader6 = (props: ProductHeader6Props) => {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="flex flex-col">
-                      <Label className="mb-2">Variant</Label>
-                      <div className="flex flex-wrap gap-4">
+                    <div className='flex flex-col'>
+                      <Label className='mb-2'>Variant</Label>
+                      <div className='flex flex-wrap gap-4'>
                         {options.map((option, index) => (
                           <Button
                             key={index}
-                            className="px-4 py-2"
+                            className='px-4 py-2'
                             asChild
                             onClick={() => setOptionInput(option.title || "")}
                             {...option}
@@ -171,8 +168,7 @@ export const ProductHeader6 = (props: ProductHeader6Props) => {
                             <a
                               href={option.url}
                               className={clsx({
-                                "pointer-events-none opacity-25":
-                                  option.disabled,
+                                "pointer-events-none opacity-25": option.disabled,
                               })}
                             >
                               {option.title}
@@ -182,26 +178,24 @@ export const ProductHeader6 = (props: ProductHeader6Props) => {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-8">
-                    <div className="grid grid-cols-[4rem_1fr] gap-x-4">
-                      <div className="flex flex-col">
+                  <div className='mt-8'>
+                    <div className='grid grid-cols-[4rem_1fr] gap-x-4'>
+                      <div className='flex flex-col'>
                         <Input
-                          type="number"
+                          type='number'
                           placeholder={quantityInputPlaceholder}
                           value={quantityInput}
                           onChange={(e) => setQuantityInput(e.target.value)}
                         />
                       </div>
-                      <Button {...addToCartbutton}>
-                        {addToCartbutton.title}
-                      </Button>
+                      <Button {...addToCartbutton}>{addToCartbutton.title}</Button>
                     </div>
-                    <div className="my-4">
-                      <Button {...buyNowButtons} className="w-full">
+                    <div className='my-4'>
+                      <Button {...buyNowButtons} className='w-full'>
                         {buyNowButtons.title}
                       </Button>
                     </div>
-                    <p className="text-center text-xs">{freeShipping}</p>
+                    <p className='text-center text-xs'>{freeShipping}</p>
                   </div>
                 </form>
                 <InformationTabs tabs={tabs} />
@@ -218,22 +212,12 @@ const Star = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   return (
-    <div className="flex items-center gap-1">
+    <div className='flex items-center gap-1'>
       {[...Array(5)].map((_, i) => {
         const isFullStar = i < fullStars;
         const isHalfStar = hasHalfStar && i === fullStars;
 
-        return (
-          <div key={i}>
-            {isFullStar ? (
-              <BiSolidStar />
-            ) : isHalfStar ? (
-              <BiSolidStarHalf />
-            ) : (
-              <BiStar />
-            )}
-          </div>
-        );
+        return <div key={i}>{isFullStar ? <BiSolidStar /> : isHalfStar ? <BiSolidStarHalf /> : <BiStar />}</div>;
       })}
     </div>
   );
@@ -242,21 +226,13 @@ const Star = ({ rating }: { rating: number }) => {
 const Gallery = ({ images }: GalleryProps) => {
   return (
     <React.Fragment>
-      <div className="relative block w-full pt-[120%] lg:hidden">
-        <img
-          src={images[0].src}
-          alt={images[0].alt}
-          className="absolute inset-0 size-full object-cover"
-        />
+      <div className='relative block w-full pt-[120%] lg:hidden'>
+        <img src={images[0].src} alt={images[0].alt} className='absolute inset-0 size-full object-cover' />
       </div>
-      <div className="hidden lg:flex lg:flex-col">
+      <div className='hidden lg:flex lg:flex-col'>
         {images.map((slide, index) => (
-          <div key={index} className="relative lg:h-screen lg:max-h-[60rem]">
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              className="absolute inset-0 size-full object-cover"
-            />
+          <div key={index} className='relative lg:h-screen lg:max-h-[60rem]'>
+            <img src={slide.src} alt={slide.alt} className='absolute inset-0 size-full object-cover' />
           </div>
         ))}
       </div>
@@ -267,23 +243,19 @@ const Gallery = ({ images }: GalleryProps) => {
 const InformationTabs = ({ tabs }: { tabs: TabProps[] }) => {
   return (
     <Tabs defaultValue={tabs[0].value}>
-      <TabsList className="mb-5 flex-wrap items-center gap-6 md:mb-6">
+      <TabsList className='mb-5 flex-wrap items-center gap-6 md:mb-6'>
         {tabs.map((tab, index) => (
           <TabsTrigger
             key={index}
             value={tab.value}
-            className="border-0 border-b-[1.5px] border-border-alternative px-0 py-2 duration-0 data-[state=active]:border-b-[1.5px] data-[state=active]:border-border-primary data-[state=active]:bg-transparent data-[state=active]:text-text-primary"
+            className='border-0 border-b-[1.5px] border-border-alternative px-0 py-2 duration-0 data-[state=active]:border-b-[1.5px] data-[state=active]:border-border-primary data-[state=active]:bg-transparent data-[state=active]:text-text-primary'
           >
             {tab.trigger}
           </TabsTrigger>
         ))}
       </TabsList>
       {tabs.map((tab, index) => (
-        <TabsContent
-          key={index}
-          value={tab.value}
-          className="data-[state=active]:animate-tabs"
-        >
+        <TabsContent key={index} value={tab.value} className='data-[state=active]:animate-tabs'>
           <p>{tab.description}</p>
         </TabsContent>
       ))}

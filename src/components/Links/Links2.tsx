@@ -1,27 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  Input,
-} from "@relume_io/relume-ui";
+import { Button, Dialog, DialogContent, DialogTrigger, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { MdLocationOn } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  BiEnvelope,
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import { BiEnvelope, BiLogoFacebookCircle, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoYoutube } from "react-icons/bi";
 
 type ImageProps = {
   src: string;
   alt?: string;
+};
+
+// Extend ButtonProps to allow custom variants
+type ExtendedButtonProps = ButtonProps & {
+  variant?: "secondary" | ButtonProps["variant"];
 };
 
 type AuthorDetailsProps = {
@@ -31,10 +24,9 @@ type AuthorDetailsProps = {
   location: string;
 };
 
-type CategoryLinkProps = {
+type CategoryLinkProps = ExtendedButtonProps & {
   url: string;
   title: string;
-  variant?: string;
 };
 
 type CategoryProps = {
@@ -64,8 +56,7 @@ type Props = {
   socialLinks: SocialLinkProps[];
 };
 
-export type Links2Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Links2Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Links2 = (props: Links2Props) => {
   const { author, image, categories, newsLetter, button, socialLinks } = {
@@ -80,24 +71,22 @@ export const Links2 = (props: Links2Props) => {
     });
   };
   return (
-    <section id="relume" className="relative px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container max-w-md">
-        <div className="mb-10 flex flex-col items-center text-center text-text-alternative md:mb-14 lg:mb-16">
+    <section id='relume' className='relative px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container max-w-md'>
+        <div className='mb-10 flex flex-col items-center text-center text-text-alternative md:mb-14 lg:mb-16'>
           <img
             src={author.avatar.src}
             alt={author.avatar.alt}
-            className="mb-5 size-24 rounded-full object-cover md:mb-6"
+            className='mb-5 size-24 rounded-full object-cover md:mb-6'
           />
-          <h2 className="mb-2 text-xl font-bold md:text-2xl">
-            {author.fullName}
-          </h2>
+          <h2 className='mb-2 text-xl font-bold md:text-2xl'>{author.fullName}</h2>
           <p>{author.position}</p>
-          <div className="mt-3 flex items-center justify-center gap-2 md:mt-4">
-            <MdLocationOn className="size-5" />
+          <div className='mt-3 flex items-center justify-center gap-2 md:mt-4'>
+            <MdLocationOn className='size-5' />
             <p>{author.location}</p>
           </div>
         </div>
-        <div className="space-y-8">
+        <div className='space-y-8'>
           {categories.map((category, index) => (
             <Category key={index} {...category} />
           ))}
@@ -105,34 +94,29 @@ export const Links2 = (props: Links2Props) => {
             <DialogTrigger asChild>
               <Button
                 {...button}
-                className="w-full gap-4 whitespace-normal border border-border-primary p-4 text-left"
+                className='w-full gap-4 whitespace-normal border border-border-primary p-4 text-left'
               />
             </DialogTrigger>
             <DialogContent
-              closeIconPosition="inside"
-              overlayClassName="bg-black/25"
-              className="flex size-full flex-col bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm"
+              closeIconPosition='inside'
+              overlayClassName='bg-black/25'
+              className='flex size-full flex-col bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm'
             >
-              <div className="mb-8 text-center md:mb-12">
-                <h2 className="mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+              <div className='mb-8 text-center md:mb-12'>
+                <h2 className='mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>
                   {newsLetter.heading}
                 </h2>
                 <p>{newsLetter.description}</p>
               </div>
-              <form
-                className="mb-4 flex flex-col gap-y-4"
-                onSubmit={handleSubmit}
-              >
+              <form className='mb-4 flex flex-col gap-y-4' onSubmit={handleSubmit}>
                 <Input
-                  id="email"
-                  type="email"
+                  id='email'
+                  type='email'
                   placeholder={newsLetter.inputPlaceholder}
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                 />
-                <Button {...newsLetter.submitButton}>
-                  {newsLetter.submitButton.title}
-                </Button>
+                <Button {...newsLetter.submitButton}>{newsLetter.submitButton.title}</Button>
               </form>
               <div
                 dangerouslySetInnerHTML={{
@@ -141,7 +125,7 @@ export const Links2 = (props: Links2Props) => {
               />
             </DialogContent>
           </Dialog>
-          <div className="flex flex-wrap justify-center gap-3 text-text-alternative">
+          <div className='flex flex-wrap justify-center gap-3 text-text-alternative'>
             {socialLinks.map((link, index) => (
               <a key={index} href={link.href}>
                 {link.icon}
@@ -150,13 +134,9 @@ export const Links2 = (props: Links2Props) => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 -z-10">
-        <img
-          src={image.src}
-          className="size-full object-cover"
-          alt={image.alt}
-        />
-        <div className="absolute inset-0 bg-black/50" />
+      <div className='absolute inset-0 -z-10'>
+        <img src={image.src} className='size-full object-cover' alt={image.alt} />
+        <div className='absolute inset-0 bg-black/50' />
       </div>
     </section>
   );
@@ -164,11 +144,9 @@ export const Links2 = (props: Links2Props) => {
 
 const Category = (category: CategoryProps) => {
   return (
-    <div className="flex flex-col gap-4 text-center">
+    <div className='flex flex-col gap-4 text-center'>
       {category.heading && (
-        <h3 className="text-md font-bold leading-[1.4] text-text-alternative md:text-xl">
-          {category.heading}
-        </h3>
+        <h3 className='text-md font-bold leading-[1.4] text-text-alternative md:text-xl'>{category.heading}</h3>
       )}
       {category.links.map((link, index) => (
         <Button key={index} {...link} asChild>
@@ -243,12 +221,10 @@ export const Links2Defaults: Props = {
     variant: "secondary",
     children: (
       <>
-        <BiEnvelope className="size-8 shrink-0" />
-        <span className="flex grow flex-col items-start">
-          <span className="font-semibold md:text-md">Join our newsletter</span>
-          <span className="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </span>
+        <BiEnvelope className='size-8 shrink-0' />
+        <span className='flex grow flex-col items-start'>
+          <span className='font-semibold md:text-md'>Join our newsletter</span>
+          <span className='text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </span>
       </>
     ),
@@ -269,10 +245,10 @@ export const Links2Defaults: Props = {
   },
 
   socialLinks: [
-    { href: "#", icon: <BiLogoFacebookCircle className="size-8" /> },
-    { href: "#", icon: <BiLogoInstagram className="size-8" /> },
-    { href: "#", icon: <FaXTwitter className="size-8" /> },
-    { href: "#", icon: <BiLogoLinkedinSquare className="size-8" /> },
-    { href: "#", icon: <BiLogoYoutube className="size-8" /> },
+    { href: "#", icon: <BiLogoFacebookCircle className='size-8' /> },
+    { href: "#", icon: <BiLogoInstagram className='size-8' /> },
+    { href: "#", icon: <FaXTwitter className='size-8' /> },
+    { href: "#", icon: <BiLogoLinkedinSquare className='size-8' /> },
+    { href: "#", icon: <BiLogoYoutube className='size-8' /> },
   ],
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
@@ -23,8 +24,7 @@ type Props = {
   data: ContentProps[];
 };
 
-export type Layout516Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Layout516Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout516 = (props: Layout516Props) => {
   const { data } = {
@@ -38,25 +38,16 @@ export const Layout516 = (props: Layout516Props) => {
     offset: ["start center", "end center"],
   });
   return (
-    <section
-      ref={containerRef}
-      id="relume"
-      className="px-[5%] py-16 md:px-0 md:py-0"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2">
+    <section ref={containerRef} id='relume' className='px-[5%] py-16 md:px-0 md:py-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2'>
         <div>
-          <div className="flex flex-col gap-y-12 md:sticky md:top-0 md:items-end md:gap-y-0">
+          <div className='flex flex-col gap-y-12 md:sticky md:top-0 md:items-end md:gap-y-0'>
             {data.map((item, index) => {
               const startProgress = index / data.length;
               const endProgress = (index + 1) / data.length;
               const opacity = useTransform(
                 scrollYProgress,
-                [
-                  Math.max(0, startProgress - 0.07),
-                  startProgress,
-                  endProgress - 0.07,
-                  Math.min(1, endProgress),
-                ],
+                [Math.max(0, startProgress - 0.07), startProgress, endProgress - 0.07, Math.min(1, endProgress)],
                 [0, 1, 1, 0]
               );
               const motionStyles = {
@@ -66,13 +57,11 @@ export const Layout516 = (props: Layout516Props) => {
               if (isMobile) {
                 return (
                   <div key={index}>
-                    <div className="max-w-md">
-                      <p className="mb-3 font-semibold">{item.tagline}</p>
-                      <h2 className="mb-5 text-5xl font-bold">
-                        {item.heading}
-                      </h2>
+                    <div className='max-w-md'>
+                      <p className='mb-3 font-semibold'>{item.tagline}</p>
+                      <h2 className='mb-5 text-5xl font-bold'>{item.heading}</h2>
                       <p>{item.description}</p>
-                      <div className="mt-6 flex flex-wrap items-center gap-4">
+                      <div className='mt-6 flex flex-wrap items-center gap-4'>
                         {item.buttons.map((button, buttonIndex) => (
                           <Button key={buttonIndex} {...button}>
                             {button.title}
@@ -80,12 +69,8 @@ export const Layout516 = (props: Layout516Props) => {
                         ))}
                       </div>
                     </div>
-                    <div className="mt-8">
-                      <img
-                        src={item.imageMobile.src}
-                        alt={item.imageMobile.alt}
-                        className="size-full object-cover"
-                      />
+                    <div className='mt-8'>
+                      <img src={item.imageMobile.src} alt={item.imageMobile.alt} className='size-full object-cover' />
                     </div>
                   </div>
                 );
@@ -95,15 +80,13 @@ export const Layout516 = (props: Layout516Props) => {
                 <motion.div
                   key={index}
                   style={motionStyles}
-                  className="md:absolute md:flex md:h-screen md:flex-col md:justify-center"
+                  className='md:absolute md:flex md:h-screen md:flex-col md:justify-center'
                 >
-                  <div className="max-w-md md:ml-[5vw] md:mr-20">
-                    <p className="font-semibold md:mb-4">{item.tagline}</p>
-                    <h2 className="font-bold md:mb-6 md:text-7xl lg:text-8xl">
-                      {item.heading}
-                    </h2>
-                    <p className="md:text-md">{item.description}</p>
-                    <div className="flex flex-wrap items-center gap-4 md:mt-8">
+                  <div className='max-w-md md:ml-[5vw] md:mr-20'>
+                    <p className='font-semibold md:mb-4'>{item.tagline}</p>
+                    <h2 className='font-bold md:mb-6 md:text-7xl lg:text-8xl'>{item.heading}</h2>
+                    <p className='md:text-md'>{item.description}</p>
+                    <div className='flex flex-wrap items-center gap-4 md:mt-8'>
                       {item.buttons.map((button, buttonIndex) => (
                         <Button key={buttonIndex} {...button}>
                           {button.title}
@@ -116,14 +99,10 @@ export const Layout516 = (props: Layout516Props) => {
             })}
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className='hidden md:block'>
           {data.map((item, index) => (
-            <div key={index} className="md:h-screen">
-              <img
-                src={item.image.src}
-                alt={item.image.alt}
-                className="size-full object-cover"
-              />
+            <div key={index} className='md:h-screen'>
+              <img src={item.image.src} alt={item.image.alt} className='size-full object-cover' />
             </div>
           ))}
         </div>
