@@ -24,8 +24,7 @@ type Props = {
   button: ButtonProps;
 };
 
-export type Navbar15Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Navbar15Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Navbar15 = (props: Navbar15Props) => {
   const { logo, navLinks, button } = {
@@ -57,19 +56,16 @@ export const Navbar15 = (props: Navbar15Props) => {
   }, []);
 
   return (
-    <nav className="flex h-screen items-end justify-center">
-      <div className="fixed bottom-auto top-0 z-[999] mx-auto mt-5 flex w-full items-center justify-center px-[5%] md:mt-6 lg:bottom-0 lg:top-auto lg:mx-[5%] lg:mb-6 lg:w-auto">
-        <div className="mx-auto flex min-h-16 w-full items-center justify-between gap-4 border border-border-primary bg-white px-5 md:min-h-18 md:px-4 lg:w-auto">
+    <nav className='flex h-screen items-end justify-center'>
+      <div className='fixed bottom-auto top-0 z-[999] mx-auto mt-5 flex w-full items-center justify-center px-[5%] md:mt-6 lg:bottom-0 lg:top-auto lg:mx-[5%] lg:mb-6 lg:w-auto'>
+        <div className='mx-auto flex min-h-16 w-full items-center justify-between gap-4 border border-border-primary bg-white px-5 md:min-h-18 md:px-4 lg:w-auto'>
           {isMobile ? (
             <a href={logo.url}>
               <img src={logo.src} alt={logo.alt} />
             </a>
           ) : (
-            <a
-              href={logo.url}
-              className="flex size-10 items-center justify-center"
-            >
-              <RxChevronUp className="size-6" />
+            <a href={logo.url} className='flex size-10 items-center justify-center'>
+              <RxChevronUp className='size-6' />
             </a>
           )}
           <motion.div
@@ -77,10 +73,10 @@ export const Navbar15 = (props: Navbar15Props) => {
               open: { height: "var(--height, 100vh)" },
               close: { height: "auto" },
             }}
-            initial="close"
-            exit="close"
+            initial='close'
+            exit='close'
             animate={isMobileMenuOpen ? "open" : "close"}
-            className="absolute left-0 right-0 top-full w-full overflow-hidden lg:static lg:left-auto lg:right-auto lg:top-auto lg:w-auto lg:overflow-visible lg:[--height:auto]"
+            className='absolute left-0 right-0 top-full w-full overflow-hidden lg:static lg:left-auto lg:right-auto lg:top-auto lg:w-auto lg:overflow-visible lg:[--height:auto]'
           >
             <motion.div
               variants={{
@@ -88,14 +84,14 @@ export const Navbar15 = (props: Navbar15Props) => {
                 close: { y: "var(--translate-y, -100%)" },
               }}
               animate={isMobileMenuOpen ? "open" : "close"}
-              initial="close"
-              exit="close"
+              initial='close'
+              exit='close'
               transition={{ duration: 0.3 }}
-              className="absolute left-0 right-0 top-0 mx-auto min-w-full justify-self-center bg-background-primary px-[5%] text-center lg:static lg:inset-auto lg:mx-0 lg:px-0 lg:text-left lg:[--translate-y:0%]"
+              className='absolute left-0 right-0 top-0 mx-auto min-w-full justify-self-center bg-background-primary px-[5%] text-center lg:static lg:inset-auto lg:mx-0 lg:px-0 lg:text-left lg:[--translate-y:0%]'
             >
               <div
                 ref={menuRef}
-                className="flex w-full flex-col border border-t-0 border-border-primary bg-background-primary p-5 md:p-8 lg:w-auto lg:flex-row lg:border-none lg:bg-none lg:p-0"
+                className='flex w-full flex-col border border-t-0 border-border-primary bg-background-primary p-5 md:p-8 lg:w-auto lg:flex-row lg:border-none lg:bg-none lg:p-0'
               >
                 {navLinks.map((navLink, index) => (
                   <div key={index}>
@@ -104,7 +100,7 @@ export const Navbar15 = (props: Navbar15Props) => {
                     ) : (
                       <a
                         href={navLink.url}
-                        className="relative block pb-4 pt-3 text-center text-md lg:px-4 lg:py-2 lg:text-left lg:text-base"
+                        className='relative block pb-4 pt-3 text-center text-md lg:px-4 lg:py-2 lg:text-left lg:text-base'
                       >
                         {navLink.title}
                       </a>
@@ -114,27 +110,27 @@ export const Navbar15 = (props: Navbar15Props) => {
               </div>
             </motion.div>
           </motion.div>
-          <div className="flex items-center justify-center gap-4">
-            <Button {...button} className="px-4 py-1 md:px-6 md:py-2">
+          <div className='flex items-center justify-center gap-4'>
+            <Button {...button} className='px-4 py-1 md:px-6 md:py-2'>
               {button.title}
             </Button>
             <button
               ref={buttonRef}
-              className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:hidden"
+              className='-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:hidden'
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? "open" : "close"}
                 variants={topLineVariants}
               />
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? "open" : "close"}
                 variants={middleLineVariants}
               />
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? "open" : "close"}
                 variants={bottomLineVariants}
               />
@@ -146,23 +142,17 @@ export const Navbar15 = (props: Navbar15Props) => {
   );
 };
 
-const SubMenu = ({
-  navLink,
-  isMobile,
-}: {
-  navLink: NavLink;
-  isMobile: boolean;
-}) => {
+const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <div
-      className="relative"
+      className='relative'
       onMouseEnter={() => !isMobile && setIsDropdownOpen(true)}
       onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
     >
       <button
-        className="relative flex w-full items-center justify-center gap-4 whitespace-nowrap py-3 text-center text-md lg:gap-2 lg:px-4 lg:py-2 lg:text-left lg:text-base"
+        className='relative flex w-full items-center justify-center gap-4 whitespace-nowrap py-3 text-center text-md lg:gap-2 lg:px-4 lg:py-2 lg:text-left lg:text-base'
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <span>{navLink.title}</span>
@@ -181,8 +171,8 @@ const SubMenu = ({
         {isDropdownOpen && (
           <motion.nav
             animate={isDropdownOpen ? "open" : "close"}
-            initial="close"
-            exit="close"
+            initial='close'
+            exit='close'
             variants={{
               open: {
                 opacity: "var(--opacity-open, 100%)",
@@ -198,14 +188,10 @@ const SubMenu = ({
               },
             }}
             transition={{ duration: 0.2 }}
-            className="static flex w-full min-w-full flex-col overflow-hidden whitespace-nowrap border-0 border-border-primary bg-background-primary p-0 lg:absolute lg:bottom-full lg:overflow-visible lg:border lg:p-2 lg:[--height:auto] lg:[--opacity-close:0%] lg:[--opacity-open:100%] lg:[--translate-y-open:0%] lg:[--translate-y-close:-25%]"
+            className='static flex w-full min-w-full flex-col overflow-hidden whitespace-nowrap border-0 border-border-primary bg-background-primary p-0 lg:absolute lg:bottom-full lg:overflow-visible lg:border lg:p-2 lg:[--height:auto] lg:[--opacity-close:0%] lg:[--opacity-open:100%] lg:[--translate-y-open:0%] lg:[--translate-y-close:-25%]'
           >
             {navLink.subMenuLinks?.map((subMenuLink, subIndex) => (
-              <a
-                key={subIndex}
-                href={subMenuLink.url}
-                className="px-0 py-3 text-center lg:px-4 lg:py-2 lg:text-left"
-              >
+              <a key={subIndex} href={subMenuLink.url} className='px-0 py-3 text-center lg:px-4 lg:py-2 lg:text-left'>
                 {subMenuLink.title}
               </a>
             ))}
@@ -225,7 +211,7 @@ export const Navbar15Defaults: Props = {
   navLinks: [
     {
       url: "#",
-      title: "Link One",
+      title: "Navbar 15",
     },
     {
       url: "#",

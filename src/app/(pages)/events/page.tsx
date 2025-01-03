@@ -1,5 +1,5 @@
 import { Event1 } from "@/components/Events/Event1";
-// import { Event2 } from "@/components/Events/Event2";
+import { Event2 } from "@/components/Events/Event2";
 import { Event4 } from "@/components/Events/Event4";
 import { Event8 } from "@/components/Events/Event8";
 import { Event10 } from "@/components/Events/Event10";
@@ -54,7 +54,7 @@ import { EventItemHeader10 } from "@/components/Events/EventItemHeader10";
 
 const eventComponents = [
   { component: Event1, title: "Event 1" },
-  //   { component: Event2, title: "Event 2" },
+  { component: Event2, title: "Event 2" },
   { component: Event3, title: "Event 3" },
   { component: Event4, title: "Event 4" },
   { component: Event5, title: "Event 5" },
@@ -113,14 +113,12 @@ const eventComponents = [
 const EventsPage = () => {
   return (
     <div>
-      <h1 className="text-8xl text-center font-bold mb-4">Events</h1>
-      <section className="mb-4">
+      <h1 className='text-8xl text-center font-bold mb-4'>Events</h1>
+      <section className='mb-4'>
         {eventComponents.map(({ component: EventComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="text-4xl font-bold text-center mt-20 mb-5">
-              {title}
-            </h2>
+            <h2 className='text-4xl font-bold text-center mt-20 mb-5'>{title}</h2>
             {/* Render the component */}
             <EventComponent />
           </div>

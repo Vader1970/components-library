@@ -1,27 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  Input,
-} from "@relume_io/relume-ui";
+import { Button, Dialog, DialogContent, DialogTrigger, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { MdLocationOn } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  BiEnvelope,
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import { BiEnvelope, BiLogoFacebookCircle, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoYoutube } from "react-icons/bi";
 
 type ImageProps = {
   src: string;
   alt?: string;
+};
+
+// Extend ButtonProps to allow custom variants
+type ExtendedButtonProps = ButtonProps & {
+  variant?: "secondary" | ButtonProps["variant"];
 };
 
 type AuthorDetailsProps = {
@@ -30,10 +23,9 @@ type AuthorDetailsProps = {
   location: string;
 };
 
-type CategoryLinkProps = {
+type CategoryLinkProps = ExtendedButtonProps & {
   url: string;
   title: string;
-  variant?: string;
 };
 
 type CategoryProps = {
@@ -63,8 +55,7 @@ type Props = {
   socialLinks: SocialLinkProps[];
 };
 
-export type Links4Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Links4Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Links4 = (props: Links4Props) => {
   const { author, image, categories, button, newsLetter, socialLinks } = {
@@ -79,20 +70,18 @@ export const Links4 = (props: Links4Props) => {
     });
   };
   return (
-    <section id="relume" className="px-[5%] md:pt-8">
-      <div className="container max-w-md">
-        <div className="mb-6 pt-6 text-center text-text-alternative md:mb-8 md:pt-0">
-          <div className="relative">
-            <div className="absolute bottom-0 left-0 z-10 w-full px-6 py-8">
-              <h2 className="mb-2 text-xl font-bold md:text-2xl">
-                {author.fullName}
-              </h2>
+    <section id='relume' className='px-[5%] md:pt-8'>
+      <div className='container max-w-md'>
+        <div className='mb-6 pt-6 text-center text-text-alternative md:mb-8 md:pt-0'>
+          <div className='relative'>
+            <div className='absolute bottom-0 left-0 z-10 w-full px-6 py-8'>
+              <h2 className='mb-2 text-xl font-bold md:text-2xl'>{author.fullName}</h2>
               <p>{author.position}</p>
-              <div className="my-3 flex items-center justify-center gap-2 md:my-4">
-                <MdLocationOn className="size-5" />
+              <div className='my-3 flex items-center justify-center gap-2 md:my-4'>
+                <MdLocationOn className='size-5' />
                 <p>{author.location}</p>
               </div>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className='flex flex-wrap justify-center gap-3'>
                 {socialLinks.map((link, index) => (
                   <a key={index} href={link.href}>
                     {link.icon}
@@ -100,54 +89,45 @@ export const Links4 = (props: Links4Props) => {
                 ))}
               </div>
             </div>
-            <div className="relative -z-10 flex aspect-square items-center justify-center object-cover">
-              <div className="absolute -top-6 size-full h-[calc(100%+1.5rem)] w-screen md:top-0 md:size-full">
-                <img
-                  src={image.src}
-                  className="size-full object-cover"
-                  alt={image.alt}
-                />
-                <div className="absolute inset-0 bg-black/50" />
+            <div className='relative -z-10 flex aspect-square items-center justify-center object-cover'>
+              <div className='absolute -top-6 size-full h-[calc(100%+1.5rem)] w-screen md:top-0 md:size-full'>
+                <img src={image.src} className='size-full object-cover' alt={image.alt} />
+                <div className='absolute inset-0 bg-black/50' />
               </div>
             </div>
           </div>
         </div>
-        <div className="space-y-8 pb-16 md:pb-24 lg:pb-28">
+        <div className='space-y-8 pb-16 md:pb-24 lg:pb-28'>
           {categories.map((category, index) => (
             <Category key={index} {...category} />
           ))}
           <Dialog>
             <DialogTrigger asChild>
               <Button
-                className="w-full gap-4 whitespace-normal border border-border-primary p-4 text-left"
+                className='w-full gap-4 whitespace-normal border border-border-primary p-4 text-left'
                 {...button}
               />
             </DialogTrigger>
             <DialogContent
-              closeIconPosition="inside"
-              overlayClassName="bg-black/25"
-              className="flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm"
+              closeIconPosition='inside'
+              overlayClassName='bg-black/25'
+              className='flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm'
             >
-              <div className="mb-8 text-center md:mb-12">
-                <h2 className="mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+              <div className='mb-8 text-center md:mb-12'>
+                <h2 className='mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>
                   {newsLetter.heading}
                 </h2>
                 <p>{newsLetter.description}</p>
               </div>
-              <form
-                className="mb-4 flex flex-col gap-y-4"
-                onSubmit={handleSubmit}
-              >
+              <form className='mb-4 flex flex-col gap-y-4' onSubmit={handleSubmit}>
                 <Input
-                  id="email"
-                  type="email"
+                  id='email'
+                  type='email'
                   placeholder={newsLetter.inputPlaceholder}
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                 />
-                <Button {...newsLetter.submitButton}>
-                  {newsLetter.submitButton.title}
-                </Button>
+                <Button {...newsLetter.submitButton}>{newsLetter.submitButton.title}</Button>
               </form>
               <div
                 dangerouslySetInnerHTML={{
@@ -164,12 +144,8 @@ export const Links4 = (props: Links4Props) => {
 
 const Category = (category: CategoryProps) => {
   return (
-    <div className="flex flex-col gap-4 text-center">
-      {category.heading && (
-        <h3 className="text-md font-bold leading-[1.4] md:text-xl">
-          {category.heading}
-        </h3>
-      )}
+    <div className='flex flex-col gap-4 text-center'>
+      {category.heading && <h3 className='text-md font-bold leading-[1.4] md:text-xl'>{category.heading}</h3>}
       {category.links.map((link, index) => (
         <Button key={index} {...link} asChild>
           <a href={link.url}>{link.title}</a>
@@ -239,12 +215,10 @@ export const Links4Defaults: Props = {
     variant: "secondary",
     children: (
       <>
-        <BiEnvelope className="size-8 shrink-0" />
-        <span className="flex grow flex-col items-start">
-          <span className="font-semibold md:text-md">Join our newsletter</span>
-          <span className="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </span>
+        <BiEnvelope className='size-8 shrink-0' />
+        <span className='flex grow flex-col items-start'>
+          <span className='font-semibold md:text-md'>Join our newsletter</span>
+          <span className='text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </span>
       </>
     ),
@@ -264,10 +238,10 @@ export const Links4Defaults: Props = {
   `,
   },
   socialLinks: [
-    { href: "#", icon: <BiLogoFacebookCircle className="size-8" /> },
-    { href: "#", icon: <BiLogoInstagram className="size-8" /> },
-    { href: "#", icon: <FaXTwitter className="size-8" /> },
-    { href: "#", icon: <BiLogoLinkedinSquare className="size-8" /> },
-    { href: "#", icon: <BiLogoYoutube className="size-8" /> },
+    { href: "#", icon: <BiLogoFacebookCircle className='size-8' /> },
+    { href: "#", icon: <BiLogoInstagram className='size-8' /> },
+    { href: "#", icon: <FaXTwitter className='size-8' /> },
+    { href: "#", icon: <BiLogoLinkedinSquare className='size-8' /> },
+    { href: "#", icon: <BiLogoYoutube className='size-8' /> },
   ],
 };

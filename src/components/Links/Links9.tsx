@@ -1,28 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  Input,
-} from "@relume_io/relume-ui";
+import { Button, Dialog, DialogContent, DialogTrigger, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { MdLocationOn } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  BiEnvelope,
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import { BiEnvelope, BiLogoFacebookCircle, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoYoutube } from "react-icons/bi";
 import clsx from "clsx";
 
 type ImageProps = {
   src: string;
   alt?: string;
+};
+
+type ExtendedButtonProps = ButtonProps & {
+  url?: string;
 };
 
 type AuthorDetailsProps = {
@@ -38,7 +30,7 @@ enum CategoryLinkType {
 }
 
 type CategoryLinkProps = {
-  button: ButtonProps;
+  button: ExtendedButtonProps;
   image?: ImageProps;
   description?: string;
   variant?: string;
@@ -71,8 +63,7 @@ type Props = {
   socialLinks: SocialLinkProps[];
 };
 
-export type Links9Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Links9Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Links9 = (props: Links9Props) => {
   const { author, categories, button, newsLetter, socialLinks } = {
@@ -87,59 +78,52 @@ export const Links9 = (props: Links9Props) => {
     });
   };
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container max-w-md">
-        <div className="mb-10 flex flex-col items-center text-center md:mb-14 lg:mb-16">
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container max-w-md'>
+        <div className='mb-10 flex flex-col items-center text-center md:mb-14 lg:mb-16'>
           <img
             src={author.avatar.src}
             alt={author.avatar.alt}
-            className="mb-5 size-24 rounded-full object-cover md:mb-6"
+            className='mb-5 size-24 rounded-full object-cover md:mb-6'
           />
-          <h2 className="mb-2 text-xl font-bold md:text-2xl">
-            {author.fullName}
-          </h2>
+          <h2 className='mb-2 text-xl font-bold md:text-2xl'>{author.fullName}</h2>
           <p>{author.position}</p>
-          <div className="mt-3 flex items-center justify-center gap-2 md:mt-4">
-            <MdLocationOn className="size-5" />
+          <div className='mt-3 flex items-center justify-center gap-2 md:mt-4'>
+            <MdLocationOn className='size-5' />
             <p>{author.location}</p>
           </div>
         </div>
-        <div className="space-y-8">
+        <div className='space-y-8'>
           {categories.map((category, index) => (
             <Category key={index} {...category} />
           ))}
           <Dialog>
             <DialogTrigger asChild>
               <Button
-                className="w-full gap-4 whitespace-normal border border-border-primary p-4 text-left"
+                className='w-full gap-4 whitespace-normal border border-border-primary p-4 text-left'
                 {...button}
               />
             </DialogTrigger>
             <DialogContent
-              closeIconPosition="inside"
-              overlayClassName="bg-black/25"
-              className="flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm"
+              closeIconPosition='inside'
+              overlayClassName='bg-black/25'
+              className='flex size-full flex-col justify-center bg-white px-[5%] pb-28 pt-12 md:size-auto md:w-[90%] md:px-12 md:py-12 lg:max-w-sm'
             >
-              <div className="mb-8 text-center md:mb-12">
-                <h2 className="mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+              <div className='mb-8 text-center md:mb-12'>
+                <h2 className='mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>
                   {newsLetter.heading}
                 </h2>
                 <p>{newsLetter.description}</p>
               </div>
-              <form
-                className="mb-4 flex flex-col gap-y-4"
-                onSubmit={handleSubmit}
-              >
+              <form className='mb-4 flex flex-col gap-y-4' onSubmit={handleSubmit}>
                 <Input
-                  id="email"
-                  type="email"
+                  id='email'
+                  type='email'
                   placeholder={newsLetter.inputPlaceholder}
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                 />
-                <Button {...newsLetter.submitButton}>
-                  {newsLetter.submitButton.title}
-                </Button>
+                <Button {...newsLetter.submitButton}>{newsLetter.submitButton.title}</Button>
               </form>
               <div
                 dangerouslySetInnerHTML={{
@@ -148,7 +132,7 @@ export const Links9 = (props: Links9Props) => {
               />
             </DialogContent>
           </Dialog>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className='flex flex-wrap justify-center gap-3'>
             {socialLinks.map((link, index) => (
               <a key={index} href={link.href}>
                 {link.icon}
@@ -163,13 +147,9 @@ export const Links9 = (props: Links9Props) => {
 
 const Category = (category: CategoryProps) => {
   return (
-    <div className="flex flex-col gap-4 text-center">
-      {category.heading && (
-        <h3 className="text-md font-bold leading-[1.4] md:text-xl">
-          {category.heading}
-        </h3>
-      )}
-      <div className="grid grid-cols-1 gap-4">
+    <div className='flex flex-col gap-4 text-center'>
+      {category.heading && <h3 className='text-md font-bold leading-[1.4] md:text-xl'>{category.heading}</h3>}
+      <div className='grid grid-cols-1 gap-4'>
         {category.links.map((link, index) => (
           <Button
             key={index}
@@ -185,17 +165,11 @@ const Category = (category: CategoryProps) => {
                 link.button.title
               ) : (
                 <React.Fragment>
-                  <span className="block h-full overflow-hidden">
-                    <img
-                      src={link.image?.src}
-                      alt={link.image?.alt}
-                      className="aspect-[3/2] size-full object-cover"
-                    />
+                  <span className='block h-full overflow-hidden'>
+                    <img src={link.image?.src} alt={link.image?.alt} className='aspect-[3/2] size-full object-cover' />
                   </span>
-                  <span className="flex flex-col space-y-1 whitespace-normal px-5 py-4 text-left sm:px-4">
-                    <span className="font-semibold md:text-md">
-                      {link.button.title}
-                    </span>
+                  <span className='flex flex-col space-y-1 whitespace-normal px-5 py-4 text-left sm:px-4'>
+                    <span className='font-semibold md:text-md'>{link.button.title}</span>
                     <span>{link.description}</span>
                   </span>
                 </React.Fragment>
@@ -250,8 +224,7 @@ export const Links9Defaults: Props = {
             title: "Link three",
             variant: "secondary",
           },
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
             alt: "Relume placeholder image 1",
@@ -264,8 +237,7 @@ export const Links9Defaults: Props = {
             title: "Link four",
             variant: "secondary",
           },
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
             alt: "Relume placeholder image 2",
@@ -278,8 +250,7 @@ export const Links9Defaults: Props = {
             title: "Link five",
             variant: "secondary",
           },
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
             alt: "Relume placeholder image 3",
@@ -292,8 +263,7 @@ export const Links9Defaults: Props = {
             title: "Link six",
             variant: "secondary",
           },
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           image: {
             src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
             alt: "Relume placeholder image 4",
@@ -306,12 +276,10 @@ export const Links9Defaults: Props = {
     variant: "secondary",
     children: (
       <>
-        <BiEnvelope className="size-8 shrink-0" />
-        <span className="flex grow flex-col items-start">
-          <span className="font-semibold md:text-md">Join our newsletter</span>
-          <span className="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </span>
+        <BiEnvelope className='size-8 shrink-0' />
+        <span className='flex grow flex-col items-start'>
+          <span className='font-semibold md:text-md'>Join our newsletter</span>
+          <span className='text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </span>
       </>
     ),
@@ -331,10 +299,10 @@ export const Links9Defaults: Props = {
   `,
   },
   socialLinks: [
-    { href: "#", icon: <BiLogoFacebookCircle className="size-8" /> },
-    { href: "#", icon: <BiLogoInstagram className="size-8" /> },
-    { href: "#", icon: <FaXTwitter className="size-8" /> },
-    { href: "#", icon: <BiLogoLinkedinSquare className="size-8" /> },
-    { href: "#", icon: <BiLogoYoutube className="size-8" /> },
+    { href: "#", icon: <BiLogoFacebookCircle className='size-8' /> },
+    { href: "#", icon: <BiLogoInstagram className='size-8' /> },
+    { href: "#", icon: <FaXTwitter className='size-8' /> },
+    { href: "#", icon: <BiLogoLinkedinSquare className='size-8' /> },
+    { href: "#", icon: <BiLogoYoutube className='size-8' /> },
   ],
 };

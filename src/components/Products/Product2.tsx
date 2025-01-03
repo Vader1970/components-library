@@ -23,8 +23,7 @@ type Props = {
   products: ProductCardProps[];
 };
 
-export type Product2Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Product2Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Product2 = (props: Product2Props) => {
   const { tagline, heading, description, button, products } = {
@@ -32,21 +31,19 @@ export const Product2 = (props: Product2Props) => {
     ...props,
   };
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="mb-12 grid grid-cols-1 items-end gap-12 md:mb-18 md:grid-cols-[1fr_max-content] lg:mb-20 lg:gap-20">
-          <div className="max-w-lg">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h1 className="mb-3 text-5xl font-bold md:mb-4 md:text-7xl lg:text-8xl">
-              {heading}
-            </h1>
-            <p className="md:text-md">{description}</p>
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container'>
+        <div className='mb-12 grid grid-cols-1 items-end gap-12 md:mb-18 md:grid-cols-[1fr_max-content] lg:mb-20 lg:gap-20'>
+          <div className='max-w-lg'>
+            <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
+            <h1 className='mb-3 text-5xl font-bold md:mb-4 md:text-7xl lg:text-8xl'>{heading}</h1>
+            <p className='md:text-md'>{description}</p>
           </div>
-          <Button {...button} className="hidden md:flex">
+          <Button {...button} className='hidden md:flex'>
             {button.title}
           </Button>
         </div>
-        <div className="grid grid-cols-2 justify-items-start gap-x-5 gap-y-12 md:gap-x-8 md:gap-y-16 lg:grid-cols-4">
+        <div className='grid grid-cols-2 justify-items-start gap-x-5 gap-y-12 md:gap-x-8 md:gap-y-16 lg:grid-cols-4'>
           {products.map((product, index) => (
             <ProductCard key={index} {...product} />
           ))}
@@ -56,31 +53,20 @@ export const Product2 = (props: Product2Props) => {
   );
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  url,
-  image,
-  title,
-  price,
-  variant,
-  button,
-}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ url, image, title, price, variant, button }) => {
   return (
     <div>
-      <a href={url} className="mb-3 block aspect-[5/6] md:mb-4">
-        <img
-          src={image.src}
-          alt={image.alt}
-          className="size-full object-cover"
-        />
+      <a href={url} className='mb-3 block aspect-[5/6] md:mb-4'>
+        <img src={image.src} alt={image.alt} className='size-full object-cover' />
       </a>
-      <a href={url} className="flex justify-between md:text-md">
-        <div className="mr-4">
-          <h3 className="font-semibold">{title}</h3>
-          <div className="text-sm">{variant}</div>
+      <a href={url} className='flex justify-between md:text-md'>
+        <div className='mr-4'>
+          <h3 className='font-semibold'>{title}</h3>
+          <div className='text-sm'>{variant}</div>
         </div>
-        <div className="text-md font-semibold md:text-lg">{price}</div>
+        <div className='text-md font-semibold md:text-lg'>{price}</div>
       </a>
-      <Button {...button} className="mt-3 w-full md:mt-4">
+      <Button {...button} className='mt-3 w-full md:mt-4'>
         {button.title}
       </Button>
     </div>
@@ -96,7 +82,7 @@ const productData = {
   title: "Product name",
   price: "$55",
   variant: "Variant",
-  button: { variant: "secondary", size: "sm", title: "Add to cart" },
+  button: { variant: "secondary", size: "sm", title: "Add to cart" } as const,
 };
 
 export const Product2Defaults: Props = {
@@ -108,14 +94,5 @@ export const Product2Defaults: Props = {
     size: "primary",
     title: "View all",
   },
-  products: [
-    productData,
-    productData,
-    productData,
-    productData,
-    productData,
-    productData,
-    productData,
-    productData,
-  ],
+  products: [productData, productData, productData, productData, productData, productData, productData, productData],
 };
