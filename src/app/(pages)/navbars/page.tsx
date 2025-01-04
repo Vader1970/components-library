@@ -51,11 +51,11 @@ const navComponents = [
 const NavbarPage = () => {
   return (
     <div>
-      <h1 className='text-8xl text-center font-bold mb-4'>Navbars</h1>
+      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>Navbars</h1>
       <section className='mb-4'>
         {navComponents.map(({ component: NavComponent, title }, index) => (
           <div key={index} className='mb-[1000px]'>
-            <h2 className='text-4xl font-bold text-center mt-20 mb-5'>{title}</h2>
+            <h2 className='bg-slate-300 text-4xl font-bold text-center py-10'>{title}</h2>
             {/* Render the component directly */}
             <NavComponent />
           </div>
