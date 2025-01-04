@@ -1051,12 +1051,12 @@ const layoutComponents = [
 const LayoutsPage = () => {
   return (
     <div>
-      <h1 className='text-8xl text-center font-bold mb-4'>LAYOUTS</h1>
+      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>LAYOUTS</h1>
       <section>
         {layoutComponents.map(({ component: LayoutComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className='text-4xl font-bold text-center mt-20 mb-5'>{title}</h2>
+            <h2 className='bg-slate-300 text-4xl font-bold text-center py-10'>{title}</h2>
             {/* Render the component */}
             <LayoutComponent />
           </div>
