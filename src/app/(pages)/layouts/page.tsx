@@ -518,7 +518,7 @@ import { Layout491 } from "@/components/Layouts/Layout491";
 import { Layout492 } from "@/components/Layouts/Layout492";
 import { Layout497 } from "@/components/Layouts/Layout497";
 import { Layout498 } from "@/components/Layouts/Layout498";
-import { Layout352 } from "@/components/Layouts/Layout352";
+// import { Layout352 } from "@/components/Layouts/Layout352";
 import { Layout421 } from "@/components/Layouts/Layout421";
 
 const layoutComponents = [
@@ -868,7 +868,7 @@ const layoutComponents = [
   { component: Layout349, title: "Layout 349" },
   { component: Layout350, title: "Layout 350" },
   { component: Layout351, title: "Layout 351" },
-  { component: Layout352, title: "Layout 352" },
+  // { component: Layout352, title: "Layout 352" },
   { component: Layout353, title: "Layout 353" },
   { component: Layout354, title: "Layout 354" },
   { component: Layout355, title: "Layout 355" },
@@ -1051,16 +1051,22 @@ const layoutComponents = [
 const LayoutsPage = () => {
   return (
     <div>
-      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>LAYOUTS</h1>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
+        LAYOUTS
+      </h1>
       <section>
-        {layoutComponents.map(({ component: LayoutComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-slate-300 text-4xl font-bold text-center py-10'>{title}</h2>
-            {/* Render the component */}
-            <LayoutComponent />
-          </div>
-        ))}
+        {layoutComponents.map(
+          ({ component: LayoutComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+                {title}
+              </h2>
+              {/* Render the component */}
+              <LayoutComponent />
+            </div>
+          )
+        )}
       </section>
     </div>
   );

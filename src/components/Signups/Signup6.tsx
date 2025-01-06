@@ -118,14 +118,14 @@ export const Signup6 = (props: Signup6Props) => {
             <form className="grid grid-cols-1 gap-4" onSubmit={handleSubmit}>
               <Input
                 type="email"
-                id="email"
+                id="email6"
                 placeholder={inputPlaceholderEmail}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Input
                 type="password"
-                id="password"
+                id="password6"
                 placeholder={inputPlaceholderPassword}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

@@ -76,12 +76,12 @@ export const Login7 = (props: Login7Props) => {
             </div>
             <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
               <div className="grid w-full items-center">
-                <Label htmlFor="email" className="mb-2">
+                <Label htmlFor="email7" className="mb-2">
                   Email*
                 </Label>
                 <Input
                   type="email"
-                  id="email"
+                  id="email7"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -89,7 +89,7 @@ export const Login7 = (props: Login7Props) => {
               </div>
               <div className="grid w-full grid-cols-1 items-center">
                 <div className="flex items-start justify-between">
-                  <Label htmlFor="password" className="mb-2">
+                  <Label htmlFor="password7" className="mb-2">
                     Password*
                   </Label>
                   <a href={forgotPassword.url} className="underline">
@@ -98,7 +98,7 @@ export const Login7 = (props: Login7Props) => {
                 </div>
                 <Input
                   type="password"
-                  id="password"
+                  id="password7"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required

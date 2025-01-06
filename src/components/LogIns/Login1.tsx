@@ -79,12 +79,12 @@ export const Login1 = (props: Login1Props) => {
           </div>
           <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
             <div className="grid w-full items-center">
-              <Label htmlFor="email" className="mb-2">
+              <Label htmlFor="email1" className="mb-2">
                 Email*
               </Label>
               <Input
                 type="email"
-                id="email"
+                id="email1"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -96,7 +96,7 @@ export const Login1 = (props: Login1Props) => {
               </Label>
               <Input
                 type="password"
-                id="password"
+                id="password1"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
