@@ -56,7 +56,7 @@ export const Form15 = (props: Form15Props) => {
   return (
     <section
       id="relume"
-      className="grid auto-cols-fr grid-cols-1 items-start gap-6 lg:grid-cols-[0.75fr_1fr] lg:gap-12"
+      className="grid auto-cols-fr grid-cols-1 items-start gap-6 p-10 lg:grid-cols-[0.75fr_1fr] lg:gap-12"
     >
       <div>
         <h1 className="text-xl font-bold md:text-2xl">{heading}</h1>

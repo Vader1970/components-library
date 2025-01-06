@@ -59,7 +59,7 @@ export const Form5 = (props: Form5Props) => {
   ];
 
   return (
-    <section>
+    <section className="p-10">
       <div className="pb-5 md:pb-6">
         <h1 className="text-xl font-bold md:text-2xl">{heading}</h1>
         <p className="mt-2">{description}</p>

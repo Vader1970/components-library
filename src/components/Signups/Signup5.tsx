@@ -110,36 +110,36 @@ export const Signup5 = (props: Signup5Props) => {
             </div>
             <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1">
-                <Label htmlFor="name" className="mb-2">
+                <Label htmlFor="name5" className="mb-2">
                   Name*
                 </Label>
                 <Input
                   type="email"
-                  id="name"
+                  id="name5"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
               <div className="grid grid-cols-1">
-                <Label htmlFor="email" className="mb-2">
+                <Label htmlFor="email5" className="mb-2">
                   Email*
                 </Label>
                 <Input
                   type="email"
-                  id="email"
+                  id="email5"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
               <div className="grid grid-cols-1">
-                <Label htmlFor="password" className="mb-2">
+                <Label htmlFor="password5" className="mb-2">
                   Password*
                 </Label>
                 <Input
                   type="password"
-                  id="password"
+                  id="password5"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required

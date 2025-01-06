@@ -49,16 +49,22 @@ const timelineComponents = [
 const TimelinesPage = () => {
   return (
     <div>
-      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>Timelines</h1>
-      <section className='mb-4'>
-        {timelineComponents.map(({ component: TimelineComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-slate-300 text-4xl font-bold text-center py-10'>{title}</h2>
-            {/* Render the component */}
-            <TimelineComponent />
-          </div>
-        ))}
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
+        Timelines
+      </h1>
+      <section className="mb-4">
+        {timelineComponents.map(
+          ({ component: TimelineComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+                {title}
+              </h2>
+              {/* Render the component */}
+              <TimelineComponent />
+            </div>
+          )
+        )}
       </section>
     </div>
   );

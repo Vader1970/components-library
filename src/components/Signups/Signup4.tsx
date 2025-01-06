@@ -75,14 +75,14 @@ export const Signup4 = (props: Signup4Props) => {
         <form className="grid grid-cols-1 gap-4" onSubmit={handleSubmit}>
           <Input
             type="email"
-            id="email"
+            id="email4"
             placeholder={inputPlaceholderEmail}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input
             type="password"
-            id="password"
+            id="password4"
             placeholder={inputPlaceholderPassword}
             value={password}
             onChange={(e) => setPassword(e.target.value)}

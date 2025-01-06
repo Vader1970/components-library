@@ -39,16 +39,24 @@ const bannerComponents = [
 const BannersPage = () => {
   return (
     <div>
-      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>Banners</h1>
-      <section className='mb-4'>
-        {bannerComponents.map(({ component: BannerComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-slate-300 text-4xl font-bold text-center py-5'>{title}</h2>
-            {/* Render the component */}
-            <BannerComponent />
-          </div>
-        ))}
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
+        Banners
+      </h1>
+      <section>
+        {bannerComponents.map(
+          ({ component: BannerComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+                {title}
+              </h2>
+              <div className="py-10">
+                {/* Render the component */}
+                <BannerComponent />
+              </div>
+            </div>
+          )
+        )}
       </section>
     </div>
   );

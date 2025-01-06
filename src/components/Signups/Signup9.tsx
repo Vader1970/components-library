@@ -132,36 +132,36 @@ const SignupForm: React.FC<{ formData: SignupForm }> = ({ formData }) => {
       </div>
       <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1">
-          <Label htmlFor="name" className="mb-2">
+          <Label htmlFor="name9" className="mb-2">
             Name*
           </Label>
           <Input
             type="text"
-            id="name"
+            id="name9"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
         <div className="grid grid-cols-1">
-          <Label htmlFor="email" className="mb-2">
+          <Label htmlFor="email9" className="mb-2">
             Email*
           </Label>
           <Input
             type="email"
-            id="email"
+            id="email9"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
         <div className="grid grid-cols-1">
-          <Label htmlFor="password" className="mb-2">
+          <Label htmlFor="password9" className="mb-2">
             Password*
           </Label>
           <Input
             type="password"
-            id="password"
+            id="password9"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -209,12 +209,12 @@ const LoginForm: React.FC<{ formData: LoginForm }> = ({ formData }) => {
       </div>
       <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1">
-          <Label htmlFor="email" className="mb-2">
+          <Label htmlFor="email10" className="mb-2">
             Email*
           </Label>
           <Input
             type="email"
-            id="email"
+            id="email10"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -222,7 +222,7 @@ const LoginForm: React.FC<{ formData: LoginForm }> = ({ formData }) => {
         </div>
         <div className="grid grid-cols-1">
           <div className="flex justify-between">
-            <Label htmlFor="password" className="mb-2">
+            <Label htmlFor="password10" className="mb-2">
               Password*
             </Label>
             <a href={formData.forgotPassword.url} className="underline">

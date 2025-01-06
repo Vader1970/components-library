@@ -11,16 +11,24 @@ const gridlistsComponents = [
 const GridListsPage = () => {
   return (
     <div>
-      <h1 className='text-slate-800 text-8xl text-center underline font-bold my-4'>Grid List</h1>
-      <section className='mb-4'>
-        {gridlistsComponents.map(({ component: GridListComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-slate-300 text-4xl font-bold text-center py-10'>{title}</h2>
-            {/* Render the component */}
-            <GridListComponent />
-          </div>
-        ))}
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
+        Grid List
+      </h1>
+      <section className="mb-4">
+        {gridlistsComponents.map(
+          ({ component: GridListComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+                {title}
+              </h2>
+              <div className="p-10">
+                {/* Render the component */}
+                <GridListComponent />
+              </div>
+            </div>
+          )
+        )}
       </section>
     </div>
   );

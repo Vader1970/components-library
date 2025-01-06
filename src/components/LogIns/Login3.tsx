@@ -73,12 +73,12 @@ export const Login3 = (props: Login3Props) => {
           </div>
           <form className="grid gap-6" onSubmit={handleSubmit}>
             <div className="grid">
-              <Label htmlFor="email" className="mb-2">
+              <Label htmlFor="email3" className="mb-2">
                 Email*
               </Label>
               <Input
                 type="email"
-                id="email"
+                id="email3"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -86,7 +86,7 @@ export const Login3 = (props: Login3Props) => {
             </div>
             <div className="grid">
               <div className="flex justify-between">
-                <Label htmlFor="password" className="mb-2">
+                <Label htmlFor="password3" className="mb-2">
                   Password*
                 </Label>
                 <a href={forgotPassword.url} className="underline">
@@ -95,7 +95,7 @@ export const Login3 = (props: Login3Props) => {
               </div>
               <Input
                 type="password"
-                id="password"
+                id="password3"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

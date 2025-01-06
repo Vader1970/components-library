@@ -78,14 +78,14 @@ export const Login4 = (props: Login4Props) => {
           <form className="grid gap-4" onSubmit={handleSubmit}>
             <Input
               type="email"
-              id="email"
+              id="email4"
               placeholder={inputPlaceholderEmail}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               type="password"
-              id="password"
+              id="password4"
               placeholder={inputPlaceholderPassword}
               value={password}
               onChange={(e) => setPassword(e.target.value)}

@@ -114,12 +114,12 @@ export const Login5 = (props: Login5Props) => {
             </div>
             <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
               <div className="grid w-full items-center">
-                <Label htmlFor="email" className="mb-2">
+                <Label htmlFor="email5" className="mb-2">
                   Email*
                 </Label>
                 <Input
                   type="email"
-                  id="email"
+                  id="email5"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -127,7 +127,7 @@ export const Login5 = (props: Login5Props) => {
               </div>
               <div className="grid w-full items-center">
                 <div className="flex items-start justify-between">
-                  <Label htmlFor="password" className="mb-2">
+                  <Label htmlFor="password5" className="mb-2">
                     Password*
                   </Label>
                   <a href={forgotPassword.url} className="underline">
@@ -136,7 +136,7 @@ export const Login5 = (props: Login5Props) => {
                 </div>
                 <Input
                   type="password"
-                  id="password"
+                  id="password5"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
