@@ -1,23 +1,23 @@
-import { Product1 } from "@/components/Products/Product1";
-import { Product10 } from "@/components/Products/Product10";
-import { Product11 } from "@/components/Products/Product11";
-import { Product12 } from "@/components/Products/Product12";
-import { Product2 } from "@/components/Products/Product2";
-import { Product3 } from "@/components/Products/Product3";
-import { Product4 } from "@/components/Products/Product4";
-import { Product5 } from "@/components/Products/Product5";
-import { Product6 } from "@/components/Products/Product6";
-import { Product7 } from "@/components/Products/Product7";
-import { Product8 } from "@/components/Products/Product8";
-import { Product9 } from "@/components/Products/Product9";
-import { ProductHeader1 } from "@/components/Products/ProductHeader1";
-import { ProductHeader2 } from "@/components/Products/ProductHeader2";
-import { ProductHeader3 } from "@/components/Products/ProductHeader3";
-import { ProductHeader4 } from "@/components/Products/ProductHeader4";
-import { ProductHeader5 } from "@/components/Products/ProductHeader5";
-import { ProductHeader6 } from "@/components/Products/ProductHeader6";
-import { ProductHeader7 } from "@/components/Products/ProductHeader7";
-import { ProductHeader8 } from "@/components/Products/ProductHeader8";
+import { Product1 } from "@/components/Product1";
+import { Product10 } from "@/components/Product10";
+import { Product11 } from "@/components/Product11";
+import { Product12 } from "@/components/Product12";
+import { Product2 } from "@/components/Product2";
+import { Product3 } from "@/components/Product3";
+import { Product4 } from "@/components/Product4";
+import { Product5 } from "@/components/Product5";
+import { Product6 } from "@/components/Product6";
+import { Product7 } from "@/components/Product7";
+import { Product8 } from "@/components/Product8";
+import { Product9 } from "@/components/Product9";
+import { ProductHeader1 } from "@/components/ProductHeader1";
+import { ProductHeader2 } from "@/components/ProductHeader2";
+import { ProductHeader3 } from "@/components/ProductHeader3";
+import { ProductHeader4 } from "@/components/ProductHeader4";
+import { ProductHeader5 } from "@/components/ProductHeader5";
+import { ProductHeader6 } from "@/components/ProductHeader6";
+import { ProductHeader7 } from "@/components/ProductHeader7";
+import { ProductHeader8 } from "@/components/ProductHeader8";
 
 const productComponents = [
   { component: Product1, title: "Product 1" },
@@ -47,22 +47,28 @@ const productComponents = [
 const ProductsPage = () => {
   return (
     <div>
-      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
+      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
         Products
       </h1>
-      <section className="mb-4">
-        {productComponents.map(
-          ({ component: ProductComponent, title }, index) => (
-            <div key={index}>
-              {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
-                {title}
-              </h2>
-              {/* Render the component */}
-              <ProductComponent />
-            </div>
-          )
-        )}
+      <section className='mb-4'>
+        {productComponents.map(({ component: ProductComponent, title }, index) => (
+          <div key={index}>
+            {/* Render the title as an h2 element */}
+            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
+              {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
+              >
+                View Code
+              </a>
+            </h2>
+            {/* Render the component */}
+            <ProductComponent />
+          </div>
+        ))}
       </section>
     </div>
   );
