@@ -1,6 +1,6 @@
 "use client";
 
-// import { useState } from 'react';
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import { Search } from 'lucide-react';
@@ -47,40 +47,54 @@ const categories = [
 export function Navbar() {
   //   const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // User is scrolling down
+        setShowNavbar(false);
+      } else {
+        // User is scrolling up
+        setShowNavbar(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full !bg-black !text-white p-5 border-b">
+    <nav
+      className={`sticky top-0 z-50 w-full p-5 border-b transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      } !bg-black !text-white`}
+    >
       <div className="flex flex-col items-center">
         <Link
           href="/"
-          className="flex items-center  hover:text-gray-400 ease-in-out duration-300"
+          className="flex items-center hover:text-blue-500 ease-in-out duration-300"
         >
           <span className="font-bold mb-5 text-2xl">Component Library</span>
         </Link>
 
         <div className="flex h-auto">
           <div className="flex flex-1 items-center">
-            <div className="flex">
-              {/* <div className="relative">
-              <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search components..."
-                className="pl-8"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div> */}
-            </div>
             <nav className="flex flex-row flex-wrap items-center justify-center space-x-6">
               {categories.map((category) => (
                 <Link
                   key={category.href}
                   href={category.href}
                   className={cn(
-                    "text-base font-medium transition-colors hover:text-gray-400 hover:underline ease-in-out duration-300",
+                    "text-base font-medium transition-colors hover:text-blue-500 hover:underline ease-in-out duration-300",
                     pathname === category.href
-                      ? "underline text-gray-400"
+                      ? "underline text-blue-500"
                       : "text-muted-foreground"
                   )}
                 >
