@@ -1,33 +1,33 @@
-import { Content1 } from "@/components/Contents/Content1";
-import { Content10 } from "@/components/Contents/Content10";
-import { Content11 } from "@/components/Contents/Content11";
-import { Content12 } from "@/components/Contents/Content12";
-import { Content13 } from "@/components/Contents/Content13";
-import { Content14 } from "@/components/Contents/Content14";
-import { Content15 } from "@/components/Contents/Content15";
-import { Content16 } from "@/components/Contents/Content16";
-import { Content17 } from "@/components/Contents/Content17";
-import { Content18 } from "@/components/Contents/Content18";
-import { Content19 } from "@/components/Contents/Content19";
-import { Content2 } from "@/components/Contents/Content2";
-import { Content20 } from "@/components/Contents/Content20";
-import { Content21 } from "@/components/Contents/Content21";
-import { Content22 } from "@/components/Contents/Content22";
-import { Content23 } from "@/components/Contents/Content23";
-import { Content24 } from "@/components/Contents/Content24";
-import { Content25 } from "@/components/Contents/Content25";
-import { Content26 } from "@/components/Contents/Content26";
-import { Content27 } from "@/components/Contents/Content27";
-import { Content28 } from "@/components/Contents/Content28";
-import { Content29 } from "@/components/Contents/Content29";
-import { Content3 } from "@/components/Contents/Content3";
-import { Content30 } from "@/components/Contents/Content30";
-import { Content31 } from "@/components/Contents/Content31";
-import { Content32 } from "@/components/Contents/Content32";
-import { Content4 } from "@/components/Contents/Content4";
-import { Content7 } from "@/components/Contents/Content7";
-import { Content8 } from "@/components/Contents/Content8";
-import { Content9 } from "@/components/Contents/Content9";
+import { Content1 } from "@/components/Content1";
+import { Content10 } from "@/components/Content10";
+import { Content11 } from "@/components/Content11";
+import { Content12 } from "@/components/Content12";
+import { Content13 } from "@/components/Content13";
+import { Content14 } from "@/components/Content14";
+import { Content15 } from "@/components/Content15";
+import { Content16 } from "@/components/Content16";
+import { Content17 } from "@/components/Content17";
+import { Content18 } from "@/components/Content18";
+import { Content19 } from "@/components/Content19";
+import { Content2 } from "@/components/Content2";
+import { Content20 } from "@/components/Content20";
+import { Content21 } from "@/components/Content21";
+import { Content22 } from "@/components/Content22";
+import { Content23 } from "@/components/Content23";
+import { Content24 } from "@/components/Content24";
+import { Content25 } from "@/components/Content25";
+import { Content26 } from "@/components/Content26";
+import { Content27 } from "@/components/Content27";
+import { Content28 } from "@/components/Content28";
+import { Content29 } from "@/components/Content29";
+import { Content3 } from "@/components/Content3";
+import { Content30 } from "@/components/Content30";
+import { Content31 } from "@/components/Content31";
+import { Content32 } from "@/components/Content32";
+import { Content4 } from "@/components/Content4";
+import { Content7 } from "@/components/Content7";
+import { Content8 } from "@/components/Content8";
+import { Content9 } from "@/components/Content9";
 
 const contentComponents = [
   { component: Content1, title: "Content 1" },
@@ -75,8 +75,16 @@ const ContentsPage = () => {
           ({ component: ContentComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <ContentComponent />

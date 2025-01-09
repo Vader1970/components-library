@@ -1,26 +1,26 @@
-import { Navbar1 } from "@/components/Navbars/Navbar1";
-import { Navbar2 } from "@/components/Navbars/Navbar2";
-import { Navbar3 } from "@/components/Navbars/Navbar";
-import { Navbar7 } from "@/components/Navbars/Navbar7";
-import { Navbar8 } from "@/components/Navbars/Navbar8";
-import { Navbar10 } from "@/components/Navbars/Navbar10";
-import { Navbar12 } from "@/components/Navbars/Navbar12";
-import { Navbar16 } from "@/components/Navbars/Navbar16";
-import { Navbar17 } from "@/components/Navbars/Navbar17";
-import { Navbar18 } from "@/components/Navbars/Navbar18";
-import { Navbar19 } from "@/components/Navbars/Navbar19";
-import { Navbar20 } from "@/components/Navbars/Navbar20";
-import { Navbar21 } from "@/components/Navbars/Navbar21";
-import { Navbar22 } from "@/components/Navbars/Navbar22";
-import { Navbar5 } from "@/components/Navbars/Navbar5";
-import { Navbar11 } from "@/components/Navbars/Navbar11";
-import { Navbar4 } from "@/components/Navbars/Navbar4";
-import { Navbar6 } from "@/components/Navbars/Navbar6";
-import { Navbar13 } from "@/components/Navbars/Navbar13";
+import { Navbar1 } from "@/components/Navbar1";
+import { Navbar2 } from "@/components/Navbar2";
+import { Navbar3 } from "@/components/Navbar";
+import { Navbar7 } from "@/components/Navbar7";
+import { Navbar8 } from "@/components/Navbar8";
+import { Navbar10 } from "@/components/Navbar10";
+import { Navbar12 } from "@/components/Navbar12";
+import { Navbar16 } from "@/components/Navbar16";
+import { Navbar17 } from "@/components/Navbar17";
+import { Navbar18 } from "@/components/Navbar18";
+import { Navbar19 } from "@/components/Navbar19";
+import { Navbar20 } from "@/components/Navbar20";
+import { Navbar21 } from "@/components/Navbar21";
+import { Navbar22 } from "@/components/Navbar22";
+import { Navbar5 } from "@/components/Navbar5";
+import { Navbar11 } from "@/components/Navbar11";
+import { Navbar4 } from "@/components/Navbar4";
+import { Navbar6 } from "@/components/Navbar6";
+import { Navbar13 } from "@/components/Navbar13";
 //Navbar14 sticky nav
-import { Navbar14 } from "@/components/Navbars/Navbar14";
-import { Navbar15 } from "@/components/Navbars/Navbar15";
-import { Navbar9 } from "@/components/Navbars/Navbar9";
+import { Navbar14 } from "@/components/Navbar14";
+import { Navbar15 } from "@/components/Navbar15";
+import { Navbar9 } from "@/components/Navbar9";
 
 const navComponents = [
   { component: Navbar1, title: "Navbar 1" },
@@ -57,8 +57,16 @@ const NavbarPage = () => {
       <section className="mb-4">
         {navComponents.map(({ component: NavComponent, title }, index) => (
           <div key={index} className="mb-[1000px]">
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component directly */}
             <NavComponent />

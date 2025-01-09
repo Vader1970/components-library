@@ -1,9 +1,9 @@
-import { Logo1 } from "@/components/Logos/Logo1";
-import { Logo2 } from "@/components/Logos/Logo2";
-import { Logo3 } from "@/components/Logos/Logo3";
-import { Logo4 } from "@/components/Logos/Logo4";
-import { Logo5 } from "@/components/Logos/Logo5";
-import { Logo6 } from "@/components/Logos/logo6";
+import { Logo1 } from "@/components/Logo1";
+import { Logo2 } from "@/components/Logo2";
+import { Logo3 } from "@/components/Logo3";
+import { Logo4 } from "@/components/Logo4";
+import { Logo5 } from "@/components/Logo5";
+import { Logo6 } from "@/components/Logo6";
 
 const logoComponents = [
   { component: Logo1, title: "Logo 1" },
@@ -26,8 +26,16 @@ const LogosPage = () => {
         {logoComponents.map(({ component: LogoComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <LogoComponent />

@@ -1,33 +1,33 @@
-import { Contact1 } from "@/components/Contacts/Contact1";
-import { Contact2 } from "@/components/Contacts/Contact2";
-import { Contact5 } from "@/components/Contacts/Contact5";
-import { Contact6 } from "@/components/Contacts/Contact6";
-import { Contact7 } from "@/components/Contacts/Contact7";
-import { Contact9 } from "@/components/Contacts/Contact9";
-import { Contact12 } from "@/components/Contacts/Contact12";
-import { Contact24 } from "@/components/Contacts/Contact24";
-import { Contact26 } from "@/components/Contacts/Contact26";
-import { Contact29 } from "@/components/Contacts/Contact29";
-import { Contact14 } from "@/components/Contacts/Contact14";
-import { Contact3 } from "@/components/Contacts/Contact3";
-import { Contact4 } from "@/components/Contacts/Contact4";
-import { Contact8 } from "@/components/Contacts/Contact8";
-import { Contact10 } from "@/components/Contacts/Contact10";
-import { Contact11 } from "@/components/Contacts/Contact11";
-import { Contact13 } from "@/components/Contacts/Contact13";
-import { Contact15 } from "@/components/Contacts/Contact15";
-import { Contact16 } from "@/components/Contacts/Contact16";
-import { Contact17 } from "@/components/Contacts/Contact17";
-import { Contact18 } from "@/components/Contacts/Contact18";
-import { Contact19 } from "@/components/Contacts/Contact19";
-import { Contact20 } from "@/components/Contacts/Contact20";
-import { Contact21 } from "@/components/Contacts/Contact21";
-import { Contact22 } from "@/components/Contacts/Contact22";
-import { Contact23 } from "@/components/Contacts/Contact23";
-import { Contact25 } from "@/components/Contacts/Contact25";
-import { Contact27 } from "@/components/Contacts/Contact27";
-import { Contact28 } from "@/components/Contacts/Contact28";
-import Contact30 from "@/components/Contacts/Contact30";
+import { Contact1 } from "@/components/Contact1";
+import { Contact2 } from "@/components/Contact2";
+import { Contact5 } from "@/components/Contact5";
+import { Contact6 } from "@/components/Contact6";
+import { Contact7 } from "@/components/Contact7";
+import { Contact9 } from "@/components/Contact9";
+import { Contact12 } from "@/components/Contact12";
+import { Contact24 } from "@/components/Contact24";
+import { Contact26 } from "@/components/Contact26";
+import { Contact29 } from "@/components/Contact29";
+import { Contact14 } from "@/components/Contact14";
+import { Contact3 } from "@/components/Contact3";
+import { Contact4 } from "@/components/Contact4";
+import { Contact8 } from "@/components/Contact8";
+import { Contact10 } from "@/components/Contact10";
+import { Contact11 } from "@/components/Contact11";
+import { Contact13 } from "@/components/Contact13";
+import { Contact15 } from "@/components/Contact15";
+import { Contact16 } from "@/components/Contact16";
+import { Contact17 } from "@/components/Contact17";
+import { Contact18 } from "@/components/Contact18";
+import { Contact19 } from "@/components/Contact19";
+import { Contact20 } from "@/components/Contact20";
+import { Contact21 } from "@/components/Contact21";
+import { Contact22 } from "@/components/Contact22";
+import { Contact23 } from "@/components/Contact23";
+import { Contact25 } from "@/components/Contact25";
+import { Contact27 } from "@/components/Contact27";
+import { Contact28 } from "@/components/Contact28";
+import Contact30 from "@/components/Contact30";
 
 const contactComponents = [
   { component: Contact1, title: "Contact 1" },
@@ -75,8 +75,16 @@ const ContactsPage = () => {
           ({ component: ContactComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <ContactComponent />

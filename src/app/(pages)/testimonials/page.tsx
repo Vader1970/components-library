@@ -1,41 +1,41 @@
-import { Testimonial1 } from "@/components/Testimonials/Testimonial1";
-import { Testimonial2 } from "@/components/Testimonials/Testimonial2";
-import { Testimonial3 } from "@/components/Testimonials/Testimonial3";
-import { Testimonial4 } from "@/components/Testimonials/Testimonial4";
-import { Testimonial5 } from "@/components/Testimonials/Testimonial5";
-import { Testimonial6 } from "@/components/Testimonials/Testimonial6";
-import { Testimonial7 } from "@/components/Testimonials/Testimonial7";
-import { Testimonial8 } from "@/components/Testimonials/Testimonial8";
-import { Testimonial9 } from "@/components/Testimonials/Testimonial9";
-import { Testimonial10 } from "@/components/Testimonials/Testimonial10";
-import { Testimonial11 } from "@/components/Testimonials/Testimonial11";
-import { Testimonial12 } from "@/components/Testimonials/Testimonial12";
-import { Testimonial13 } from "@/components/Testimonials/Testimonial13";
-import { Testimonial14 } from "@/components/Testimonials/Testimonial14";
-import { Testimonial15 } from "@/components/Testimonials/Testimonial15";
-import { Testimonial16 } from "@/components/Testimonials/Testimonial16";
-import { Testimonial17 } from "@/components/Testimonials/Testimonial17";
-import { Testimonial21 } from "@/components/Testimonials/Testimonial21";
-import { Testimonial23 } from "@/components/Testimonials/Testimonial23";
-import { Testimonial29 } from "@/components/Testimonials/Testimonial29";
-import { Testimonial34 } from "@/components/Testimonials/Testimonial34";
-import { Testimonial35 } from "@/components/Testimonials/Testimonial35";
-import { Testimonial19 } from "@/components/Testimonials/Testimonial19";
-import { Testimonial20 } from "@/components/Testimonials/Testimonial20";
-import { Testimonial22 } from "@/components/Testimonials/Testimonial22";
-import { Testimonial24 } from "@/components/Testimonials/Testimonial24";
-import { Testimonial25 } from "@/components/Testimonials/Testimonial25";
-import { Testimonial26 } from "@/components/Testimonials/Testimonial26";
-import { Testimonial36 } from "@/components/Testimonials/Testimonial36";
-import { Testimonial37 } from "@/components/Testimonials/Testimonial37";
-import { Testimonial38 } from "@/components/Testimonials/Testimonial38";
-import { Testimonial39 } from "@/components/Testimonials/Testimonial39";
-import { Testimonial32 } from "@/components/Testimonials/Testimonial32";
-import { Testimonial27 } from "@/components/Testimonials/Testimonial27";
-import { Testimonial28 } from "@/components/Testimonials/Testimonial28";
-import { Testimonial30 } from "@/components/Testimonials/Testimonial30";
-import { Testimonial31 } from "@/components/Testimonials/Testimonial31";
-import { Testimonial33 } from "@/components/Testimonials/Testimonial33";
+import { Testimonial1 } from "@/components/Testimonial1";
+import { Testimonial2 } from "@/components/Testimonial2";
+import { Testimonial3 } from "@/components/Testimonial3";
+import { Testimonial4 } from "@/components/Testimonial4";
+import { Testimonial5 } from "@/components/Testimonial5";
+import { Testimonial6 } from "@/components/Testimonial6";
+import { Testimonial7 } from "@/components/Testimonial7";
+import { Testimonial8 } from "@/components/Testimonial8";
+import { Testimonial9 } from "@/components/Testimonial9";
+import { Testimonial10 } from "@/components/Testimonial10";
+import { Testimonial11 } from "@/components/Testimonial11";
+import { Testimonial12 } from "@/components/Testimonial12";
+import { Testimonial13 } from "@/components/Testimonial13";
+import { Testimonial14 } from "@/components/Testimonial14";
+import { Testimonial15 } from "@/components/Testimonial15";
+import { Testimonial16 } from "@/components/Testimonial16";
+import { Testimonial17 } from "@/components/Testimonial17";
+import { Testimonial21 } from "@/components/Testimonial21";
+import { Testimonial23 } from "@/components/Testimonial23";
+import { Testimonial29 } from "@/components/Testimonial29";
+import { Testimonial34 } from "@/components/Testimonial34";
+import { Testimonial35 } from "@/components/Testimonial35";
+import { Testimonial19 } from "@/components/Testimonial19";
+import { Testimonial20 } from "@/components/Testimonial20";
+import { Testimonial22 } from "@/components/Testimonial22";
+import { Testimonial24 } from "@/components/Testimonial24";
+import { Testimonial25 } from "@/components/Testimonial25";
+import { Testimonial26 } from "@/components/Testimonial26";
+import { Testimonial36 } from "@/components/Testimonial36";
+import { Testimonial37 } from "@/components/Testimonial37";
+import { Testimonial38 } from "@/components/Testimonial38";
+import { Testimonial39 } from "@/components/Testimonial39";
+import { Testimonial32 } from "@/components/Testimonial32";
+import { Testimonial27 } from "@/components/Testimonial27";
+import { Testimonial28 } from "@/components/Testimonial28";
+import { Testimonial30 } from "@/components/Testimonial30";
+import { Testimonial31 } from "@/components/Testimonial31";
+import { Testimonial33 } from "@/components/Testimonial33";
 
 const testimonialComponents = [
   { component: Testimonial1, title: "Testimonial 1" },
@@ -91,8 +91,16 @@ const TestimonialsPage = () => {
           ({ component: TestimonialComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <TestimonialComponent />

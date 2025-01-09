@@ -1,5 +1,5 @@
-import { Form15 } from "@/components/Forms/Form15";
-import { Form5 } from "@/components/Forms/Form5";
+import { Form15 } from "@/components/Form15";
+import { Form5 } from "@/components/Form5";
 
 const formsComponents = [
   { component: Form5, title: "Form 5" },
@@ -18,8 +18,16 @@ const FormsPage = () => {
         {formsComponents.map(({ component: FormComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <FormComponent />

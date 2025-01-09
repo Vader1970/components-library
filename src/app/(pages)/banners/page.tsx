@@ -1,19 +1,19 @@
-import { Banner1 } from "@/components/Banners/Banner1";
-import { Banner10 } from "@/components/Banners/Banner10";
-import { Banner11 } from "@/components/Banners/Banner11";
-import { Banner12 } from "@/components/Banners/Banner12";
-import { Banner13 } from "@/components/Banners/Banner13";
-import { Banner14 } from "@/components/Banners/Banner14";
-import { Banner15 } from "@/components/Banners/Banner15";
-import { Banner16 } from "@/components/Banners/Banner16";
-import { Banner2 } from "@/components/Banners/Banner2";
-import { Banner3 } from "@/components/Banners/Banner3";
-import { Banner4 } from "@/components/Banners/Banner4";
-import { Banner5 } from "@/components/Banners/Banner5";
-import { Banner6 } from "@/components/Banners/Banner6";
-import { Banner7 } from "@/components/Banners/Banner7";
-import { Banner8 } from "@/components/Banners/Banner8";
-import { Banner9 } from "@/components/Banners/Banner9";
+import { Banner1 } from "@/components/Banner1";
+import { Banner10 } from "@/components/Banner10";
+import { Banner11 } from "@/components/Banner11";
+import { Banner12 } from "@/components/Banner12";
+import { Banner13 } from "@/components/Banner13";
+import { Banner14 } from "@/components/Banner14";
+import { Banner15 } from "@/components/Banner15";
+import { Banner16 } from "@/components/Banner16";
+import { Banner2 } from "@/components/Banner2";
+import { Banner3 } from "@/components/Banner3";
+import { Banner4 } from "@/components/Banner4";
+import { Banner5 } from "@/components/Banner5";
+import { Banner6 } from "@/components/Banner6";
+import { Banner7 } from "@/components/Banner7";
+import { Banner8 } from "@/components/Banner8";
+import { Banner9 } from "@/components/Banner9";
 
 const bannerComponents = [
   { component: Banner1, title: "Banner 1" },
@@ -47,8 +47,16 @@ const BannersPage = () => {
           ({ component: BannerComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               <div className="py-10">
                 {/* Render the component */}

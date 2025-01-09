@@ -1,24 +1,24 @@
-import { Timeline2 } from "@/components/Timelines/Timeline2";
-import { Timeline4 } from "@/components/Timelines/Timeline4";
-import { Timeline5 } from "@/components/Timelines/Timeline5";
-import { Timeline6 } from "@/components/Timelines/Timeline6";
-import { Timeline8 } from "@/components/Timelines/Timeline8";
-import { Timeline9 } from "@/components/Timelines/Timeline9";
-import { Timeline10 } from "@/components/Timelines/Timeline10";
-import { Timeline12 } from "@/components/Timelines/Timeline12";
-import { Timeline20 } from "@/components/Timelines/Timeline20";
-import { Timeline14 } from "@/components/Timelines/Timeline14";
-import { Timeline15 } from "@/components/Timelines/Timeline15";
-import { Timeline16 } from "@/components/Timelines/Timeline16";
-import { Timeline17 } from "@/components/Timelines/Timeline17";
-import { Timeline18 } from "@/components/Timelines/Timeline18";
-import { Timeline19 } from "@/components/Timelines/Timeline19";
-import { Timeline21 } from "@/components/Timelines/Timeline21";
-import { Timeline1 } from "@/components/Timelines/Timeline1";
-import { Timeline3 } from "@/components/Timelines/Timeline3";
-import { Timeline7 } from "@/components/Timelines/Timeline7";
-import { Timeline11 } from "@/components/Timelines/Timeline11";
-import { Timeline13 } from "@/components/Timelines/Timeline13";
+import { Timeline2 } from "@/components/Timeline2";
+import { Timeline4 } from "@/components/Timeline4";
+import { Timeline5 } from "@/components/Timeline5";
+import { Timeline6 } from "@/components/Timeline6";
+import { Timeline8 } from "@/components/Timeline8";
+import { Timeline9 } from "@/components/Timeline9";
+import { Timeline10 } from "@/components/Timeline10";
+import { Timeline12 } from "@/components/Timeline12";
+import { Timeline20 } from "@/components/Timeline20";
+import { Timeline14 } from "@/components/Timeline14";
+import { Timeline15 } from "@/components/Timeline15";
+import { Timeline16 } from "@/components/Timeline16";
+import { Timeline17 } from "@/components/Timeline17";
+import { Timeline18 } from "@/components/Timeline18";
+import { Timeline19 } from "@/components/Timeline19";
+import { Timeline21 } from "@/components/Timeline21";
+import { Timeline1 } from "@/components/Timeline1";
+import { Timeline3 } from "@/components/Timeline3";
+import { Timeline7 } from "@/components/Timeline7";
+import { Timeline11 } from "@/components/Timeline11";
+import { Timeline13 } from "@/components/Timeline13";
 
 const timelineComponents = [
   { component: Timeline1, title: "Timeline 1" },
@@ -49,18 +49,30 @@ const timelineComponents = [
 const TimelinesPage = () => {
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Timelines
       </h1>
-      <section className='mb-4'>
-        {timelineComponents.map(({ component: TimelineComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-4xl font-bold text-center py-10'>{title}</h2>
-            {/* Render the component */}
-            <TimelineComponent />
-          </div>
-        ))}
+      <section className="mb-4">
+        {timelineComponents.map(
+          ({ component: TimelineComponent, title }, index) => (
+            <div key={index}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              {/* Render the component */}
+              <TimelineComponent />
+            </div>
+          )
+        )}
       </section>
     </div>
   );

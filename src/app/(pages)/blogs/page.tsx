@@ -1,72 +1,72 @@
-import { Blog2 } from "@/components/Blogs/Blog2";
-import { Blog4 } from "@/components/Blogs/Blog4";
-import { Blog15 } from "@/components/Blogs/Blog15";
-import { Blog16 } from "@/components/Blogs/Blog16";
-import { Blog33 } from "@/components/Blogs/Blog33";
-import { Blog44 } from "@/components/Blogs/Blog44";
-import { Blog56 } from "@/components/Blogs/Blog56";
-import { Blog67 } from "@/components/Blogs/Blog67";
-import { Blog68 } from "@/components/Blogs/Blog68";
-import { Blog6 } from "@/components/Blogs/Blog6";
-import { Blog10 } from "@/components/Blogs/Blog10";
-import { Blog52 } from "@/components/Blogs/Blog52";
-import { Blog41 } from "@/components/Blogs/Blog41";
-import { Blog1 } from "@/components/Blogs/Blog1";
-import { Blog3 } from "@/components/Blogs/Blog3";
-import { Blog5 } from "@/components/Blogs/Blog5";
-import { Blog7 } from "@/components/Blogs/Blog7";
-import { Blog8 } from "@/components/Blogs/Blog8";
-import { Blog9 } from "@/components/Blogs/Blog9";
-import { Blog11 } from "@/components/Blogs/Blog11";
-import { Blog12 } from "@/components/Blogs/Blog12";
-import { Blog13 } from "@/components/Blogs/Blog13";
-import { Blog14 } from "@/components/Blogs/Blog14";
-import { Blog17 } from "@/components/Blogs/Blog17";
-import { Blog18 } from "@/components/Blogs/Blog18";
-import { Blog19 } from "@/components/Blogs/Blog19";
-import { Blog20 } from "@/components/Blogs/Blog20";
-import { Blog21 } from "@/components/Blogs/Blog21";
-import { Blog22 } from "@/components/Blogs/Blog22";
-import { Blog23 } from "@/components/Blogs/Blog23";
-import { Blog24 } from "@/components/Blogs/Blog24";
-import { Blog25 } from "@/components/Blogs/Blog25";
-import { Blog26 } from "@/components/Blogs/Blog26";
-import { Blog27 } from "@/components/Blogs/Blog27";
-import { Blog28 } from "@/components/Blogs/Blog28";
-import { Blog29 } from "@/components/Blogs/Blog29";
-import { Blog30 } from "@/components/Blogs/Blog30";
-import { BlogPostHeader3 } from "@/components/Blogs/BlogPostHeader3";
-import { BlogPostHeader4 } from "@/components/Blogs/BlogPostHeader4";
-import { Blog31 } from "@/components/Blogs/Blog31";
-import { Blog32 } from "@/components/Blogs/Blog32";
-import { Blog35 } from "@/components/Blogs/Blog35";
-import { Blog36 } from "@/components/Blogs/Blog36";
-import { Blog37 } from "@/components/Blogs/Blog37";
-import { Blog38 } from "@/components/Blogs/Blog38";
-import { Blog39 } from "@/components/Blogs/Blog39";
-import { Blog40 } from "@/components/Blogs/Blog40";
-import { Blog42 } from "@/components/Blogs/Blog42";
-import { Blog43 } from "@/components/Blogs/Blog43";
-import { Blog45 } from "@/components/Blogs/Blog45";
-import { Blog46 } from "@/components/Blogs/Blog46";
-import { Blog47 } from "@/components/Blogs/Blog47";
-import { Blog48 } from "@/components/Blogs/Blog48";
-import { Blog49 } from "@/components/Blogs/Blog49";
-import { Blog50 } from "@/components/Blogs/Blog50";
-import { Blog51 } from "@/components/Blogs/Blog51";
-import { Blog53 } from "@/components/Blogs/Blog53";
-import { Blog54 } from "@/components/Blogs/Blog54";
-import { Blog55 } from "@/components/Blogs/Blog55";
-import { Blog57 } from "@/components/Blogs/Blog57";
-import { Blog58 } from "@/components/Blogs/Blog58";
-import { Blog59 } from "@/components/Blogs/Blog59";
-import { Blog60 } from "@/components/Blogs/Blog60";
-import { Blog61 } from "@/components/Blogs/Blog61";
-import { Blog62 } from "@/components/Blogs/Blog62";
-import { Blog63 } from "@/components/Blogs/Blog63";
-import { Blog64 } from "@/components/Blogs/Blog64";
-import { Blog65 } from "@/components/Blogs/Blog65";
-import { Blog66 } from "@/components/Blogs/Blog66";
+import { Blog2 } from "@/components/Blog2";
+import { Blog4 } from "@/components/Blog4";
+import { Blog15 } from "@/components/Blog15";
+import { Blog16 } from "@/components/Blog16";
+import { Blog33 } from "@/components/Blog33";
+import { Blog44 } from "@/components/Blog44";
+import { Blog56 } from "@/components/Blog56";
+import { Blog67 } from "@/components/Blog67";
+import { Blog68 } from "@/components/Blog68";
+import { Blog6 } from "@/components/Blog6";
+import { Blog10 } from "@/components/Blog10";
+import { Blog52 } from "@/components/Blog52";
+import { Blog41 } from "@/components/Blog41";
+import { Blog1 } from "@/components/Blog1";
+import { Blog3 } from "@/components/Blog3";
+import { Blog5 } from "@/components/Blog5";
+import { Blog7 } from "@/components/Blog7";
+import { Blog8 } from "@/components/Blog8";
+import { Blog9 } from "@/components/Blog9";
+import { Blog11 } from "@/components/Blog11";
+import { Blog12 } from "@/components/Blog12";
+import { Blog13 } from "@/components/Blog13";
+import { Blog14 } from "@/components/Blog14";
+import { Blog17 } from "@/components/Blog17";
+import { Blog18 } from "@/components/Blog18";
+import { Blog19 } from "@/components/Blog19";
+import { Blog20 } from "@/components/Blog20";
+import { Blog21 } from "@/components/Blog21";
+import { Blog22 } from "@/components/Blog22";
+import { Blog23 } from "@/components/Blog23";
+import { Blog24 } from "@/components/Blog24";
+import { Blog25 } from "@/components/Blog25";
+import { Blog26 } from "@/components/Blog26";
+import { Blog27 } from "@/components/Blog27";
+import { Blog28 } from "@/components/Blog28";
+import { Blog29 } from "@/components/Blog29";
+import { Blog30 } from "@/components/Blog30";
+import { BlogPostHeader3 } from "@/components/BlogPostHeader3";
+import { BlogPostHeader4 } from "@/components/BlogPostHeader4";
+import { Blog31 } from "@/components/Blog31";
+import { Blog32 } from "@/components/Blog32";
+import { Blog35 } from "@/components/Blog35";
+import { Blog36 } from "@/components/Blog36";
+import { Blog37 } from "@/components/Blog37";
+import { Blog38 } from "@/components/Blog38";
+import { Blog39 } from "@/components/Blog39";
+import { Blog40 } from "@/components/Blog40";
+import { Blog42 } from "@/components/Blog42";
+import { Blog43 } from "@/components/Blog43";
+import { Blog45 } from "@/components/Blog45";
+import { Blog46 } from "@/components/Blog46";
+import { Blog47 } from "@/components/Blog47";
+import { Blog48 } from "@/components/Blog48";
+import { Blog49 } from "@/components/Blog49";
+import { Blog50 } from "@/components/Blog50";
+import { Blog51 } from "@/components/Blog51";
+import { Blog53 } from "@/components/Blog53";
+import { Blog54 } from "@/components/Blog54";
+import { Blog55 } from "@/components/Blog55";
+import { Blog57 } from "@/components/Blog57";
+import { Blog58 } from "@/components/Blog58";
+import { Blog59 } from "@/components/Blog59";
+import { Blog60 } from "@/components/Blog60";
+import { Blog61 } from "@/components/Blog61";
+import { Blog62 } from "@/components/Blog62";
+import { Blog63 } from "@/components/Blog63";
+import { Blog64 } from "@/components/Blog64";
+import { Blog65 } from "@/components/Blog65";
+import { Blog66 } from "@/components/Blog66";
 
 const blogComponents = [
   { component: Blog1, title: "Blog 1" },
@@ -152,8 +152,16 @@ const BlogsPage = () => {
         {blogComponents.map(({ component: BlogComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <BlogComponent />
