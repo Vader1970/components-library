@@ -1,61 +1,61 @@
-import { Cta1 } from "@/components/Ctas/Cta1";
-import { Cta2 } from "@/components/Ctas/Cta2";
-import { Cta3 } from "@/components/Ctas/Cta3";
-import { Cta7 } from "@/components/Ctas/Cta7";
-import { Cta8 } from "@/components/Ctas/Cta8";
-import { Cta9 } from "@/components/Ctas/Cta9";
-import { Cta13 } from "@/components/Ctas/Cta13";
-import { Cta15 } from "@/components/Ctas/Cta15";
-import { Cta16 } from "@/components/Ctas/Cta16";
-import { Cta25 } from "@/components/Ctas/Cta25";
-import { Cta37 } from "@/components/Ctas/Cta37";
-import { Cta38 } from "@/components/Ctas/Cta38";
-import { Cta57 } from "@/components/Ctas/Cta57";
-import { Cta58 } from "@/components/Ctas/Cta58";
-import { Cta33 } from "@/components/Ctas/Cta33";
-import { Cta4 } from "@/components/Ctas/Cta4";
-import { Cta5 } from "@/components/Ctas/Cta5";
-import { Cta6 } from "@/components/Ctas/Cta6";
-import { Cta10 } from "@/components/Ctas/Cta10";
-import { Cta11 } from "@/components/Ctas/Cta11";
-import { Cta12 } from "@/components/Ctas/Cta12";
-import { Cta14 } from "@/components/Ctas/Cta14";
-import { Cta17 } from "@/components/Ctas/Cta17";
-import { Cta18 } from "@/components/Ctas/Cta18";
-import { Cta19 } from "@/components/Ctas/Cta19";
-import { Cta20 } from "@/components/Ctas/Cta20";
-import { Cta21 } from "@/components/Ctas/Cta21";
-import { Cta22 } from "@/components/Ctas/Cta22";
-import { Cta23 } from "@/components/Ctas/Cta23";
-import { Cta24 } from "@/components/Ctas/Cta24";
-import { Cta26 } from "@/components/Ctas/Cta26";
-import { Cta27 } from "@/components/Ctas/Cta27";
-import { Cta28 } from "@/components/Ctas/Cta28";
-import { Cta29 } from "@/components/Ctas/Cta29";
-import { Cta30 } from "@/components/Ctas/Cta30";
-import { Cta31 } from "@/components/Ctas/Cta31";
-import { Cta32 } from "@/components/Ctas/Cta32";
-import { Cta34 } from "@/components/Ctas/Cta34";
-import { Cta35 } from "@/components/Ctas/Cta35";
-import { Cta36 } from "@/components/Ctas/Cta36";
-import { Cta39 } from "@/components/Ctas/Cta39";
-import { Cta40 } from "@/components/Ctas/Cta40";
-import { Cta41 } from "@/components/Ctas/Cta41";
-import { Cta42 } from "@/components/Ctas/Cta42";
-import { Cta43 } from "@/components/Ctas/Cta43";
-import { Cta44 } from "@/components/Ctas/Cta44";
-import { Cta45 } from "@/components/Ctas/Cta45";
-import { Cta46 } from "@/components/Ctas/Cta46";
-import { Cta47 } from "@/components/Ctas/Cta47";
-import { Cta48 } from "@/components/Ctas/Cta48";
-import { Cta49 } from "@/components/Ctas/Cta49";
-import { Cta50 } from "@/components/Ctas/Cta50";
-import { Cta51 } from "@/components/Ctas/Cta51";
-import { Cta52 } from "@/components/Ctas/Cta52";
-import { Cta53 } from "@/components/Ctas/Cta53";
-import { Cta54 } from "@/components/Ctas/Cta54";
-import { Cta55 } from "@/components/Ctas/Cta55";
-import { Cta56 } from "@/components/Ctas/Cta56";
+import { Cta1 } from "@/components/Cta1";
+import { Cta2 } from "@/components/Cta2";
+import { Cta3 } from "@/components/Cta3";
+import { Cta7 } from "@/components/Cta7";
+import { Cta8 } from "@/components/Cta8";
+import { Cta9 } from "@/components/Cta9";
+import { Cta13 } from "@/components/Cta13";
+import { Cta15 } from "@/components/Cta15";
+import { Cta16 } from "@/components/Cta16";
+import { Cta25 } from "@/components/Cta25";
+import { Cta37 } from "@/components/Cta37";
+import { Cta38 } from "@/components/Cta38";
+import { Cta57 } from "@/components/Cta57";
+import { Cta58 } from "@/components/Cta58";
+import { Cta33 } from "@/components/Cta33";
+import { Cta4 } from "@/components/Cta4";
+import { Cta5 } from "@/components/Cta5";
+import { Cta6 } from "@/components/Cta6";
+import { Cta10 } from "@/components/Cta10";
+import { Cta11 } from "@/components/Cta11";
+import { Cta12 } from "@/components/Cta12";
+import { Cta14 } from "@/components/Cta14";
+import { Cta17 } from "@/components/Cta17";
+import { Cta18 } from "@/components/Cta18";
+import { Cta19 } from "@/components/Cta19";
+import { Cta20 } from "@/components/Cta20";
+import { Cta21 } from "@/components/Cta21";
+import { Cta22 } from "@/components/Cta22";
+import { Cta23 } from "@/components/Cta23";
+import { Cta24 } from "@/components/Cta24";
+import { Cta26 } from "@/components/Cta26";
+import { Cta27 } from "@/components/Cta27";
+import { Cta28 } from "@/components/Cta28";
+import { Cta29 } from "@/components/Cta29";
+import { Cta30 } from "@/components/Cta30";
+import { Cta31 } from "@/components/Cta31";
+import { Cta32 } from "@/components/Cta32";
+import { Cta34 } from "@/components/Cta34";
+import { Cta35 } from "@/components/Cta35";
+import { Cta36 } from "@/components/Cta36";
+import { Cta39 } from "@/components/Cta39";
+import { Cta40 } from "@/components/Cta40";
+import { Cta41 } from "@/components/Cta41";
+import { Cta42 } from "@/components/Cta42";
+import { Cta43 } from "@/components/Cta43";
+import { Cta44 } from "@/components/Cta44";
+import { Cta45 } from "@/components/Cta45";
+import { Cta46 } from "@/components/Cta46";
+import { Cta47 } from "@/components/Cta47";
+import { Cta48 } from "@/components/Cta48";
+import { Cta49 } from "@/components/Cta49";
+import { Cta50 } from "@/components/Cta50";
+import { Cta51 } from "@/components/Cta51";
+import { Cta52 } from "@/components/Cta52";
+import { Cta53 } from "@/components/Cta53";
+import { Cta54 } from "@/components/Cta54";
+import { Cta55 } from "@/components/Cta55";
+import { Cta56 } from "@/components/Cta56";
 
 const ctaComponents = [
   { component: Cta1, title: "CTA 1" },
@@ -130,8 +130,16 @@ const CtasPage = () => {
         {ctaComponents.map(({ component: CtaComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <CtaComponent />

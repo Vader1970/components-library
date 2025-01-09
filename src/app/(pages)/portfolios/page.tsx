@@ -1,30 +1,30 @@
-import { Portfolio1 } from "@/components/Portfolios/Portfolio1";
-import { Portfolio10 } from "@/components/Portfolios/Portfolio10";
-import { Portfolio11 } from "@/components/Portfolios/Portfolio11";
-import { Portfolio12 } from "@/components/Portfolios/Portfolio12";
-import { Portfolio13 } from "@/components/Portfolios/Portfolio13";
-import { Portfolio14 } from "@/components/Portfolios/Portfolio14";
-import { Portfolio15 } from "@/components/Portfolios/Portfolio15";
-import { Portfolio16 } from "@/components/Portfolios/Portfolio16";
-import { Portfolio17 } from "@/components/Portfolios/Portfolio17";
-import { Portfolio2 } from "@/components/Portfolios/Portfolio2";
-import { Portfolio3 } from "@/components/Portfolios/Portfolio3";
-import { Portfolio4 } from "@/components/Portfolios/Portfolio4";
-import { Portfolio5 } from "@/components/Portfolios/Portfolio5";
-import { Portfolio6 } from "@/components/Portfolios/Portfolio6";
-import { Portfolio7 } from "@/components/Portfolios/Portfolio7";
-import { Portfolio8 } from "@/components/Portfolios/Portfolio8";
-import { Portfolio9 } from "@/components/Portfolios/Portfolio9";
-import { PortfolioHeader1 } from "@/components/Portfolios/PortfolioHeader1";
-import { PortfolioHeader10 } from "@/components/Portfolios/PortfolioHeader10";
-import { PortfolioHeader11 } from "@/components/Portfolios/PortfolioHeader11";
-import { PortfolioHeader12 } from "@/components/Portfolios/PortfolioHeader12";
-import { PortfolioHeader2 } from "@/components/Portfolios/PortfolioHeader2";
-import { PortfolioHeader3 } from "@/components/Portfolios/PortfolioHeader3";
-import { PortfolioHeader4 } from "@/components/Portfolios/PortfolioHeader4";
-import { PortfolioHeader5 } from "@/components/Portfolios/PortfolioHeader5";
-import { PortfolioHeader8 } from "@/components/Portfolios/PortfolioHeader8";
-import { PortfolioHeader9 } from "@/components/Portfolios/PortfolioHeader9";
+import { Portfolio1 } from "@/components/Portfolio1";
+import { Portfolio10 } from "@/components/Portfolio10";
+import { Portfolio11 } from "@/components/Portfolio11";
+import { Portfolio12 } from "@/components/Portfolio12";
+import { Portfolio13 } from "@/components/Portfolio13";
+import { Portfolio14 } from "@/components/Portfolio14";
+import { Portfolio15 } from "@/components/Portfolio15";
+import { Portfolio16 } from "@/components/Portfolio16";
+import { Portfolio17 } from "@/components/Portfolio17";
+import { Portfolio2 } from "@/components/Portfolio2";
+import { Portfolio3 } from "@/components/Portfolio3";
+import { Portfolio4 } from "@/components/Portfolio4";
+import { Portfolio5 } from "@/components/Portfolio5";
+import { Portfolio6 } from "@/components/Portfolio6";
+import { Portfolio7 } from "@/components/Portfolio7";
+import { Portfolio8 } from "@/components/Portfolio8";
+import { Portfolio9 } from "@/components/Portfolio9";
+import { PortfolioHeader1 } from "@/components/PortfolioHeader1";
+import { PortfolioHeader10 } from "@/components/PortfolioHeader10";
+import { PortfolioHeader11 } from "@/components/PortfolioHeader11";
+import { PortfolioHeader12 } from "@/components/PortfolioHeader12";
+import { PortfolioHeader2 } from "@/components/PortfolioHeader2";
+import { PortfolioHeader3 } from "@/components/PortfolioHeader3";
+import { PortfolioHeader4 } from "@/components/PortfolioHeader4";
+import { PortfolioHeader5 } from "@/components/PortfolioHeader5";
+import { PortfolioHeader8 } from "@/components/PortfolioHeader8";
+import { PortfolioHeader9 } from "@/components/PortfolioHeader9";
 
 const portfolioComponents = [
   { component: Portfolio1, title: "Portfolio 1" },
@@ -69,8 +69,16 @@ const PortfoliosPage = () => {
           ({ component: PortfolioComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <PortfolioComponent />

@@ -1,56 +1,56 @@
-import { Event1 } from "@/components/Events/Event1";
-import { Event2 } from "@/components/Events/Event2";
-import { Event4 } from "@/components/Events/Event4";
-import { Event8 } from "@/components/Events/Event8";
-import { Event10 } from "@/components/Events/Event10";
-import { Event16 } from "@/components/Events/Event16";
-import { Event20 } from "@/components/Events/Event20";
-import { Event26 } from "@/components/Events/Event26";
-import { Event28 } from "@/components/Events/Event28";
-import { Event30 } from "@/components/Events/Event30";
-import { Event31 } from "@/components/Events/Event31";
-import { Event32 } from "@/components/Events/Event32";
-import { Event33 } from "@/components/Events/Event33";
-import { Event34 } from "@/components/Events/Event34";
-import { Event36 } from "@/components/Events/Event36";
-import { EventHeader2 } from "@/components/Events/EventHeader2";
-import { EventHeader3 } from "@/components/Events/EventHeader3";
-import { EventHeader4 } from "@/components/Events/EventHeader4";
-import { EventItemHeader1 } from "@/components/Events/EventItemHeader1";
-import { EventItemHeader3 } from "@/components/Events/EventItemHeader3";
-import { EventItemHeader5 } from "@/components/Events/EventItemHeader5";
-import { Event3 } from "@/components/Events/Event3";
-import { Event5 } from "@/components/Events/Event5";
-import { Event6 } from "@/components/Events/Event6";
-import { Event7 } from "@/components/Events/Event7";
-import { Event9 } from "@/components/Events/Event9";
-import { Event11 } from "@/components/Events/Event11";
-import { Event12 } from "@/components/Events/Event12";
-import { Event13 } from "@/components/Events/Event13";
-import { Event14 } from "@/components/Events/Event14";
-import { Event15 } from "@/components/Events/Event15";
-import { Event17 } from "@/components/Events/Event17";
-import { Event18 } from "@/components/Events/Event18";
-import { Event19 } from "@/components/Events/Event19";
-import { Event21 } from "@/components/Events/Event21";
-import { Event22 } from "@/components/Events/Event22";
-import { Event23 } from "@/components/Events/Event23";
-import { Event24 } from "@/components/Events/Event24";
-import { Event25 } from "@/components/Events/Event25";
-import { Event27 } from "@/components/Events/Event27";
-import { Event29 } from "@/components/Events/Event29";
-import { Event35 } from "@/components/Events/Events35";
-import { Event37 } from "@/components/Events/Event37";
-import { EventHeader1 } from "@/components/Events/EventHeader1";
-import { EventHeader5 } from "@/components/Events/EventHeader5";
-import { EventHeader6 } from "@/components/Events/EventHeader6";
-import { EventItemHeader4 } from "@/components/Events/EventItemHeader4";
-import { EventItemHeader2 } from "@/components/Events/EventItemHeader2";
-import { EventItemHeader6 } from "@/components/Events/EventItemHeader6";
-import { EventItemHeader7 } from "@/components/Events/EventItemHeader7";
-import { EventItemHeader8 } from "@/components/Events/EventItemHeader8";
-import { EventItemHeader9 } from "@/components/Events/EventItemHeader9";
-import { EventItemHeader10 } from "@/components/Events/EventItemHeader10";
+import { Event1 } from "@/components/Event1";
+import { Event2 } from "@/components/Event2";
+import { Event4 } from "@/components/Event4";
+import { Event8 } from "@/components/Event8";
+import { Event10 } from "@/components/Event10";
+import { Event16 } from "@/components/Event16";
+import { Event20 } from "@/components/Event20";
+import { Event26 } from "@/components/Event26";
+import { Event28 } from "@/components/Event28";
+import { Event30 } from "@/components/Event30";
+import { Event31 } from "@/components/Event31";
+import { Event32 } from "@/components/Event32";
+import { Event33 } from "@/components/Event33";
+import { Event34 } from "@/components/Event34";
+import { Event36 } from "@/components/Event36";
+import { EventHeader2 } from "@/components/EventHeader2";
+import { EventHeader3 } from "@/components/EventHeader3";
+import { EventHeader4 } from "@/components/EventHeader4";
+import { EventItemHeader1 } from "@/components/EventItemHeader1";
+import { EventItemHeader3 } from "@/components/EventItemHeader3";
+import { EventItemHeader5 } from "@/components/EventItemHeader5";
+import { Event3 } from "@/components/Event3";
+import { Event5 } from "@/components/Event5";
+import { Event6 } from "@/components/Event6";
+import { Event7 } from "@/components/Event7";
+import { Event9 } from "@/components/Event9";
+import { Event11 } from "@/components/Event11";
+import { Event12 } from "@/components/Event12";
+import { Event13 } from "@/components/Event13";
+import { Event14 } from "@/components/Event14";
+import { Event15 } from "@/components/Event15";
+import { Event17 } from "@/components/Event17";
+import { Event18 } from "@/components/Event18";
+import { Event19 } from "@/components/Event19";
+import { Event21 } from "@/components/Event21";
+import { Event22 } from "@/components/Event22";
+import { Event23 } from "@/components/Event23";
+import { Event24 } from "@/components/Event24";
+import { Event25 } from "@/components/Event25";
+import { Event27 } from "@/components/Event27";
+import { Event29 } from "@/components/Event29";
+import { Event35 } from "@/components/Event35";
+import { Event37 } from "@/components/Event37";
+import { EventHeader1 } from "@/components/EventHeader1";
+import { EventHeader5 } from "@/components/EventHeader5";
+import { EventHeader6 } from "@/components/EventHeader6";
+import { EventItemHeader4 } from "@/components/EventItemHeader4";
+import { EventItemHeader2 } from "@/components/EventItemHeader2";
+import { EventItemHeader6 } from "@/components/EventItemHeader6";
+import { EventItemHeader7 } from "@/components/EventItemHeader7";
+import { EventItemHeader8 } from "@/components/EventItemHeader8";
+import { EventItemHeader9 } from "@/components/EventItemHeader9";
+import { EventItemHeader10 } from "@/components/EventItemHeader10";
 
 const eventComponents = [
   { component: Event1, title: "Event 1" },
@@ -120,8 +120,16 @@ const EventsPage = () => {
         {eventComponents.map(({ component: EventComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <EventComponent />

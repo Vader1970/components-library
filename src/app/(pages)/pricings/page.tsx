@@ -1,30 +1,30 @@
-import { Pricing1 } from "@/components/Pricings/Pricing1";
-import { Pricing10 } from "@/components/Pricings/Pricing10";
-import { Pricing11 } from "@/components/Pricings/Pricing11";
-import { Pricing12 } from "@/components/Pricings/Pricing12";
-import { Pricing13 } from "@/components/Pricings/Pricing13";
-import { Pricing14 } from "@/components/Pricings/Pricing14";
-import { Pricing15 } from "@/components/Pricings/Pricing15";
-import { Pricing16 } from "@/components/Pricings/Pricing16";
-import { Pricing17 } from "@/components/Pricings/Pricing17";
-import { Pricing18 } from "@/components/Pricings/Pricing18";
-import { Pricing19 } from "@/components/Pricings/Pricing19";
-import { Pricing2 } from "@/components/Pricings/Pricing2";
-import { Pricing20 } from "@/components/Pricings/Pricing20";
-import { Pricing21 } from "@/components/Pricings/Pricing21";
-import { Pricing22 } from "@/components/Pricings/Pricing22";
-import { Pricing23 } from "@/components/Pricings/Pricing23";
-import { Pricing24 } from "@/components/Pricings/Pricing24";
-import { Pricing25 } from "@/components/Pricings/Pricing25";
-import { Pricing26 } from "@/components/Pricings/Pricing26";
-import { Pricing27 } from "@/components/Pricings/Pricing27";
-import { Pricing3 } from "@/components/Pricings/Pricing3";
-import { Pricing4 } from "@/components/Pricings/Pricing4";
-import { Pricing5 } from "@/components/Pricings/Pricing5";
-import { Pricing7 } from "@/components/Pricings/Pricing7";
-import { Pricing8 } from "@/components/Pricings/Pricing8";
-import { Pricing9 } from "@/components/Pricings/Pricing9";
-import { Pricing6 } from "@/components/Pricings/Pricing6";
+import { Pricing1 } from "@/components/Pricing1";
+import { Pricing10 } from "@/components/Pricing10";
+import { Pricing11 } from "@/components/Pricing11";
+import { Pricing12 } from "@/components/Pricing12";
+import { Pricing13 } from "@/components/Pricing13";
+import { Pricing14 } from "@/components/Pricing14";
+import { Pricing15 } from "@/components/Pricing15";
+import { Pricing16 } from "@/components/Pricing16";
+import { Pricing17 } from "@/components/Pricing17";
+import { Pricing18 } from "@/components/Pricing18";
+import { Pricing19 } from "@/components/Pricing19";
+import { Pricing2 } from "@/components/Pricing2";
+import { Pricing20 } from "@/components/Pricing20";
+import { Pricing21 } from "@/components/Pricing21";
+import { Pricing22 } from "@/components/Pricing22";
+import { Pricing23 } from "@/components/Pricing23";
+import { Pricing24 } from "@/components/Pricing24";
+import { Pricing25 } from "@/components/Pricing25";
+import { Pricing26 } from "@/components/Pricing26";
+import { Pricing27 } from "@/components/Pricing27";
+import { Pricing3 } from "@/components/Pricing3";
+import { Pricing4 } from "@/components/Pricing4";
+import { Pricing5 } from "@/components/Pricing5";
+import { Pricing7 } from "@/components/Pricing7";
+import { Pricing8 } from "@/components/Pricing8";
+import { Pricing9 } from "@/components/Pricing9";
+import { Pricing6 } from "@/components/Pricing6";
 
 const pricingComponents = [
   { component: Pricing1, title: "Pricing 1" },
@@ -69,8 +69,16 @@ const PricingsPage = () => {
           ({ component: PricingComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <PricingComponent />

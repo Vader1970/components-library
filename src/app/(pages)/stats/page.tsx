@@ -1,63 +1,63 @@
-import { Stats1 } from "@/components/Stats/Stats1";
-import { Stats10 } from "@/components/Stats/Stats10";
-import { Stats11 } from "@/components/Stats/Stats11";
-import { Stats12 } from "@/components/Stats/Stats12";
-import { Stats13 } from "@/components/Stats/Stats13";
-import { Stats14 } from "@/components/Stats/Stats14";
-import { Stats15 } from "@/components/Stats/Stats15";
-import { Stats16 } from "@/components/Stats/Stats16";
-import { Stats17 } from "@/components/Stats/Stats17";
-import { Stats18 } from "@/components/Stats/Stats18";
-import { Stats19 } from "@/components/Stats/Stats19";
-import { Stats2 } from "@/components/Stats/Stats2";
-import { Stats20 } from "@/components/Stats/Stats20";
-import { Stats21 } from "@/components/Stats/Stats21";
-import { Stats22 } from "@/components/Stats/Stats22";
-import { Stats23 } from "@/components/Stats/Stats23";
-import { Stats24 } from "@/components/Stats/Stats24";
-import { Stats25 } from "@/components/Stats/Stats25";
-import { Stats26 } from "@/components/Stats/Stats26";
-import { Stats27 } from "@/components/Stats/Stats27";
-import { Stats28 } from "@/components/Stats/Stats28";
-import { Stats29 } from "@/components/Stats/Stats29";
-import { Stats3 } from "@/components/Stats/Stats3";
-import { Stats30 } from "@/components/Stats/Stats30";
-import { Stats31 } from "@/components/Stats/Stats31";
-import { Stats32 } from "@/components/Stats/Stats32";
-import { Stats33 } from "@/components/Stats/Stats33";
-import { Stats34 } from "@/components/Stats/Stats34";
-import { Stats35 } from "@/components/Stats/Stats35";
-import { Stats36 } from "@/components/Stats/Stats36";
-import { Stats37 } from "@/components/Stats/Stats37";
-import { Stats38 } from "@/components/Stats/Stats38";
-import { Stats39 } from "@/components/Stats/Stats39";
-import { Stats4 } from "@/components/Stats/Stats4";
-import { Stats40 } from "@/components/Stats/Stats40";
-import { Stats41 } from "@/components/Stats/Stats41";
-import { Stats42 } from "@/components/Stats/Stats42";
-import { Stats43 } from "@/components/Stats/Stats43";
-import { Stats44 } from "@/components/Stats/Stats44";
-import { Stats45 } from "@/components/Stats/Stats45";
-import { Stats46 } from "@/components/Stats/Stats46";
-import { Stats47 } from "@/components/Stats/Stats47";
-import { Stats48 } from "@/components/Stats/Stats48";
-import { Stats49 } from "@/components/Stats/Stats49";
-import { Stats5 } from "@/components/Stats/Stats5";
-import { Stats50 } from "@/components/Stats/Stats50";
-import { Stats51 } from "@/components/Stats/Stats51";
-import { Stats52 } from "@/components/Stats/Stats52";
-import { Stats53 } from "@/components/Stats/Stats53";
-import { Stats54 } from "@/components/Stats/Stats54";
-import { Stats55 } from "@/components/Stats/Stats55";
-import { Stats56 } from "@/components/Stats/Stats56";
-import { Stats57 } from "@/components/Stats/Stats57";
-import { Stats58 } from "@/components/Stats/Stats58";
-import { Stats59 } from "@/components/Stats/Stats59";
-import { Stats6 } from "@/components/Stats/Stats6";
-import { Stats60 } from "@/components/Stats/Stats60";
-import { Stats7 } from "@/components/Stats/Stats7";
-import { Stats8 } from "@/components/Stats/Stats8";
-import { Stats9 } from "@/components/Stats/Stats9";
+import { Stats1 } from "@/components/Stats1";
+import { Stats10 } from "@/components/Stats10";
+import { Stats11 } from "@/components/Stats11";
+import { Stats12 } from "@/components/Stats12";
+import { Stats13 } from "@/components/Stats13";
+import { Stats14 } from "@/components/Stats14";
+import { Stats15 } from "@/components/Stats15";
+import { Stats16 } from "@/components/Stats16";
+import { Stats17 } from "@/components/Stats17";
+import { Stats18 } from "@/components/Stats18";
+import { Stats19 } from "@/components/Stats19";
+import { Stats2 } from "@/components/Stats2";
+import { Stats20 } from "@/components/Stats20";
+import { Stats21 } from "@/components/Stats21";
+import { Stats22 } from "@/components/Stats22";
+import { Stats23 } from "@/components/Stats23";
+import { Stats24 } from "@/components/Stats24";
+import { Stats25 } from "@/components/Stats25";
+import { Stats26 } from "@/components/Stats26";
+import { Stats27 } from "@/components/Stats27";
+import { Stats28 } from "@/components/Stats28";
+import { Stats29 } from "@/components/Stats29";
+import { Stats3 } from "@/components/Stats3";
+import { Stats30 } from "@/components/Stats30";
+import { Stats31 } from "@/components/Stats31";
+import { Stats32 } from "@/components/Stats32";
+import { Stats33 } from "@/components/Stats33";
+import { Stats34 } from "@/components/Stats34";
+import { Stats35 } from "@/components/Stats35";
+import { Stats36 } from "@/components/Stats36";
+import { Stats37 } from "@/components/Stats37";
+import { Stats38 } from "@/components/Stats38";
+import { Stats39 } from "@/components/Stats39";
+import { Stats4 } from "@/components/Stats4";
+import { Stats40 } from "@/components/Stats40";
+import { Stats41 } from "@/components/Stats41";
+import { Stats42 } from "@/components/Stats42";
+import { Stats43 } from "@/components/Stats43";
+import { Stats44 } from "@/components/Stats44";
+import { Stats45 } from "@/components/Stats45";
+import { Stats46 } from "@/components/Stats46";
+import { Stats47 } from "@/components/Stats47";
+import { Stats48 } from "@/components/Stats48";
+import { Stats49 } from "@/components/Stats49";
+import { Stats5 } from "@/components/Stats5";
+import { Stats50 } from "@/components/Stats50";
+import { Stats51 } from "@/components/Stats51";
+import { Stats52 } from "@/components/Stats52";
+import { Stats53 } from "@/components/Stats53";
+import { Stats54 } from "@/components/Stats54";
+import { Stats55 } from "@/components/Stats55";
+import { Stats56 } from "@/components/Stats56";
+import { Stats57 } from "@/components/Stats57";
+import { Stats58 } from "@/components/Stats58";
+import { Stats59 } from "@/components/Stats59";
+import { Stats6 } from "@/components/Stats6";
+import { Stats60 } from "@/components/Stats60";
+import { Stats7 } from "@/components/Stats7";
+import { Stats8 } from "@/components/Stats8";
+import { Stats9 } from "@/components/Stats9";
 
 const statComponents = [
   { component: Stats1, title: "Stats 1" },
@@ -134,8 +134,16 @@ const StatsPage = () => {
         {statComponents.map(({ component: StatComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <StatComponent />

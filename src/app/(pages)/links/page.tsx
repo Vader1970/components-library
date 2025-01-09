@@ -1,18 +1,18 @@
-import { Links10 } from "@/components/Links/Links10";
-import { Links11 } from "@/components/Links/Links11";
-import { Links12 } from "@/components/Links/Links12";
-import { Links13 } from "@/components/Links/Links13";
-import { Links14 } from "@/components/Links/Links14";
-import { Links15 } from "@/components/Links/Links15";
-import { Links16 } from "@/components/Links/Links16";
-import { Links2 } from "@/components/Links/Links2";
-import { Links3 } from "@/components/Links/Links3";
-import { Links4 } from "@/components/Links/Links4";
-import { Links5 } from "@/components/Links/Links5";
-import { Links6 } from "@/components/Links/Links6";
-import { Links7 } from "@/components/Links/Links7";
-import { Links8 } from "@/components/Links/Links8";
-import { Links9 } from "@/components/Links/Links9";
+import { Links10 } from "@/components/Link10";
+import { Links11 } from "@/components/Link11";
+import { Links12 } from "@/components/Link12";
+import { Links13 } from "@/components/Link13";
+import { Links14 } from "@/components/Link14";
+import { Links15 } from "@/components/Link15";
+import { Links16 } from "@/components/Link16";
+import { Links2 } from "@/components/Link2";
+import { Links3 } from "@/components/Link3";
+import { Links4 } from "@/components/Link4";
+import { Links5 } from "@/components/Link5";
+import { Links6 } from "@/components/Link6";
+import { Links7 } from "@/components/Link7";
+import { Links8 } from "@/components/Link8";
+import { Links9 } from "@/components/Link9";
 
 const linkComponents = [
   { component: Links2, title: "Link 2" },
@@ -44,8 +44,16 @@ const LinksPage = () => {
         {linkComponents.map(({ component: LinkComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <LinkComponent />

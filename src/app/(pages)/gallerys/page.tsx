@@ -1,26 +1,26 @@
-import { Gallery7 } from "@/components/Gallerys/Gallery7";
-import { Gallery13 } from "@/components/Gallerys/Gallery13";
-import { Gallery15 } from "@/components/Gallerys/Gallery15";
-import { Gallery19 } from "@/components/Gallerys/Gallery19";
-import { Gallery21 } from "@/components/Gallerys/Gallery21";
-import { Gallery24 } from "@/components/Gallerys/Gallery24";
-import { Gallery2 } from "@/components/Gallerys/Gallery2";
-import { Gallery3 } from "@/components/Gallerys/Gallery3";
-import { Gallery4 } from "@/components/Gallerys/Gallery4";
-import { Gallery5 } from "@/components/Gallerys/Gallery5";
-import { Gallery6 } from "@/components/Gallerys/Gallery6";
-import { Gallery8 } from "@/components/Gallerys/Gallery8";
-import { Gallery10 } from "@/components/Gallerys/Gallery10";
-import { Gallery23 } from "@/components/Gallerys/Gallery23";
-import { Gallery1 } from "@/components/Gallerys/Gallery1";
-import { Gallery9 } from "@/components/Gallerys/Gallery9";
-import { Gallery11 } from "@/components/Gallerys/Gallery11";
-import { Gallery12 } from "@/components/Gallerys/Gallery12";
-import { Gallery16 } from "@/components/Gallerys/Gallery16";
-import { Gallery17 } from "@/components/Gallerys/Gallery17";
-import { Gallery18 } from "@/components/Gallerys/Gallery18";
-import { Gallery20 } from "@/components/Gallerys/Gallery20";
-import { Gallery22 } from "@/components/Gallerys/Gallery22";
+import { Gallery7 } from "@/components/Gallery7";
+import { Gallery13 } from "@/components/Gallery13";
+import { Gallery15 } from "@/components/Gallery15";
+import { Gallery19 } from "@/components/Gallery19";
+import { Gallery21 } from "@/components/Gallery21";
+import { Gallery24 } from "@/components/Gallery24";
+import { Gallery2 } from "@/components/Gallery2";
+import { Gallery3 } from "@/components/Gallery3";
+import { Gallery4 } from "@/components/Gallery4";
+import { Gallery5 } from "@/components/Gallery5";
+import { Gallery6 } from "@/components/Gallery6";
+import { Gallery8 } from "@/components/Gallery8";
+import { Gallery10 } from "@/components/Gallery10";
+import { Gallery23 } from "@/components/Gallery23";
+import { Gallery1 } from "@/components/Gallery1";
+import { Gallery9 } from "@/components/Gallery9";
+import { Gallery11 } from "@/components/Gallery11";
+import { Gallery12 } from "@/components/Gallery12";
+import { Gallery16 } from "@/components/Gallery16";
+import { Gallery17 } from "@/components/Gallery17";
+import { Gallery18 } from "@/components/Gallery18";
+import { Gallery20 } from "@/components/Gallery20";
+import { Gallery22 } from "@/components/Gallery22";
 
 const galleryComponents = [
   { component: Gallery1, title: "Gallery 1" },
@@ -61,8 +61,16 @@ const GallerysPage = () => {
           ({ component: GalleryComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <GalleryComponent />

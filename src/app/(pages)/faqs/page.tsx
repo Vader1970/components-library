@@ -1,17 +1,17 @@
-import { Faq1 } from "@/components/FAQs/Faq1";
-import { Faq2 } from "@/components/FAQs/Faq2";
-import { Faq3 } from "@/components/FAQs/Faq3";
-import { Faq4 } from "@/components/FAQs/Faq4";
-import { Faq5 } from "@/components/FAQs/Faq5";
-import { Faq6 } from "@/components/FAQs/Faq6";
-import { Faq11 } from "@/components/FAQs/Faq11";
-import { Faq7 } from "@/components/FAQs/Faq7";
-import { Faq13 } from "@/components/FAQs/Faq13";
-import { Faq14 } from "@/components/FAQs/Faq14";
-import { Faq8 } from "@/components/FAQs/Faq8";
-import { Faq9 } from "@/components/FAQs/Faq9";
-import { Faq10 } from "@/components/FAQs/Faq10";
-import { Faq12 } from "@/components/FAQs/Faq12";
+import { Faq1 } from "@/components/Faq1";
+import { Faq2 } from "@/components/Faq2";
+import { Faq3 } from "@/components/Faq3";
+import { Faq4 } from "@/components/Faq4";
+import { Faq5 } from "@/components/Faq5";
+import { Faq6 } from "@/components/Faq6";
+import { Faq11 } from "@/components/Faq11";
+import { Faq7 } from "@/components/Faq7";
+import { Faq13 } from "@/components/Faq13";
+import { Faq14 } from "@/components/Faq14";
+import { Faq8 } from "@/components/Faq8";
+import { Faq9 } from "@/components/Faq9";
+import { Faq10 } from "@/components/Faq10";
+import { Faq12 } from "@/components/Faq12";
 
 const faqComponents = [
   { component: Faq1, title: "FAQ 1" },
@@ -42,8 +42,16 @@ const FaqsPage = () => {
         {faqComponents.map(({ component: FaqComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <FaqComponent />

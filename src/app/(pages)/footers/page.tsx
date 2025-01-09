@@ -1,20 +1,20 @@
-import { Footer2 } from "@/components/Footers/Footer2";
-import { Footer3 } from "@/components/Footers/Footer3";
-import { Footer4 } from "@/components/Footers/Footer4";
-import { Footer5 } from "@/components/Footers/Footer5";
-import { Footer6 } from "@/components/Footers/Footer6";
-import { Footer7 } from "@/components/Footers/Footer7";
-import { Footer8 } from "@/components/Footers/Footer8";
-import { Footer14 } from "@/components/Footers/Footer14";
-import { Footer15 } from "@/components/Footers/Footer15";
-import { Footer16 } from "@/components/Footers/Footer16";
-import { Footer17 } from "@/components/Footers/Footer17";
-import { Footer1 } from "@/components/Footers/Footer1";
-import { Footer9 } from "@/components/Footers/Footer9";
-import { Footer10 } from "@/components/Footers/Footer10";
-import { Footer11 } from "@/components/Footers/Footer11";
-import { Footer12 } from "@/components/Footers/Footer12";
-import { Footer13 } from "@/components/Footers/Footer13";
+import { Footer2 } from "@/components/Footer2";
+import { Footer3 } from "@/components/Footer3";
+import { Footer4 } from "@/components/Footer4";
+import { Footer5 } from "@/components/Footer5";
+import { Footer6 } from "@/components/Footer6";
+import { Footer7 } from "@/components/Footer7";
+import { Footer8 } from "@/components/Footer8";
+import { Footer14 } from "@/components/Footer14";
+import { Footer15 } from "@/components/Footer15";
+import { Footer16 } from "@/components/Footer16";
+import { Footer17 } from "@/components/Footer17";
+import { Footer1 } from "@/components/Footer1";
+import { Footer9 } from "@/components/Footer9";
+import { Footer10 } from "@/components/Footer10";
+import { Footer11 } from "@/components/Footer11";
+import { Footer12 } from "@/components/Footer12";
+import { Footer13 } from "@/components/Footer13";
 
 const footerComponents = [
   { component: Footer1, title: "Footer 1" },
@@ -49,8 +49,16 @@ const FootersPage = () => {
           ({ component: FooterComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <FooterComponent />

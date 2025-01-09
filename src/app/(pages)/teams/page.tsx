@@ -1,25 +1,25 @@
-import { Team2 } from "@/components/Teams/Team2";
-import { Team10 } from "@/components/Teams/Team10";
-import { Team14 } from "@/components/Teams/Team14";
-import { Team1 } from "@/components/Teams/Team1";
-import { Team5 } from "@/components/Teams/Team5";
-import { Team8 } from "@/components/Teams/Team8";
-import { Team16 } from "@/components/Teams/Team16";
-import { Team18 } from "@/components/Teams/Team18";
-import { Team21 } from "@/components/Teams/Team21";
-import { Team22 } from "@/components/Teams/Team22";
-import { Team3 } from "@/components/Teams/Team3";
-import { Team4 } from "@/components/Teams/Team4";
-import { Team6 } from "@/components/Teams/Team6";
-import { Team7 } from "@/components/Teams/Team7";
-import { Team15 } from "@/components/Teams/Team15";
-import { Team17 } from "@/components/Teams/Team17";
-import { Team9 } from "@/components/Teams/Team9";
-import { Team11 } from "@/components/Teams/Team11";
-import { Team12 } from "@/components/Teams/Team12";
-import { Team13 } from "@/components/Teams/Team13";
-import { Team19 } from "@/components/Teams/Team19";
-import { Team20 } from "@/components/Teams/Team20";
+import { Team2 } from "@/components/Team2";
+import { Team10 } from "@/components/Team10";
+import { Team14 } from "@/components/Team14";
+import { Team1 } from "@/components/Team1";
+import { Team5 } from "@/components/Team5";
+import { Team8 } from "@/components/Team8";
+import { Team16 } from "@/components/Team16";
+import { Team18 } from "@/components/Team18";
+import { Team21 } from "@/components/Team21";
+import { Team22 } from "@/components/Team22";
+import { Team3 } from "@/components/Team3";
+import { Team4 } from "@/components/Team4";
+import { Team6 } from "@/components/Team6";
+import { Team7 } from "@/components/Team7";
+import { Team15 } from "@/components/Team15";
+import { Team17 } from "@/components/Team17";
+import { Team9 } from "@/components/Team9";
+import { Team11 } from "@/components/Team11";
+import { Team12 } from "@/components/Team12";
+import { Team13 } from "@/components/Team13";
+import { Team19 } from "@/components/Team19";
+import { Team20 } from "@/components/Team20";
 
 const teamsComponents = [
   { component: Team1, title: "Team 1" },
@@ -58,8 +58,16 @@ const TeamsPage = () => {
         {teamsComponents.map(({ component: TeamComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <TeamComponent />

@@ -1,12 +1,12 @@
-import { Signup1 } from "@/components/Signups/Signup1";
-import { Signup2 } from "@/components/Signups/Signup2";
-import { Signup3 } from "@/components/Signups/Signup3";
-import { Signup4 } from "@/components/Signups/Signup4";
-import { Signup5 } from "@/components/Signups/Signup5";
-import { Signup6 } from "@/components/Signups/Signup6";
-import { Signup7 } from "@/components/Signups/Signup7";
-import { Signup8 } from "@/components/Signups/Signup8";
-import { Signup9 } from "@/components/Signups/Signup9";
+import { Signup1 } from "@/components/Signup1";
+import { Signup2 } from "@/components/Signup2";
+import { Signup3 } from "@/components/Signup3";
+import { Signup4 } from "@/components/Signup4";
+import { Signup5 } from "@/components/Signup5";
+import { Signup6 } from "@/components/Signup6";
+import { Signup7 } from "@/components/Signup7";
+import { Signup8 } from "@/components/Signup8";
+import { Signup9 } from "@/components/Signup9";
 
 const signupComponents = [
   { component: Signup1, title: "Sign Up 1" },
@@ -33,8 +33,16 @@ const SignupsPage = () => {
           ({ component: SignupComponent, title }, index) => (
             <div key={index}>
               {/* Render the title as an h2 element */}
-              <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
               </h2>
               {/* Render the component */}
               <SignupComponent />

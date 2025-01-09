@@ -1,11 +1,11 @@
-import { Login1 } from "@/components/LogIns/Login1";
-import { Login2 } from "@/components/LogIns/Login2";
-import { Login3 } from "@/components/LogIns/Login3";
-import { Login4 } from "@/components/LogIns/Login4";
-import { Login5 } from "@/components/LogIns/Login5";
-import { Login6 } from "@/components/LogIns/LogIn6";
-import { Login7 } from "@/components/LogIns/Login7";
-import { Login8 } from "@/components/LogIns/LogIn8";
+import { Login1 } from "@/components/Login1";
+import { Login2 } from "@/components/Login2";
+import { Login3 } from "@/components/Login3";
+import { Login4 } from "@/components/Login4";
+import { Login5 } from "@/components/Login5";
+import { Login6 } from "@/components/LogIn6";
+import { Login7 } from "@/components/Login7";
+import { Login8 } from "@/components/LogIn8";
 
 const loginComponents = [
   { component: Login1, title: "Log In 1" },
@@ -30,8 +30,16 @@ const LogInsPage = () => {
         {loginComponents.map(({ component: LogInComponent, title }, index) => (
           <div key={index}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-4xl font-bold text-center py-10">
+            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
+              <a
+                href={`/view-code/${title.replace(/\s+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+              >
+                View Code
+              </a>
             </h2>
             {/* Render the component */}
             <LogInComponent />
