@@ -1,6 +1,10 @@
+// app/components/Layout1.tsx
+"use client";
+
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
+import Image from "next/image"; // Using Next.js Image component for optimization
 
 type ImageProps = {
   src: string;
@@ -23,13 +27,14 @@ export const Layout1 = (props: Layout1Props) => {
     ...Layout1Defaults,
     ...props,
   };
+
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h1 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+            <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
               {heading}
             </h1>
             <p className="md:text-md">{description}</p>
@@ -41,11 +46,13 @@ export const Layout1 = (props: Layout1Props) => {
               ))}
             </div>
           </div>
-          <div>
-            <img
+          <div className="h-auto w-auto">
+            <Image
               src={image.src}
+              alt={image.alt || "Image"}
+              width={600} // Specify width
+              height={600} // Specify height
               className="w-full object-cover"
-              alt={image.alt}
             />
           </div>
         </div>
@@ -70,6 +77,6 @@ export const Layout1Defaults: Props = {
   ],
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    alt: "Relume placeholder image",
+    alt: "placeholder image",
   },
 };

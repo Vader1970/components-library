@@ -122,7 +122,7 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-1",
       trigger: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 1",
       },
       content: {
@@ -141,7 +141,7 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-2",
       trigger: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 2",
       },
       content: {
@@ -160,7 +160,7 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-3",
       trigger: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 3",
       },
       content: {
@@ -179,7 +179,7 @@ export const Testimonial34Defaults: Props = {
     {
       value: "tab-4",
       trigger: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 4",
       },
       content: {

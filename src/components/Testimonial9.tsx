@@ -145,7 +145,7 @@ const testimonial = {
   quote:
     '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."',
   logo: {
-    src: "/logo.png",
+    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
     alt: "logo 1",
   },
   avatar: {

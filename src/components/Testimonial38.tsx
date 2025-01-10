@@ -199,7 +199,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 1",
         },
       },
@@ -224,7 +224,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 1",
         },
       },
@@ -233,7 +233,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 2",
         },
       },
@@ -257,7 +257,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 2",
         },
       },
@@ -266,7 +266,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 3",
         },
       },
@@ -291,7 +291,7 @@ export const Testimonial38Defaults: Props = {
       component: "logo",
       props: {
         logo: {
-          src: "/logo.png",
+          src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
           alt: "logo 3",
         },
       },

@@ -128,19 +128,19 @@ export const Layout205Defaults: Props = {
   },
   logos: [
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 1",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 1",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 2",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 2",
     },
   ],

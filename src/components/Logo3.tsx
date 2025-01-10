@@ -50,35 +50,35 @@ export const Logo3Defaults: Props = {
   heading: "Used by the world's leading companies",
   logos: [
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 1",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 1",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 2",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 2",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 3",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 3",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 4",
     },
     {
-      src: "/logo.png",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
       alt: "logo 4",
     },
   ],

@@ -1,3 +1,9 @@
+"use client";
+
+import { Search } from "@/components/ui/Search";
+
+import { ScrollUp } from "@/components/ui/ScrollUp";
+
 import { Product1 } from "@/components/Product1";
 import { Product10 } from "@/components/Product10";
 import { Product11 } from "@/components/Product11";
@@ -40,36 +46,53 @@ const productComponents = [
   { component: ProductHeader6, title: "Product Header 6" },
   { component: ProductHeader7, title: "Product Header 7" },
   { component: ProductHeader8, title: "Product Header 8" },
-
-  // Add more products as necessary
 ];
 
 const ProductsPage = () => {
+  const handleSearch = (query: string) => {
+    const target = document.getElementById(query);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert("Component not found");
+    }
+  };
+
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Products
       </h1>
-      <section className='mb-4'>
-        {productComponents.map(({ component: ProductComponent, title }, index) => (
-          <div key={index}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
-              {title}
-              <a
-                href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
-              >
-                View Code
-              </a>
-            </h2>
-            {/* Render the component */}
-            <ProductComponent />
-          </div>
-        ))}
+
+      {/* Search Section */}
+      <Search
+        placeholder="Search for a component (e.g., Product 9)"
+        onSearch={handleSearch}
+      />
+
+      <section className="mb-4">
+        {productComponents.map(
+          ({ component: ProductComponent, title }, index) => (
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              {/* Render the component */}
+              <ProductComponent />
+            </div>
+          )
+        )}
       </section>
+      <ScrollUp />
     </div>
   );
 };

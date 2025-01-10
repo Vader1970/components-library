@@ -149,7 +149,7 @@ export const Testimonial23Defaults: Props = {
   testimonials: [
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 1",
       },
       quote:
@@ -170,7 +170,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 2",
       },
       quote:
@@ -191,7 +191,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 3",
       },
       quote:
@@ -212,7 +212,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 4",
       },
       quote:
@@ -233,7 +233,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "logo 5",
       },
       quote:
@@ -254,7 +254,7 @@ export const Testimonial23Defaults: Props = {
     },
     {
       logo: {
-        src: "/logo.png",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
         alt: "Testimonial logo 6",
       },
       quote:

@@ -55,7 +55,7 @@ export const Testimonial1Defaults: Props = {
   quote:
     '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."',
   logo: {
-    src: "/logo.png",
+    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
     alt: "logo",
   },
   avatar: {
