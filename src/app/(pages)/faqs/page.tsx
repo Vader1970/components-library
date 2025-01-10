@@ -1,3 +1,9 @@
+"use client";
+
+import { Search } from "@/components/ui/Search";
+
+import { ScrollUp } from "@/components/ui/ScrollUp";
+
 import { Faq1 } from "@/components/Faq1";
 import { Faq2 } from "@/components/Faq2";
 import { Faq3 } from "@/components/Faq3";
@@ -33,14 +39,30 @@ const faqComponents = [
 ];
 
 const FaqsPage = () => {
+  const handleSearch = (query: string) => {
+    const target = document.getElementById(query);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert("Component not found");
+    }
+  };
+
   return (
     <div>
       <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         FAQS
       </h1>
+
+      {/* Search Section */}
+      <Search
+        placeholder="Search for a component (e.g., Faq 9)"
+        onSearch={handleSearch}
+      />
+
       <section className="mb-4">
         {faqComponents.map(({ component: FaqComponent, title }, index) => (
-          <div key={index}>
+          <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
             {/* Render the title as an h2 element */}
             <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
@@ -58,6 +80,7 @@ const FaqsPage = () => {
           </div>
         ))}
       </section>
+      <ScrollUp />
     </div>
   );
 };

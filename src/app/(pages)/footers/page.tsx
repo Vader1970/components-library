@@ -1,3 +1,9 @@
+"use client";
+
+import { Search } from "@/components/ui/Search";
+
+import { ScrollUp } from "@/components/ui/ScrollUp";
+
 import { Footer2 } from "@/components/Footer2";
 import { Footer3 } from "@/components/Footer3";
 import { Footer4 } from "@/components/Footer4";
@@ -39,15 +45,31 @@ const footerComponents = [
 ];
 
 const FootersPage = () => {
+  const handleSearch = (query: string) => {
+    const target = document.getElementById(query);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert("Component not found");
+    }
+  };
+
   return (
     <div>
       <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Footers
       </h1>
+
+      {/* Search Section */}
+      <Search
+        placeholder="Search for a component (e.g., Footer 9)"
+        onSearch={handleSearch}
+      />
+
       <section className="mb-4">
         {footerComponents.map(
           ({ component: FooterComponent, title }, index) => (
-            <div key={index}>
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
               {/* Render the title as an h2 element */}
               <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
                 {title}
@@ -66,6 +88,7 @@ const FootersPage = () => {
           )
         )}
       </section>
+      <ScrollUp />
     </div>
   );
 };

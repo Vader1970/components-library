@@ -1,3 +1,9 @@
+"use client";
+
+import { Search } from "@/components/ui/Search";
+
+import { ScrollUp } from "@/components/ui/ScrollUp";
+
 import { Navbar1 } from "@/components/Navbar1";
 import { Navbar2 } from "@/components/Navbar2";
 import { Navbar3 } from "@/components/Navbar";
@@ -18,7 +24,7 @@ import { Navbar4 } from "@/components/Navbar4";
 import { Navbar6 } from "@/components/Navbar6";
 import { Navbar13 } from "@/components/Navbar13";
 //Navbar14 sticky nav
-import { Navbar14 } from "@/components/Navbar14";
+// import { Navbar14 } from "@/components/Navbar14";
 import { Navbar15 } from "@/components/Navbar15";
 import { Navbar9 } from "@/components/Navbar9";
 
@@ -37,7 +43,7 @@ const navComponents = [
   { component: Navbar12, title: "Navbar 12" },
   { component: Navbar13, title: "Navbar 13" },
   //Navbar 14 stcky nav
-  { component: Navbar14, title: "Navbar 14" },
+  // { component: Navbar14, title: "Navbar 14" },
   { component: Navbar15, title: "Navbar 15" },
   { component: Navbar16, title: "Navbar 16" },
   { component: Navbar17, title: "Navbar 17" },
@@ -49,14 +55,34 @@ const navComponents = [
 ];
 
 const NavbarPage = () => {
+  const handleSearch = (query: string) => {
+    const target = document.getElementById(query);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      alert("Component not found");
+    }
+  };
+
   return (
     <div>
       <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Navbars
       </h1>
+
+      {/* Search Section */}
+      <Search
+        placeholder="Search for a component (e.g., Navbar 9)"
+        onSearch={handleSearch}
+      />
+
       <section className="mb-4">
         {navComponents.map(({ component: NavComponent, title }, index) => (
-          <div key={index} className="mb-[1000px]">
+          <div
+            key={index}
+            className="mb-[1000px]"
+            id={title.toLowerCase().replace(/\s+/g, "")}
+          >
             <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
               {title}
               <a
@@ -73,6 +99,7 @@ const NavbarPage = () => {
           </div>
         ))}
       </section>
+      <ScrollUp />
     </div>
   );
 };

@@ -149,7 +149,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const testimonial1 = {
   logo: {
-    src: "/logo.png",
+    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
     alt: "logo 1",
   },
   quote:
@@ -171,7 +171,7 @@ const testimonial1 = {
 
 const testimonial2 = {
   logo: {
-    src: "/logo.png",
+    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
     alt: "logo 2",
   },
   quote:

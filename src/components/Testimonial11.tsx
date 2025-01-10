@@ -164,7 +164,7 @@ const testimonial = {
   name: "Name Surname",
   position: "Position, Company name",
   logo: {
-    src: "/logo.png",
+    src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
     alt: "logo 1",
   },
 };
