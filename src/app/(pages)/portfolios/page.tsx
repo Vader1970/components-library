@@ -6,7 +6,7 @@ import { ScrollUp } from "@/components/ui/ScrollUp";
 
 import { Portfolio1 } from "@/components/Portfolio1";
 import { Portfolio10 } from "@/components/Portfolio10";
-import { Portfolio11 } from "@/components/Portfolio11";
+// import { Portfolio11 } from "@/components/Portfolio11";
 import { Portfolio12 } from "@/components/Portfolio12";
 import { Portfolio13 } from "@/components/Portfolio13";
 import { Portfolio14 } from "@/components/Portfolio14";
@@ -43,7 +43,7 @@ const portfolioComponents = [
   { component: Portfolio8, title: "Portfolio 8" },
   { component: Portfolio9, title: "Portfolio 9" },
   { component: Portfolio10, title: "Portfolio 10" },
-  { component: Portfolio11, title: "Portfolio 11" },
+  // { component: Portfolio11, title: "Portfolio 11" },
   { component: Portfolio12, title: "Portfolio 12" },
   { component: Portfolio13, title: "Portfolio 13" },
   { component: Portfolio14, title: "Portfolio 14" },
