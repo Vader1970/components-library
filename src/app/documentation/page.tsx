@@ -1,7 +1,38 @@
-/** @type {import('tailwindcss').Config} */
-/* eslint-disable @typescript-eslint/no-require-imports */
+"use client";
 
-// const { join } = require("path");
+import React, { useState } from "react";
+
+import { ScrollUp } from "@/components/ui/ScrollUp";
+
+const InstallationGuide = () => {
+  // Define all code snippets in an array
+  const snippets = [
+    {
+      title: "Step 1: Install Packages",
+      code: `npm i @relume_io/relume-ui @relume_io/relume-tailwind`,
+    },
+    {
+      title: "Option 1: Using Tailwind Preset",
+      code: `/** @type {import('tailwindcss').Config} */
+
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  presets: [require("@relume_io/relume-tailwind")],
+  plugins: [],
+}`,
+    },
+    {
+      title: "Option 2: Copy/Paste the Tailwind Config",
+      code: `/** @type {import('tailwindcss').Config} */
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 module.exports = {
   content: [
@@ -499,3 +530,74 @@ module.exports = {
     },
   ],
 };
+`,
+    },
+  ];
+
+  // React downgrade snippet
+  const reactDowngradeSnippet = {
+    title: "Downgrade to React 18",
+    code: `npm install react@18.2.0 react-dom@18.2.0`,
+  };
+
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+  const handleCopy = (index: number, code: string) => {
+    navigator.clipboard.writeText(code);
+    setCopiedIndex(index);
+    setTimeout(() => setCopiedIndex(null), 2000); // Reset copied state after 2 seconds
+  };
+
+  return (
+    <section>
+      <div className='min-h-screen bg-gray-900 text-white flex flex-col items-center py-10 px-4'>
+        <h1 className='text-3xl font-bold mb-6'>Installation Guide</h1>
+        <p className='text-base sm:text-lg text-center mb-6 text-gray-300'>
+          Follow the steps below to install the component library into your project:
+        </p>
+
+        {/* Important Notes */}
+        <div className='space-y-8 w-full max-w-3xl mb-6'>
+          <p className='text-gray-300 text-center'>
+            <strong>Note:</strong> The component library is not compatible with React 19 as Motion Animations are not
+            supported at this stage. <br />
+            If you are using Next.js 15 or React 19, you will need to downgrade to React 18. <br />
+            Ensure that your <code>tailwind.config.js</code> file is a JavaScript file and not the default{" "}
+            <code>.tsx</code> TypeScript file.
+          </p>
+
+          {/* React Downgrade Snippet */}
+          <div className='relative bg-black rounded-lg p-6 mt-6'>
+            <h2 className='text-base sm:text-lg font-semibold mb-4'>{reactDowngradeSnippet.title}</h2>
+            <pre className='text-sm font-mono text-gray-300 whitespace-pre-wrap'>{reactDowngradeSnippet.code}</pre>
+            <button
+              onClick={() => handleCopy(999, reactDowngradeSnippet.code)}
+              className='absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white text-sm px-4 py-2 rounded'
+            >
+              {copiedIndex === 999 ? "Copied!" : "Copy"}
+            </button>
+          </div>
+        </div>
+
+        {/* Code Snippets */}
+        <div className='space-y-8 w-full max-w-3xl'>
+          {snippets.map((snippet, index) => (
+            <div key={index} className='relative bg-black rounded-lg p-6'>
+              <h2 className='text-base sm:text-lg font-semibold mb-4'>{snippet.title}</h2>
+              <pre className='text-sm font-mono text-gray-300 whitespace-pre-wrap'>{snippet.code}</pre>
+              <button
+                onClick={() => handleCopy(index, snippet.code)}
+                className='absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white text-sm px-4 py-2 rounded'
+              >
+                {copiedIndex === index ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+      <ScrollUp />
+    </section>
+  );
+};
+
+export default InstallationGuide;
