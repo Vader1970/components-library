@@ -43,16 +43,16 @@ import { Header76 } from "@/components/Header76";
 import { Header77 } from "@/components/Header77";
 import { Header78 } from "@/components/Header78";
 import { Header79 } from "@/components/Header79";
-// import { Header80 } from "@/components/Header80";
-// import { Header81 } from "@/components/Header81";
-// import { Header82 } from "@/components/Header82";
+import { Header80 } from "@/components/Header80";
+import { Header81 } from "@/components/Header81";
+import { Header82 } from "@/components/Header82";
 import { Header88 } from "@/components/Header88";
 import { Header102 } from "@/components/Header102";
 import { Header103 } from "@/components/Header103";
 import { Header104 } from "@/components/Header104";
-// import { Header106 } from "@/components/Header106";
-// import { Header108 } from "@/components/Header108";
-// import { Header109 } from "@/components/Header109";
+import { Header106 } from "@/components/Header106";
+import { Header108 } from "@/components/Header108";
+import { Header109 } from "@/components/Header109";
 import { Header111 } from "@/components/Header111";
 import { Header112 } from "@/components/Header112";
 import { Header113 } from "@/components/Header113";
@@ -135,14 +135,14 @@ import { Header98 } from "@/components/Header98";
 import { Header99 } from "@/components/Header99";
 import { Header100 } from "@/components/Header100";
 import { Header101 } from "@/components/Header101";
-// import { Header141 } from "@/components/Header141";
-// import { Header144 } from "@/components/Header144";
-// import { Header143 } from "@/components/Header143";
-// import { Header140 } from "@/components/Header140";
-// import { Header139 } from "@/components/Header139";
-// import { Header107 } from "@/components/Header107";
+import { Header141 } from "@/components/Header141";
+import { Header144 } from "@/components/Header144";
+import { Header143 } from "@/components/Header143";
+import { Header140 } from "@/components/Header140";
+import { Header139 } from "@/components/Header139";
+import { Header107 } from "@/components/Header107";
 import { Header75 } from "@/components/Header75";
-// import { Header83 } from "@/components/Header83";
+import { Header83 } from "@/components/Header83";
 
 const headerComponents = [
   { component: Header1, title: "Header 1" },
@@ -219,10 +219,10 @@ const headerComponents = [
   { component: Header77, title: "Header 77" },
   { component: Header78, title: "Header 78" },
   { component: Header79, title: "Header 79" },
-  // { component: Header80, title: "Header 80" },
-  // { component: Header81, title: "Header 81" },
-  // { component: Header82, title: "Header 82" },
-  // { component: Header83, title: "Header 83" },
+  { component: Header80, title: "Header 80" },
+  { component: Header81, title: "Header 81" },
+  { component: Header82, title: "Header 82" },
+  { component: Header83, title: "Header 83" },
   { component: Header84, title: "Header 84" },
   { component: Header85, title: "Header 85" },
   { component: Header86, title: "Header 86" },
@@ -245,10 +245,10 @@ const headerComponents = [
   { component: Header103, title: "Header 103" },
   { component: Header104, title: "Header 104" },
   { component: Header105, title: "Header 105" },
-  // { component: Header106, title: "Header 106" },
-  // { component: Header107, title: "Header 107" },
-  // { component: Header108, title: "Header 108" },
-  // { component: Header109, title: "Header 109" },
+  { component: Header106, title: "Header 106" },
+  { component: Header107, title: "Header 107" },
+  { component: Header108, title: "Header 108" },
+  { component: Header109, title: "Header 109" },
   { component: Header110, title: "Header 110" },
   { component: Header111, title: "Header 111" },
   { component: Header112, title: "Header 112" },
@@ -278,12 +278,12 @@ const headerComponents = [
   { component: Header136, title: "Header 136" },
   { component: Header137, title: "Header 137" },
   { component: Header138, title: "Header 138" },
-  // { component: Header139, title: "Header 139" },
-  // { component: Header140, title: "Header 140" },
-  // { component: Header141, title: "Header 141" },
+  { component: Header139, title: "Header 139" },
+  { component: Header140, title: "Header 140" },
+  { component: Header141, title: "Header 141" },
   // { component: Header142, title: "Header 142" },
-  // { component: Header143, title: "Header 143" },
-  // { component: Header144, title: "Header 144" },
+  { component: Header143, title: "Header 143" },
+  { component: Header144, title: "Header 144" },
   // Add more headers as necessary
 ];
 
