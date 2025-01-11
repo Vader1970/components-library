@@ -141,7 +141,7 @@ import { Header101 } from "@/components/Header101";
 // import { Header140 } from "@/components/Header140";
 // import { Header139 } from "@/components/Header139";
 // import { Header107 } from "@/components/Header107";
-// import { Header75 } from "@/components/Header75";
+import { Header75 } from "@/components/Header75";
 // import { Header83 } from "@/components/Header83";
 
 const headerComponents = [
@@ -214,7 +214,7 @@ const headerComponents = [
   { component: Header72, title: "Header 72" },
   { component: Header73, title: "Header 73" },
   { component: Header74, title: "Header 74" },
-  // { component: Header75, title: "Header 75" },
+  { component: Header75, title: "Header 75" },
   { component: Header76, title: "Header 76" },
   { component: Header77, title: "Header 77" },
   { component: Header78, title: "Header 78" },
