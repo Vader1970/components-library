@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { Search } from 'lucide-react';
-// import { Input } from '@/components/ui/input';
 import { cn } from "@/lib/utils";
 
 const categories = [
@@ -23,7 +21,7 @@ const categories = [
   { name: "Modals", href: "/modals" },
   { name: "CTAs", href: "/ctas" },
   { name: "Footers", href: "/footers" },
-  // { name: "Timelines", href: "/timelines" },
+  { name: "Timelines", href: "/timelines" },
   { name: "Logos", href: "/logos" },
   { name: "Teams", href: "/teams" },
   { name: "Banners", href: "/banners" },
@@ -45,7 +43,6 @@ const categories = [
 ];
 
 export function Navbar() {
-  //   const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
