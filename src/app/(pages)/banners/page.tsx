@@ -8,10 +8,10 @@ import { Banner1 } from "@/components/Banner1";
 import { Banner10 } from "@/components/Banner10";
 import { Banner11 } from "@/components/Banner11";
 import { Banner12 } from "@/components/Banner12";
-// import { Banner13 } from "@/components/Banner13";
-// import { Banner14 } from "@/components/Banner14";
+import { Banner13 } from "@/components/Banner13";
+import { Banner14 } from "@/components/Banner14";
 import { Banner15 } from "@/components/Banner15";
-// import { Banner16 } from "@/components/Banner16";
+import { Banner16 } from "@/components/Banner16";
 import { Banner2 } from "@/components/Banner2";
 import { Banner3 } from "@/components/Banner3";
 import { Banner4 } from "@/components/Banner4";
@@ -34,10 +34,10 @@ const bannerComponents = [
   { component: Banner10, title: "Banner 10" },
   { component: Banner11, title: "Banner 11" },
   { component: Banner12, title: "Banner 12" },
-  // { component: Banner13, title: "Banner 13" },
-  // { component: Banner14, title: "Banner 14" },
+  { component: Banner13, title: "Banner 13" },
+  { component: Banner14, title: "Banner 14" },
   { component: Banner15, title: "Banner 15" },
-  // { component: Banner16, title: "Banner 16" },
+  { component: Banner16, title: "Banner 16" },
 
   // Add more banners as necessary
 ];
