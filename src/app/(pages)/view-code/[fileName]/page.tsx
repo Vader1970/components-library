@@ -35,25 +35,41 @@ const CodeViewerPage = ({ params }: { params: { fileName: string } }) => {
     }, 2000);
   };
 
+  const handleGoBack = () => {
+    if (window.history.length > 1) {
+      window.history.back(); // Go back to the previous page
+    } else {
+      window.close(); // Close the current browser tab or window if history is unavailable
+    }
+  };
+
   return (
-    <div className="p-4">
+    <div className='p-4'>
+      {/* Back button styled as a link */}
+      <div className='flex mb-2'>
+        <button
+          onClick={handleGoBack}
+          className='text-blue-500 hover:text-blue-700 text-lg font-bold transition duration-200 flex items-center'
+        >
+          <span className='mr-2'>←</span> Back
+        </button>
+      </div>
+
       {/* Flex container to align title and button */}
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Code for {params.fileName}</h1>
+      <div className='flex justify-between items-center mb-4'>
+        <h1 className='text-2xl font-bold'>Code for {params.fileName}</h1>
         <button
           onClick={handleCopyCode}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+          className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
         >
           Copy Code
         </button>
       </div>
-      <pre className="bg-gray-800 text-white p-4 rounded overflow-auto">
-        {code}
-      </pre>
+      <pre className='bg-gray-800 text-white p-4 rounded overflow-auto'>{code}</pre>
 
       {/* Notification */}
       {notification && (
-        <div className="fixed top-[50%] left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-md">
+        <div className='fixed top-[50%] left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-md'>
           {notification}
         </div>
       )}
