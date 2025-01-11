@@ -198,7 +198,7 @@ import { Layout419 } from "@/components/Layout419";
 import { Layout420 } from "@/components/Layout420";
 import { Layout422 } from "@/components/Layout422";
 import { Layout423 } from "@/components/Layout423";
-import { Layout424 } from "@/components/Layout424";
+// import { Layout424 } from "@/components/Layout424";
 import { Layout425 } from "@/components/Layout425";
 import { Layout426 } from "@/components/Layout426";
 import { Layout427 } from "@/components/Layout427";
@@ -525,7 +525,7 @@ import { Layout492 } from "@/components/Layout492";
 import { Layout497 } from "@/components/Layout497";
 import { Layout498 } from "@/components/Layout498";
 // import { Layout352 } from "@/components/Layouts/Layout352";
-import { Layout421 } from "@/components/Layout421";
+// import { Layout421 } from "@/components/Layout421";
 
 const layoutComponents = [
   { component: Layout1, title: "Layout 1" },
@@ -943,10 +943,10 @@ const layoutComponents = [
   { component: Layout418, title: "Layout 418" },
   { component: Layout419, title: "Layout 419" },
   { component: Layout420, title: "Layout 420" },
-  { component: Layout421, title: "Layout 421" },
+  // { component: Layout421, title: "Layout 421" },
   { component: Layout422, title: "Layout 422" },
   { component: Layout423, title: "Layout 423" },
-  { component: Layout424, title: "Layout 424" },
+  // { component: Layout424, title: "Layout 424" },
   { component: Layout425, title: "Layout 425" },
   { component: Layout426, title: "Layout 426" },
   { component: Layout427, title: "Layout 427" },
