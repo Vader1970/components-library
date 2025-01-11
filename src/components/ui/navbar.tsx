@@ -23,7 +23,7 @@ const categories = [
   { name: "Modals", href: "/modals" },
   { name: "CTAs", href: "/ctas" },
   { name: "Footers", href: "/footers" },
-  { name: "Timelines", href: "/timelines" },
+  // { name: "Timelines", href: "/timelines" },
   { name: "Logos", href: "/logos" },
   { name: "Teams", href: "/teams" },
   { name: "Banners", href: "/banners" },
@@ -76,26 +76,21 @@ export function Navbar() {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       } !bg-black !text-white`}
     >
-      <div className="flex flex-col items-center">
-        <Link
-          href="/"
-          className="flex items-center hover:text-blue-500 ease-in-out duration-300"
-        >
-          <span className="font-bold mb-5 text-2xl">Component Library</span>
+      <div className='flex flex-col items-center'>
+        <Link href='/' className='flex items-center hover:text-blue-500 ease-in-out duration-300'>
+          <span className='font-bold mb-5 text-2xl'>Component Library</span>
         </Link>
 
-        <div className="flex h-auto">
-          <div className="flex flex-1 items-center">
-            <nav className="flex flex-row flex-wrap items-center justify-center space-x-6">
+        <div className='flex h-auto'>
+          <div className='flex flex-1 items-center'>
+            <nav className='flex flex-row flex-wrap items-center justify-center space-x-6'>
               {categories.map((category) => (
                 <Link
                   key={category.href}
                   href={category.href}
                   className={cn(
                     "text-base font-medium transition-colors hover:text-blue-500 hover:underline ease-in-out duration-300",
-                    pathname === category.href
-                      ? "underline text-blue-500"
-                      : "text-muted-foreground"
+                    pathname === category.href ? "underline text-blue-500" : "text-muted-foreground"
                   )}
                 >
                   {category.name}
