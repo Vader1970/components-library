@@ -199,7 +199,7 @@ import { Layout420 } from "@/components/Layout420";
 import { Layout422 } from "@/components/Layout422";
 import { Layout423 } from "@/components/Layout423";
 // import { Layout424 } from "@/components/Layout424";
-import { Layout425 } from "@/components/Layout425";
+// import { Layout425 } from "@/components/Layout425";
 import { Layout426 } from "@/components/Layout426";
 import { Layout427 } from "@/components/Layout427";
 import { Layout428 } from "@/components/Layout428";
@@ -947,7 +947,7 @@ const layoutComponents = [
   { component: Layout422, title: "Layout 422" },
   { component: Layout423, title: "Layout 423" },
   // { component: Layout424, title: "Layout 424" },
-  { component: Layout425, title: "Layout 425" },
+  // { component: Layout425, title: "Layout 425" },
   { component: Layout426, title: "Layout 426" },
   { component: Layout427, title: "Layout 427" },
   { component: Layout428, title: "Layout 428" },
