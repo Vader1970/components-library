@@ -90,11 +90,11 @@ export default function Home() {
             description: "Comprehensive and stylish website footer designs",
             href: "/footers",
           },
-          // {
-          //   title: "Timelines",
-          //   description: "Chronological and visual timeline components for storytelling",
-          //   href: "/timelines",
-          // },
+          {
+            title: "Timelines",
+            description: "Chronological and visual timeline components for storytelling",
+            href: "/timelines",
+          },
           {
             title: "Logos",
             description: "Versatile logo display and branding components",
