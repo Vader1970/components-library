@@ -8,13 +8,16 @@ export default function Home() {
       <div className='space-y-4'>
         <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl'>Welcome to the Component Library</h1>
         <p className='mx-auto max-w-[700px] text-muted-foreground'>
-          Browse our collection of beautiful and reusable components. Explore our library of 1,304 components built with
+          Browse our collection of beautiful and reusable components. Explore our library of 1,288 components built with
           Next.js, Tailwind CSS, and TypeScript. Click on any category to dive in and discover the perfect components
           for your project.
         </p>
 
         {/* Documentation Link */}
-        <Link href='/documentation' className='inline-block text-sm text-blue-500 hover:text-blue-400 underline mt-2'>
+        <Link
+          href='/documentation'
+          className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2'
+        >
           View Documentation for Installation
         </Link>
       </div>
