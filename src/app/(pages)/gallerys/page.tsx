@@ -9,7 +9,7 @@ import { Gallery13 } from "@/components/Gallery13";
 import { Gallery15 } from "@/components/Gallery15";
 import { Gallery19 } from "@/components/Gallery19";
 import { Gallery21 } from "@/components/Gallery21";
-// import { Gallery24 } from "@/components/Gallery24";
+import { Gallery24 } from "@/components/Gallery24";
 import { Gallery2 } from "@/components/Gallery2";
 import { Gallery3 } from "@/components/Gallery3";
 import { Gallery4 } from "@/components/Gallery4";
@@ -51,7 +51,7 @@ const galleryComponents = [
   { component: Gallery21, title: "Gallery 21" },
   { component: Gallery22, title: "Gallery 22" },
   { component: Gallery23, title: "Gallery 23" },
-  // { component: Gallery24, title: "Gallery 24" },
+  { component: Gallery24, title: "Gallery 24" },
 
   // Add more gallerys as necessary
 ];

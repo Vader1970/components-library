@@ -24,9 +24,9 @@ export default function Home() {
       <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {[
           {
-            title: "Layouts",
-            description: "Flexible layout components for structuring your pages",
-            href: "/layouts",
+            title: "Navbars",
+            description: "Navigation components for easy site exploration",
+            href: "/navbars",
           },
           {
             title: "Headers",
@@ -34,124 +34,9 @@ export default function Home() {
             href: "/headers",
           },
           {
-            title: "Navbars",
-            description: "Navigation components for easy site exploration",
-            href: "/navbars",
-          },
-          {
-            title: "Testimonials",
-            description: "Compelling social proof components to build trust and credibility",
-            href: "/testimonials",
-          },
-          {
-            title: "Forms",
-            description: "Responsive and intuitive form designs for seamless user interactions",
-            href: "/forms",
-          },
-          {
-            title: "Portfolios",
-            description: "Elegant showcase components to highlight your best work",
-            href: "/portfolios",
-          },
-          {
-            title: "FAQs",
-            description: "Clean and organized frequently asked questions sections",
-            href: "/faqs",
-          },
-          {
-            title: "Sign Ups",
-            description: "Attractive and conversion-focused user registration interfaces",
-            href: "/signups",
-          },
-          {
-            title: "Gallery",
-            description: "Visually stunning image and media display components",
-            href: "/gallerys",
-          },
-          {
-            title: "Contacts",
-            description: "Professional contact form and information display layouts",
-            href: "/contacts",
-          },
-          {
-            title: "Blogs",
-            description: "Beautifully structured blog post and article layouts",
-            href: "/blogs",
-          },
-          {
-            title: "Modals",
-            description: "Interactive popup windows for alerts, confirmations, and additional content",
-            href: "/modals",
-          },
-          {
-            title: "CTAs",
-            description: "Powerful call-to-action components to drive user engagement",
-            href: "/ctas",
-          },
-          {
-            title: "Footers",
-            description: "Comprehensive and stylish website footer designs",
-            href: "/footers",
-          },
-          {
-            title: "Timelines",
-            description: "Chronological and visual timeline components for storytelling",
-            href: "/timelines",
-          },
-          {
-            title: "Logos",
-            description: "Versatile logo display and branding components",
-            href: "/logos",
-          },
-          {
-            title: "Teams",
-            description: "Elegant team member showcase and organizational layouts",
-            href: "/teams",
-          },
-          {
-            title: "Banners",
-            description: "Eye-catching promotional and informational banner designs",
-            href: "/banners",
-          },
-          {
-            title: "Links",
-            description: "Stylish and functional hyperlink and navigation components",
-            href: "/links",
-          },
-          {
-            title: "Events",
-            description: "Clean and informative event listing and detail components",
-            href: "/events",
-          },
-          {
-            title: "Log Ins",
-            description: "Secure and user-friendly authentication interfaces",
-            href: "/logins",
-          },
-          {
-            title: "Products",
-            description: "Attractive product card and listing components",
-            href: "/products",
-          },
-          {
-            title: "Stats",
-            description: "Visually appealing statistical and data visualization layouts",
-            href: "/stats",
-          },
-          {
-            title: "Application Shells",
-            description: "Comprehensive application framework and container components",
-            href: "/applicationshells",
-          },
-          {
-            title: "Careers",
-            description: "Professional job listing and career opportunity displays",
-            href: "/careers",
-          },
-          {
-            title: "Comparisons",
-            description: "Side-by-side comparison components for easy decision-making",
-            href: "/comparisons",
+            title: "Layouts",
+            description: "Flexible layout components for structuring your pages",
+            href: "/layouts",
           },
           {
             title: "Contents",
@@ -159,14 +44,129 @@ export default function Home() {
             href: "/contents",
           },
           {
-            title: "Description Lists",
-            description: "Structured and readable description and detail components",
-            href: "/descriptionlists",
+            title: "CTAs",
+            description: "Powerful call-to-action components to drive user engagement",
+            href: "/ctas",
+          },
+          {
+            title: "Testimonials",
+            description: "Compelling social proof components to build trust and credibility",
+            href: "/testimonials",
+          },
+          {
+            title: "Gallery",
+            description: "Visually stunning image and media display components",
+            href: "/gallerys",
+          },
+          {
+            title: "Blogs",
+            description: "Beautifully structured blog post and article layouts",
+            href: "/blogs",
+          },
+          {
+            title: "Events",
+            description: "Clean and informative event listing and detail components",
+            href: "/events",
+          },
+          {
+            title: "Logos",
+            description: "Versatile logo display and branding components",
+            href: "/logos",
+          },
+          {
+            title: "Banners",
+            description: "Eye-catching promotional and informational banner designs",
+            href: "/banners",
+          },
+          {
+            title: "Products",
+            description: "Attractive product card and listing components",
+            href: "/products",
+          },
+          {
+            title: "Portfolios",
+            description: "Elegant showcase components to highlight your best work",
+            href: "/portfolios",
+          },
+          {
+            title: "Stats",
+            description: "Visually appealing statistical and data visualization layouts",
+            href: "/stats",
           },
           {
             title: "Pricings",
             description: "Clear and compelling pricing table designs",
             href: "/pricings",
+          },
+          {
+            title: "Comparisons",
+            description: "Side-by-side comparison components for easy decision-making",
+            href: "/comparisons",
+          },
+          {
+            title: "Timelines",
+            description: "Chronological and visual timeline components for storytelling",
+            href: "/timelines",
+          },
+          {
+            title: "Teams",
+            description: "Elegant team member showcase and organizational layouts",
+            href: "/teams",
+          },
+          {
+            title: "Careers",
+            description: "Professional job listing and career opportunity displays",
+            href: "/careers",
+          },
+          {
+            title: "FAQs",
+            description: "Clean and organized frequently asked questions sections",
+            href: "/faqs",
+          },
+          {
+            title: "Contacts",
+            description: "Professional contact form and information display layouts",
+            href: "/contacts",
+          },
+          {
+            title: "Footers",
+            description: "Comprehensive and stylish website footer designs",
+            href: "/footers",
+          },
+          {
+            title: "Forms",
+            description: "Responsive and intuitive form designs for seamless user interactions",
+            href: "/forms",
+          },
+          {
+            title: "Sign Ups",
+            description: "Attractive and conversion-focused user registration interfaces",
+            href: "/signups",
+          },
+          {
+            title: "Log Ins",
+            description: "Secure and user-friendly authentication interfaces",
+            href: "/logins",
+          },
+          {
+            title: "Modals",
+            description: "Interactive popup windows for alerts, confirmations, and additional content",
+            href: "/modals",
+          },
+          {
+            title: "Links",
+            description: "Stylish and functional hyperlink and navigation components",
+            href: "/links",
+          },
+          {
+            title: "Application Shells",
+            description: "Comprehensive application framework and container components",
+            href: "/applicationshells",
+          },
+          {
+            title: "Description Lists",
+            description: "Structured and readable description and detail components",
+            href: "/descriptionlists",
           },
           {
             title: "Stat Cards",
