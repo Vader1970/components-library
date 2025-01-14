@@ -1,9 +1,12 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
   alt?: string;
+  width?: number; // Add optional width
+  height?: number; // Add optional height
 };
 
 type Props = {
@@ -41,10 +44,11 @@ export const Header5 = (props: Header5Props) => {
         </div>
       </div>
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src={image.src}
-          className="size-full object-cover"
-          alt={image.alt}
+          alt={image.alt || "Background image"}
+          fill // Replaces layout="fill"
+          className="object-cover" // Ensures the image covers the container
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
@@ -60,5 +64,7 @@ export const Header5Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",
+    width: 600, // Example width
+    height: 600, // Example height
   },
 };

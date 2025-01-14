@@ -325,5 +325,5 @@ export const Login5Defaults: Props = {
       },
     },
   ],
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };

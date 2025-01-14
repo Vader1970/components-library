@@ -179,5 +179,5 @@ export const Login8Defaults: Props = {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "Relume placeholder image",
   },
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };

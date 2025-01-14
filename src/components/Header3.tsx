@@ -67,7 +67,7 @@ export const Header3 = (props: Header3Props) => {
                 <Image
                   src={image.src}
                   alt={image.alt || "Image"} // Fallback alt text
-                  width={image.width || 800} // Default width if not provided
+                  width={image.width || 600} // Default width if not provided
                   height={image.height || 600} // Default height if not provided
                   className="w-full object-cover"
                 />
@@ -113,7 +113,7 @@ export const Header3Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",
-    width: 1200, // Example width
-    height: 800, // Example height
+    width: 600, // Example width
+    height: 600, // Example height
   },
 };
