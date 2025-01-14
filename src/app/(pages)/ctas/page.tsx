@@ -64,7 +64,7 @@ import { Cta55 } from "@/components/Cta55";
 import { Cta56 } from "@/components/Cta56";
 
 const ctaComponents = [
-  { component: Cta1, title: "CTA 1" },
+  { component: Cta1, title: "Cta 1" },
   { component: Cta2, title: "CTA 2" },
   { component: Cta3, title: "CTA 3" },
   { component: Cta4, title: "CTA 4" },
@@ -138,27 +138,22 @@ const CtasPage = () => {
 
   return (
     <div>
-      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
-        CTAs
-      </h1>
+      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>CTAs</h1>
 
       {/* Search Section */}
-      <Search
-        placeholder="Search for a component (e.g., Cta 4)"
-        onSearch={handleSearch}
-      />
+      <Search placeholder='Search for a component (e.g., Cta 4)' onSearch={handleSearch} />
 
-      <section className="mb-4">
+      <section className='mb-4'>
         {ctaComponents.map(({ component: CtaComponent, title }, index) => (
           <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
             {/* Render the title as an h2 element */}
-            <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
               {title}
               <a
                 href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                target='_blank'
+                rel='noopener noreferrer'
+                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
               >
                 View Code
               </a>
