@@ -3,6 +3,7 @@
 import { Button, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useState } from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -46,10 +47,11 @@ export const Header10 = (props: Header10Props) => {
     <section id="relume" className="flex h-svh min-h-svh flex-col">
       <div className="relative flex-1">
         <div className="absolute inset-0 -z-10">
-          <img
+          <Image
             src={image.src}
-            alt={image.alt}
-            className="absolute inset-0 size-full object-cover"
+            alt={image.alt || "Background image"}
+            fill // Makes the image fill the container
+            className="absolute inset-0 size-full object-cover" // Replaces objectFit with CSS
           />
         </div>
       </div>

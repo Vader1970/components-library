@@ -3,10 +3,13 @@
 import { Button, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useState } from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
   alt?: string;
+  width?: number; // Add optional width
+  height?: number; // Add optional height
 };
 
 type Props = {
@@ -69,10 +72,12 @@ export const Header2 = (props: Header2Props) => {
             </div>
           </div>
           <div>
-            <img
+            <Image
               src={image.src}
+              alt={image.alt || "Image"} // Fallback alt text
+              width={image.width || 600} // Default width if not provided
+              height={image.height || 600} // Default height if not provided
               className="w-full object-cover"
-              alt={image.alt}
             />
           </div>
         </div>
@@ -96,5 +101,7 @@ export const Header2Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",
+    width: 600, // Example width
+    height: 600, // Example height
   },
 };

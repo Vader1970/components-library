@@ -161,5 +161,5 @@ export const Login1Defaults: Props = {
     text: "Forgot your password?",
     url: "#",
   },
-  footerText: "© 2024 Relume",
+  footerText: "© 2024 Company",
 };

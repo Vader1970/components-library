@@ -53,7 +53,7 @@ export const Header1 = (props: Header1Props) => {
             <Image
               src={image.src}
               alt={image.alt || "Image"} // Fallback alt text
-              width={image.width || 800} // Default width if not provided
+              width={image.width || 600} // Default width if not provided
               height={image.height || 600} // Default height if not provided
               className="w-full object-cover"
               priority // Optional: Ensure above-the-fold images load faster
@@ -70,13 +70,13 @@ export const Header1Defaults: Props = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   buttons: [
-    { title: "Button", href: "/about" },
-    { title: "Button", variant: "secondary", href: "/contact" },
+    { title: "Button", href: "#" },
+    { title: "Button", variant: "secondary", href: "#" },
   ],
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",
-    width: 1200, // Example width
-    height: 800, // Example height
+    width: 600, // Example width
+    height: 600, // Example height
   },
 };

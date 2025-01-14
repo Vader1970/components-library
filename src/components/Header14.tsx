@@ -12,6 +12,7 @@ import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { FaCirclePlay } from "react-icons/fa6";
 import { CgSpinner } from "react-icons/cg";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -60,9 +61,10 @@ export const Header14 = (props: Header14Props) => {
         <Dialog>
           <DialogTrigger asChild>
             <button className="absolute inset-0 flex size-full items-center justify-center object-cover">
-              <img
+              <Image
                 src={image.src}
-                alt={image.alt}
+                alt={image.alt || "Background Image"}
+                fill
                 className="size-full object-cover"
               />
               <span className="absolute inset-0 z-10 bg-black/50" />
