@@ -9,9 +9,9 @@ import { Login2 } from "@/components/Login2";
 import { Login3 } from "@/components/Login3";
 import { Login4 } from "@/components/Login4";
 import { Login5 } from "@/components/Login5";
-// import { Login6 } from "@/components/Login6";
+import { Login6 } from "@/components/Login6";
 import { Login7 } from "@/components/Login7";
-// import { Login8 } from "@/components/Login8";
+import { Login8 } from "@/components/Login8";
 
 const loginComponents = [
   { component: Login1, title: "Log in 1" },
@@ -19,9 +19,9 @@ const loginComponents = [
   { component: Login3, title: "Log in 3" },
   { component: Login4, title: "Log in 4" },
   { component: Login5, title: "Log in 5" },
-  // { component: Login6, title: "Log in 6" },
+  { component: Login6, title: "Log in 6" },
   { component: Login7, title: "Log in 7" },
-  // { component: Login8, title: "Log in 8" },
+  { component: Login8, title: "Log in 8" },
 
   // Add more logins as necessary
 ];
