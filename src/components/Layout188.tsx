@@ -83,19 +83,19 @@ export const Layout188Defaults: Props = {
   ],
   logos: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
       alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
       alt: "logo 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
       alt: "logo 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+      src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo-white.svg",
       alt: "logo 2",
     },
   ],
