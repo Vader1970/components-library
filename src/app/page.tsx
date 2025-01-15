@@ -30,7 +30,7 @@ export default function Home() {
 
           {/* Figma File Link */}
           <a
-            href="https://www.figma.com/files/team/1399532825502951659/project/324092661/Component-Library?fuid=1399532822001607492"
+            href="https://www.figma.com/design/Fw591yRy6nBbRkd5BtwIHA/Next-JS-Component-Library?node-id=0-1&t=V1yn2GkJLilbxU0d-1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2"

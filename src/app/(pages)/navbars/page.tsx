@@ -6,7 +6,7 @@ import { ScrollUp } from "@/components/ui/ScrollUp";
 
 import { Navbar1 } from "@/components/Navbar1";
 import { Navbar2 } from "@/components/Navbar2";
-import { Navbar3 } from "@/components/Navbar";
+import { Navbar3 } from "@/components/Navbar3";
 import { Navbar7 } from "@/components/Navbar7";
 import { Navbar8 } from "@/components/Navbar8";
 import { Navbar10 } from "@/components/Navbar10";

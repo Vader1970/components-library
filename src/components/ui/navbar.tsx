@@ -4,57 +4,47 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-const categories = [
-  { name: "Home", href: "/" },
-  { name: "Navbars", href: "/navbars" },
-  { name: "Headers", href: "/headers" },
-  { name: "Layouts", href: "/layouts" },
-  { name: "Contents", href: "/contents" },
-  { name: "CTAs", href: "/ctas" },
-  { name: "Testimonials", href: "/testimonials" },
-  { name: "Gallery", href: "/gallerys" },
-  { name: "Blogs", href: "/blogs" },
-  { name: "Events", href: "/events" },
-  { name: "Logos", href: "/logos" },
-  { name: "Banners", href: "/banners" },
-  { name: "Products", href: "/products" },
-  { name: "Portfolios", href: "/portfolios" },
-  { name: "Stats", href: "/stats" },
-  { name: "Pricings", href: "/pricings" },
-  { name: "Comparisons", href: "/comparisons" },
-  { name: "Timelines", href: "/timelines" },
-  { name: "Teams", href: "/teams" },
-  { name: "Careers", href: "/careers" },
-  { name: "FAQs", href: "/faqs" },
-  { name: "Contacts", href: "/contacts" },
-  { name: "Footers", href: "/footers" },
-  { name: "Forms", href: "/forms" },
-  { name: "Sign Ups", href: "/signups" },
-  { name: "Log Ins", href: "/logins" },
-  { name: "Modals", href: "/modals" },
-  { name: "Links", href: "/links" },
-  { name: "Application Shells", href: "/applicationshells" },
-  { name: "Description Lists", href: "/descriptionlists" },
-  { name: "Stat Cards", href: "/statcards" },
-  { name: "Grid Lists", href: "/gridlists" },
-  { name: "Stacked Lists", href: "/stackedlists" },
-  { name: "Tables", href: "/tables" },
-];
+import { categories } from "@/lib/categories";
 
 export function Navbar() {
   const pathname = usePathname();
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+    if (!isOpen) {
+      document.body.style.overflow = "hidden"; // Disable body scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable body scrolling
+    }
+  };
+
+  // Check screen size
   useEffect(() => {
+    const updateScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 768); // Medium breakpoint (768px)
+    };
+
+    updateScreenSize();
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []);
+
+  // Handle scrolling effect for large screens only
+  useEffect(() => {
+    if (!isLargeScreen) return;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // User is scrolling down
         setShowNavbar(false);
       } else {
-        // User is scrolling up
         setShowNavbar(true);
       }
       setLastScrollY(currentScrollY);
@@ -65,38 +55,93 @@ export function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, isLargeScreen]);
+
+  // Clean up body scroll style on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   return (
     <nav
       className={`sticky top-0 z-50 w-full p-5 border-b transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      } !bg-black !text-white`}
+        isLargeScreen && !showNavbar ? "-translate-y-full" : "translate-y-0"
+      } bg-black text-white`}
     >
-      <div className='flex flex-col items-center'>
-        <Link href='/' className='flex items-center hover:text-blue-500 ease-in-out duration-300'>
-          <span className='font-bold mb-5 text-2xl'>Component Library</span>
+      <div className="flex flex-row items-center md:flex-col justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex items-center hover:text-blue-500 ease-in-out duration-300 md:mb-4"
+        >
+          <span className="font-bold text-2xl">Component Library</span>
         </Link>
 
-        <div className='flex h-auto'>
-          <div className='flex flex-1 items-center'>
-            <nav className='flex flex-row flex-wrap items-center justify-center space-x-6'>
-              {categories.map((category) => (
-                <Link
-                  key={category.href}
-                  href={category.href}
-                  className={cn(
-                    "text-base font-medium transition-colors hover:text-blue-500 hover:underline ease-in-out duration-300",
-                    pathname === category.href ? "underline text-blue-500" : "text-muted-foreground"
-                  )}
-                >
-                  {category.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
+        {/* Hamburger Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <Link
+              key={category.href}
+              href={category.href}
+              className={cn(
+                "text-base font-medium transition-colors hover:text-blue-500 hover:underline ease-in-out duration-300",
+                pathname === category.href
+                  ? "underline text-blue-500"
+                  : "text-white"
+              )}
+            >
+              {category.name}
+            </Link>
+          ))}
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div
+          className="md:hidden bg-black mt-2 max-h-[60vh] overflow-y-auto"
+          style={{ WebkitOverflowScrolling: "touch" }} // Smooth scrolling for iOS
+        >
+          {categories.map((category) => (
+            <Link
+              key={category.href}
+              href={category.href}
+              className={cn(
+                "block px-4 py-2 text-white hover:bg-gray-800",
+                pathname === category.href ? "bg-gray-800 text-blue-500" : ""
+              )}
+              onClick={toggleMenu}
+            >
+              {category.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
