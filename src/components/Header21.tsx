@@ -12,6 +12,8 @@ import clsx from "clsx";
 import { FaCirclePlay } from "react-icons/fa6";
 import { CgSpinner } from "react-icons/cg";
 
+import Image from "next/image";
+
 type ImageProps = {
   src: string;
   alt?: string;
@@ -41,10 +43,12 @@ export const Header21 = (props: Header21Props) => {
           <Dialog>
             <DialogTrigger className="order-2 lg:order-1" asChild>
               <button className="relative flex w-full items-center justify-center">
-                <img
+                <Image
                   src={image.src}
-                  alt={image.alt}
+                  alt={image.alt || "Image"}
                   className="size-full object-cover"
+                  width={600}
+                  height={600}
                 />
                 <span className="absolute inset-0 z-10 bg-black/50" />
                 <FaCirclePlay className="absolute z-20 size-16 text-white" />

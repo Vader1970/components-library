@@ -1,6 +1,12 @@
 "use client";
 
-import { useScroll, motion, useTransform, useSpring, MotionValue } from "framer-motion";
+import {
+  useScroll,
+  motion,
+  useTransform,
+  useSpring,
+  MotionValue,
+} from "framer-motion";
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useRef } from "react";
@@ -17,7 +23,8 @@ type Props = {
   buttons: ButtonProps[];
 };
 
-export type Header81Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header81Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header81 = (props: Header81Props) => {
   const { heading, description, buttons, image } = {
@@ -36,12 +43,14 @@ export const Header81 = (props: Header81Props) => {
   const width = useTransform(smoothScrollYProgress, [0, 1], ["50%", "100%"]);
 
   return (
-    <section ref={headerRef} className='relative md:h-[300vh]'>
-      <div className='static top-0 grid auto-cols-fr grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:sticky lg:h-screen lg:grid-cols-2 lg:gap-y-0 lg:pt-0'>
-        <div className='relative mx-[5%] max-w-md lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
-          <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{heading}</h1>
-          <p className='md:text-md'>{description}</p>
-          <div className='mt-6 flex flex-wrap gap-4 md:mt-8'>
+    <section ref={headerRef} className="relative md:h-[300vh]">
+      <div className="static top-0 grid auto-cols-fr grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:sticky lg:h-screen lg:grid-cols-2 lg:gap-y-0 lg:pt-0">
+        <div className="relative mx-[5%] max-w-md lg:ml-[5vw] lg:mr-20 lg:justify-self-end">
+          <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+            {heading}
+          </h1>
+          <p className="md:text-md">{description}</p>
+          <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
             {buttons.map((button, index) => (
               <Button key={index} {...button}>
                 {button.title}
@@ -66,15 +75,26 @@ const MotionImage = ({
 }) => (
   <div>
     {isMobile ? (
-      <div className='static w-full'>
-        <div className='relative size-full pt-[100%] lg:pt-0'>
-          <img src={image.src} alt={image.alt} className='absolute inset-0 size-full object-cover' />
+      <div className="static w-full">
+        <div className="relative size-full pt-[100%] lg:pt-0">
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="absolute inset-0 size-full object-cover"
+          />
         </div>
       </div>
     ) : (
-      <motion.div style={{ width }} className='absolute inset-0 left-auto w-auto'>
-        <div className='relative size-full pt-[100%] lg:pt-0'>
-          <img src={image.src} alt={image.alt} className='absolute inset-0 size-full object-cover' />
+      <motion.div
+        style={{ width }}
+        className="absolute inset-0 left-auto w-auto"
+      >
+        <div className="relative size-full pt-[100%] lg:pt-0">
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="absolute inset-0 size-full object-cover"
+          />
         </div>
       </motion.div>
     )}

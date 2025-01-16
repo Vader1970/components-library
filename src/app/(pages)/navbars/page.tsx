@@ -6,7 +6,7 @@ import { ScrollUp } from "@/components/ui/ScrollUp";
 
 import { Navbar1 } from "@/components/Navbar1";
 import { Navbar2 } from "@/components/Navbar2";
-import { Navbar3 } from "@/components/Navbar3";
+// import { Navbar3 } from "@/components/Navbar3";
 import { Navbar7 } from "@/components/Navbar7";
 import { Navbar8 } from "@/components/Navbar8";
 import { Navbar10 } from "@/components/Navbar10";
@@ -25,13 +25,13 @@ import { Navbar6 } from "@/components/Navbar6";
 import { Navbar13 } from "@/components/Navbar13";
 //Navbar14 sticky nav
 // import { Navbar14 } from "@/components/Navbar14";
-import { Navbar15 } from "@/components/Navbar15";
+// import { Navbar15 } from "@/components/Navbar15";
 import { Navbar9 } from "@/components/Navbar9";
 
 const navComponents = [
+  // { component: Navbar3, title: "Navbar 3" },
   { component: Navbar1, title: "Navbar 1" },
   { component: Navbar2, title: "Navbar 2" },
-  { component: Navbar3, title: "Navbar 3" },
   { component: Navbar4, title: "Navbar 4" },
   { component: Navbar5, title: "Navbar 5" },
   { component: Navbar6, title: "Navbar 6" },
@@ -44,7 +44,7 @@ const navComponents = [
   { component: Navbar13, title: "Navbar 13" },
   //Navbar 14 stcky nav
   // { component: Navbar14, title: "Navbar 14" },
-  { component: Navbar15, title: "Navbar 15" },
+  // { component: Navbar15, title: "Navbar 15" },
   { component: Navbar16, title: "Navbar 16" },
   { component: Navbar17, title: "Navbar 17" },
   { component: Navbar18, title: "Navbar 18" },

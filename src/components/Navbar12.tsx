@@ -227,7 +227,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 1",
               },
             },
@@ -236,7 +236,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 2",
               },
             },
@@ -245,7 +245,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 3",
               },
             },
@@ -254,7 +254,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 4",
               },
             },
@@ -268,7 +268,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 1",
               },
             },
@@ -277,7 +277,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 2",
               },
             },
@@ -286,7 +286,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 3",
               },
             },
@@ -295,7 +295,7 @@ export const Navbar12Defaults: Props = {
               description: "Lorem ipsum dolor sit amet consectetur elit",
               url: "#",
               image: {
-                src: "relume-icon.svg",
+                src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
                 alt: "Sub menu link 4",
               },
             },

@@ -294,8 +294,8 @@ const SubMenu = ({
 const RelumeLogo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      width="currentWidth"
-      height="currentHeight"
+      width={props.width || "24"} // Default width is 24 if not provided
+      height={props.height || "24"} // Default height is 24 if not provided
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -40,10 +41,12 @@ export const Header36 = (props: Header36Props) => {
         </div>
       </div>
       <div>
-        <img
+        <Image
           src={image.src}
-          alt={image.alt}
+          alt={image.alt || "Image"}
           className="w-full object-cover lg:h-screen lg:max-h-[60rem]"
+          width={1280}
+          height={960}
         />
       </div>
     </section>

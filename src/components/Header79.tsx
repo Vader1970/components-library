@@ -1,6 +1,7 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import React from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -74,10 +75,12 @@ const ImageGrid = ({ images }: { images: ImageProps[] }) => (
     {images.map((image, index) => (
       <div key={index} className="grid size-full grid-cols-1 gap-4">
         <div className="relative w-full pt-[120%]">
-          <img
+          <Image
             className="absolute inset-0 size-full object-cover"
             src={image.src}
-            alt={image.alt}
+            alt={image.alt || `Image ${index + 1}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>

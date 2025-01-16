@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ImageProps = {
   src: string;
   alt?: string;
@@ -28,10 +30,11 @@ export const Header54 = (props: Header54Props) => {
         </div>
       </div>
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src={image.src}
           className="size-full object-cover"
-          alt={image.alt}
+          alt={image.alt || "Image"}
+          fill
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
