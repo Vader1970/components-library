@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Input } from "@relume_io/relume-ui";
 import type { ButtonProps, InputProps } from "@relume_io/relume-ui";
 import { BiSearch } from "react-icons/bi";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -65,10 +66,11 @@ export const Header32 = (props: Header32Props) => {
         </div>
       </div>
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src={image.src}
           className="size-full object-cover"
-          alt={image.alt}
+          alt={image.alt || "Background Image"}
+          fill
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>

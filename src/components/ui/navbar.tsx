@@ -64,6 +64,11 @@ export function Navbar() {
     };
   }, []);
 
+  // Do not render Navbar if the pathname starts with /view-code
+  if (pathname.startsWith("/view-code")) {
+    return null;
+  }
+
   return (
     <nav
       className={`sticky top-0 z-50 w-full p-5 border-b transition-transform duration-300 ${

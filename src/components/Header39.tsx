@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -48,10 +49,12 @@ export const Header39 = (props: Header39Props) => {
       className="grid grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:grid-cols-2 lg:pt-0"
     >
       <div className="order-last lg:order-first">
-        <img
+        <Image
           src={image.src}
-          alt={image.alt}
+          alt={image.alt || "Image"}
           className="w-full object-cover lg:h-screen lg:max-h-[60rem]"
+          width={1280}
+          height={960}
         />
       </div>
       <div className="mx-[5%] overflow-x-auto sm:max-w-md md:justify-self-start lg:ml-20 lg:mr-[5vw] lg:justify-self-start">

@@ -3,6 +3,7 @@
 import { Button, Input } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useState } from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -68,10 +69,12 @@ export const Header27 = (props: Header27Props) => {
           </div>
         </div>
         <div>
-          <img
+          <Image
             src={image.src}
             className="size-full object-cover"
-            alt={image.alt}
+            alt={image.alt || "Image"}
+            width={1280}
+            height={720}
           />
         </div>
       </div>

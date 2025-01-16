@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -27,10 +28,12 @@ export const Header37 = (props: Header37Props) => {
       className="grid grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:grid-cols-2 lg:pt-0"
     >
       <div className="order-2 lg:order-1">
-        <img
+        <Image
           src={image.src}
-          alt={image.alt}
+          alt={image.alt || "Image"}
           className="w-full object-cover lg:h-screen lg:max-h-[60rem]"
+          width={1280}
+          height={960}
         />
       </div>
       <div className="order-1 mx-[5%] sm:max-w-md md:justify-self-start lg:order-2 lg:ml-20 lg:mr-[5vw]">

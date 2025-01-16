@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -48,10 +49,12 @@ export const Header78 = (props: Header78Props) => {
                       key={imageIndex}
                       className="relative w-[60vw] pt-[75%] sm:w-[18rem] md:w-[26rem]"
                     >
-                      <img
+                      <Image
                         className="absolute inset-0 size-full object-cover"
                         src={image.src}
-                        alt={image.alt}
+                        alt={image.alt || `Image ${index + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                   ))}
@@ -66,10 +69,12 @@ export const Header78 = (props: Header78Props) => {
                       key={imageIndex}
                       className="relative w-[60vw] pt-[75%] sm:w-[18rem] md:w-[26rem]"
                     >
-                      <img
+                      <Image
                         className="absolute inset-0 size-full object-cover"
                         src={image.src}
-                        alt={image.alt}
+                        alt={image.alt || `Image ${index + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                   ))}
