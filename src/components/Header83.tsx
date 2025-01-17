@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -18,7 +19,8 @@ type Props = {
   images: ImageProps[];
 };
 
-export type Header83Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header83Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header83 = (props: Header83Props) => {
   const { heading, description, buttons, images } = {
@@ -41,17 +43,20 @@ export const Header83 = (props: Header83Props) => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [3.2, 1]);
 
   return (
-    <section ref={sectionRef} id='relume' className='relative h-[300vh]'>
-      <div className='sticky top-0 h-screen overflow-hidden'>
+    <section ref={sectionRef} id="relume" className="relative h-[300vh]">
+      <div className="sticky top-0 h-screen overflow-hidden">
         {/* Header Content */}
-        <motion.div className='flex h-full items-center justify-center' style={{ opacity: opacityContent }}>
-          <div className='px-[5%] py-16 md:py-24 lg:py-28'>
-            <div className='mx-auto max-w-lg text-center'>
-              <h1 className='mb-5 text-6xl font-bold text-text-alternative md:mb-6 md:text-9xl lg:text-10xl'>
+        <motion.div
+          className="flex h-full items-center justify-center"
+          style={{ opacity: opacityContent }}
+        >
+          <div className="px-[5%] py-16 md:py-24 lg:py-28">
+            <div className="mx-auto max-w-lg text-center">
+              <h1 className="mb-5 text-6xl font-bold text-text-alternative md:mb-6 md:text-9xl lg:text-10xl">
                 {heading}
               </h1>
-              <p className='text-text-alternative md:text-md'>{description}</p>
-              <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
+              <p className="text-text-alternative md:text-md">{description}</p>
+              <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
@@ -63,14 +68,17 @@ export const Header83 = (props: Header83Props) => {
         </motion.div>
 
         {/* Grid of Images */}
-        <div className='absolute inset-0 -z-10'>
+        <div className="absolute inset-0 -z-10">
           {/* Overlay with opacity animation */}
-          <motion.div className='absolute inset-0 z-10 bg-black/50' style={{ opacity: opacityOverlay }} />
+          <motion.div
+            className="absolute inset-0 z-10 bg-black/50"
+            style={{ opacity: opacityOverlay }}
+          />
 
           {/* Image Grid Scaling Animation */}
           <motion.div
             style={{ scale }}
-            className='grid size-full auto-cols-fr grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3'
+            className="grid size-full auto-cols-fr grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3"
           >
             {images.map((image, index) => (
               <div
@@ -80,7 +88,12 @@ export const Header83 = (props: Header83Props) => {
                   [0, 2, 3, 5, 6, 8].includes(index) && "hidden md:block" // Hide certain images on smaller screens
                 )}
               >
-                <img src={image.src} alt={image.alt} className='absolute inset-0 size-full object-cover' />
+                <Image
+                  src={image.src}
+                  alt={image.alt || "Image Placeholders"}
+                  fill
+                  className="absolute inset-0 size-full object-cover"
+                />
               </div>
             ))}
           </motion.div>

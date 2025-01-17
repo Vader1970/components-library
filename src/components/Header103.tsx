@@ -5,6 +5,7 @@ import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -128,10 +129,11 @@ const TabContent = ({ ...content }: TabContent) => {
       </div>
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 z-10 bg-black/50" />
-        <img
+        <Image
           className="size-full object-cover"
           src={content.image.src}
-          alt={content.image.alt}
+          alt={content.image.alt || "Image"}
+          fill
         />
       </div>
     </div>

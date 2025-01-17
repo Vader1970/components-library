@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -96,10 +97,12 @@ export const Header102 = (props: Header102Props) => {
                 <div className="relative inline-block size-full whitespace-normal text-left align-top">
                   <div className="flex h-screen flex-col">
                     <div className="relative flex-1">
-                      <img
+                      <Image
                         className="absolute size-full object-cover"
                         src={image.src}
-                        alt={image.alt}
+                        alt={image.alt || "Image"}
+                        width={1280}
+                        height={1632}
                       />
                     </div>
                     <div className="relative bg-background-secondary px-6 pb-32 pt-6 sm:px-8 sm:pt-8">

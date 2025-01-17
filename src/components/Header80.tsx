@@ -71,7 +71,7 @@ export const Header80 = (props: Header80Props) => {
                 <Image
                   src={image.src}
                   className="absolute inset-0 size-full object-cover"
-                  alt={image.alt || "Image"}
+                  alt={image.alt || `Image ${index + 1}`}
                   fill
                 />
               </div>
@@ -98,7 +98,7 @@ export const Header80 = (props: Header80Props) => {
                 <Image
                   src={image.src}
                   className="absolute inset-0 size-full object-cover"
-                  alt={image.alt || "Image"}
+                  alt={image.alt || `Image ${index + 1}`}
                   fill
                 />
               </div>

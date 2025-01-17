@@ -10,6 +10,7 @@ import {
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useRef } from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -77,9 +78,10 @@ const MotionImage = ({
     {isMobile ? (
       <div className="static w-full">
         <div className="relative size-full pt-[100%] lg:pt-0">
-          <img
+          <Image
             src={image.src}
-            alt={image.alt}
+            alt={image.alt || "Image"}
+            fill
             className="absolute inset-0 size-full object-cover"
           />
         </div>
@@ -90,9 +92,10 @@ const MotionImage = ({
         className="absolute inset-0 left-auto w-auto"
       >
         <div className="relative size-full pt-[100%] lg:pt-0">
-          <img
+          <Image
             src={image.src}
-            alt={image.alt}
+            alt={image.alt || "Image"}
+            fill
             className="absolute inset-0 size-full object-cover"
           />
         </div>

@@ -1,10 +1,18 @@
 "use client";
 
-import { Button, Dialog, DialogContent, DialogTrigger, useMediaQuery, VideoIframe } from "@relume_io/relume-ui";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  useMediaQuery,
+  VideoIframe,
+} from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaCirclePlay } from "react-icons/fa6";
 import { useRef } from "react";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -19,7 +27,8 @@ type Props = {
   image: ImageProps;
 };
 
-export type Header109Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header109Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header109 = (props: Header109Props) => {
   const { title, description, buttons, video, image } = {
@@ -41,7 +50,11 @@ export const Header109 = (props: Header109Props) => {
   });
 
   // Adjusted Video dialog transforms for quicker shrinking
-  const videoDialogY = useTransform(scrollYProgress, [0.2, 0.4], ["0vh", "40vh"]);
+  const videoDialogY = useTransform(
+    scrollYProgress,
+    [0.2, 0.4],
+    ["0vh", "40vh"]
+  );
   const videoDialogWidth = useTransform(
     scrollYProgress,
     [0.2, 0.4],
@@ -64,11 +77,15 @@ export const Header109 = (props: Header109Props) => {
   );
 
   return (
-    <section ref={sectionRef} id='relume' className='relative flex h-[300vh] flex-col items-center mb-28'>
+    <section
+      ref={sectionRef}
+      id="relume"
+      className="relative flex h-[300vh] flex-col items-center mb-28"
+    >
       {/* Sticky Container: Video + Content */}
-      <div className='sticky top-0 flex w-full flex-col items-center justify-center'>
+      <div className="sticky top-0 flex w-full flex-col items-center justify-center">
         {/* Video */}
-        <div className='relative z-10 flex h-screen w-full items-center justify-center'>
+        <div className="relative z-10 flex h-screen w-full items-center justify-center">
           <Dialog>
             <DialogTrigger asChild>
               <motion.button
@@ -79,11 +96,16 @@ export const Header109 = (props: Header109Props) => {
                   top: videoDialogTop,
                   left: videoDialogLeft,
                 }}
-                className='absolute inset-0 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center'
+                className="absolute inset-0 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center"
               >
-                <img src={image.src} alt={image.alt} className='size-full object-cover' />
-                <FaCirclePlay className='absolute z-20 size-16 text-white' />
-                <span className='absolute inset-0 z-10 bg-black/50' />
+                <Image
+                  src={image.src}
+                  alt={image.alt || "Image"}
+                  className="size-full object-cover"
+                  fill
+                />
+                <FaCirclePlay className="absolute z-20 size-16 text-white" />
+                <span className="absolute inset-0 z-10 bg-black/50" />
               </motion.button>
             </DialogTrigger>
             <DialogContent>
@@ -93,10 +115,12 @@ export const Header109 = (props: Header109Props) => {
         </div>
 
         {/* Content (Positioned under video) */}
-        <div className='relative w-full max-w-lg px-[5%] text-center'>
-          <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{title}</h1>
-          <p className='md:text-md'>{description}</p>
-          <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
+        <div className="relative w-full max-w-lg px-[5%] text-center">
+          <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+            {title}
+          </h1>
+          <p className="md:text-md">{description}</p>
+          <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
             {buttons.map((button, index) => (
               <Button key={index} {...button}>
                 {button.title}
@@ -107,7 +131,7 @@ export const Header109 = (props: Header109Props) => {
       </div>
 
       {/* Extra Scroll Space */}
-      <div className='absolute inset-0 -z-10 mt-[100vh]' />
+      <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
 };
@@ -125,7 +149,8 @@ export const Header109Defaults: Props = {
       variant: "secondary",
     },
   ],
-  video: "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
+  video:
+    "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
     alt: "placeholder image",
