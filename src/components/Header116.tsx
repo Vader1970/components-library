@@ -1,9 +1,12 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
   alt?: string;
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -22,6 +25,7 @@ export const Header116 = (props: Header116Props) => {
     ...Header116Defaults,
     ...props,
   };
+
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
@@ -43,17 +47,22 @@ export const Header116 = (props: Header116Props) => {
 
         <div className="grid grid-cols-[1fr_0.33fr] items-start gap-6 sm:gap-8 md:gap-16">
           <div className="mt-[10%] w-full">
-            <img
-              className="aspect-[3/2] size-full object-cover"
+            <Image
               src={firstImage.src}
-              alt={firstImage.alt}
+              alt={firstImage.alt || "First image"}
+              width={firstImage.width || 900}
+              height={firstImage.height || 600}
+              className="aspect-[3/2] size-full object-cover"
+              priority
             />
           </div>
           <div className="w-full">
-            <img
-              className="aspect-[2/3] size-full object-cover"
+            <Image
               src={secondImage.src}
-              alt={secondImage.alt}
+              alt={secondImage.alt || "Second image"}
+              width={secondImage.width || 300}
+              height={secondImage.height || 450}
+              className="aspect-[2/3] size-full object-cover"
             />
           </div>
         </div>
@@ -70,9 +79,13 @@ export const Header116Defaults: Props = {
   firstImage: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
     alt: "Relume placeholder image 1",
+    width: 900,
+    height: 600,
   },
   secondImage: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "Relume placeholder image 2",
+    width: 300,
+    height: 450,
   },
 };

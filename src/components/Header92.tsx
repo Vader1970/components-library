@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -26,10 +27,12 @@ export const Header92 = (props: Header92Props) => {
       <div className="container">
         <div className="grid auto-cols-fr grid-cols-1 border border-border-primary lg:grid-cols-2">
           <div className="flex items-center justify-center">
-            <img
+            <Image
               src={image.src}
               className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || "Image"}
+              width={639}
+              height={639}
             />
           </div>
           <div className="flex flex-col justify-center p-8 md:p-12">

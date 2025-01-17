@@ -17,7 +17,8 @@ type Props = {
   images: ImageProps[];
 };
 
-export type Header107Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header107Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header107 = (props: Header107Props) => {
   const { title, description, buttons, images } = {
@@ -38,27 +39,53 @@ export const Header107 = (props: Header107Props) => {
   });
 
   // Transforms for animations (adjusted for mobile and desktop)
-  const containerHeight = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["60vh", "100vh"] : ["70vh", "100vh"]);
+  const containerHeight = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["60vh", "100vh"] : ["70vh", "100vh"]
+  );
 
-  const leftImageGroupX = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]);
+  const leftImageGroupX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]
+  );
 
-  const centerImageX = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]);
+  const centerImageX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "-25vw"] : ["0vw", "-50vw"]
+  );
 
-  const centerImageWidth = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["50vw", "100vw"] : ["30vw", "100vw"]);
+  const centerImageWidth = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["50vw", "100vw"] : ["30vw", "100vw"]
+  );
 
-  const centerImageHeight = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["50vh", "100vh"] : ["70vh", "100vh"]);
+  const centerImageHeight = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["50vh", "100vh"] : ["70vh", "100vh"]
+  );
 
-  const rightImageX = useTransform(scrollYProgress, [0, 0.5], isMobile ? ["0vw", "25vw"] : ["0vw", "20vw"]);
+  const rightImageX = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    isMobile ? ["0vw", "25vw"] : ["0vw", "20vw"]
+  );
 
   return (
-    <section ref={sectionRef} id='relume' className='relative h-[250vh]'>
+    <section ref={sectionRef} id="relume" className="relative h-[250vh]">
       {/* Content */}
-      <div className='px-[5%] pt-16 md:pt-24 lg:pt-28'>
-        <div className='container'>
-          <div className='w-full max-w-lg'>
-            <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{title}</h1>
-            <p className='md:text-md'>{description}</p>
-            <div className='mt-6 flex flex-wrap gap-4 md:mt-8'>
+      <div className="px-[5%] pt-16 md:pt-24 lg:pt-28">
+        <div className="container">
+          <div className="w-full max-w-lg">
+            <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+              {title}
+            </h1>
+            <p className="md:text-md">{description}</p>
+            <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               {buttons.map((button, index) => (
                 <Button key={index} {...button}>
                   {button.title}
@@ -70,53 +97,65 @@ export const Header107 = (props: Header107Props) => {
       </div>
 
       {/* Sticky Images */}
-      <div className='sticky top-0 flex h-screen w-full items-center overflow-hidden'>
+      <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
         <motion.div
-          className='z-10 grid w-full grid-flow-col grid-cols-[25%_50%_25%] justify-center md:grid-cols-[50%_30%_20%]'
+          className="z-10 grid w-full grid-flow-col grid-cols-[25%_50%_25%] justify-center md:grid-cols-[50%_30%_20%]"
           style={{ height: containerHeight }}
         >
           {/* Left Image Group */}
           <motion.div
-            className='grid grid-flow-col grid-cols-1 justify-items-end gap-4 justify-self-end px-4'
+            className="grid grid-flow-col grid-cols-1 justify-items-end gap-4 justify-self-end px-4"
             style={{ x: leftImageGroupX }}
           >
-            <div className='relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]'>
-              <img className='aspect-[2/3] w-full object-cover' {...images[0]} />
+            <div className="relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
+              <img
+                className="aspect-[2/3] w-full object-cover"
+                {...images[0]}
+              />
             </div>
-            <div className='relative top-[-5%] flex flex-col gap-4 self-center'>
-              <div className='relative w-[30vw] flex-none md:w-[15vw]'>
-                <img className='aspect-square w-full object-cover' {...images[1]} />
+            <div className="relative top-[-5%] flex flex-col gap-4 self-center">
+              <div className="relative w-[30vw] flex-none md:w-[15vw]">
+                <img
+                  className="aspect-square w-full object-cover"
+                  {...images[1]}
+                />
               </div>
-              <div className='relative w-[30vw] flex-none md:w-[15vw]'>
-                <img className='aspect-[3/4] w-full object-cover' {...images[2]} />
+              <div className="relative w-[30vw] flex-none md:w-[15vw]">
+                <img
+                  className="aspect-[3/4] w-full object-cover"
+                  {...images[2]}
+                />
               </div>
             </div>
           </motion.div>
 
           {/* Center Image */}
           <motion.div
-            className='relative'
+            className="relative"
             style={{
               x: centerImageX,
               width: centerImageWidth,
               height: centerImageHeight,
             }}
           >
-            <img className='size-full object-cover' {...images[4]} />
+            <img className="size-full object-cover" {...images[4]} />
           </motion.div>
 
           {/* Right Image */}
           <motion.div
-            className='grid grid-flow-col grid-cols-1 gap-4 justify-self-start px-4'
+            className="grid grid-flow-col grid-cols-1 gap-4 justify-self-start px-4"
             style={{ x: rightImageX }}
           >
-            <div className='relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]'>
-              <img className='aspect-[3/4] w-full object-cover' {...images[5]} />
+            <div className="relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]">
+              <img
+                className="aspect-[3/4] w-full object-cover"
+                {...images[5]}
+              />
             </div>
           </motion.div>
         </motion.div>
       </div>
-      <div className='absolute inset-0 -z-10 mt-[100vh]' />
+      <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
 };

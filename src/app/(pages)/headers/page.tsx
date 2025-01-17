@@ -45,7 +45,7 @@ import { Header78 } from "@/components/Header78";
 import { Header79 } from "@/components/Header79";
 import { Header80 } from "@/components/Header80";
 import { Header81 } from "@/components/Header81";
-import { Header82 } from "@/components/Header82";
+// import { Header82 } from "@/components/Header82";
 import { Header88 } from "@/components/Header88";
 import { Header102 } from "@/components/Header102";
 import { Header103 } from "@/components/Header103";
@@ -221,7 +221,7 @@ const headerComponents = [
   { component: Header79, title: "Header 79" },
   { component: Header80, title: "Header 80" },
   { component: Header81, title: "Header 81" },
-  { component: Header82, title: "Header 82" },
+  // { component: Header82, title: "Header 82" },
   { component: Header83, title: "Header 83" },
   { component: Header84, title: "Header 84" },
   { component: Header85, title: "Header 85" },
@@ -299,32 +299,37 @@ const HeadersPage = () => {
 
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         HEADERS
       </h1>
 
       {/* Search Section */}
-      <Search placeholder='Search for a component (e.g., Header 9)' onSearch={handleSearch} />
+      <Search
+        placeholder="Search for a component (e.g., Header 9)"
+        onSearch={handleSearch}
+      />
 
       <section>
-        {headerComponents.map(({ component: HeaderComponent, title }, index) => (
-          <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
-              {title}
-              <a
-                href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
-              >
-                View Code
-              </a>
-            </h2>
-            {/* Render the component */}
-            <HeaderComponent />
-          </div>
-        ))}
+        {headerComponents.map(
+          ({ component: HeaderComponent, title }, index) => (
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              {/* Render the component */}
+              <HeaderComponent />
+            </div>
+          )
+        )}
       </section>
       <ScrollUp />
     </div>

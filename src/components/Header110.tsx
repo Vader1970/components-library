@@ -1,10 +1,13 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
   alt?: string;
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -43,9 +46,11 @@ export const Header110 = (props: Header110Props) => {
         <div className="grid grid-cols-[1fr_0.75fr] items-start gap-6 sm:gap-8">
           {images.map((image, index) => (
             <div key={index} className="w-full">
-              <img
+              <Image
                 src={image.src}
-                alt={image.alt}
+                alt={image.alt || ""}
+                width={444}
+                height={667}
                 className={clsx("size-full object-cover", {
                   "aspect-[2/3]": index === 0,
                   "aspect-square": index !== 0,
@@ -68,10 +73,14 @@ export const Header110Defaults: Props = {
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
       alt: "Relume placeholder image 1",
+      width: 444,
+      height: 667,
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
       alt: "Relume placeholder image 2",
+      width: 332,
+      height: 332,
     },
   ],
 };

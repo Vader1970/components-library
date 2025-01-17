@@ -5,6 +5,7 @@ import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -18,7 +19,8 @@ type Props = {
   images: ImageProps[];
 };
 
-export type Header106Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header106Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header106 = (props: Header106Props) => {
   const { heading, description, buttons, images } = {
@@ -64,16 +66,18 @@ export const Header106 = (props: Header106Props) => {
   ];
 
   return (
-    <section ref={sectionRef} id='relume'>
-      <div className='relative h-[110vh] md:h-[500vh]'>
-        <div className='sticky top-0 min-h-screen overflow-hidden'>
+    <section ref={sectionRef} id="relume">
+      <div className="relative h-[110vh] md:h-[500vh]">
+        <div className="sticky top-0 min-h-screen overflow-hidden">
           {/* Text Content */}
-          <div className='px-[5%] py-16 md:py-24 lg:py-28'>
-            <div className='container max-w-lg'>
-              <div className='relative z-20 text-center'>
-                <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{heading}</h1>
-                <p className='md:text-md'>{description}</p>
-                <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
+          <div className="px-[5%] py-16 md:py-24 lg:py-28">
+            <div className="container max-w-lg">
+              <div className="relative z-20 text-center">
+                <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+                  {heading}
+                </h1>
+                <p className="md:text-md">{description}</p>
+                <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
                   {buttons.map((button, index) => (
                     <Button key={index} {...button}>
                       {button.title}
@@ -87,7 +91,7 @@ export const Header106 = (props: Header106Props) => {
           {/* Motion Container */}
           <motion.div
             style={containerMotion}
-            className='absolute inset-0 z-10 flex origin-bottom items-end justify-center'
+            className="absolute inset-0 z-10 flex origin-bottom items-end justify-center"
           >
             {images.map((image, index) => (
               <motion.div
@@ -96,20 +100,33 @@ export const Header106 = (props: Header106Props) => {
                   x: imageMotions[index]?.x,
                   y: imageMotions[index]?.y,
                 }}
-                className={clsx("absolute w-full max-w-[9rem] sm:max-w-[15rem] lg:max-w-xs", {
-                  "left-[-25%] top-[65%] sm:top-[45%] md:left-[-20%] lg:left-[-10%] lg:top-[12%] ": index === 0,
-                  "bottom-[5%] left-[-8%] md:left-[5%] lg:bottom-[10%]": index === 1,
-                  "bottom-[0%]": index === 2,
-                  "bottom-[4%] right-[-5%] sm:bottom-[7%] md:right-[8%] lg:bottom-[15%] lg:right-[10%]": index === 3,
-                  "right-[-30%] top-[65%] sm:right-[-15%] sm:top-[45%] lg:right-[-8%] lg:top-[5%]": index === 4,
-                })}
+                className={clsx(
+                  "absolute w-full max-w-[9rem] sm:max-w-[15rem] lg:max-w-xs",
+                  {
+                    "left-[-25%] top-[65%] sm:top-[45%] md:left-[-20%] lg:left-[-10%] lg:top-[12%] ":
+                      index === 0,
+                    "bottom-[5%] left-[-8%] md:left-[5%] lg:bottom-[10%]":
+                      index === 1,
+                    "bottom-[0%]": index === 2,
+                    "bottom-[4%] right-[-5%] sm:bottom-[7%] md:right-[8%] lg:bottom-[15%] lg:right-[10%]":
+                      index === 3,
+                    "right-[-30%] top-[65%] sm:right-[-15%] sm:top-[45%] lg:right-[-8%] lg:top-[5%]":
+                      index === 4,
+                  }
+                )}
               >
-                <img className='size-full' src={image.src} alt={image.alt} />
+                <Image
+                  className="size-full"
+                  src={image.src}
+                  alt={image.alt || "Image"}
+                  width={380}
+                  height={380}
+                />
               </motion.div>
             ))}
           </motion.div>
         </div>
-        <div className='absolute inset-0 -z-10 mt-[100vh]' />
+        <div className="absolute inset-0 -z-10 mt-[100vh]" />
       </div>
     </section>
   );

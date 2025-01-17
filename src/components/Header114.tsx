@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -51,10 +52,11 @@ export const Header114 = (props: Header114Props) => {
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 to-black/50">
         <div className="absolute inset-0 z-10 bg-black/50" />
-        <img
+        <Image
           src={image.src}
           className="absolute inset-0 size-full object-cover"
-          alt={image.alt}
+          alt={image.alt || "Background Image"}
+          fill
         />
       </div>
     </section>
