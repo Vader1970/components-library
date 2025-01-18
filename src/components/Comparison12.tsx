@@ -118,20 +118,20 @@ export const comparison12Defaults: Props = {
       products: [
         {
           image: {
-            src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-            alt: "Relume image 1",
+            src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+            alt: "image 1",
           },
         },
         {
           image: {
-            src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-            alt: "Relume image 2",
+            src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+            alt: "image 2",
           },
         },
         {
           image: {
-            src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-            alt: "Relume image 3",
+            src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+            alt: "image 3",
           },
         },
       ],

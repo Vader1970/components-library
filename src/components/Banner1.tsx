@@ -19,8 +19,7 @@ type Props = {
   button: ButtonProps;
 };
 
-export type Banner1Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Banner1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Banner1 = (props: Banner1Props) => {
   const { heading, description, logo, inputPlaceholder, button } = {
@@ -42,39 +41,32 @@ export const Banner1 = (props: Banner1Props) => {
   }
 
   return (
-    <section id="relume" className="px-[5%]">
-      <div className="container relative flex flex-col justify-start border border-border-primary bg-neutral-white p-4 md:flex-row md:items-center md:px-4 md:py-3">
-        <div className="mb-4 mr-7 flex flex-1 items-start md:mb-0 md:mr-8 md:items-center">
-          <a href={logo.url} className="flex-none">
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="mr-4 hidden size-8 lg:block"
-            />
+    <section id='relume' className='px-[5%]'>
+      <div className='container relative flex flex-col justify-start border border-border-primary bg-neutral-white p-4 md:flex-row md:items-center md:px-4 md:py-3'>
+        <div className='mb-4 mr-7 flex flex-1 items-start md:mb-0 md:mr-8 md:items-center'>
+          <a href={logo.url} className='flex-none'>
+            <img src={logo.src} alt={logo.alt} className='mr-4 hidden size-8 lg:block' />
           </a>
           <div>
-            <h2 className="font-semibold">{heading}</h2>
-            <p className="text-sm">{description}</p>
+            <h2 className='font-semibold'>{heading}</h2>
+            <p className='text-sm'>{description}</p>
           </div>
         </div>
         <form
-          className="grid w-full max-w-xs flex-1 gap-3 sm:grid-cols-[1fr_max-content] sm:gap-4 lg:flex-none"
+          className='grid w-full max-w-xs flex-1 gap-3 sm:grid-cols-[1fr_max-content] sm:gap-4 lg:flex-none'
           onSubmit={handleSubmit}
         >
           <Input
-            id="email"
-            type="email"
+            id='email'
+            type='email'
             placeholder={inputPlaceholder}
             value={emailInput}
             onChange={(e) => setEmailInput(e.target.value)}
           />
           <Button {...button}>{button.title}</Button>
         </form>
-        <button className="absolute right-2 top-2 ml-4 md:static">
-          <RxCross2
-            className="size-8 p-1"
-            onClick={() => setIsVisible(false)}
-          />
+        <button className='absolute right-2 top-2 ml-4 md:static'>
+          <RxCross2 className='size-8 p-1' onClick={() => setIsVisible(false)} />
         </button>
       </div>
     </section>
@@ -87,7 +79,7 @@ export const Banner1Defaults: Props = {
   logo: {
     url: "#",
     src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-    alt: "Relume logo",
+    alt: "logo",
   },
   inputPlaceholder: "Enter your email",
   button: {

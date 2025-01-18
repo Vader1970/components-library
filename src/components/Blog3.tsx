@@ -28,8 +28,7 @@ type Props = {
   blogPosts: BlogPost[];
 };
 
-export type Blog3Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Blog3Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Blog3 = (props: Blog3Props) => {
   const { tagline, heading, description, buttons, categoryLink, blogPosts } = {
@@ -37,19 +36,17 @@ export const Blog3 = (props: Blog3Props) => {
     ...props,
   };
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="mx-auto w-full max-w-lg text-center">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
-              {heading}
-            </h1>
-            <p className="md:text-md">{description}</p>
+    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+      <div className='container'>
+        <div className='mb-12 md:mb-18 lg:mb-20'>
+          <div className='mx-auto w-full max-w-lg text-center'>
+            <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
+            <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{heading}</h1>
+            <p className='md:text-md'>{description}</p>
           </div>
         </div>
-        <div className="flex flex-col justify-start">
-          <div className="no-scrollbar mb-12 ml-[-5vw] flex w-screen items-center justify-start overflow-scroll pl-[5vw] md:mb-16 md:ml-0 md:w-full md:justify-center md:overflow-hidden md:pl-0">
+        <div className='flex flex-col justify-start'>
+          <div className='no-scrollbar mb-12 ml-[-5vw] flex w-screen items-center justify-start overflow-scroll pl-[5vw] md:mb-16 md:ml-0 md:w-full md:justify-center md:overflow-hidden md:pl-0'>
             {buttons.map((button, index) => (
               <Button
                 key={index}
@@ -64,45 +61,36 @@ export const Blog3 = (props: Blog3Props) => {
               </Button>
             ))}
           </div>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
+          <div className='grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3'>
             {blogPosts.map((post, index) => (
-              <div key={index} className="border border-border-primary">
-                <a href={post.url} className="w-full max-w-full">
-                  <div className="w-full overflow-hidden">
-                    <img
-                      src={post.image.src}
-                      alt={post.image.alt}
-                      className="aspect-[3/2] size-full object-cover"
-                    />
+              <div key={index} className='border border-border-primary'>
+                <a href={post.url} className='w-full max-w-full'>
+                  <div className='w-full overflow-hidden'>
+                    <img src={post.image.src} alt={post.image.alt} className='aspect-[3/2] size-full object-cover' />
                   </div>
                 </a>
-                <div className="px-5 py-6 md:p-6">
-                  <a
-                    href={post.url}
-                    className="mb-2 flex text-sm font-semibold"
-                  >
+                <div className='px-5 py-6 md:p-6'>
+                  <a href={post.url} className='mb-2 flex text-sm font-semibold'>
                     {post.category}
                   </a>
-                  <a href={post.url} className="mb-2 block max-w-full">
-                    <h5 className="text-xl font-bold md:text-2xl">
-                      {post.title}
-                    </h5>
+                  <a href={post.url} className='mb-2 block max-w-full'>
+                    <h5 className='text-xl font-bold md:text-2xl'>{post.title}</h5>
                   </a>
                   <p>{post.description}</p>
-                  <div className="mt-6 flex items-center">
-                    <div className="mr-4 shrink-0">
+                  <div className='mt-6 flex items-center'>
+                    <div className='mr-4 shrink-0'>
                       <img
                         src={post.avatar.src}
                         alt={post.avatar.alt}
-                        className="size-12 min-h-12 min-w-12 rounded-full object-cover"
+                        className='size-12 min-h-12 min-w-12 rounded-full object-cover'
                       />
                     </div>
                     <div>
-                      <h6 className="text-sm font-semibold">{post.fullName}</h6>
-                      <div className="flex items-center">
-                        <p className="text-sm">{post.date}</p>
-                        <span className="mx-2">•</span>
-                        <p className="text-sm">{post.readTime}</p>
+                      <h6 className='text-sm font-semibold'>{post.fullName}</h6>
+                      <div className='flex items-center'>
+                        <p className='text-sm'>{post.date}</p>
+                        <span className='mx-2'>•</span>
+                        <p className='text-sm'>{post.readTime}</p>
                       </div>
                     </div>
                   </div>
@@ -133,15 +121,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 1",
+        alt: "placeholder image 1",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 1",
+        alt: "placeholder avatar 1",
       },
       fullName: "Full name",
       date: "11 Jan 2022",
@@ -151,15 +138,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 2",
+        alt: "placeholder image 2",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 2",
+        alt: "placeholder avatar 2",
       },
       fullName: "Full name",
       date: "11 Jan 2022",
@@ -169,15 +155,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 3",
+        alt: "placeholder image 3",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 3",
+        alt: "placeholder avatar 3",
       },
       fullName: "Full name",
       date: "11 Jan 2022",
@@ -187,15 +172,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 4",
+        alt: "placeholder image 4",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 4",
+        alt: "placeholder avatar 4",
       },
       fullName: "Full name",
       date: "11 Jan 2022",
@@ -205,15 +189,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 5",
+        alt: "placeholder image 5",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 5",
+        alt: "placeholder avatar 5",
       },
       fullName: "Full name",
       date: "11 Jan 2022",
@@ -223,15 +206,14 @@ export const Blog3Defaults: Props = {
       url: "#",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-        alt: "Relume placeholder image 6",
+        alt: "placeholder image 6",
       },
       category: "Category",
       title: "Blog title heading will go here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       avatar: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder avatar 6",
+        alt: "placeholder avatar 6",
       },
       fullName: "Full name",
       date: "11 Jan 2022",

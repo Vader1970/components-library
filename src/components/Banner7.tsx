@@ -18,8 +18,7 @@ type Props = {
   button: ButtonProps;
 };
 
-export type Banner7Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type Banner7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Banner7 = (props: Banner7Props) => {
   const { heading, description, logo, button } = {
@@ -34,32 +33,22 @@ export const Banner7 = (props: Banner7Props) => {
   }
 
   return (
-    <section
-      id="relume"
-      className="relative border-b border-border-primary bg-neutral-white px-[5%]"
-    >
-      <div className="flex flex-col justify-start py-4 md:flex-row md:items-center md:justify-center md:py-3">
-        <div className="mr-7 flex flex-col items-start md:ml-12 md:mr-0 md:flex-1 md:flex-row md:items-center md:justify-center">
+    <section id='relume' className='relative border-b border-border-primary bg-neutral-white px-[5%]'>
+      <div className='flex flex-col justify-start py-4 md:flex-row md:items-center md:justify-center md:py-3'>
+        <div className='mr-7 flex flex-col items-start md:ml-12 md:mr-0 md:flex-1 md:flex-row md:items-center md:justify-center'>
           <a href={logo.url}>
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="mr-4 hidden size-8 lg:block"
-            />
+            <img src={logo.src} alt={logo.alt} className='mr-4 hidden size-8 lg:block' />
           </a>
-          <div className="mb-4 md:mb-0 md:mr-6">
-            <h2 className="font-semibold">{heading}</h2>
-            <p className="text-sm">{description}</p>
+          <div className='mb-4 md:mb-0 md:mr-6'>
+            <h2 className='font-semibold'>{heading}</h2>
+            <p className='text-sm'>{description}</p>
           </div>
           <div>
             <Button {...button}>{button.title}</Button>
           </div>
         </div>
-        <button className="absolute right-2 top-2 md:static md:ml-4 md:size-8">
-          <RxCross2
-            className="size-8 p-1"
-            onClick={() => setIsVisible(false)}
-          />
+        <button className='absolute right-2 top-2 md:static md:ml-4 md:size-8'>
+          <RxCross2 className='size-8 p-1' onClick={() => setIsVisible(false)} />
         </button>
       </div>
     </section>
@@ -72,7 +61,7 @@ export const Banner7Defaults: Props = {
   logo: {
     url: "#",
     src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-    alt: "Relume logo",
+    alt: "logo",
   },
   button: {
     title: "Button",

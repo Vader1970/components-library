@@ -52,7 +52,7 @@ export const ApplicationShell4 = () => {
       <div className='sticky top-0 flex min-h-16 w-full items-center border-b border-border-primary bg-white px-4 md:min-h-18 md:px-8'>
         <div className='mx-auto grid size-full grid-cols-2 items-center justify-between gap-4 lg:grid-cols-[1fr_1.5fr_1fr]'>
           <a href='#' className='ml-14 justify-self-start lg:ml-0'>
-            <img src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg' alt='Relume logo' className='shrink-0' />
+            <img src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg' alt='logo' className='shrink-0' />
           </a>
 
           <div className='hidden lg:block lg:w-full lg:max-w-md lg:justify-self-center'>
