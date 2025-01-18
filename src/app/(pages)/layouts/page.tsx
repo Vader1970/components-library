@@ -524,6 +524,7 @@ import { Layout491 } from "@/components/Layout491";
 import { Layout492 } from "@/components/Layout492";
 import { Layout497 } from "@/components/Layout497";
 import { Layout498 } from "@/components/Layout498";
+import { Layout600 } from "@/components/Layout600";
 // import { Layout352 } from "@/components/Layouts/Layout352";
 // import { Layout421 } from "@/components/Layout421";
 
@@ -1050,6 +1051,7 @@ const layoutComponents = [
   { component: Layout525, title: "Layout 525" },
   { component: Layout526, title: "Layout 526" },
   { component: Layout527, title: "Layout 527" },
+  { component: Layout600, title: "Layout 600" },
 
   // Add more layouts as necessary
 ];
