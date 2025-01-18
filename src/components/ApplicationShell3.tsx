@@ -53,7 +53,7 @@ export const ApplicationShell3 = () => {
       <div className='absolute top-0 z-10 flex min-h-16 flex-col px-6 md:min-h-18 md:px-8 lg:sticky lg:h-screen lg:min-h-[auto] lg:w-[19.5rem] lg:min-w-[19.5rem] lg:border-r lg:border-border-primary lg:px-0 lg:py-6'>
         <div className='flex flex-1 flex-row items-center lg:flex-col lg:items-stretch'>
           <a href='#' className='order-1 ml-6 flex justify-start lg:order-none lg:mb-6 lg:ml-6 lg:block lg:self-start'>
-            <img src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg' alt='Relume logo' className='shrink-0' />
+            <img src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg' alt='logo' className='shrink-0' />
           </a>
           {isMobile ? (
             <Sheet>

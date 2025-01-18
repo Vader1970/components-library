@@ -85,8 +85,8 @@ export const Comparison15Defaults: Props = {
   products: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Relume icon 1",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+        alt: "icon 1",
       },
       productName: "Product name",
       description: "Lorem ipsum dolor sit amet",
@@ -105,8 +105,8 @@ export const Comparison15Defaults: Props = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-logo.svg",
-        alt: "Relume icon 2",
+        src: "https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg",
+        alt: "icon 2",
       },
       productName: "Product name",
       description: "Lorem ipsum dolor sit amet",
