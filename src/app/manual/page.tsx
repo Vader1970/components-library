@@ -6,7 +6,7 @@ export default function Manual() {
       <div className='max-w-5xl mx-auto space-y-8'>
         {/* Page Title */}
         <h1 className='text-3xl font-bold tracking-tight text-center'>Using the Component Library with Figma</h1>
-        <p className='text-center text-gray-400'>
+        <p className='text-center text-white'>
           The <strong> Library</strong> is designed to facilitate rapid development of websites, pages, and sections by
           providing ready-to-use components along with corresponding Figma designs. This guide explains how to use the
           Component Library and its accompanying Figma Component Library effectively.
@@ -15,7 +15,7 @@ export default function Manual() {
         {/* Documentation Sections */}
         <div className='space-y-6'>
           {/* Overview Section */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Overview</h2>
             <p className='font-semibold'>The Component Library offers:</p>
             <ul className='list-disc list-inside mt-4 text-gray-300 space-y-2'>
@@ -38,7 +38,7 @@ export default function Manual() {
           </div>
 
           {/* Getting Started Section */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Getting Started</h2>
             <div className='mt-4 space-y-6'>
               <div>
@@ -64,7 +64,7 @@ export default function Manual() {
           </div>
 
           {/* Figma Library */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Figma Library</h2>
             <div className='mt-4 space-y-6'>
               <div>
@@ -99,7 +99,7 @@ export default function Manual() {
           </div>
 
           {/* Preview Components */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Components Preview</h2>
             <div className='mt-4 space-y-6'>
               <div>
@@ -119,7 +119,7 @@ export default function Manual() {
           </div>
 
           {/* Copy and Paste Components */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Copy and Paste Components</h2>
             <div className='mt-4 space-y-6'>
               <div>
@@ -150,7 +150,7 @@ export default function Manual() {
           </div>
 
           {/* Component Categories Section */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Component Categories</h2>
             <p className='text-gray-300 mt-2'>
               The Component Library organizes components into several categories to streamline the selection process.
@@ -178,7 +178,7 @@ export default function Manual() {
           </div>
 
           {/* Key Features Section */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Key Features</h2>
             <ul className='list-disc list-inside mt-4 text-gray-300 space-y-2'>
               <li>
@@ -201,7 +201,7 @@ export default function Manual() {
           </div>
 
           {/* Workflow Example */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Workflow Example</h2>
             <div className='mt-4 space-y-6'>
               <div>
@@ -234,7 +234,7 @@ export default function Manual() {
           </div>
 
           {/* Tips for Effective Usage */}
-          <div className='bg-gray-800 p-6 rounded-lg shadow'>
+          <div className='bg-black p-6 rounded-lg shadow'>
             <h2 className='text-xl font-semibold'>Tips for Effective Usage</h2>
             <div className='mt-4 space-y-6'>
               <div>
