@@ -40,6 +40,18 @@ export default function Home() {
           <p className="mx-auto max-w-[700px] text-muted-foreground">
             Must have own Figma account to access.
           </p>
+
+          {/* Using the Component Library with Figma Link */}
+          <Link
+            href="/manual"
+            className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2"
+          >
+            Using the Component Library with Figma
+          </Link>
+          <p className="mx-auto max-w-[700px] text-muted-foreground">
+            Learn how to use the Component Library and Figma designs together
+            for seamless collaboration and faster workflows.
+          </p>
         </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
