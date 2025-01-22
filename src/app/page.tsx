@@ -16,42 +16,49 @@ export default function Home() {
           components for your project.
         </p>
 
-        <div className="rounded-lg border p-5">
+        <div className="rounded-lg border p-5 space-y-6">
+          {/* Using the Component Library with Figma Link */}
+          <div>
+            <Link
+              href="/manual"
+              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+            >
+              Using the Component Library with Figma
+            </Link>
+            <p className="mx-auto max-w-[700px] text-muted-foreground">
+              Learn how to use the Component Library and Figma designs together
+              for seamless collaboration and faster workflows.
+            </p>
+          </div>
+
           {/* Documentation Link */}
-          <Link
-            href="/documentation"
-            className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2"
-          >
-            View Documentation for Installation
-          </Link>
-          <p className="mx-auto max-w-[700px] text-muted-foreground">
-            Documentation for installing dependency and Tailwind configuration.
-          </p>
+          <div>
+            <Link
+              href="/documentation"
+              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+            >
+              View Documentation for Installation
+            </Link>
+            <p className="mx-auto max-w-[700px] text-muted-foreground">
+              Documentation for installing dependency and Tailwind
+              configuration.
+            </p>
+          </div>
 
           {/* Figma File Link */}
-          <a
-            href="https://www.figma.com/design/Fw591yRy6nBbRkd5BtwIHA/Next-JS-Component-Library?node-id=0-1&t=V1yn2GkJLilbxU0d-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2"
-          >
-            Open Figma Component Library
-          </a>
-          <p className="mx-auto max-w-[700px] text-muted-foreground">
-            Must have own Figma account to access.
-          </p>
-
-          {/* Using the Component Library with Figma Link */}
-          <Link
-            href="/manual"
-            className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline mt-2"
-          >
-            Using the Component Library with Figma
-          </Link>
-          <p className="mx-auto max-w-[700px] text-muted-foreground">
-            Learn how to use the Component Library and Figma designs together
-            for seamless collaboration and faster workflows.
-          </p>
+          <div>
+            <a
+              href="https://www.figma.com/design/Fw591yRy6nBbRkd5BtwIHA/Next-JS-Component-Library?node-id=0-1&t=V1yn2GkJLilbxU0d-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+            >
+              Open Figma Component Library
+            </a>
+            <p className="mx-auto max-w-[700px] text-muted-foreground">
+              Must have own Figma account to access.
+            </p>
+          </div>
         </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -247,7 +254,7 @@ export default function Home() {
             <Card className="h-full group relative overflow-hidden p-6 hover:scale-105 ease-in-out duration-300">
               <div className="flex h-full flex-col justify-between">
                 <div>
-                  <h3 className="font-semibold">{category.title}</h3>
+                  <h2 className="font-semibold">{category.title}</h2>
                   <p className="text-sm text-muted-foreground">
                     {category.description}
                   </p>
