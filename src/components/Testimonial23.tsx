@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import type { ButtonProps, CarouselApi } from "@relume_io/relume-ui";

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FaXTwitter } from "react-icons/fa6";
 import {
   BiLogoFacebookCircle,

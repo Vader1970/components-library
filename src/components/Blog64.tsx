@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import { ButtonProps } from "@relume_io/relume-ui";
 import { Button } from "@relume_io/relume-ui";

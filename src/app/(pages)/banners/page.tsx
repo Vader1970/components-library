@@ -54,34 +54,39 @@ const BannersPage = () => {
 
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Banners
       </h1>
 
       {/* Search Section */}
-      <Search placeholder='Search for a component (e.g., Banner 9)' onSearch={handleSearch} />
+      <Search
+        placeholder="Search for a component (e.g., Banner 9)"
+        onSearch={handleSearch}
+      />
 
       <section>
-        {bannerComponents.map(({ component: BannerComponent, title }, index) => (
-          <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
-              {title}
-              <a
-                href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
-              >
-                View Code
-              </a>
-            </h2>
-            <div className='py-10'>
-              {/* Render the component */}
-              <BannerComponent />
+        {bannerComponents.map(
+          ({ component: BannerComponent, title }, index) => (
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              <div className="py-10">
+                {/* Render the component */}
+                <BannerComponent />
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </section>
       <ScrollUp />
     </div>

@@ -5,8 +5,6 @@ import type { ButtonProps } from "@relume_io/relume-ui";
 type ImageProps = {
   src: string;
   alt?: string;
-  width?: number;
-  height?: number;
 };
 
 type Props = {
@@ -33,8 +31,8 @@ export const Header19 = (props: Header19Props) => {
               src={image.src}
               className="w-full object-cover"
               alt={image.alt || "Image"}
-              width={image.width || 600}
-              height={image.height || 600}
+              width={600}
+              height={600}
             />
           </div>
           <div className="order-1 lg:order-2">
@@ -64,7 +62,5 @@ export const Header19Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "Relume placeholder image",
-    width: 600,
-    height: 600,
   },
 };

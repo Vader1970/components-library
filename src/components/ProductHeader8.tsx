@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -77,7 +78,8 @@ type Props = {
   selectVariants: SelectVariant[];
 };
 
-export type ProductHeader8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type ProductHeader8Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const ProductHeader8 = (props: ProductHeader8Props) => {
   const {
@@ -108,16 +110,18 @@ export const ProductHeader8 = (props: ProductHeader8Props) => {
     });
   };
   return (
-    <header id='relume' className='px-[5%] py-12 md:py-14 lg:py-28'>
-      <div className='container'>
-        <div className='grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1fr_1.25fr_1fr] lg:items-center lg:gap-x-16'>
+    <header id="relume" className="px-[5%] py-12 md:py-14 lg:py-28">
+      <div className="container">
+        <div className="grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1fr_1.25fr_1fr] lg:items-center lg:gap-x-16">
           <div>
-            <Breadcrumb className='mb-6 flex flex-wrap items-center text-sm'>
+            <Breadcrumb className="mb-6 flex flex-wrap items-center text-sm">
               <BreadcrumbList>
                 {breadcrumbs.map((item, index) => (
                   <React.Fragment key={index}>
                     <BreadcrumbItem>
-                      <BreadcrumbLink href={item.url}>{item.title}</BreadcrumbLink>
+                      <BreadcrumbLink href={item.url}>
+                        {item.title}
+                      </BreadcrumbLink>
                     </BreadcrumbItem>
                     {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
                   </React.Fragment>
@@ -125,31 +129,33 @@ export const ProductHeader8 = (props: ProductHeader8Props) => {
               </BreadcrumbList>
             </Breadcrumb>
             <div>
-              <h1 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{heading}</h1>
-              <div className='mb-5 flex flex-col flex-wrap sm:flex-row md:mb-6'>
-                <p className='text-xl font-bold md:text-2xl'>{price}</p>
-                <div className='mx-4 hidden w-px self-stretch bg-background-alternative sm:block'></div>
-                <div className='flex flex-col gap-1'>
+              <h1 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+                {heading}
+              </h1>
+              <div className="mb-5 flex flex-col flex-wrap sm:flex-row md:mb-6">
+                <p className="text-xl font-bold md:text-2xl">{price}</p>
+                <div className="mx-4 hidden w-px self-stretch bg-background-alternative sm:block"></div>
+                <div className="flex flex-col gap-1">
                   <Star rating={rating.starsNumber} />
-                  <p className='text-sm'>{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
+                  <p className="text-sm">{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
                 </div>
               </div>
               <InformationTabs tabs={tabs} />
             </div>
           </div>
-          <div className='order-first lg:order-none'>
+          <div className="order-first lg:order-none">
             <Gallery images={images} />
           </div>
           <div>
-            <form onSubmit={handleSubmit} className='mb-4'>
-              <div className='grid grid-cols-1 gap-6'>
-                <div className='flex flex-col'>
-                  <Label className='mb-2'>Variant</Label>
-                  <div className='flex flex-wrap gap-4'>
+            <form onSubmit={handleSubmit} className="mb-4">
+              <div className="grid grid-cols-1 gap-6">
+                <div className="flex flex-col">
+                  <Label className="mb-2">Variant</Label>
+                  <div className="flex flex-wrap gap-4">
                     {options.map((option, index) => (
                       <Button
                         key={index}
-                        className='px-4 py-2'
+                        className="px-4 py-2"
                         asChild
                         onClick={() => setOptionInput(option.title || "")}
                         {...option}
@@ -166,12 +172,12 @@ export const ProductHeader8 = (props: ProductHeader8Props) => {
                     ))}
                   </div>
                 </div>
-                <div className='grid grid-cols-[1fr_4rem] gap-x-4'>
-                  <div className='flex flex-col'>
-                    <Label className='mb-2'>Variant</Label>
+                <div className="grid grid-cols-[1fr_4rem] gap-x-4">
+                  <div className="flex flex-col">
+                    <Label className="mb-2">Variant</Label>
                     <Select onValueChange={setVariantInput}>
                       <SelectTrigger>
-                        <SelectValue placeholder='Select' />
+                        <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
                         {selectVariants.map((item, index) => (
@@ -182,29 +188,29 @@ export const ProductHeader8 = (props: ProductHeader8Props) => {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className='flex flex-col'>
-                    <Label htmlFor='quantity' className='mb-2'>
+                  <div className="flex flex-col">
+                    <Label htmlFor="quantity" className="mb-2">
                       Qty
                     </Label>
                     <Input
-                      type='number'
-                      id='quantity'
+                      type="number"
+                      id="quantity"
                       placeholder={quantityInputPlaceholder}
-                      className='w-16'
+                      className="w-16"
                       value={quantityInput}
                       onChange={(e) => setQuantityInput(e.target.value)}
                     />
                   </div>
                 </div>
               </div>
-              <div className='mb-4 mt-8 flex flex-col gap-y-4'>
+              <div className="mb-4 mt-8 flex flex-col gap-y-4">
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
                   </Button>
                 ))}
               </div>
-              <p className='text-center text-xs'>{freeShipping}</p>
+              <p className="text-center text-xs">{freeShipping}</p>
             </form>
           </div>
         </div>
@@ -217,12 +223,22 @@ const Star = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   return (
-    <div className='flex items-center gap-1'>
+    <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) => {
         const isFullStar = i < fullStars;
         const isHalfStar = hasHalfStar && i === fullStars;
 
-        return <div key={i}>{isFullStar ? <BiSolidStar /> : isHalfStar ? <BiSolidStarHalf /> : <BiStar />}</div>;
+        return (
+          <div key={i}>
+            {isFullStar ? (
+              <BiSolidStar />
+            ) : isHalfStar ? (
+              <BiSolidStarHalf />
+            ) : (
+              <BiStar />
+            )}
+          </div>
+        );
       })}
     </div>
   );
@@ -243,26 +259,30 @@ const Gallery = ({ images }: GalleryProps) => {
     });
   }, [mainApi, thumbApi]);
   return (
-    <div className='flex flex-col gap-y-4'>
-      <div className='overflow-hidden'>
+    <div className="flex flex-col gap-y-4">
+      <div className="overflow-hidden">
         <Carousel
           setApi={setMainApi}
           opts={{
             loop: true,
             align: "start",
           }}
-          className='m-0'
+          className="m-0"
         >
-          <CarouselContent className='m-0'>
+          <CarouselContent className="m-0">
             {images.map((slide, index) => (
-              <CarouselItem key={index} className='basis-full pl-0'>
-                <img src={slide.src} alt={slide.alt} className='aspect-square size-full object-cover' />
+              <CarouselItem key={index} className="basis-full pl-0">
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="aspect-square size-full object-cover"
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
       </div>
-      <div className='hidden overflow-y-auto lg:block'>
+      <div className="hidden overflow-y-auto lg:block">
         <Carousel
           setApi={setThumbApi}
           opts={{
@@ -270,16 +290,20 @@ const Gallery = ({ images }: GalleryProps) => {
             containScroll: "keepSnaps",
             dragFree: true,
           }}
-          className='m-0'
+          className="m-0"
         >
-          <CarouselContent className='gap-y-4'>
+          <CarouselContent className="gap-y-4">
             {images.map((slide, index) => (
-              <CarouselItem key={index} className='basis-1/5'>
+              <CarouselItem key={index} className="basis-1/5">
                 <button
                   onClick={() => mainApi?.scrollTo(index)}
                   className={clsx("block", current === index && "opacity-60")}
                 >
-                  <img src={slide.src} alt={slide.alt} className='aspect-square size-full object-cover' />
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="aspect-square size-full object-cover"
+                  />
                 </button>
               </CarouselItem>
             ))}
@@ -293,19 +317,23 @@ const Gallery = ({ images }: GalleryProps) => {
 const InformationTabs = ({ tabs }: { tabs: TabProps[] }) => {
   return (
     <Tabs defaultValue={tabs[0].value}>
-      <TabsList className='mb-5 flex-wrap items-center gap-6 md:mb-6'>
+      <TabsList className="mb-5 flex-wrap items-center gap-6 md:mb-6">
         {tabs.map((tab, index) => (
           <TabsTrigger
             key={index}
             value={tab.value}
-            className='border-0 border-b-[1.5px] border-border-alternative px-0 py-2 duration-0 data-[state=active]:border-b-[1.5px] data-[state=active]:border-border-primary data-[state=active]:bg-transparent data-[state=active]:text-text-primary'
+            className="border-0 border-b-[1.5px] border-border-alternative px-0 py-2 duration-0 data-[state=active]:border-b-[1.5px] data-[state=active]:border-border-primary data-[state=active]:bg-transparent data-[state=active]:text-text-primary"
           >
             {tab.trigger}
           </TabsTrigger>
         ))}
       </TabsList>
       {tabs.map((tab, index) => (
-        <TabsContent key={index} value={tab.value} className='data-[state=active]:animate-tabs'>
+        <TabsContent
+          key={index}
+          value={tab.value}
+          className="data-[state=active]:animate-tabs"
+        >
           <p>{tab.description}</p>
         </TabsContent>
       ))}
@@ -352,7 +380,10 @@ export const ProductHeader8Defaults: Props = {
       alt: "Relume placeholder image 5",
     },
   ],
-  buttons: [{ title: "Add to cart" }, { title: "Buy now", variant: "secondary" }],
+  buttons: [
+    { title: "Add to cart" },
+    { title: "Buy now", variant: "secondary" },
+  ],
   options: [
     {
       title: "Option one",

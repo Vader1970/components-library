@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import { Button, ButtonProps, VideoIframe } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";

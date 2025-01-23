@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 
 import { Button, ButtonProps } from "@relume_io/relume-ui";

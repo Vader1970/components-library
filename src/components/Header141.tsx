@@ -19,13 +19,15 @@ type Props = {
   imageRight: ImageProps;
 };
 
-export type Header141Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header141Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header141 = (props: Header141Props) => {
-  const { heading, description, buttons, imageLeft, imageCenter, imageRight } = {
-    ...Header141Defaults,
-    ...props,
-  };
+  const { heading, description, buttons, imageLeft, imageCenter, imageRight } =
+    {
+      ...Header141Defaults,
+      ...props,
+    };
 
   // Ref for localized scroll tracking
   const sectionRef = useRef<HTMLElement>(null);
@@ -40,26 +42,44 @@ export const Header141 = (props: Header141Props) => {
 
   // Motion transforms
   const leftImageTranslate = {
-    y: useTransform(scrollYProgress, [0, 1], isMobile ? ["-20.5%", "0%"] : isTablet ? ["-14%", "0%"] : ["-16%", "0%"]),
+    y: useTransform(
+      scrollYProgress,
+      [0, 1],
+      isMobile ? ["-20.5%", "0%"] : isTablet ? ["-14%", "0%"] : ["-16%", "0%"]
+    ),
   };
 
   const centerImageTranslate = {
-    y: useTransform(scrollYProgress, [0, 1], isMobile ? ["19%", "0%"] : isTablet ? ["14%", "0%"] : ["15.5%", "0%"]),
+    y: useTransform(
+      scrollYProgress,
+      [0, 1],
+      isMobile ? ["19%", "0%"] : isTablet ? ["14%", "0%"] : ["15.5%", "0%"]
+    ),
   };
 
   const rightImageTranslate = {
-    y: useTransform(scrollYProgress, [0, 1], isMobile ? ["26%", "-20%"] : isTablet ? ["8%", "-20%"] : ["12%", "-20%"]),
+    y: useTransform(
+      scrollYProgress,
+      [0, 1],
+      isMobile ? ["26%", "-20%"] : isTablet ? ["8%", "-20%"] : ["12%", "-20%"]
+    ),
   };
 
   return (
-    <section ref={sectionRef} id='relume' className='relative px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
+    <section
+      ref={sectionRef}
+      id="relume"
+      className="relative px-[5%] py-16 md:py-24 lg:py-28"
+    >
+      <div className="container">
         {/* Header Content */}
-        <div className='mb-12 text-center md:mb-18 lg:mb-20'>
-          <div className='mx-auto w-full max-w-lg'>
-            <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{heading}</h1>
-            <p className='md:text-md'>{description}</p>
-            <div className='mt-6 flex items-center justify-center gap-4 md:mt-8'>
+        <div className="mb-12 text-center md:mb-18 lg:mb-20">
+          <div className="mx-auto w-full max-w-lg">
+            <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+              {heading}
+            </h1>
+            <p className="md:text-md">{description}</p>
+            <div className="mt-6 flex items-center justify-center gap-4 md:mt-8">
               {buttons.map((button, index) => (
                 <Button key={index} {...button}>
                   {button.title}
@@ -70,20 +90,44 @@ export const Header141 = (props: Header141Props) => {
         </div>
 
         {/* Images */}
-        <div className='relative flex justify-center gap-6 sm:gap-8 md:gap-0'>
+        <div className="relative flex justify-center gap-6 sm:gap-8 md:gap-0">
           {/* Left Image */}
-          <motion.div className='relative w-1/3 sm:w-2/5' style={leftImageTranslate}>
-            <img src={imageLeft.src} alt={imageLeft.alt} className='aspect-square size-full object-cover' />
+          <motion.div
+            className="relative w-1/3 sm:w-2/5"
+            style={leftImageTranslate}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imageLeft.src}
+              alt={imageLeft.alt}
+              className="aspect-square size-full object-cover"
+            />
           </motion.div>
 
           {/* Center Image */}
-          <motion.div className='relative w-1/3 sm:w-1/2' style={centerImageTranslate}>
-            <img src={imageCenter.src} alt={imageCenter.alt} className='aspect-square size-full object-cover' />
+          <motion.div
+            className="relative w-1/3 sm:w-1/2"
+            style={centerImageTranslate}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imageCenter.src}
+              alt={imageCenter.alt}
+              className="aspect-square size-full object-cover"
+            />
           </motion.div>
 
           {/* Right Image */}
-          <motion.div className='relative w-1/3 sm:w-2/5' style={rightImageTranslate}>
-            <img src={imageRight.src} alt={imageRight.alt} className='aspect-[4/3] size-full object-cover' />
+          <motion.div
+            className="relative w-1/3 sm:w-2/5"
+            style={rightImageTranslate}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imageRight.src}
+              alt={imageRight.alt}
+              className="aspect-[4/3] size-full object-cover"
+            />
           </motion.div>
         </div>
       </div>

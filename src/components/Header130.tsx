@@ -41,6 +41,7 @@ export const Header130 = (props: Header130Props) => {
           </div>
           <div className="relative flex">
             <div className="absolute bottom-0 left-0 w-3/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={firstImage.src}
                 className="aspect-square size-full object-cover"
@@ -48,6 +49,7 @@ export const Header130 = (props: Header130Props) => {
               />
             </div>
             <div className="mb-[15%] ml-[15%] w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={secondImage.src}
                 className="aspect-square size-full object-cover"

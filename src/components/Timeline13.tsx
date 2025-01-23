@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
@@ -34,7 +35,8 @@ type Props = {
   timelineItems: TimelineItem[];
 };
 
-export type Timeline13Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Timeline13Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Timeline13 = (props: Timeline13Props) => {
   const { tagline, heading, description, buttons, timelineItems } = {
@@ -43,15 +45,17 @@ export const Timeline13 = (props: Timeline13Props) => {
   };
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
-        <div className='flex flex-col items-center'>
-          <div className='mb-12 text-center md:mb-18 lg:mb-20'>
-            <div className='relative z-10 w-full max-w-lg'>
-              <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
-              <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-              <p className='md:text-md'>{description}</p>
-              <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="flex flex-col items-center">
+          <div className="mb-12 text-center md:mb-18 lg:mb-20">
+            <div className="relative z-10 w-full max-w-lg">
+              <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+                {heading}
+              </h2>
+              <p className="md:text-md">{description}</p>
+              <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
@@ -60,13 +64,13 @@ export const Timeline13 = (props: Timeline13Props) => {
               </div>
             </div>
           </div>
-          <div className='relative grid auto-cols-fr grid-cols-1 justify-items-center gap-20'>
-            <div className='absolute flex h-full w-8 flex-col items-center justify-self-start md:justify-self-auto'>
-              <div className='absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent' />
-              <div className='sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black' />
-              <div className='h-full w-[3px] bg-neutral-lighter' />
-              <div className='absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary' />
-              <div className='absolute top-[-50vh] h-[50vh] w-full bg-background-primary' />
+          <div className="relative grid auto-cols-fr grid-cols-1 justify-items-center gap-20">
+            <div className="absolute flex h-full w-8 flex-col items-center justify-self-start md:justify-self-auto">
+              <div className="absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent" />
+              <div className="sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black" />
+              <div className="h-full w-[3px] bg-neutral-lighter" />
+              <div className="absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary" />
+              <div className="absolute top-[-50vh] h-[50vh] w-full bg-background-primary" />
             </div>
             <React.Fragment>
               {timelineItems.map((item, index) => (
@@ -80,7 +84,13 @@ export const Timeline13 = (props: Timeline13Props) => {
   );
 };
 
-const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) => {
+const TimelineItem = ({
+  item,
+  index,
+}: {
+  item: TimelineItem;
+  index: number;
+}) => {
   const isEven = index % 2 === 0;
   const circleRef = useRef<HTMLDivElement>(null);
 
@@ -94,25 +104,29 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
   };
 
   return (
-    <div className='grid auto-cols-fr grid-cols-[max-content_1fr] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-12'>
+    <div className="grid auto-cols-fr grid-cols-[max-content_1fr] items-start justify-items-center gap-4 md:grid-cols-[1fr_max-content_1fr] md:gap-8 lg:gap-12">
       {isEven ? (
         <React.Fragment>
-          <div className='order-last w-full overflow-hidden md:order-none md:w-auto'>
-            <img src={item.image.src} alt={item.image.alt} className='w-full' />
+          <div className="order-last w-full overflow-hidden md:order-none md:w-auto">
+            <img src={item.image.src} alt={item.image.alt} className="w-full" />
           </div>
-          <TimelineCircle ref={circleRef} backgroundColor={backgroundColor} className='col-span-1 row-span-2' />
+          <TimelineCircle
+            ref={circleRef}
+            backgroundColor={backgroundColor}
+            className="col-span-1 row-span-2"
+          />
           <TimelineContent item={item} />
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <TimelineContent item={item} alignment='right' />
+          <TimelineContent item={item} alignment="right" />
           <TimelineCircle
             ref={circleRef}
             backgroundColor={backgroundColor}
-            className='order-first col-span-1 row-span-2 md:order-none'
+            className="order-first col-span-1 row-span-2 md:order-none"
           />
-          <div className='w-full overflow-hidden md:w-auto'>
-            <img src={item.image.src} alt={item.image.alt} className='w-full' />
+          <div className="w-full overflow-hidden md:w-auto">
+            <img src={item.image.src} alt={item.image.alt} className="w-full" />
           </div>
         </React.Fragment>
       )}
@@ -120,30 +134,41 @@ const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) =>
   );
 };
 
-const TimelineCircle = React.forwardRef<HTMLDivElement, TimelineCircleProps>(({ backgroundColor, className }, ref) => (
-  <div className={clsx("flex h-full w-8 justify-center", className)}>
-    <motion.div
-      ref={ref}
-      style={backgroundColor}
-      className='z-20 mt-7 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white] md:mt-8'
-    />
-  </div>
-));
+const TimelineCircle = React.forwardRef<HTMLDivElement, TimelineCircleProps>(
+  ({ backgroundColor, className }, ref) => (
+    <div className={clsx("flex h-full w-8 justify-center", className)}>
+      <motion.div
+        ref={ref}
+        style={backgroundColor}
+        className="z-20 mt-7 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white] md:mt-8"
+      />
+    </div>
+  )
+);
 
 // Set the displayName for the TimelineCircle component
 TimelineCircle.displayName = "TimelineCircle";
 
-const TimelineContent = ({ item, alignment = "left" }: { item: TimelineItem; alignment?: "left" | "right" }) => (
+const TimelineContent = ({
+  item,
+  alignment = "left",
+}: {
+  item: TimelineItem;
+  alignment?: "left" | "right";
+}) => (
   <div
     className={clsx(
       "z-20 mt-4 flex w-full flex-col md:w-auto",
-      alignment === "right" && "items-start text-left md:items-end md:text-right"
+      alignment === "right" &&
+        "items-start text-left md:items-end md:text-right"
     )}
   >
-    <h3 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{item.heading}</h3>
-    <h4 className='mb-3 text-xl font-bold md:mb-4 md:text-2xl'>{item.title}</h4>
+    <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+      {item.heading}
+    </h3>
+    <h4 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">{item.title}</h4>
     <p>{item.description}</p>
-    <div className='mt-6 flex flex-wrap items-center gap-4 md:mt-8'>
+    <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
       {item.buttons.map((button, index) => (
         <Button key={index} {...button}>
           {button.title}

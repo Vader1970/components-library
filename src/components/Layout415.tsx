@@ -1,10 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useRef } from "react";
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
-import { MotionStyle, MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import {
+  MotionStyle,
+  MotionValue,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 type ImageProps = {
   src: string;
@@ -25,7 +32,8 @@ type Props = {
   featureSections: FeatureSectionProps[];
 };
 
-export type Layout415Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Layout415Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Layout415 = (props: Layout415Props) => {
   const { tagline, heading, description, buttons, featureSections } = {
@@ -42,15 +50,17 @@ export const Layout415 = (props: Layout415Props) => {
   });
 
   return (
-    <section ref={containerRef} className='px-[5%]'>
-      <div className='container'>
-        <div className='relative h-[300svh] lg:h-[300vh]'>
-          <div className='static grid h-full grid-cols-1 content-start items-center gap-x-20 gap-y-16 py-16 md:sticky md:top-0 md:h-svh md:grid-cols-2 md:content-normal md:py-0 lg:h-screen'>
+    <section ref={containerRef} className="px-[5%]">
+      <div className="container">
+        <div className="relative h-[300svh] lg:h-[300vh]">
+          <div className="static grid h-full grid-cols-1 content-start items-center gap-x-20 gap-y-16 py-16 md:sticky md:top-0 md:h-svh md:grid-cols-2 md:content-normal md:py-0 lg:h-screen">
             <div>
-              <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
-              <h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-              <p className='md:text-md'>{description}</p>
-              <div className='mt-6 flex flex-wrap items-center gap-4 md:mt-8'>
+              <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+              <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+                {heading}
+              </h2>
+              <p className="md:text-md">{description}</p>
+              <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
@@ -58,7 +68,7 @@ export const Layout415 = (props: Layout415Props) => {
                 ))}
               </div>
             </div>
-            <div className='sticky top-[25%] flex min-h-[24.5rem] flex-col items-center justify-center md:relative md:top-0 md:min-h-[auto]'>
+            <div className="sticky top-[25%] flex min-h-[24.5rem] flex-col items-center justify-center md:relative md:top-0 md:min-h-[auto]">
               {featureSections.map((section, index) => (
                 <FeatureSection
                   key={index}
@@ -72,7 +82,7 @@ export const Layout415 = (props: Layout415Props) => {
           </div>
         </div>
       </div>
-      <div className='absolute inset-0 -z-10 mt-[100vh]' />
+      <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
 };
@@ -91,14 +101,26 @@ const FeatureSection = ({
   const sectionScrollStart = index / totalSections;
   const sectionScrollEnd = (index + 1) / totalSections;
 
-  const rotate = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], [0 + index * 3, -30]);
-  const translateY = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], ["0vh", "-100vh"]);
+  const rotate = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    [0 + index * 3, -30]
+  );
+  const translateY = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vh", "-100vh"]
+  );
 
-  const translateX = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], ["0vw", "-10vw"]);
+  const translateX = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vw", "-10vw"]
+  );
 
   return (
     <motion.div
-      className='absolute mx-6 flex flex-col justify-between border border-border-primary bg-background-primary p-8 md:ml-0'
+      className="absolute mx-6 flex flex-col justify-between border border-border-primary bg-background-primary p-8 md:ml-0"
       style={
         {
           rotate: index === totalSections - 1 ? "9deg" : rotate,
@@ -108,10 +130,16 @@ const FeatureSection = ({
         } as MotionStyle
       }
     >
-      <div className='rb-6 mb-6 md:mb-8'>
-        <img src={section.icon.src} alt={section.icon.alt} className='size-12' />
+      <div className="rb-6 mb-6 md:mb-8">
+        <img
+          src={section.icon.src}
+          alt={section.icon.alt}
+          className="size-12"
+        />
       </div>
-      <h3 className='mb-3 text-xl font-bold md:mb-4 md:text-2xl'>{section.title}</h3>
+      <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+        {section.title}
+      </h3>
       <p>{section.description}</p>
     </motion.div>
   );

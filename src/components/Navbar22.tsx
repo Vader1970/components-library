@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Label, Textarea, Checkbox, Button, Input } from "@relume_io/relume-ui";

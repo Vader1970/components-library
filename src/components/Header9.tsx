@@ -5,8 +5,6 @@ import Image from "next/image";
 type ImageProps = {
   src: string;
   alt?: string;
-  width?: number; // Optional width
-  height?: number; // Optional height
 };
 
 type Props = {

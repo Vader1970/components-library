@@ -1,8 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import { MotionValue, useMotionValue, motion, useScroll, useTransform } from "framer-motion";
+import {
+  MotionValue,
+  useMotionValue,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import { RxChevronRight } from "react-icons/rx";
 import clsx from "clsx";
@@ -28,15 +35,21 @@ type Props = {
   featureSections: FeatureSectionProps[];
 };
 
-export type Layout409Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Layout409Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
-const calculateScales = (totalSections: number, scrollYProgress: MotionValue<number>) => {
+const calculateScales = (
+  totalSections: number,
+  scrollYProgress: MotionValue<number>
+) => {
   return Array.from({ length: totalSections }, (_, index) => {
     const sectionFraction = 1 / totalSections;
     const start = sectionFraction * index;
     const end = sectionFraction * (index + 1);
 
-    return index < totalSections - 1 ? useTransform(scrollYProgress, [start, end], [1, 0.8]) : useMotionValue(1);
+    return index < totalSections - 1
+      ? useTransform(scrollYProgress, [start, end], [1, 0.8])
+      : useMotionValue(1);
   });
 };
 
@@ -56,16 +69,26 @@ export const Layout409 = (props: Layout409Props) => {
   const scales = calculateScales(featureSections.length, scrollYProgress);
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
-        <div className='mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20'>
-          <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
-          <h1 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h1>
-          <p className='md:text-md'>{description}</p>
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
+          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+          <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+            {heading}
+          </h1>
+          <p className="md:text-md">{description}</p>
         </div>
-        <div ref={containerRef} className='sticky top-0 grid grid-cols-1 gap-6 md:gap-0'>
+        <div
+          ref={containerRef}
+          className="sticky top-0 grid grid-cols-1 gap-6 md:gap-0"
+        >
           {featureSections.map((featureSection, index) => (
-            <FeatureSection key={index} {...featureSection} scale={scales[index]} index={index} />
+            <FeatureSection
+              key={index}
+              {...featureSection}
+              scale={scales[index]}
+              index={index}
+            />
           ))}
         </div>
       </div>
@@ -87,12 +110,12 @@ const FeatureSection = ({
   return (
     <React.Fragment>
       {isMobile ? (
-        <div className='static grid grid-cols-1 content-center overflow-hidden border border-border-primary bg-neutral-white'>
+        <div className="static grid grid-cols-1 content-center overflow-hidden border border-border-primary bg-neutral-white">
           <FeatureSectionContent isEven={isEven} {...featureSection} />
         </div>
       ) : (
         <motion.div
-          className='static grid grid-cols-1 content-center overflow-hidden border border-border-primary bg-neutral-white md:sticky md:top-[10%] md:mb-[10vh] md:h-[80vh] md:grid-cols-2'
+          className="static grid grid-cols-1 content-center overflow-hidden border border-border-primary bg-neutral-white md:sticky md:top-[10%] md:mb-[10vh] md:h-[80vh] md:grid-cols-2"
           style={{ scale }}
         >
           <FeatureSectionContent isEven={isEven} {...featureSection} />
@@ -102,7 +125,10 @@ const FeatureSection = ({
   );
 };
 
-const FeatureSectionContent = ({ isEven, ...featureSection }: FeatureSectionProps & { isEven: boolean }) => (
+const FeatureSectionContent = ({
+  isEven,
+  ...featureSection
+}: FeatureSectionProps & { isEven: boolean }) => (
   <React.Fragment>
     <div
       className={clsx(
@@ -110,12 +136,12 @@ const FeatureSectionContent = ({ isEven, ...featureSection }: FeatureSectionProp
         isEven ? "md:order-first" : "md:order-last"
       )}
     >
-      <p className='mb-2 font-semibold'>{featureSection.tagline}</p>
-      <h2 className='rb-5 mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>
+      <p className="mb-2 font-semibold">{featureSection.tagline}</p>
+      <h2 className="rb-5 mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
         {featureSection.heading}
       </h2>
       <p>{featureSection.description}</p>
-      <div className='mt-6 flex items-center gap-x-4 md:mt-8'>
+      <div className="mt-6 flex items-center gap-x-4 md:mt-8">
         {featureSection.buttons.map((button, index) => (
           <Button key={index} {...button}>
             {button.title}

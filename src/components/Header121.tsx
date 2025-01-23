@@ -45,13 +45,16 @@ export const Header121 = (props: Header121Props) => {
 
         <div className="mt-12 grid auto-cols-fr grid-cols-1 items-end sm:grid-cols-[0.4fr_1fr_0.4fr] sm:gap-8 md:mt-0">
           <div className="w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-square size-full object-cover"
               src={firstImage.src}
               alt={firstImage.alt}
             />
           </div>
+
           <div className="my-[15%] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="my-[10%] aspect-[3/2] size-full object-cover sm:my-0"
               src={secondImage.src}
@@ -59,6 +62,7 @@ export const Header121 = (props: Header121Props) => {
             />
           </div>
           <div className="w-full self-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[3/4] size-full object-cover"
               src={thirdImage.src}

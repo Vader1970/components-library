@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -76,7 +77,8 @@ type Props = {
   selectVariants: SelectVariant[];
 };
 
-export type ProductHeader1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type ProductHeader1Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const ProductHeader1 = (props: ProductHeader1Props) => {
   const {
@@ -108,9 +110,9 @@ export const ProductHeader1 = (props: ProductHeader1Props) => {
     });
   };
   return (
-    <header id='relume' className='px-[5%] py-12 md:py-16 lg:py-20'>
-      <div className='container'>
-        <Breadcrumb className='mb-6 flex flex-wrap items-center text-sm'>
+    <header id="relume" className="px-[5%] py-12 md:py-16 lg:py-20">
+      <div className="container">
+        <Breadcrumb className="mb-6 flex flex-wrap items-center text-sm">
           <BreadcrumbList>
             {breadcrumbs.map((item, index) => (
               <React.Fragment key={index}>
@@ -122,23 +124,27 @@ export const ProductHeader1 = (props: ProductHeader1Props) => {
             ))}
           </BreadcrumbList>
         </Breadcrumb>
-        <div className='grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1.25fr_1fr] lg:gap-x-20'>
+        <div className="grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1.25fr_1fr] lg:gap-x-20">
           <Gallery images={images} />
           <div>
-            <h1 className='mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl'>{heading}</h1>
-            <p className='mb-5 text-xl font-bold md:mb-6 md:text-2xl'>{price}</p>
-            <div className='mb-5 flex flex-wrap items-center gap-3 md:mb-6'>
+            <h1 className="mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl">
+              {heading}
+            </h1>
+            <p className="mb-5 text-xl font-bold md:mb-6 md:text-2xl">
+              {price}
+            </p>
+            <div className="mb-5 flex flex-wrap items-center gap-3 md:mb-6">
               <Star rating={rating.starsNumber} />
-              <p className='text-sm'>{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
+              <p className="text-sm">{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
             </div>
-            <p className='mb-5 md:mb-6'>{description}</p>
-            <form onSubmit={handleSubmit} className='mb-8'>
-              <div className='grid grid-cols-1 gap-6'>
-                <div className='flex flex-col'>
-                  <Label className='mb-2'>Variant</Label>
+            <p className="mb-5 md:mb-6">{description}</p>
+            <form onSubmit={handleSubmit} className="mb-8">
+              <div className="grid grid-cols-1 gap-6">
+                <div className="flex flex-col">
+                  <Label className="mb-2">Variant</Label>
                   <Select onValueChange={setVariantInput}>
                     <SelectTrigger>
-                      <SelectValue placeholder='Select' />
+                      <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
                       {selectVariants.map((item, index) => (
@@ -149,13 +155,13 @@ export const ProductHeader1 = (props: ProductHeader1Props) => {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className='flex flex-col'>
-                  <Label className='mb-2'>Variant</Label>
-                  <div className='flex flex-wrap gap-4'>
+                <div className="flex flex-col">
+                  <Label className="mb-2">Variant</Label>
+                  <div className="flex flex-wrap gap-4">
                     {options.map((option, index) => (
                       <Button
                         key={index}
-                        className='px-4 py-2'
+                        className="px-4 py-2"
                         asChild
                         onClick={() => setOptionInput(option.title || "")}
                         {...option}
@@ -172,36 +178,38 @@ export const ProductHeader1 = (props: ProductHeader1Props) => {
                     ))}
                   </div>
                 </div>
-                <div className='flex flex-col'>
-                  <Label htmlFor='quantity' className='mb-2'>
+                <div className="flex flex-col">
+                  <Label htmlFor="quantity" className="mb-2">
                     Quantity
                   </Label>
                   <Input
-                    type='number'
-                    id='quantity'
+                    type="number"
+                    id="quantity"
                     placeholder={quantityInputPlaceholder}
-                    className='w-16'
+                    className="w-16"
                     value={quantityInput}
                     onChange={(e) => setQuantityInput(e.target.value)}
                   />
                 </div>
               </div>
-              <div className='mb-4 mt-8 flex flex-col gap-y-4'>
+              <div className="mb-4 mt-8 flex flex-col gap-y-4">
                 {buttons.map((button, index) => (
                   <Button key={index} {...button}>
                     {button.title}
                   </Button>
                 ))}
               </div>
-              <p className='text-center text-xs'>{freeShipping}</p>
+              <p className="text-center text-xs">{freeShipping}</p>
             </form>
-            <Accordion type='multiple'>
+            <Accordion type="multiple">
               {questions.map((question, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className='py-4 font-semibold md:text-md [&_svg]:size-6'>
+                  <AccordionTrigger className="py-4 font-semibold md:text-md [&_svg]:size-6">
                     {question.title}
                   </AccordionTrigger>
-                  <AccordionContent className='md:pb-6'>{question.answer}</AccordionContent>
+                  <AccordionContent className="md:pb-6">
+                    {question.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -216,12 +224,22 @@ const Star = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   return (
-    <div className='flex items-center gap-1'>
+    <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) => {
         const isFullStar = i < fullStars;
         const isHalfStar = hasHalfStar && i === fullStars;
 
-        return <div key={i}>{isFullStar ? <BiSolidStar /> : isHalfStar ? <BiSolidStarHalf /> : <BiStar />}</div>;
+        return (
+          <div key={i}>
+            {isFullStar ? (
+              <BiSolidStar />
+            ) : isHalfStar ? (
+              <BiSolidStarHalf />
+            ) : (
+              <BiStar />
+            )}
+          </div>
+        );
       })}
     </div>
   );
@@ -242,27 +260,31 @@ const Gallery = ({ images }: GalleryProps) => {
     });
   }, [mainApi, thumbApi]);
   return (
-    <div className='grid grid-cols-1 md:grid-cols-[5rem_1fr] md:gap-x-4'>
-      <div className='relative hidden h-full md:block'>
-        <div className='absolute bottom-0 top-0 max-h-full overflow-y-auto'>
+    <div className="grid grid-cols-1 md:grid-cols-[5rem_1fr] md:gap-x-4">
+      <div className="relative hidden h-full md:block">
+        <div className="absolute bottom-0 top-0 max-h-full overflow-y-auto">
           <Carousel
             setApi={setThumbApi}
-            orientation='vertical'
+            orientation="vertical"
             opts={{
               align: "start",
               containScroll: "keepSnaps",
               dragFree: true,
             }}
-            className='m-0'
+            className="m-0"
           >
-            <CarouselContent className='m-0 gap-y-4'>
+            <CarouselContent className="m-0 gap-y-4">
               {images.map((slide, index) => (
-                <CarouselItem key={index} className='p-0'>
+                <CarouselItem key={index} className="p-0">
                   <button
                     onClick={() => mainApi?.scrollTo(index)}
                     className={clsx("block", current === index && "opacity-60")}
                   >
-                    <img src={slide.src} alt={slide.alt} className='aspect-[5/6] size-full object-cover' />
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      className="aspect-[5/6] size-full object-cover"
+                    />
                   </button>
                 </CarouselItem>
               ))}
@@ -270,20 +292,24 @@ const Gallery = ({ images }: GalleryProps) => {
           </Carousel>
         </div>
       </div>
-      <div className='overflow-hidden'>
+      <div className="overflow-hidden">
         <Carousel
           setApi={setMainApi}
           opts={{
             loop: true,
             align: "start",
           }}
-          className='m-0'
+          className="m-0"
         >
-          <CarouselContent className='m-0'>
+          <CarouselContent className="m-0">
             {images.map((slide, index) => (
-              <CarouselItem key={index} className='basis-full pl-0'>
+              <CarouselItem key={index} className="basis-full pl-0">
                 <button>
-                  <img src={slide.src} alt={slide.alt} className='aspect-[5/6] size-full object-cover' />
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="aspect-[5/6] size-full object-cover"
+                  />
                 </button>
               </CarouselItem>
             ))}
@@ -331,7 +357,10 @@ export const ProductHeader1Defaults: Props = {
       alt: "Relume placeholder image 4",
     },
   ],
-  buttons: [{ title: "Add to cart" }, { title: "Buy now", variant: "secondary" }],
+  buttons: [
+    { title: "Add to cart" },
+    { title: "Buy now", variant: "secondary" },
+  ],
   options: [
     {
       title: "Option one",

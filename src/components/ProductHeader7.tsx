@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -79,7 +80,8 @@ type Props = {
   selectVariants: SelectVariant[];
 };
 
-export type ProductHeader7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type ProductHeader7Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const ProductHeader7 = (props: ProductHeader7Props) => {
   const {
@@ -112,16 +114,16 @@ export const ProductHeader7 = (props: ProductHeader7Props) => {
     });
   };
   return (
-    <header id='relume' className='px-[5%] py-12 md:py-16 lg:py-20'>
-      <div className='container'>
-        <div className='grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1.25fr_1fr] lg:gap-x-20'>
-          <div className='order-first md:order-none'>
-            <div className='lg:sticky lg:inset-y-[10vh]'>
+    <header id="relume" className="px-[5%] py-12 md:py-16 lg:py-20">
+      <div className="container">
+        <div className="grid grid-cols-1 gap-y-8 md:gap-y-10 lg:grid-cols-[1.25fr_1fr] lg:gap-x-20">
+          <div className="order-first md:order-none">
+            <div className="lg:sticky lg:inset-y-[10vh]">
               <Gallery images={images} />
             </div>
           </div>
           <div>
-            <Breadcrumb className='mb-6 flex flex-wrap items-center text-sm'>
+            <Breadcrumb className="mb-6 flex flex-wrap items-center text-sm">
               <BreadcrumbList>
                 {breadcrumbs.map((item, index) => (
                   <React.Fragment key={index}>
@@ -141,30 +143,35 @@ export const ProductHeader7 = (props: ProductHeader7Props) => {
               </BreadcrumbList>
             </Breadcrumb>
             <div>
-              <h1 className='mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>{heading}</h1>
-              <div className='mb-5 flex flex-col flex-wrap sm:flex-row sm:items-center md:mb-6'>
-                <p className='text-xl font-bold md:text-2xl'>{price}</p>
-                <div className='mx-4 hidden w-px self-stretch bg-background-alternative sm:block'></div>
-                <div className='flex flex-wrap items-center gap-3'>
+              <h1 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+                {heading}
+              </h1>
+              <div className="mb-5 flex flex-col flex-wrap sm:flex-row sm:items-center md:mb-6">
+                <p className="text-xl font-bold md:text-2xl">{price}</p>
+                <div className="mx-4 hidden w-px self-stretch bg-background-alternative sm:block"></div>
+                <div className="flex flex-wrap items-center gap-3">
                   <Star rating={rating.starsNumber} />
-                  <p className='text-sm'>{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
+                  <p className="text-sm">{`(${rating.starsNumber} stars) • ${rating.review} reviews`}</p>
                 </div>
               </div>
               <p>{description}</p>
-              <ul className='mb-5 mt-4 list-inside list-disc md:mb-6'>
+              <ul className="mb-5 mt-4 list-inside list-disc md:mb-6">
                 {list.map((item, index) => (
-                  <li key={index} className='py-0.5 pl-1.5 first:pt-0 last:pb-0'>
+                  <li
+                    key={index}
+                    className="py-0.5 pl-1.5 first:pt-0 last:pb-0"
+                  >
                     {item.title}
                   </li>
                 ))}
               </ul>
-              <form onSubmit={handleSubmit} className='mb-8'>
-                <div className='grid grid-cols-1 gap-6'>
-                  <div className='flex flex-col'>
-                    <Label className='mb-2'>Variant</Label>
+              <form onSubmit={handleSubmit} className="mb-8">
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="flex flex-col">
+                    <Label className="mb-2">Variant</Label>
                     <Select onValueChange={setVariantInput}>
                       <SelectTrigger>
-                        <SelectValue placeholder='Select' />
+                        <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
                         {selectVariants.map((item, index) => (
@@ -175,13 +182,13 @@ export const ProductHeader7 = (props: ProductHeader7Props) => {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className='flex flex-col'>
-                    <Label className='mb-2'>Variant</Label>
-                    <div className='flex flex-wrap gap-4'>
+                  <div className="flex flex-col">
+                    <Label className="mb-2">Variant</Label>
+                    <div className="flex flex-wrap gap-4">
                       {options.map((option, index) => (
                         <Button
                           key={index}
-                          className='px-4 py-2'
+                          className="px-4 py-2"
                           asChild
                           onClick={() => setOptionInput(option.title || "")}
                           {...option}
@@ -198,35 +205,39 @@ export const ProductHeader7 = (props: ProductHeader7Props) => {
                       ))}
                     </div>
                   </div>
-                  <div className='flex flex-col'>
-                    <Label htmlFor='quantity' className='mb-2'>
+                  <div className="flex flex-col">
+                    <Label htmlFor="quantity" className="mb-2">
                       Quantity
                     </Label>
                     <Input
-                      type='number'
-                      id='quantity'
+                      type="number"
+                      id="quantity"
                       placeholder={quantityInputPlaceholder}
-                      className='w-16'
+                      className="w-16"
                       value={quantityInput}
                       onChange={(e) => setQuantityInput(e.target.value)}
                     />
                   </div>
                 </div>
-                <div className='mb-4 mt-8 flex flex-col gap-y-4'>
+                <div className="mb-4 mt-8 flex flex-col gap-y-4">
                   {buttons.map((button, index) => (
                     <Button key={index} {...button}>
                       {button.title}
                     </Button>
                   ))}
                 </div>
-                <p className='text-center text-xs'>{freeShipping}</p>
+                <p className="text-center text-xs">{freeShipping}</p>
               </form>
-              <div className='space-y-5 md:space-y-6'>
+              <div className="space-y-5 md:space-y-6">
                 {questions.map((question, index) => (
                   <div key={index}>
-                    <p className='mb-2 font-semibold md:text-md'>{question.title}</p>
+                    <p className="mb-2 font-semibold md:text-md">
+                      {question.title}
+                    </p>
                     <p>{question.answer}</p>
-                    {index < questions.length - 1 && <div className='mt-5 h-px w-full bg-black md:mt-6' />}
+                    {index < questions.length - 1 && (
+                      <div className="mt-5 h-px w-full bg-black md:mt-6" />
+                    )}
                   </div>
                 ))}
               </div>
@@ -242,12 +253,22 @@ const Star = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   return (
-    <div className='flex items-center gap-1'>
+    <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) => {
         const isFullStar = i < fullStars;
         const isHalfStar = hasHalfStar && i === fullStars;
 
-        return <div key={i}>{isFullStar ? <BiSolidStar /> : isHalfStar ? <BiSolidStarHalf /> : <BiStar />}</div>;
+        return (
+          <div key={i}>
+            {isFullStar ? (
+              <BiSolidStar />
+            ) : isHalfStar ? (
+              <BiSolidStarHalf />
+            ) : (
+              <BiStar />
+            )}
+          </div>
+        );
       })}
     </div>
   );
@@ -266,34 +287,44 @@ const Gallery = ({ images }: GalleryProps) => {
     });
   }, [mainApi]);
   return (
-    <div className='flex flex-col gap-y-4'>
-      <div className='group overflow-hidden'>
+    <div className="flex flex-col gap-y-4">
+      <div className="group overflow-hidden">
         <Carousel
           setApi={setMainApi}
           opts={{
             loop: true,
             align: "start",
           }}
-          className='relative m-0'
+          className="relative m-0"
         >
-          <CarouselContent className='relative m-0 pt-[120%] lg:pt-0'>
+          <CarouselContent className="relative m-0 pt-[120%] lg:pt-0">
             {images.map((slide, index) => (
-              <CarouselItem key={index} className='absolute inset-0 size-full basis-full pl-0 lg:static'>
-                <img src={slide.src} alt={slide.alt} className='size-full object-cover lg:h-[80vh]' />
+              <CarouselItem
+                key={index}
+                className="absolute inset-0 size-full basis-full pl-0 lg:static"
+              >
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="size-full object-cover lg:h-[80vh]"
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className='left-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex' />
-          <CarouselNext className='right-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex' />
-          <div className='absolute bottom-[26px] left-0 flex w-full items-center justify-center'>
+          <CarouselPrevious className="left-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex" />
+          <CarouselNext className="right-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex" />
+          <div className="absolute bottom-[26px] left-0 flex w-full items-center justify-center">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => mainApi?.scrollTo(index)}
-                className={clsx("relative mx-[3px] inline-block size-2 rounded-full", {
-                  "bg-black": current === index + 1,
-                  "bg-neutral-darker/40": current !== index + 1,
-                })}
+                className={clsx(
+                  "relative mx-[3px] inline-block size-2 rounded-full",
+                  {
+                    "bg-black": current === index + 1,
+                    "bg-neutral-darker/40": current !== index + 1,
+                  }
+                )}
               />
             ))}
           </div>
@@ -340,7 +371,10 @@ export const ProductHeader7Defaults: Props = {
       alt: "Relume placeholder image 4",
     },
   ],
-  buttons: [{ title: "Add to cart" }, { title: "Buy now", variant: "secondary" }],
+  buttons: [
+    { title: "Add to cart" },
+    { title: "Buy now", variant: "secondary" },
+  ],
   options: [
     {
       title: "Option one",

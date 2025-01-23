@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState } from "react";
@@ -19,7 +20,8 @@ type Props = {
   button: ButtonProps;
 };
 
-export type Banner6Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Banner6Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Banner6 = (props: Banner6Props) => {
   const { heading, description, logo, inputPlaceholder, button } = {
@@ -41,32 +43,39 @@ export const Banner6 = (props: Banner6Props) => {
   }
 
   return (
-    <section id='relume'>
-      <div className='relative flex flex-col justify-start border-b border-border-primary bg-neutral-white px-[5%] py-4 md:flex-row md:items-center md:py-3'>
-        <div className='mb-4 mr-7 flex flex-1 items-start md:mb-0 md:mr-8 md:items-center'>
-          <a href={logo.url} className='flex-none'>
-            <img src={logo.src} alt={logo.alt} className='mr-4 hidden size-8 lg:block' />
+    <section id="relume">
+      <div className="relative flex flex-col justify-start border-b border-border-primary bg-neutral-white px-[5%] py-4 md:flex-row md:items-center md:py-3">
+        <div className="mb-4 mr-7 flex flex-1 items-start md:mb-0 md:mr-8 md:items-center">
+          <a href={logo.url} className="flex-none">
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="mr-4 hidden size-8 lg:block"
+            />
           </a>
           <div>
-            <h2 className='font-semibold'>{heading}</h2>
-            <p className='text-sm'>{description}</p>
+            <h2 className="font-semibold">{heading}</h2>
+            <p className="text-sm">{description}</p>
           </div>
         </div>
         <form
-          className='grid w-full flex-1 gap-3 sm:grid-cols-[1fr_max-content] sm:gap-4 md:max-w-xs lg:flex-none'
+          className="grid w-full flex-1 gap-3 sm:grid-cols-[1fr_max-content] sm:gap-4 md:max-w-xs lg:flex-none"
           onSubmit={handleSubmit}
         >
           <Input
-            id='email'
-            type='email'
+            id="email"
+            type="email"
             placeholder={inputPlaceholder}
             value={emailInput}
             onChange={(e) => setEmailInput(e.target.value)}
           />
           <Button {...button}>{button.title}</Button>
         </form>
-        <button className='absolute right-2 top-2 ml-4 md:static'>
-          <RxCross2 className='size-8 p-1' onClick={() => setIsVisible(false)} />
+        <button className="absolute right-2 top-2 ml-4 md:static">
+          <RxCross2
+            className="size-8 p-1"
+            onClick={() => setIsVisible(false)}
+          />
         </button>
       </div>
     </section>

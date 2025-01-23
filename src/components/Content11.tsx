@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Dialog, DialogTrigger, DialogContent } from "@relume_io/relume-ui";
@@ -19,7 +20,8 @@ type Props = {
   video: string;
 };
 
-export type Content11Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Content11Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Content11 = (props: Content11Props) => {
   const { heading, children, image, video } = {
@@ -30,35 +32,46 @@ export const Content11 = (props: Content11Props) => {
   const [isIframeLoaded, setIsIframeLoaded] = useState<boolean>(false);
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
-        <div className='mb-12 md:mb-18 lg:mb-20'>
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="mb-12 md:mb-18 lg:mb-20">
           <Dialog>
             <DialogTrigger asChild>
-              <button className='relative flex w-full items-center justify-center'>
-                <img src={image.src} alt={image.alt} className='aspect-video size-full object-cover' />
-                <span className='absolute inset-0 z-10 bg-black/50' />
-                <FaCirclePlay className='absolute z-20 size-16 text-white' />
+              <button className="relative flex w-full items-center justify-center">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="aspect-video size-full object-cover"
+                />
+                <span className="absolute inset-0 z-10 bg-black/50" />
+                <FaCirclePlay className="absolute z-20 size-16 text-white" />
               </button>
             </DialogTrigger>
             <DialogContent>
-              {!isIframeLoaded && <CgSpinner className='mx-auto size-16 animate-spin text-white' />}
+              {!isIframeLoaded && (
+                <CgSpinner className="mx-auto size-16 animate-spin text-white" />
+              )}
               <iframe
-                className={clsx("z-0 mx-auto aspect-video h-full w-full md:w-[738px] lg:w-[940px]", {
-                  visible: isIframeLoaded,
-                  hidden: !isIframeLoaded,
-                })}
+                className={clsx(
+                  "z-0 mx-auto aspect-video h-full w-full md:w-[738px] lg:w-[940px]",
+                  {
+                    visible: isIframeLoaded,
+                    hidden: !isIframeLoaded,
+                  }
+                )}
                 src={video}
-                allow='autoplay; encrypted-media; picture-in-picture'
+                allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
                 onLoad={() => setIsIframeLoaded(true)}
               ></iframe>
             </DialogContent>
           </Dialog>
         </div>
-        <div className='mx-auto max-w-lg'>
-          <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-          <div className='prose'>{children}</div>
+        <div className="mx-auto max-w-lg">
+          <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+            {heading}
+          </h2>
+          <div className="prose">{children}</div>
         </div>
       </div>
     </section>
@@ -70,20 +83,24 @@ export const Content11Defaults: Props = {
   children: (
     <React.Fragment>
       <p>
-        Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis
-        est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet
-        nulla purus habitasse.
+        Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id
+        scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit
+        elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque
+        amet nulla purus habitasse.
       </p>
       <p>
-        Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra
-        consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor
-        commodo cursus.
+        Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas
+        condimentum mi massa. In tincidunt pharetra consectetur sed duis
+        facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit
+        dictum eget nibh tortor commodo cursus.
       </p>
       <p>
-        Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat
-        dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere
-        pharetra odio consequat scelerisque et, nunc tortor. Nulla adipiscing erat a erat. Condimentum lorem posuere
-        gravida enim posuere cursus diam.
+        Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet.
+        Nam elementum urna nisi aliquet erat dolor enim. Ornare id morbi eget
+        ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec
+        posuere pharetra odio consequat scelerisque et, nunc tortor. Nulla
+        adipiscing erat a erat. Condimentum lorem posuere gravida enim posuere
+        cursus diam.
       </p>
     </React.Fragment>
   ),

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
@@ -27,7 +28,8 @@ type Props = {
   cards: CardProps[];
 };
 
-export type Layout520Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Layout520Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Layout520 = (props: Layout520Props) => {
   const { tagline, heading, description, cards } = {
@@ -36,16 +38,18 @@ export const Layout520 = (props: Layout520Props) => {
   };
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
-        <div className='mb-12 md:mb-18 lg:mb-20'>
-          <div className='mx-auto max-w-lg text-center'>
-            <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
-            <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-            <p className='md:text-md'>{description}</p>
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="mb-12 md:mb-18 lg:mb-20">
+          <div className="mx-auto max-w-lg text-center">
+            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+              {heading}
+            </h2>
+            <p className="md:text-md">{description}</p>
           </div>
         </div>
-        <div className='grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3'>
+        <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
           {cards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
@@ -55,20 +59,28 @@ export const Layout520 = (props: Layout520Props) => {
   );
 };
 
-const Card: React.FC<CardProps> = ({ image, logo, heading, description, button }) => (
-  <div className='relative p-6 text-text-alternative md:p-8'>
-    <div className='absolute inset-0 -z-10'>
-      <div className='absolute inset-0 bg-black/50' />
-      <img src={image.src} className='size-full object-cover' alt={image.alt} />
+const Card: React.FC<CardProps> = ({
+  image,
+  logo,
+  heading,
+  description,
+  button,
+}) => (
+  <div className="relative p-6 text-text-alternative md:p-8">
+    <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 bg-black/50" />
+      <img src={image.src} className="size-full object-cover" alt={image.alt} />
     </div>
     <div>
-      <div className='mb-5 md:mb-6'>
-        <img src={logo.src} className='size-12' alt={logo.alt} />
+      <div className="mb-5 md:mb-6">
+        <img src={logo.src} className="size-12" alt={logo.alt} />
       </div>
-      <h3 className='mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl'>{heading}</h3>
+      <h3 className="mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
+        {heading}
+      </h3>
       <p>{description}</p>
     </div>
-    <div className='mt-5 flex items-center md:mt-6'>
+    <div className="mt-5 flex items-center md:mt-6">
       <Button {...button}>{button.title}</Button>
     </div>
   </div>

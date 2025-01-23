@@ -6,8 +6,6 @@ import Image from "next/image";
 type ImageProps = {
   src: string;
   alt?: string;
-  width?: number; // Add optional width
-  height?: number; // Add optional height
 };
 
 type Props = {
@@ -52,9 +50,9 @@ export const Header1 = (props: Header1Props) => {
           <div>
             <Image
               src={image.src}
-              alt={image.alt || "Image"} // Fallback alt text
-              width={image.width || 600} // Default width if not provided
-              height={image.height || 600} // Default height if not provided
+              alt={image.alt || "Image"}
+              width={600}
+              height={600}
               className="w-full object-cover"
               priority // Optional: Ensure above-the-fold images load faster
             />
@@ -76,7 +74,5 @@ export const Header1Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "placeholder image",
-    width: 600, // Example width
-    height: 600, // Example height
   },
 };

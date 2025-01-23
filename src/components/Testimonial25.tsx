@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { BiSolidStar } from "react-icons/bi";
 
 type ImageProps = {

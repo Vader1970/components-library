@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Dialog, DialogTrigger, DialogContent } from "@relume_io/relume-ui";

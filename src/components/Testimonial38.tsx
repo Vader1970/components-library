@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
 import { BiSolidStar } from "react-icons/bi";

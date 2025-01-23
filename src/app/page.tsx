@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
         <p className="mx-auto max-w-[700px] text-muted-foreground">
           Browse our collection of beautiful and reusable components. Explore
-          our library of 1,285 components built with Next.js, Tailwind CSS, and
+          our library of 1,284 components built with Next.js, Tailwind CSS, and
           TypeScript. Click on any category to dive in and discover the perfect
           components for your project.
         </p>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useMediaQuery } from "@relume_io/relume-ui";
@@ -19,7 +20,8 @@ type Props = {
   headingsBottom: Heading[];
 };
 
-export type Banner16Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Banner16Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Banner16 = (props: Banner16Props) => {
   const { headingsTop, headingsBottom } = {
@@ -35,12 +37,23 @@ export const Banner16 = (props: Banner16Props) => {
 
   const isMobile = useMediaQuery("(max-width: 991px)");
 
-  const headingTopTranslate = useTransform(scrollYProgress, [0, 1], isMobile ? ["5%", "0%"] : ["25%", "0%"]);
-  const headingBottomTranslate = useTransform(scrollYProgress, [0, 1], isMobile ? ["-5%", "0%"] : ["-25%", "0%"]);
+  const headingTopTranslate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["5%", "0%"] : ["25%", "0%"]
+  );
+  const headingBottomTranslate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? ["-5%", "0%"] : ["-25%", "0%"]
+  );
 
-  const renderHeadings = (headings: Heading[], translate: MotionValue<string>) => (
+  const renderHeadings = (
+    headings: Heading[],
+    translate: MotionValue<string>
+  ) => (
     <motion.div
-      className='grid auto-cols-max grid-flow-col grid-cols-[max-content] items-center justify-around py-2'
+      className="grid auto-cols-max grid-flow-col grid-cols-[max-content] items-center justify-around py-2"
       style={{ x: translate }}
     >
       {headings.map((heading, index) => (
@@ -50,19 +63,26 @@ export const Banner16 = (props: Banner16Props) => {
   );
 
   return (
-    <section ref={sectionRef} className='flex w-screen max-w-full flex-col justify-end overflow-hidden'>
-      <div className='flex justify-end'>
+    <section
+      ref={sectionRef}
+      className="flex w-screen max-w-full flex-col justify-end overflow-hidden"
+    >
+      <div className="flex justify-end">
         {Array(2)
           .fill(0)
           .map((_, index) => (
-            <React.Fragment key={index}>{renderHeadings(headingsTop, headingTopTranslate)}</React.Fragment>
+            <React.Fragment key={index}>
+              {renderHeadings(headingsTop, headingTopTranslate)}
+            </React.Fragment>
           ))}
       </div>
-      <div className='flex justify-start'>
+      <div className="flex justify-start">
         {Array(2)
           .fill(0)
           .map((_, index) => (
-            <React.Fragment key={index}>{renderHeadings(headingsBottom, headingBottomTranslate)}</React.Fragment>
+            <React.Fragment key={index}>
+              {renderHeadings(headingsBottom, headingBottomTranslate)}
+            </React.Fragment>
           ))}
       </div>
     </section>
@@ -72,11 +92,15 @@ export const Banner16 = (props: Banner16Props) => {
 const Heading = ({ title, image }: Heading) => {
   return (
     <React.Fragment>
-      <div className='flex items-center justify-center whitespace-nowrap px-4 text-center lg:text-left'>
-        <h1 className='text-xl font-bold md:text-2xl'>{title}</h1>
+      <div className="flex items-center justify-center whitespace-nowrap px-4 text-center lg:text-left">
+        <h1 className="text-xl font-bold md:text-2xl">{title}</h1>
       </div>
-      <div className='relative w-full overflow-hidden'>
-        <img src={image.src} alt={image.alt} className='aspect-square size-full max-h-16 object-cover' />
+      <div className="relative w-full overflow-hidden">
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="aspect-square size-full max-h-16 object-cover"
+        />
       </div>
     </React.Fragment>
   );

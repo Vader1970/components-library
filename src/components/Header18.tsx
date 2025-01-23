@@ -17,8 +17,6 @@ import Image from "next/image";
 type ImageProps = {
   src: string;
   alt?: string;
-  width?: number;
-  height?: number;
 };
 
 type Props = {
@@ -92,10 +90,9 @@ export const Header18 = (props: Header18Props) => {
                 <Image
                   src={image.src}
                   alt={image.alt || "Image"}
-                  width={image.width || 1280}
-                  height={image.height || 720}
+                  width={1280}
+                  height={720}
                   className="w-full object-cover"
-                  priority
                 />
                 <FaCirclePlay className="absolute z-20 size-16 text-white" />
                 <span className="absolute inset-0 z-10 bg-black/50" />
@@ -143,7 +140,5 @@ export const Header18Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
     alt: "placeholder image",
-    width: 1280,
-    height: 720,
   },
 };
