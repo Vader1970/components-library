@@ -1,7 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useRef } from "react";
-import { MotionStyle, MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import {
+  MotionStyle,
+  MotionValue,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 type ImageProps = {
   src: string;
@@ -19,7 +26,8 @@ type Props = {
   featureSections: FeatureSectionProps[];
 };
 
-export type Layout418Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Layout418Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Layout418 = (props: Layout418Props) => {
   const { heading, featureSections } = {
@@ -34,15 +42,15 @@ export const Layout418 = (props: Layout418Props) => {
 
   return (
     <section ref={containerRef}>
-      <div className='container'>
-        <div className='relative h-[300svh] lg:h-[300vh]'>
-          <div className='sticky top-0 grid h-svh grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen'>
-            <div className='absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-20 md:inset-auto md:pt-0'>
-              <h1 className='whitespace-nowrap text-9xl font-bold sm:text-[5.5rem] md:text-[7.5rem] lg:text-[10rem]'>
+      <div className="container">
+        <div className="relative h-[300svh] lg:h-[300vh]">
+          <div className="sticky top-0 grid h-svh grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
+            <div className="absolute left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-20 md:inset-auto md:pt-0">
+              <h1 className="whitespace-nowrap text-9xl font-bold sm:text-[5.5rem] md:text-[7.5rem] lg:text-[10rem]">
                 {heading}
               </h1>
             </div>
-            <div className='sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-sm flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0'>
+            <div className="sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-sm flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
               {featureSections.map((section, index) => (
                 <FeatureSection
                   key={index}
@@ -56,7 +64,7 @@ export const Layout418 = (props: Layout418Props) => {
           </div>
         </div>
       </div>
-      <div className='absolute inset-0 -z-10 mt-[100vh]' />
+      <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
 };
@@ -75,15 +83,27 @@ const FeatureSection = ({
   const sectionScrollStart = index / totalSections;
   const sectionScrollEnd = (index + 1) / totalSections;
 
-  const rotate = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], [0 + index * 3, -30]);
+  const rotate = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    [0 + index * 3, -30]
+  );
 
-  const translateY = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], ["0vh", "-120vh"]);
+  const translateY = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vh", "-120vh"]
+  );
 
-  const translateX = useTransform(scrollYProgress, [sectionScrollStart, sectionScrollEnd], ["0vw", "-10vw"]);
+  const translateX = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vw", "-10vw"]
+  );
 
   return (
     <motion.div
-      className='absolute mx-6 flex flex-col justify-between border border-border-primary bg-background-primary p-8 md:mx-0'
+      className="absolute mx-6 flex flex-col justify-between border border-border-primary bg-background-primary p-8 md:mx-0"
       style={
         {
           rotate: index === totalSections - 1 ? "6deg" : rotate,
@@ -93,10 +113,16 @@ const FeatureSection = ({
         } as MotionStyle
       }
     >
-      <div className='rb-6 mb-6 md:mb-8'>
-        <img src={section.icon.src} alt={section.icon.alt} className='size-12' />
+      <div className="rb-6 mb-6 md:mb-8">
+        <img
+          src={section.icon.src}
+          alt={section.icon.alt}
+          className="size-12"
+        />
       </div>
-      <h3 className='mb-3 text-xl font-bold md:mb-4 md:text-2xl'>{section.title}</h3>
+      <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+        {section.title}
+      </h3>
       <p>{section.description}</p>
     </motion.div>
   );

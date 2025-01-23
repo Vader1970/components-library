@@ -1,4 +1,11 @@
-import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@relume_io/relume-ui";
+/* eslint-disable @next/next/no-img-element */
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { BiDotsHorizontalRounded, BiUpArrowAlt } from "react-icons/bi";
 
@@ -23,7 +30,8 @@ type Props = {
   options: string[];
 };
 
-export type Stat1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Stat1Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Stat1 = (props: Stat1Props) => {
   const { heading, description, buttons, stats, options } = {
@@ -32,13 +40,13 @@ export const Stat1 = (props: Stat1Props) => {
   };
   return (
     <section>
-      <div className='grid auto-cols-fr grid-cols-1 items-end gap-4 pb-5 md:grid-cols-[1fr_max-content] md:gap-6 md:pb-6'>
-        <div className='w-full max-w-lg'>
-          <h1 className='text-xl font-bold md:text-2xl'>{heading}</h1>
-          <p className='mt-2'>{description}</p>
+      <div className="grid auto-cols-fr grid-cols-1 items-end gap-4 pb-5 md:grid-cols-[1fr_max-content] md:gap-6 md:pb-6">
+        <div className="w-full max-w-lg">
+          <h1 className="text-xl font-bold md:text-2xl">{heading}</h1>
+          <p className="mt-2">{description}</p>
         </div>
-        <div className='flex items-center justify-between gap-4 md:justify-normal'>
-          <div className='flex items-center gap-4'>
+        <div className="flex items-center justify-between gap-4 md:justify-normal">
+          <div className="flex items-center gap-4">
             {buttons.map((button, index) => (
               <Button key={index} {...button}>
                 {button.title}
@@ -47,7 +55,7 @@ export const Stat1 = (props: Stat1Props) => {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <BiDotsHorizontalRounded className='size-6' />
+              <BiDotsHorizontalRounded className="size-6" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {options.map((option, index) => (
@@ -57,14 +65,17 @@ export const Stat1 = (props: Stat1Props) => {
           </DropdownMenu>
         </div>
       </div>
-      <div className='grid auto-cols-fr grid-cols-1 gap-4 md:grid-flow-col md:gap-6'>
+      <div className="grid auto-cols-fr grid-cols-1 gap-4 md:grid-flow-col md:gap-6">
         {stats.map((stat, index) => (
-          <div key={index} className='flex flex-col justify-between border border-border-primary p-6 md:justify-normal'>
-            <div className='mb-3 flex items-center justify-between gap-4 md:mb-4'>
-              <img src={stat.icon.src} alt={stat.icon.alt} className='size-8' />
+          <div
+            key={index}
+            className="flex flex-col justify-between border border-border-primary p-6 md:justify-normal"
+          >
+            <div className="mb-3 flex items-center justify-between gap-4 md:mb-4">
+              <img src={stat.icon.src} alt={stat.icon.alt} className="size-8" />
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <BiDotsHorizontalRounded className='size-6' />
+                  <BiDotsHorizontalRounded className="size-6" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   {options.map((option, index) => (
@@ -73,12 +84,14 @@ export const Stat1 = (props: Stat1Props) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-            <p className='mb-1'>{stat.title}</p>
-            <div className='flex items-center justify-between gap-4'>
-              <h2 className='text-xl font-bold md:text-2xl'>{stat.description}</h2>
-              <div className='flex items-center gap-1 rounded-full border border-border-primary px-2 py-0.5'>
+            <p className="mb-1">{stat.title}</p>
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="text-xl font-bold md:text-2xl">
+                {stat.description}
+              </h2>
+              <div className="flex items-center gap-1 rounded-full border border-border-primary px-2 py-0.5">
                 <BiUpArrowAlt />
-                <p className='text-sm'>{stat.badge}</p>
+                <p className="text-sm">{stat.badge}</p>
               </div>
             </div>
           </div>
@@ -90,7 +103,8 @@ export const Stat1 = (props: Stat1Props) => {
 
 export const Stat1Defaults: Props = {
   heading: "Recent Activity",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
   buttons: [
     {
       title: "Button",

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@relume_io/relume-ui";

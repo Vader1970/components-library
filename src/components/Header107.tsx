@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 
 import { useRef } from "react";
@@ -110,20 +112,23 @@ export const Header107 = (props: Header107Props) => {
             <div className="relative top-[5%] hidden w-[40vw] sm:w-[25vw] md:block lg:w-[22vw]">
               <img
                 className="aspect-[2/3] w-full object-cover"
-                {...images[0]}
+                src={images[0]?.src}
+                alt={images[0]?.alt || ""}
               />
             </div>
             <div className="relative top-[-5%] flex flex-col gap-4 self-center">
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
                 <img
                   className="aspect-square w-full object-cover"
-                  {...images[1]}
+                  src={images[1]?.src}
+                  alt={images[1]?.alt || ""}
                 />
               </div>
               <div className="relative w-[30vw] flex-none md:w-[15vw]">
                 <img
                   className="aspect-[3/4] w-full object-cover"
-                  {...images[2]}
+                  src={images[2]?.src}
+                  alt={images[2]?.alt || ""}
                 />
               </div>
             </div>
@@ -138,7 +143,11 @@ export const Header107 = (props: Header107Props) => {
               height: centerImageHeight,
             }}
           >
-            <img className="size-full object-cover" {...images[4]} />
+            <img
+              className="size-full object-cover"
+              src={images[4]?.src}
+              alt={images[4]?.alt || ""}
+            />
           </motion.div>
 
           {/* Right Image */}
@@ -149,7 +158,8 @@ export const Header107 = (props: Header107Props) => {
             <div className="relative top-[5%] w-[40vw] md:w-[25vw] lg:w-[22vw]">
               <img
                 className="aspect-[3/4] w-full object-cover"
-                {...images[5]}
+                src={images[5]?.src}
+                alt={images[5]?.alt || ""}
               />
             </div>
           </motion.div>

@@ -47,7 +47,7 @@ export const Header80 = (props: Header80Props) => {
   return (
     <section
       ref={transformRef}
-      className="relative h-[150vh] px-[5%] md:h-[300vh]"
+      className="relative h-[150vh] px-[5%] md:h-[300vh] z-10"
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute bottom-0 left-0 right-auto top-0 z-10">

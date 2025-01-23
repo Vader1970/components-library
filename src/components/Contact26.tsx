@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, ButtonProps } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";

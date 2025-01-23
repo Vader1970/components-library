@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -24,7 +25,8 @@ type Props = {
   buttons: ButtonProps[];
 };
 
-export type Navbar14Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Navbar14Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Navbar14 = (props: Navbar14Props) => {
   const { logo, navLinks, buttons } = {
@@ -57,28 +59,28 @@ export const Navbar14 = (props: Navbar14Props) => {
   }, []);
 
   return (
-    <nav className='fixed inset-0 bottom-auto z-[1000] mx-auto mt-48 flex w-full bg-white px-[5%] md:mt-40 lg:mx-[5%] lg:w-auto lg:px-0'>
-      <div className='mx-auto flex min-h-16 w-full max-w-xxl items-center justify-between gap-x-4 gap-y-4 border border-black bg-white px-5 md:min-h-18 md:px-8'>
+    <nav className="fixed inset-0 bottom-auto z-[1000] mx-auto mt-48 flex w-full bg-white px-[5%] md:mt-40 lg:mx-[5%] lg:w-auto lg:px-0">
+      <div className="mx-auto flex min-h-16 w-full max-w-xxl items-center justify-between gap-x-4 gap-y-4 border border-black bg-white px-5 md:min-h-18 md:px-8">
         <a href={logo.url}>
           <img src={logo.src} alt={logo.alt} />
         </a>
         <button
           ref={buttonRef}
-          className='-mr-2 flex size-12 flex-col items-center justify-center lg:hidden'
+          className="-mr-2 flex size-12 flex-col items-center justify-center lg:hidden"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
           <motion.span
-            className='my-[3px] h-0.5 w-6 bg-black'
+            className="my-[3px] h-0.5 w-6 bg-black"
             animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
             variants={topLineVariants}
           />
           <motion.span
-            className='my-[3px] h-0.5 w-6 bg-black'
+            className="my-[3px] h-0.5 w-6 bg-black"
             animate={isMobileMenuOpen ? "open" : "closed"}
             variants={middleLineVariants}
           />
           <motion.span
-            className='my-[3px] h-0.5 w-6 bg-black'
+            className="my-[3px] h-0.5 w-6 bg-black"
             animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
             variants={bottomLineVariants}
           />
@@ -88,10 +90,10 @@ export const Navbar14 = (props: Navbar14Props) => {
             open: { height: "var(--height, 100vh)" },
             close: { height: "auto" },
           }}
-          initial='close'
-          exit='close'
+          initial="close"
+          exit="close"
           animate={isMobileMenuOpen ? "open" : "close"}
-          className='absolute left-0 right-0 top-full w-full overflow-hidden lg:static lg:left-auto lg:right-auto lg:top-auto lg:w-auto lg:overflow-visible lg:[--height:auto]'
+          className="absolute left-0 right-0 top-full w-full overflow-hidden lg:static lg:left-auto lg:right-auto lg:top-auto lg:w-auto lg:overflow-visible lg:[--height:auto]"
         >
           <motion.div
             variants={{
@@ -99,14 +101,14 @@ export const Navbar14 = (props: Navbar14Props) => {
               close: { y: "var(--translate-y, -100%)" },
             }}
             animate={isMobileMenuOpen ? "open" : "close"}
-            initial='close'
-            exit='close'
+            initial="close"
+            exit="close"
             transition={{ duration: 0.3 }}
-            className='absolute left-0 right-0 top-0 mx-auto min-w-[200px] justify-self-center bg-white px-[5%] text-center lg:static lg:inset-auto lg:mx-0 lg:px-0 lg:text-left lg:[--translate-y:0%]'
+            className="absolute left-0 right-0 top-0 mx-auto min-w-[200px] justify-self-center bg-white px-[5%] text-center lg:static lg:inset-auto lg:mx-0 lg:px-0 lg:text-left lg:[--translate-y:0%]"
           >
             <div
               ref={menuRef}
-              className='flex w-full flex-col border border-t-0 border-black bg-white p-5 md:p-8 lg:w-auto lg:flex-row lg:border-none lg:bg-none lg:p-0'
+              className="flex w-full flex-col border border-t-0 border-black bg-white p-5 md:p-8 lg:w-auto lg:flex-row lg:border-none lg:bg-none lg:p-0"
             >
               {navLinks.map((navLink, index) => (
                 <div key={index}>
@@ -115,16 +117,16 @@ export const Navbar14 = (props: Navbar14Props) => {
                   ) : (
                     <a
                       href={navLink.url}
-                      className='relative block py-3 text-center text-md lg:px-4 lg:py-2 lg:text-left lg:text-base'
+                      className="relative block py-3 text-center text-md lg:px-4 lg:py-2 lg:text-left lg:text-base"
                     >
                       {navLink.title}
                     </a>
                   )}
                 </div>
               ))}
-              <div className='rt-4 mt-4 flex flex-col items-center gap-4 lg:ml-8 lg:mt-0 lg:flex-row'>
+              <div className="rt-4 mt-4 flex flex-col items-center gap-4 lg:ml-8 lg:mt-0 lg:flex-row">
                 {buttons.map((button, index) => (
-                  <Button key={index} {...button} className='w-full'>
+                  <Button key={index} {...button} className="w-full">
                     {button.title}
                   </Button>
                 ))}
@@ -137,7 +139,13 @@ export const Navbar14 = (props: Navbar14Props) => {
   );
 };
 
-const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean }) => {
+const SubMenu = ({
+  navLink,
+  isMobile,
+}: {
+  navLink: NavLink;
+  isMobile: boolean;
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
@@ -146,7 +154,7 @@ const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean })
       onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
     >
       <button
-        className='flex w-full items-center justify-center gap-4 py-3 text-left text-md lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base'
+        className="flex w-full items-center justify-center gap-4 py-3 text-left text-md lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base"
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <span>{navLink.title}</span>
@@ -165,8 +173,8 @@ const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean })
         {isDropdownOpen && (
           <motion.nav
             animate={isDropdownOpen ? "open" : "close"}
-            initial='close'
-            exit='close'
+            initial="close"
+            exit="close"
             variants={{
               open: {
                 opacity: "var(--opacity-open, 100%)",
@@ -182,13 +190,13 @@ const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean })
               },
             }}
             transition={{ duration: 0.2 }}
-            className='bg-white lg:absolute lg:z-50 lg:border lg:border-black lg:p-2 lg:[--y-close:25%] lg:[--height:auto]'
+            className="bg-white lg:absolute lg:z-50 lg:border lg:border-black lg:p-2 lg:[--y-close:25%] lg:[--height:auto]"
           >
             {navLink.subMenuLinks?.map((navLink, index) => (
               <a
                 key={index}
                 href={navLink.url}
-                className='block py-3 text-center lg:px-4 lg:py-2 lg:text-left lg:text-base'
+                className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left lg:text-base"
               >
                 {navLink.title}
               </a>

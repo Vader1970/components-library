@@ -43,6 +43,7 @@ export const Header119 = (props: Header119Props) => {
 
         <div className="grid grid-cols-2 items-start gap-6 sm:gap-8 md:gap-16">
           <div className="w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-square size-full object-cover"
               src={firstImage.src}
@@ -50,6 +51,7 @@ export const Header119 = (props: Header119Props) => {
             />
           </div>
           <div className="mt-[15%] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-square size-full object-cover"
               src={secondImage.src}

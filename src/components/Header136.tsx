@@ -44,6 +44,7 @@ export const Header136 = (props: Header136Props) => {
         </div>
         <div className="relative flex">
           <div className="absolute bottom-[20%] left-0 w-1/4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-square size-full object-cover"
               src={firstImage.src}
@@ -51,6 +52,7 @@ export const Header136 = (props: Header136Props) => {
             />
           </div>
           <div className="mx-[10%] mb-[5%] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[3/2] size-full object-cover"
               src={secondImage.src}
@@ -58,6 +60,7 @@ export const Header136 = (props: Header136Props) => {
             />
           </div>
           <div className="absolute bottom-0 right-0 w-1/4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[2/3] size-full object-cover"
               src={thirdImage.src}

@@ -44,6 +44,7 @@ export const Header122 = (props: Header122Props) => {
         </div>
         <div className="grid auto-cols-fr grid-cols-1 items-end gap-6 sm:grid-cols-[1fr_0.4fr_0.4fr] sm:gap-8">
           <div className="my-[15%] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[3/2] size-full object-cover"
               src={firstImage.src}
@@ -51,6 +52,7 @@ export const Header122 = (props: Header122Props) => {
             />
           </div>
           <div className="w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-square size-full object-cover"
               src={secondImage.src}
@@ -58,6 +60,7 @@ export const Header122 = (props: Header122Props) => {
             />
           </div>
           <div className="w-full self-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[3/4] size-full object-cover"
               src={thirdImage.src}

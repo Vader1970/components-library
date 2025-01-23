@@ -26,6 +26,7 @@ export const Header138 = (props: Header138Props) => {
     <section id="relume" className="flex min-h-svh flex-col md:h-svh">
       <div className="relative flex flex-1 flex-col">
         <div className="relative flex-1">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="absolute inset-0 aspect-[3/2] size-full object-cover"
             src={firstImage.src}
@@ -33,6 +34,7 @@ export const Header138 = (props: Header138Props) => {
           />
         </div>
         <div className="absolute bottom-[-15%] right-[5%] w-[30%] md:w-1/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="aspect-square size-full object-cover"
             src={secondImage.src}

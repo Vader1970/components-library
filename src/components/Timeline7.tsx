@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
@@ -28,7 +29,8 @@ type Props = {
   timelineItems: TimelineItem[];
 };
 
-export type Timeline7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Timeline7Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Timeline7 = (props: Timeline7Props) => {
   const { tagline, heading, description, buttons, timelineItems } = {
@@ -37,14 +39,16 @@ export const Timeline7 = (props: Timeline7Props) => {
   };
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container max-w-lg'>
-        <div className='mb-12 md:mb-18 lg:mb-20'>
-          <div className='relative z-10 w-full max-w-lg'>
-            <p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
-            <h2 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-            <p className='md:text-md'>{description}</p>
-            <div className='mt-6 flex flex-wrap items-center gap-4 md:mt-8'>
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container max-w-lg">
+        <div className="mb-12 md:mb-18 lg:mb-20">
+          <div className="relative z-10 w-full max-w-lg">
+            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+              {heading}
+            </h2>
+            <p className="md:text-md">{description}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               {buttons.map((button, index) => (
                 <Button key={index} {...button}>
                   {button.title}
@@ -53,15 +57,15 @@ export const Timeline7 = (props: Timeline7Props) => {
             </div>
           </div>
         </div>
-        <div className='grid w-full max-w-lg auto-cols-fr grid-cols-[max-content_1fr] items-start justify-items-center'>
-          <div className='relative left-0 flex h-full w-8 flex-col items-center md:left-auto'>
-            <div className='absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent' />
-            <div className='sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black' />
-            <div className='h-full w-[3px] bg-neutral-lighter' />
-            <div className='absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary' />
-            <div className='absolute top-[-50vh] h-[50vh] w-full bg-background-primary' />
+        <div className="grid w-full max-w-lg auto-cols-fr grid-cols-[max-content_1fr] items-start justify-items-center">
+          <div className="relative left-0 flex h-full w-8 flex-col items-center md:left-auto">
+            <div className="absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent" />
+            <div className="sticky top-0 mt-[-50vh] h-[50vh] w-[3px] bg-neutral-black" />
+            <div className="h-full w-[3px] bg-neutral-lighter" />
+            <div className="absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary" />
+            <div className="absolute top-[-50vh] h-[50vh] w-full bg-background-primary" />
           </div>
-          <div className='grid auto-cols-fr grid-cols-1 gap-y-8 sm:gap-12 md:gap-20'>
+          <div className="grid auto-cols-fr grid-cols-1 gap-y-8 sm:gap-12 md:gap-20">
             {timelineItems.map((item, index) => (
               <TimelineItem key={index} item={item} />
             ))}
@@ -85,20 +89,24 @@ const TimelineItem = ({ item }: { item: TimelineItem }) => {
   };
 
   return (
-    <div className='relative'>
-      <div className='absolute -ml-8 flex h-full w-8 items-start justify-center'>
+    <div className="relative">
+      <div className="absolute -ml-8 flex h-full w-8 items-start justify-center">
         <motion.div
           ref={circleRef}
           style={backgroundColor}
-          className='z-20 mt-7 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white] md:mt-8'
+          className="z-20 mt-7 size-[0.9375rem] rounded-full shadow-[0_0_0_8px_white] md:mt-8"
         />
       </div>
-      <div className='ml-4 mt-4 grid grid-cols-1 gap-8 md:ml-12 md:gap-12'>
+      <div className="ml-4 mt-4 grid grid-cols-1 gap-8 md:ml-12 md:gap-12">
         <div>
-          <h3 className='mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>{item.heading}</h3>
-          <h4 className='mb-3 text-xl font-bold md:mb-4 md:text-2xl'>{item.title}</h4>
+          <h3 className="mb-3 text-4xl font-bold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+            {item.heading}
+          </h3>
+          <h4 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+            {item.title}
+          </h4>
           <p>{item.description}</p>
-          <div className='mt-6 flex flex-wrap items-center gap-4 md:mt-8'>
+          <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
             {item.buttons.map((button, index) => (
               <Button key={index} {...button}>
                 {button.title}
@@ -106,8 +114,8 @@ const TimelineItem = ({ item }: { item: TimelineItem }) => {
             ))}
           </div>
         </div>
-        <div className='overflow-hidden'>
-          <img src={item.image.src} alt={item.image.alt} className='w-full' />
+        <div className="overflow-hidden">
+          <img src={item.image.src} alt={item.image.alt} className="w-full" />
         </div>
       </div>
     </div>

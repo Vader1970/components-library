@@ -41,6 +41,7 @@ export const Header124 = (props: Header124Props) => {
         </div>
         <div className="flex justify-end gap-6 sm:gap-8 md:gap-16">
           <div className="w-full max-w-[35rem] lg:max-w-[60rem]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="aspect-[3/2] size-full object-cover"
               src={image.src}

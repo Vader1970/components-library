@@ -17,7 +17,8 @@ type Props = {
   image: ImageProps;
 };
 
-export type Header144Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Header144Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Header144 = (props: Header144Props) => {
   const { heading, description, buttons, image } = {
@@ -41,14 +42,20 @@ export const Header144 = (props: Header144Props) => {
   const videoScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
 
   return (
-    <section ref={sectionRef} id='relume' className='relative md:min-h-screen px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
+    <section
+      ref={sectionRef}
+      id="relume"
+      className="relative md:min-h-screen px-[5%] py-16 md:py-24 lg:py-28"
+    >
+      <div className="container">
         {/* Heading & Description */}
-        <div className='rb-12 mb-12 grid grid-cols-1 items-start gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20 lg:gap-y-16'>
-          <h1 className='text-6xl font-bold md:text-9xl lg:text-10xl'>{heading}</h1>
-          <div className='mx-[7.5%] self-end md:mt-48'>
-            <p className='md:text-md'>{description}</p>
-            <div className='mt-6 flex flex-wrap gap-4 md:mt-8'>
+        <div className="rb-12 mb-12 grid grid-cols-1 items-start gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20 lg:gap-y-16">
+          <h1 className="text-6xl font-bold md:text-9xl lg:text-10xl">
+            {heading}
+          </h1>
+          <div className="mx-[7.5%] self-end md:mt-48">
+            <p className="md:text-md">{description}</p>
+            <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               {buttons.map((button, index) => (
                 <Button key={index} {...button}>
                   {button.title}
@@ -60,10 +67,15 @@ export const Header144 = (props: Header144Props) => {
 
         {/* Image Section */}
         <motion.div
-          className='flex origin-top-right flex-col items-end justify-center md:h-[60vh] lg:h-[80vh] lg:justify-start'
+          className="flex origin-top-right flex-col items-end justify-center md:h-[60vh] lg:h-[80vh] lg:justify-start"
           style={{ scale: isMobile ? 1 : videoScale }}
         >
-          <img src={image.src} alt={image.alt} className='size-full object-cover' />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="size-full object-cover"
+          />
         </motion.div>
       </div>
     </section>

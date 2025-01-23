@@ -42,6 +42,7 @@ export const Header137 = (props: Header137Props) => {
       </div>
       <div className="relative flex items-center">
         <div className="absolute w-[45%] pl-[5%] lg:pl-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={firstImage.src}
             alt={firstImage.alt}
@@ -49,6 +50,7 @@ export const Header137 = (props: Header137Props) => {
           />
         </div>
         <div className="ml-[10%]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={secondImage.src}
             alt={secondImage.alt}

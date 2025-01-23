@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useRef } from "react";
@@ -8,7 +9,8 @@ type Props = {
   headings: string[];
 };
 
-export type Banner13Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Banner13Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Banner13 = (props: Banner13Props) => {
   const { headings } = {
@@ -26,8 +28,12 @@ export const Banner13 = (props: Banner13Props) => {
   const xPartTwo = useTransform(scrollYProgress, [0, 1], ["10%", "0%"]);
 
   return (
-    <section id='relume' ref={sectionRef} className='overflow-hidden px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='flex flex-col whitespace-nowrap'>
+    <section
+      id="relume"
+      ref={sectionRef}
+      className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28"
+    >
+      <div className="flex flex-col whitespace-nowrap">
         {headings.map((heading, index) => (
           <motion.h1
             key={index}
@@ -45,5 +51,8 @@ export const Banner13 = (props: Banner13Props) => {
 };
 
 export const Banner13Defaults: Props = {
-  headings: ["Medium length banner heading goes here", "Medium length banner heading goes here"],
+  headings: [
+    "Medium length banner heading goes here",
+    "Medium length banner heading goes here",
+  ],
 };

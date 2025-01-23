@@ -51,12 +51,14 @@ export const Header111 = (props: Header111Props) => {
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 to-black/50">
         <div className="absolute inset-0 z-10 bg-black/50" />
-        <Image
-          src={image.src}
-          className="absolute inset-0 size-full object-cover"
-          alt={image.alt || "Background Image"}
-          fill
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={image.src}
+            className="absolute inset-0 size-full object-cover"
+            alt={image.alt || "Background Image"}
+            fill
+          />
+        </div>
       </div>
     </section>
   );

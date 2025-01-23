@@ -17,8 +17,6 @@ import Image from "next/image";
 type ImageProps = {
   src: string;
   alt?: string;
-  width?: number; // Add optional width
-  height?: number; // Add optional height
 };
 
 type Props = {
@@ -88,9 +86,9 @@ export const Header4 = (props: Header4Props) => {
               <button className="relative flex w-full items-center justify-center">
                 <Image
                   src={image.src}
-                  alt={image.alt || "Image"} // Fallback alt text
-                  width={image.width || 600} // Default width if not provided
-                  height={image.height || 600} // Default height if not provided
+                  alt={image.alt || "Image"}
+                  width={600}
+                  height={600}
                   className="w-full object-cover"
                 />
                 <span className="absolute inset-0 z-10 bg-black/50" />
@@ -139,7 +137,5 @@ export const Header4Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
     alt: "placeholder image",
-    width: 600, // Example width
-    height: 600, // Example height
   },
 };
