@@ -9,8 +9,8 @@ export default function Home() {
         <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl'>Welcome to the Component Library</h1>
         <p className='mx-auto max-w-[700px] text-muted-foreground'>
           Browse our collection of beautiful and reusable components. Explore our library of 1,284 components built with
-          Next.js, Tailwind CSS, and TypeScript. Click on any category to dive in and discover the perfect components
-          for your project.
+          React, Next.js, Tailwind CSS, and TypeScript. Click on any category to dive in and discover the perfect
+          components for your project.
         </p>
 
         <div className='rounded-lg border p-5 space-y-6'>
@@ -20,7 +20,7 @@ export default function Home() {
               href='/manual'
               className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
             >
-              Using the Component Library with Figma
+              Collaborative Workflow for Designers and Developers
             </Link>
             <p className='mx-auto max-w-[700px] text-muted-foreground'>
               Learn how to use the Component Library and Figma designs together for seamless collaboration and faster
