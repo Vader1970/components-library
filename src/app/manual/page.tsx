@@ -67,7 +67,7 @@ export default function Manual() {
               <div>
                 <h3 className='text-lg font-semibold'>Style the Component for Prototyping</h3>
                 <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
-                  <li>Customize the wireframe component in Figma to match your design vision.</li>
+                  <li>Customize the wireframe component in Figma to match your design requirements.</li>
                   <li>Apply your project&apos;s branding, typography, colours, and other stylistic elements.</li>
                   <li>Create a finalized prototype to pass on to the developer.</li>
                 </ol>
