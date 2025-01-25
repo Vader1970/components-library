@@ -7,28 +7,93 @@ export default function Manual() {
         {/* Page Title */}
         <h1 className='text-3xl font-bold tracking-tight text-center'>
           Using the Component Library with Figma:
-          <br />A Comprehensive Guide
+          <br /> A Collaborative Workflow for Designers and Developers
         </h1>
         <p className='text-center text-white'>
           The Component Library is a powerful tool designed to streamline website development by providing ready-to-use
-          components with corresponding Figma designs. This guide will walk you through the process of effectively
-          utilizing the Component Library and its associated Figma resources.
+          components with corresponding Figma designs.
+          <br />
+          This guide will walk you through the process of effectively utilizing the Component Library and its associated
+          Figma resources.
         </p>
 
         {/* Documentation Sections */}
         <div className='space-y-6'>
-          {/* Getting Started Section */}
+          {/* For Designers */}
           <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Getting Started</h2>
+            <h2 className='text-xl font-semibold'>For Designers: From Discovery to Prototype</h2>
             <div className='mt-4 space-y-6'>
               <div>
-                <ol className='list-decimal list-inside mt-2 text-gray-300 space-y-2'>
+                <h3 className='text-lg font-semibold'>Explore Components</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
+                  <li>Visit the Component Library website.</li>
+                  <li>
+                    Navigate to the relevant page (e.g., Layouts, Navbars, Headers) on the Component Library website to
+                    preview components in a live environment.
+                  </li>
+                  <li>
+                    Evaluate the component&apos;s appearance, responsiveness, and behaviour to see if it aligns with
+                    your design requirements.
+                  </li>
+                </ol>
+              </div>
+
+              {/* Use the component name of the component you wish to use
+                    and locate its match in the corresponding Folder in the Figma file (e.g., the Layouts page on the
+                    website corresponds to the Layouts Folder in Figma). The component names are identical across the
+                    website and Figma, ensuring easy searching and matching. */}
+
+              <div>
+                <h3 className='text-lg font-semibold'>Find and Use the Corresponding Figma Component</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
+                  <li>
+                    Click{" "}
+                    <a
+                      href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
+                    >
+                      <strong>Open Figma Component Library</strong>
+                    </a>{" "}
+                    on the Component Library website to access the Figma file.
+                  </li>
+                  <li>
+                    Navigate to the Folder that matches the components name that you desire (e.g, Layout4 will be
+                    located in the Layouts Folder).
+                  </li>
+                  <li>
+                    Use the search function (CTRL-F for Windows / CMD-F for Mac) in Figma to locate the matching
+                    wireframe component by name (e.g., Layout4).
+                  </li>
+                  <li>Copy the selected wireframe component into your own Figma file.</li>
+                </ol>
+              </div>
+
+              <div>
+                <h3 className='text-lg font-semibold'>Style the Component for Prototyping</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
+                  <li>Customize the wireframe component in Figma to match your design vision.</li>
+                  <li>Apply your project&apos;s branding, typography, colours, and other stylistic elements.</li>
+                  <li>Create a finalized prototype to pass on to the developer.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          {/* For Developers */}
+          <div className='bg-black p-6 rounded-lg shadow'>
+            <h2 className='text-xl font-semibold'>For Developers: From Design to Implementation</h2>
+            <div className='mt-4 space-y-6'>
+              <div>
+                <h3 className='text-lg font-semibold'>Getting Started</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
                   <li>Visit the Component Library homepage.</li>
                   <li>
-                    Click on the{" "}
+                    Click on{" "}
                     <Link href='/documentation' className='text-blue-500 hover:text-blue-400 underline'>
-                      <strong>&apos;View Documentation for Installation&apos;</strong>
-                    </Link>{" "}
+                      <strong>View Documentation for Installation</strong>
+                    </Link>
                     .
                   </li>
                   <li>
@@ -37,146 +102,118 @@ export default function Manual() {
                   </li>
                 </ol>
               </div>
-            </div>
-          </div>
 
-          {/* Figma Library */}
-          <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Accessing the Figma Library</h2>
-            <div className='mt-4 space-y-6'>
               <div>
-                <ol className='list-decimal list-inside text-gray-300 space-y-2'>
+                <h3 className='text-lg font-semibold'>Locate the Required Component</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
                   <li>
-                    From the Component Library homepage, click on{" "}
-                    <a
-                      href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-blue-500 hover:text-blue-400 underline'
-                    >
-                      <strong>&apos;Open Figma Component Library&apos;</strong>
-                    </a>
-                    .
-                  </li>
-                  <li>In Figma, browse through folders like Layouts, Navbars, and Headers to find components.</li>
-                  <li>Select your desired component (e.g., Layout4) and copy it into your Figma file.</li>
-                  <li>Modify the copied component to match your application&apos;s design requirements.</li>
-                </ol>
-              </div>
-            </div>
-            <p className='mt-2'>
-              <strong>Note:</strong> Each component in Figma has the same name and structure as the corresponding code
-              component in the library, making it easy to match, search, and customize.
-            </p>
-          </div>
-
-          {/* Preview Components */}
-          <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Previewing Components</h2>
-            <div className='mt-4 space-y-6'>
-              <div>
-                <ol className='list-decimal list-inside text-gray-300 space-y-2'>
-                  <li>Navigate to the relevant page (e.g., Layouts) from the homepage or navbar. </li>
-                  <li>
-                    Use the search function to locate specific components. Search by the components name e.g., Layout 4.
+                    Refer to the design handed over by the designer and identify the component name (e.g., Layout4).
                   </li>
                   <li>
-                    The page will automatically scroll to the selected component, allowing you to observe its appearance
-                    and behaviour in a live environment.
+                    Visit the Component Library website, navigate to the relevant page (e.g., Layouts), and use the
+                    search function to locate the corresponding component (e.g., Layout4).
+                  </li>
+                  <li>
+                    Preview the component to understand its layout, responsiveness, and behaviour (i.e. some components
+                    have animation).
                   </li>
                 </ol>
               </div>
-            </div>
-          </div>
 
-          {/* Copy and Paste Components */}
-          <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Integrating Components into Your Application</h2>
-            <div className='mt-4 space-y-6'>
               <div>
-                <ol className='list-decimal list-inside text-gray-300 space-y-2'>
-                  <li>Identify the component you want to use (e.g., Layout4).</li>
+                <h3 className='text-lg font-semibold'>Access and Copy the Code</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
                   <li>
-                    Click <strong>&apos;View Code&apos;</strong> to access the component&apos;s source code.
+                    Click <strong>&apos;View Code&apos;</strong> to open the source code of the selected component.
                   </li>
                   <li>
                     Click <strong>&apos;Copy Code&apos;</strong> to copy the component&apos;s code.
                   </li>
-                  <li>In your application, create a new file for the component (e.g., Layout4.tsx).</li>
+                </ol>
+              </div>
+
+              <div>
+                <h3 className='text-lg font-semibold'>Integrate the Component</h3>
+                <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
+                  <li>In your project, create a new file for the component (e.g., Layout4.tsx).</li>
                   <li>Paste the copied code into the file.</li>
                   <li>
-                    Style the component based on your custom design from your Figma file using Tailwind CSS or other
-                    preferred methods.
+                    Apply custom styling to the component to match the finalized Figma design using Tailwind CSS or
+                    another preferred method.
                   </li>
+                  <li>Import the component into the page.</li>
                 </ol>
               </div>
             </div>
           </div>
 
-          {/* Key Features Section */}
+          {/* Collaborative Workflow */}
           <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Key Features</h2>
-            <ul className='list-disc list-inside mt-4 text-gray-300 space-y-2'>
+            <h2 className='text-xl font-semibold'>Collaborative Workflow: Example</h2>
+            <div className='mt-4 space-y-6'>
+              <ul className='list-disc list-inside text-gray-300 space-y-2'>
+                <li>
+                  <strong>Designer&apos;s Steps:</strong> Open the Figma Component Library, locate Layout4 in the
+                  Layouts folder, and copy it into their Figma file. Style the wireframe to align with the
+                  project&apos;s branding and create a prototype.
+                </li>
+                <li>
+                  <strong>Developer&apos;s Steps:</strong> Use the Component Library website to locate Layout4, preview
+                  the component, copy its code, and integrate it into the project. Style the component to match the
+                  designer&apos;s finalized prototype.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Key Features */}
+          <div className='bg-black p-6 rounded-lg shadow'>
+            <h2 className='text-xl font-semibold'>Key Features of the Component Library</h2>
+            <ul className='list-disc list-inside text-gray-300 space-y-2 mt-4'>
               <li>
-                <strong>Figma Integration:</strong> : Every component has a corresponding design in the Figma file,
-                facilitating seamless collaboration between developers and designers
+                <strong>Live Previews:</strong> View components on the website to evaluate their layout, responsiveness,
+                and behaviour before integrating them.
               </li>
               <li>
-                <strong>Customization:</strong> Components are built for easy styling, ensuring adaptability to your
-                project&apos;s branding and requirements.
+                <strong>Figma Integration:</strong> Each code component is paired with a wireframe version in Figma,
+                ensuring consistency and easy handoff.
               </li>
               <li>
-                <strong>Search Functionality:</strong> Quickly locate components by name using the search feature in the
-                browser or CTRL-F (Windows) / CMD+F (Mac) in the Figma file.
+                <strong>Search Functionality:</strong> Quickly find components in both the website and Figma file by
+                name.
+              </li>
+              <li>
+                <strong>Customizability:</strong> Components are built for seamless adaptation to your project&apos;s
+                needs.
               </li>
             </ul>
           </div>
 
-          {/* Workflow Example */}
+          {/* Tips */}
           <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Workflow Example</h2>
-            <div className='mt-4 space-y-6'>
+            <h2 className='text-xl font-semibold'>Tips for a Smooth Workflow</h2>
+            <div className='mt-4 space-y-4 text-gray-300'>
               <div>
-                <ol className='list-decimal list-inside mt-2 text-gray-300 space-y-2'>
+                <h3 className='font-semibold'>For Designers:</h3>
+                <ul className='list-disc list-inside space-y-2 mt-2'>
                   <li>
-                    <strong>Search for a Component:</strong> Open the Figma Component Library, locate Layout4 in the
-                    Layouts folder, and copy it into your Figma file.
+                    Share your styled Figma file with the development team, clearly linking each component by name to
+                    its code equivalent.
                   </li>
-                  <li>
-                    <strong>Preview the Component:</strong> Navigate to the Layouts page on the Component Library
-                    website and search for Layout4 to preview it in the browser.
-                  </li>
-                  <li>
-                    <strong>Integrate into Your Application:</strong> View the code for Layout4, copy it, and paste it
-                    into your application. Apply your custom styles as needed.
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-
-          {/* Tips for Effective Usage */}
-          <div className='bg-black p-6 rounded-lg shadow'>
-            <h2 className='text-xl font-semibold'>Tips for Effective Usage</h2>
-            <div className='mt-4 space-y-6'>
-              <div>
-                <ul className='list-disc list-inside mt-4 text-gray-300 space-y-2'>
-                  <li>Maintain consistency by always using components from the Component Library.</li>
-                  <li>
-                    Share the Figma file with your design team for seamless integration between design and development.
-                  </li>
-                  <li>
-                    Experiment with different components using the live preview feature before finalizing your
-                    selection.
-                  </li>
-                  <li>Regularly check for updates to access new components and features.</li>
+                  <li>Regularly explore new components in the library for inspiration and updates.</li>
                 </ul>
               </div>
-              <p className='mt-2'>
-                By following this guide, you will be able to leverage the full potential of the Component Library and
-                its Figma integration, significantly enhancing your development workflow and ensuring consistency across
-                your projects.
-              </p>
+              <div>
+                <h3 className='font-semibold'>For Developers:</h3>
+                <ul className='list-disc list-inside space-y-2 mt-2'>
+                  <li>
+                    Collaborate closely with designers to ensure alignment between the Figma design and implementation.
+                  </li>
+                  <li>
+                    Preview the compnent on the website to confirm component layout, responsiveness, and behaviour .
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
