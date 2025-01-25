@@ -28,26 +28,20 @@ export default function Manual() {
                 <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
                   <li>Visit the Component Library website.</li>
                   <li>
-                    Navigate to the relevant page (e.g., Layouts, Navbars, Headers) on the Component Library website to
-                    preview components in a live environment.
+                    Navigate to a page (e.g., Layouts, Navbars, Headers) to preview components in a live environment.
                   </li>
                   <li>
-                    Evaluate the component&apos;s appearance, responsiveness, and behaviour to see if it aligns with
-                    your design requirements.
+                    Evaluate the component&apos;s layout, responsiveness, and animation to see if it aligns with your
+                    design requirements.
                   </li>
                 </ol>
               </div>
-
-              {/* Use the component name of the component you wish to use
-                    and locate its match in the corresponding Folder in the Figma file (e.g., the Layouts page on the
-                    website corresponds to the Layouts Folder in Figma). The component names are identical across the
-                    website and Figma, ensuring easy searching and matching. */}
 
               <div>
                 <h3 className='text-lg font-semibold'>Find and Use the Corresponding Figma Component</h3>
                 <ol className='list-decimal list-inside text-gray-300 space-y-2 mt-2'>
                   <li>
-                    Click{" "}
+                    Click on{" "}
                     <a
                       href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
                       target='_blank'
@@ -56,7 +50,7 @@ export default function Manual() {
                     >
                       <strong>Open Figma Component Library</strong>
                     </a>{" "}
-                    on the Component Library website to access the Figma file.
+                    to access the Figma file.
                   </li>
                   <li>
                     Navigate to the Folder that matches the components name that you desire (e.g, Layout4 will be
@@ -113,10 +107,7 @@ export default function Manual() {
                     Visit the Component Library website, navigate to the relevant page (e.g., Layouts), and use the
                     search function to locate the corresponding component (e.g., Layout4).
                   </li>
-                  <li>
-                    Preview the component to understand its layout, responsiveness, and behaviour (i.e. some components
-                    have animation).
-                  </li>
+                  <li>Preview the component to understand its layout, responsiveness, and animation.</li>
                 </ol>
               </div>
 
@@ -154,8 +145,8 @@ export default function Manual() {
               <ul className='list-disc list-inside text-gray-300 space-y-2'>
                 <li>
                   <strong>Designer&apos;s Steps:</strong> Open the Figma Component Library, locate Layout4 in the
-                  Layouts folder, and copy it into their Figma file. Style the wireframe to align with the
-                  project&apos;s branding and create a prototype.
+                  Layouts folder, and copy it into your Figma file. Style the wireframe to align with the project&apos;s
+                  branding and create a prototype.
                 </li>
                 <li>
                   <strong>Developer&apos;s Steps:</strong> Use the Component Library website to locate Layout4, preview
@@ -172,7 +163,7 @@ export default function Manual() {
             <ul className='list-disc list-inside text-gray-300 space-y-2 mt-4'>
               <li>
                 <strong>Live Previews:</strong> View components on the website to evaluate their layout, responsiveness,
-                and behaviour before integrating them.
+                and animation before integrating them.
               </li>
               <li>
                 <strong>Figma Integration:</strong> Each code component is paired with a wireframe version in Figma,
@@ -209,9 +200,7 @@ export default function Manual() {
                   <li>
                     Collaborate closely with designers to ensure alignment between the Figma design and implementation.
                   </li>
-                  <li>
-                    Preview the compnent on the website to confirm component layout, responsiveness, and behaviour .
-                  </li>
+                  <li>Preview the compnent on the website to confirm layout, responsiveness, and animation.</li>
                 </ul>
               </div>
             </div>
