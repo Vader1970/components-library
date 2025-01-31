@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Button,
   Dialog,
@@ -29,7 +29,7 @@ type Props = {
   description: string;
   tagline: string;
   features: FeaturesProps[];
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[];
   image: ImageProps;
   video: string;
 };
@@ -49,6 +49,7 @@ export const Layout20 = (props: Layout20Props) => {
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
+          {/* Text Section */}
           <div>
             <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
             <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
@@ -64,20 +65,26 @@ export const Layout20 = (props: Layout20Props) => {
             </ul>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
+                <Link key={index} href={button.href || "#"}>
+                  <Button {...button}>{button.title}</Button>
+                </Link>
               ))}
             </div>
           </div>
+
+          {/* Video Section */}
           <Dialog>
             <DialogTrigger asChild>
               <button className="relative flex w-full items-center justify-center">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="size-full object-cover"
-                />
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt || ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <span className="absolute inset-0 z-10 bg-black/50" />
                 <FaCirclePlay className="absolute z-20 size-16 text-white" />
               </button>
@@ -124,12 +131,13 @@ export const Layout20Defaults: Props = {
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "#" },
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#",
     },
   ],
   video:

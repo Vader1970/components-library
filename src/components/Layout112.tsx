@@ -1,16 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { Dialog, DialogContent, DialogTrigger } from "@relume_io/relume-ui";
 import clsx from "clsx";
+import Image from "next/image";
 import { useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 import { FaCirclePlay } from "react-icons/fa6";
 
 type ImageProps = {
   src: string;
-  alt?: string;
+  alt: string;
+  width?: number;
+  height?: number;
 };
 
 type FeaturesProps = {
@@ -58,9 +59,11 @@ export const Layout112 = (props: Layout112Props) => {
         <Dialog>
           <DialogTrigger asChild>
             <button className="relative flex w-full items-center justify-center">
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={1920}
+                height={1080}
                 className="size-full object-cover"
               />
               <span className="absolute inset-0 z-10 bg-black/50" />
@@ -98,6 +101,8 @@ export const Layout112Defaults: Props = {
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail-landscape.svg",
     alt: "Relume placeholder image",
+    width: 1920,
+    height: 1080,
   },
   video:
     "https://www.pixelperfectwebdesigns.co.nz/services/diy-digital-marketing",
@@ -106,14 +111,17 @@ export const Layout112Defaults: Props = {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 1",
+        width: 24,
+        height: 24,
       },
-
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 2",
+        width: 24,
+        height: 24,
       },
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -121,6 +129,8 @@ export const Layout112Defaults: Props = {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 3",
+        width: 24,
+        height: 24,
       },
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },

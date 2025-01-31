@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Button,
   Dialog,
@@ -24,7 +24,7 @@ type Props = {
   icon: ImageProps;
   heading: string;
   description: string;
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[]; // Add href to ButtonProps
   image: ImageProps;
   video: string;
 };
@@ -46,28 +46,44 @@ export const Layout23 = (props: Layout23Props) => {
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <div className="rb-5 mb-5 md:mb-6">
-              <img src={icon.src} className="size-20" alt={icon.alt} />
+              <Image
+                src={icon.src}
+                alt={icon.alt || ""}
+                width={80}
+                height={80}
+                className="size-20"
+              />
             </div>
             <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
               {heading}
             </h2>
             <p className="md:text-md">{description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.href ? ( // Check if the button has an href
+                  <Link key={index} href={button.href}>
+                    <Button {...button}>{button.title}</Button>
+                  </Link>
+                ) : (
+                  <Button key={index} {...button}>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
           <Dialog>
             <DialogTrigger asChild>
               <button className="relative flex w-full items-center justify-center">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="size-full object-cover"
-                />
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt || ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <span className="absolute inset-0 z-10 bg-black/50" />
                 <FaCirclePlay className="absolute z-20 size-16 text-white" />
               </button>
@@ -106,12 +122,13 @@ export const Layout23Defaults: Props = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "#" },
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#",
     },
   ],
   video:

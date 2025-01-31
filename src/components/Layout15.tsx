@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+
 type ImageProps = {
   src: string;
-  alt?: string;
+  alt: string;
 };
 
 type Props = {
@@ -30,20 +31,24 @@ export const Layout15 = (props: Layout15Props) => {
             <p className="mb-5 md:mb-6 md:text-md">{description}</p>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-6 pb-2 pt-4 md:py-2">
               {logos.map((logo, index) => (
-                <img
+                <Image
                   key={index}
                   src={logo.src}
-                  className="max-h-12"
+                  width={120}
+                  height={48}
+                  className="max-h-12 object-contain"
                   alt={logo.alt}
                 />
               ))}
             </div>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>

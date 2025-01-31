@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
+import Image from "next/image";
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -19,7 +19,7 @@ type Props = {
   description: string;
   tagline: string;
   stats: StatsProps[];
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[];
   image: ImageProps;
 };
 
@@ -52,18 +52,28 @@ export const Layout25 = (props: Layout25Props) => {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.href ? (
+                  <Link key={index} href={button.href} passHref legacyBehavior>
+                    <Button {...button}>{button.title}</Button>
+                  </Link>
+                ) : (
+                  <Button key={index} {...button}>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
-          <img
-            src={image.src}
-            className="w-full object-cover"
-            alt={image.alt}
-          />
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image.src}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -86,12 +96,13 @@ export const Layout25Defaults: Props = {
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "#" },
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#",
     },
   ],
   image: {

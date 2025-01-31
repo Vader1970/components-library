@@ -1,4 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -46,11 +48,15 @@ export const Layout27 = (props: Layout27Props) => {
             </div>
           </div>
           <div>
-            <img
-              src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
-            />
+            <div className="relative aspect-square w-full">
+              <Image
+                src={image.src}
+                alt={image.alt || ""}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

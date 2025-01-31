@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -13,7 +14,7 @@ type Props = {
   heading: string;
   description: string;
   logos: ImageProps[];
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[];
   image: ImageProps;
 };
 
@@ -37,27 +38,37 @@ export const Layout13 = (props: Layout13Props) => {
             <p className="mb-5 md:mb-6 md:text-md">{description}</p>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-6 py-2">
               {logos.map((logo, index) => (
-                <img
+                <Image
                   key={index}
                   src={logo.src}
-                  className="max-h-12"
-                  alt={logo.alt}
+                  alt={logo.alt || ""}
+                  width={120}
+                  height={48}
+                  className="max-h-12 w-auto"
                 />
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.href ? ( // Check if the button has an href
+                  <Link key={index} href={button.href}>
+                    <Button {...button}>{button.title}</Button>
+                  </Link>
+                ) : (
+                  <Button key={index} {...button}>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -90,12 +101,13 @@ export const Layout13Defaults: Props = {
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "#" }, // Added href
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#", // Added href
     },
   ],
   image: {

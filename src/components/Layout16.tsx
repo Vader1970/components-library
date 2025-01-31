@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
@@ -7,11 +7,13 @@ import { RxChevronRight } from "react-icons/rx";
 type ImageProps = {
   src: string;
   alt?: string;
+  href?: string;
 };
 
 type FeaturesProps = {
   icon: ImageProps;
   paragraph: string;
+  href?: string;
 };
 
 type Props = {
@@ -19,7 +21,7 @@ type Props = {
   description: string;
   tagline: string;
   features: FeaturesProps[];
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[];
   image: ImageProps;
 };
 
@@ -45,29 +47,51 @@ export const Layout16 = (props: Layout16Props) => {
               {features.map((feature, index) => (
                 <li key={index} className="flex self-start">
                   <div className="mr-4 flex-none self-start">
-                    <img
-                      src={feature.icon.src}
-                      alt={feature.icon.alt}
-                      className="size-6"
-                    />
+                    {feature.href ? (
+                      <Link href={feature.href}>
+                        <Image
+                          src={feature.icon.src}
+                          alt={feature.icon.alt || ""}
+                          width={24}
+                          height={24}
+                          className="size-6"
+                        />
+                      </Link>
+                    ) : (
+                      <Image
+                        src={feature.icon.src}
+                        alt={feature.icon.alt || ""}
+                        width={24}
+                        height={24}
+                        className="size-6"
+                      />
+                    )}
                   </div>
                   <span>{feature.paragraph}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.href ? (
+                  <Link key={index} href={button.href}>
+                    <Button {...button}>{button.title}</Button>
+                  </Link>
+                ) : (
+                  <Button key={index} {...button}>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -86,36 +110,43 @@ export const Layout16Defaults: Props = {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 1",
+        href: "#",
       },
-
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      href: "#",
     },
     {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 2",
+        href: "#",
       },
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      href: "#",
     },
     {
       icon: {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 3",
+        href: "#",
       },
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      href: "#",
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "/secondary" },
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#",
     },
   ],
   image: {
     src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     alt: "Relume placeholder image",
+    href: "#",
   },
 };

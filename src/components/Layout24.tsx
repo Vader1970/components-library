@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -26,18 +26,26 @@ export const Layout24 = (props: Layout24Props) => {
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <div className="rb-5 mb-5 md:mb-6">
-              <img src={icon.src} className="size-12" alt={icon.alt} />
+              <Image
+                src={icon.src}
+                alt={icon.alt || ""}
+                width={48}
+                height={48}
+                className="size-12"
+              />
             </div>
             <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
               {heading}
             </h3>
             <p className="md:text-md">{description}</p>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>
