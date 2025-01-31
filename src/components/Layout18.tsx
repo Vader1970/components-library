@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -25,10 +25,12 @@ export const Layout18 = (props: Layout18Props) => {
     ...Layout18Defaults,
     ...props,
   };
+
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
+          {/* Left Section: Text and Features */}
           <div>
             <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
               {heading}
@@ -38,9 +40,11 @@ export const Layout18 = (props: Layout18Props) => {
               {features.map((feature, index) => (
                 <li key={index} className="flex self-start">
                   <div className="mr-4 flex-none self-start">
-                    <img
+                    <Image
                       src={feature.icon.src}
-                      alt={feature.icon.alt}
+                      alt={feature.icon.alt || ""}
+                      width={24}
+                      height={24}
                       className="size-6"
                     />
                   </div>
@@ -49,11 +53,17 @@ export const Layout18 = (props: Layout18Props) => {
               ))}
             </ul>
           </div>
-          <img
-            src={image.src}
-            className="w-full object-cover"
-            alt={image.alt}
-          />
+
+          {/* Right Section: Main Image */}
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image.src}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -70,7 +80,6 @@ export const Layout18Defaults: Props = {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 1",
       },
-
       paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {

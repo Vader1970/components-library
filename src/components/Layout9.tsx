@@ -1,4 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import Image from "next/image";
+
 type ImageProps = {
   src: string;
   alt?: string;
@@ -38,9 +41,11 @@ export const Layout9 = (props: Layout9Props) => {
               {subHeadings.map((subHeading, index) => (
                 <div key={index} className="flex">
                   <div className="mr-4 flex-none self-start">
-                    <img
+                    <Image
                       src={subHeading.icon.src}
-                      alt={subHeading.icon.alt}
+                      alt={subHeading.icon.alt || ""}
+                      width={32}
+                      height={32}
                       className="size-8"
                     />
                   </div>
@@ -54,11 +59,13 @@ export const Layout9 = (props: Layout9Props) => {
               ))}
             </div>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>

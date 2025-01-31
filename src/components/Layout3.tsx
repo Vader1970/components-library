@@ -1,7 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import Image from "next/image";
+
 type ImageProps = {
   src: string;
   alt?: string;
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -18,21 +23,24 @@ export const Layout3 = (props: Layout3Props) => {
     ...Layout3Defaults,
     ...props,
   };
+
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <h1 className="rb-5 mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
+            <h1 className="mb-5 text-4xl font-bold md:mb-6 md:text-5xl lg:text-6xl">
               {heading}
             </h1>
             <p className="md:text-md">{description}</p>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-square w-full">
+            <Image
               src={image.src}
-              className="w-full object-cover"
-              alt={image.alt}
+              alt={image.alt || ""}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
           </div>
         </div>

@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Button,
   Dialog,
@@ -11,9 +11,9 @@ import {
 } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
-import clsx from "clsx";
 import { FaCirclePlay } from "react-icons/fa6";
 import { CgSpinner } from "react-icons/cg";
+import clsx from "clsx";
 
 type ImageProps = {
   src: string;
@@ -24,7 +24,7 @@ type Props = {
   tagline: string;
   heading: string;
   description: string;
-  buttons: ButtonProps[];
+  buttons: (ButtonProps & { href?: string })[];
   video: string;
   image: ImageProps;
 };
@@ -50,21 +50,31 @@ export const Layout2 = (props: Layout2Props) => {
             </h1>
             <p className="md:text-md">{description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.href ? (
+                  <Link key={index} href={button.href}>
+                    <Button {...button}>{button.title}</Button>
+                  </Link>
+                ) : (
+                  <Button key={index} {...button}>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
           <Dialog>
             <DialogTrigger asChild>
               <button className="relative flex w-full items-center justify-center">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="size-full object-cover"
-                />
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt || ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <span className="absolute inset-0 z-10 bg-black/50" />
                 <FaCirclePlay className="absolute z-20 size-16 text-white" />
               </button>
@@ -85,7 +95,7 @@ export const Layout2 = (props: Layout2Props) => {
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
                 onLoad={() => setIsIframeLoaded(true)}
-              ></iframe>
+              />
             </DialogContent>
           </Dialog>
         </div>
@@ -100,12 +110,13 @@ export const Layout2Defaults: Props = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
   buttons: [
-    { title: "Button", variant: "secondary" },
+    { title: "Button", variant: "secondary", href: "#" },
     {
       title: "Button",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
+      href: "#",
     },
   ],
   video:
