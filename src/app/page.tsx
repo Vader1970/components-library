@@ -4,64 +4,58 @@ import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white items-center space-y-8 text-center py-10 px-5">
-      <div className="flex flex-col space-y-4">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
-          Welcome to the Component Library
-        </h1>
-        <p className="mx-auto max-w-[700px] text-muted-foreground">
-          Browse our collection of beautiful and reusable components. Explore
-          our library of 1,292 components built with Next.js, Tailwind CSS, and
-          TypeScript. Click on any category to dive in and discover the perfect
-          components for your project.
+    <div className='min-h-screen flex flex-col bg-black text-white items-center space-y-8 text-center py-10 px-5'>
+      <div className='flex flex-col space-y-4'>
+        <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl'>Welcome to the Component Library</h1>
+        <p className='mx-auto max-w-[700px] text-muted-foreground'>
+          Browse our collection of beautiful and reusable components. Explore our library of 1,292 components built with
+          Next.js, Tailwind CSS, and TypeScript. Click on any category to dive in and discover the perfect components
+          for your project.
         </p>
 
-        <div className="rounded-lg border p-5 space-y-6">
+        <div className='rounded-lg border p-5 space-y-6'>
           {/* Documentation Link */}
           <div>
             <Link
-              href="/documentation"
-              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+              href='/documentation'
+              className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
             >
               View Documentation for Installation
             </Link>
-            <p className="mx-auto max-w-[700px] text-muted-foreground">
-              Documentation for installing dependency and Tailwind
-              configuration.
+            <p className='mx-auto max-w-[700px] text-muted-foreground'>
+              Documentation for installing dependency and Tailwind configuration.
             </p>
           </div>
 
           {/* Figma File Link */}
           <div>
             <a
-              href="https://www.figma.com/design/Fw591yRy6nBbRkd5BtwIHA/Next-JS-Component-Library?node-id=0-1&t=V1yn2GkJLilbxU0d-1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+              href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
             >
               Open Figma Component Library
             </a>
-            <p className="mx-auto max-w-[700px] text-muted-foreground">
-              Must have own Figma account to access.
-            </p>
+            <p className='mx-auto max-w-[700px] text-muted-foreground'>Must have own Figma account to access.</p>
           </div>
 
           {/* Using the Component Library with Figma Link */}
           <div>
             <Link
-              href="/manual"
-              className="inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline"
+              href='/manual'
+              className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
             >
               Collaborative Workflow for Designers and Developers
             </Link>
-            <p className="mx-auto max-w-[700px] text-muted-foreground">
-              Learn how to use the Component Library and Figma designs together
-              for seamless collaboration and faster workflows.
+            <p className='mx-auto max-w-[700px] text-muted-foreground'>
+              Learn how to use the Component Library and Figma designs together for seamless collaboration and faster
+              workflows.
             </p>
           </div>
         </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {[
           {
             title: "Navbars",
@@ -75,8 +69,7 @@ export default function Home() {
           },
           {
             title: "Layouts",
-            description:
-              "Flexible layout components for structuring your pages",
+            description: "Flexible layout components for structuring your pages",
             href: "/layouts",
           },
           {
@@ -86,14 +79,12 @@ export default function Home() {
           },
           {
             title: "CTAs",
-            description:
-              "Powerful call-to-action components to drive user engagement",
+            description: "Powerful call-to-action components to drive user engagement",
             href: "/ctas",
           },
           {
             title: "Testimonials",
-            description:
-              "Compelling social proof components to build trust and credibility",
+            description: "Compelling social proof components to build trust and credibility",
             href: "/testimonials",
           },
           {
@@ -108,8 +99,7 @@ export default function Home() {
           },
           {
             title: "Events",
-            description:
-              "Clean and informative event listing and detail components",
+            description: "Clean and informative event listing and detail components",
             href: "/events",
           },
           {
@@ -119,8 +109,7 @@ export default function Home() {
           },
           {
             title: "Banners",
-            description:
-              "Eye-catching promotional and informational banner designs",
+            description: "Eye-catching promotional and informational banner designs",
             href: "/banners",
           },
           {
@@ -130,14 +119,12 @@ export default function Home() {
           },
           {
             title: "Portfolios",
-            description:
-              "Elegant showcase components to highlight your best work",
+            description: "Elegant showcase components to highlight your best work",
             href: "/portfolios",
           },
           {
             title: "Stats",
-            description:
-              "Visually appealing statistical and data visualization layouts",
+            description: "Visually appealing statistical and data visualization layouts",
             href: "/stats",
           },
           {
@@ -147,38 +134,32 @@ export default function Home() {
           },
           {
             title: "Comparisons",
-            description:
-              "Side-by-side comparison components for easy decision-making",
+            description: "Side-by-side comparison components for easy decision-making",
             href: "/comparisons",
           },
           {
             title: "Timelines",
-            description:
-              "Chronological and visual timeline components for storytelling",
+            description: "Chronological and visual timeline components for storytelling",
             href: "/timelines",
           },
           {
             title: "Teams",
-            description:
-              "Elegant team member showcase and organizational layouts",
+            description: "Elegant team member showcase and organizational layouts",
             href: "/teams",
           },
           {
             title: "Careers",
-            description:
-              "Professional job listing and career opportunity displays",
+            description: "Professional job listing and career opportunity displays",
             href: "/careers",
           },
           {
             title: "FAQs",
-            description:
-              "Clean and organized frequently asked questions sections",
+            description: "Clean and organized frequently asked questions sections",
             href: "/faqs",
           },
           {
             title: "Contacts",
-            description:
-              "Professional contact form and information display layouts",
+            description: "Professional contact form and information display layouts",
             href: "/contacts",
           },
           {
@@ -188,14 +169,12 @@ export default function Home() {
           },
           {
             title: "Forms",
-            description:
-              "Responsive and intuitive form designs for seamless user interactions",
+            description: "Responsive and intuitive form designs for seamless user interactions",
             href: "/forms",
           },
           {
             title: "Sign Ups",
-            description:
-              "Attractive and conversion-focused user registration interfaces",
+            description: "Attractive and conversion-focused user registration interfaces",
             href: "/signups",
           },
           {
@@ -205,32 +184,27 @@ export default function Home() {
           },
           {
             title: "Modals",
-            description:
-              "Interactive popup windows for alerts, confirmations, and additional content",
+            description: "Interactive popup windows for alerts, confirmations, and additional content",
             href: "/modals",
           },
           {
             title: "Links",
-            description:
-              "Stylish and functional hyperlink and navigation components",
+            description: "Stylish and functional hyperlink and navigation components",
             href: "/links",
           },
           {
             title: "Application Shells",
-            description:
-              "Comprehensive application framework and container components",
+            description: "Comprehensive application framework and container components",
             href: "/applicationshells",
           },
           {
             title: "Description Lists",
-            description:
-              "Structured and readable description and detail components",
+            description: "Structured and readable description and detail components",
             href: "/descriptionlists",
           },
           {
             title: "Stat Cards",
-            description:
-              "Concise and visually engaging statistical information cards",
+            description: "Concise and visually engaging statistical information cards",
             href: "/statcards",
           },
           {
@@ -240,8 +214,7 @@ export default function Home() {
           },
           {
             title: "Stacked Lists",
-            description:
-              "Vertically organized list components with clean designs",
+            description: "Vertically organized list components with clean designs",
             href: "/stackedlists",
           },
           {
@@ -251,15 +224,13 @@ export default function Home() {
           },
         ].map((category) => (
           <Link key={category.href} href={category.href}>
-            <Card className="h-full group relative overflow-hidden p-6 hover:scale-105 ease-in-out duration-300">
-              <div className="flex h-full flex-col justify-between">
+            <Card className='h-full group relative overflow-hidden p-6 hover:scale-105 ease-in-out duration-300'>
+              <div className='flex h-full flex-col justify-between'>
                 <div>
-                  <h2 className="font-semibold">{category.title}</h2>
-                  <p className="text-sm text-muted-foreground">
-                    {category.description}
-                  </p>
+                  <h2 className='font-semibold'>{category.title}</h2>
+                  <p className='text-sm text-muted-foreground'>{category.description}</p>
                 </div>
-                <ArrowRight className="mt-4 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className='mt-4 h-4 w-4 transition-transform group-hover:translate-x-1' />
               </div>
             </Card>
           </Link>
