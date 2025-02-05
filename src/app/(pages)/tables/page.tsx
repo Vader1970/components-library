@@ -5,9 +5,25 @@ import { Search } from "@/components/ui/Search";
 import { ScrollUp } from "@/components/ui/ScrollUp";
 
 import { Table1 } from "@/components/Tables1";
+import { Table2 } from "@/components/Tables2";
+import { Table3 } from "@/components/Tables3";
+import { Table4 } from "@/components/Tables4";
+import { Table5 } from "@/components/Tables5";
+import { Table6 } from "@/components/Tables6";
+import { Table7 } from "@/components/Tables7";
+import { Table8 } from "@/components/Tables8";
+import { Table9 } from "@/components/Tables9";
 
 const tablesComponents = [
   { component: Table1, title: "Tables 1" },
+  { component: Table2, title: "Tables 2" },
+  { component: Table3, title: "Tables 3" },
+  { component: Table4, title: "Tables 4" },
+  { component: Table5, title: "Tables 5" },
+  { component: Table6, title: "Tables 6" },
+  { component: Table7, title: "Tables 7" },
+  { component: Table8, title: "Tables 8" },
+  { component: Table9, title: "Tables 9" },
 
   // Add more tables as necessary
 ];
