@@ -42,6 +42,9 @@ import { Testimonial28 } from "@/components/Testimonial28";
 import { Testimonial30 } from "@/components/Testimonial30";
 import { Testimonial31 } from "@/components/Testimonial31";
 // import { Testimonial33 } from "@/components/Testimonial33";
+import { Testimonial40 } from "@/components/Testimonial40";
+import { Testimonial41 } from "@/components/Testimonial41";
+import { Testimonial42 } from "@/components/Testimonial42";
 
 const testimonialComponents = [
   { component: Testimonial1, title: "Testimonial 1" },
@@ -82,6 +85,9 @@ const testimonialComponents = [
   { component: Testimonial37, title: "Testimonial 37" },
   { component: Testimonial38, title: "Testimonial 38" },
   { component: Testimonial39, title: "Testimonial 39" },
+  { component: Testimonial40, title: "Testimonial 40" },
+  { component: Testimonial41, title: "Testimonial 41" },
+  { component: Testimonial42, title: "Testimonial 42" },
 
   // Add more testimonials as necessary
 ];
@@ -98,32 +104,37 @@ const TestimonialsPage = () => {
 
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Testimonials
       </h1>
 
       {/* Search Section */}
-      <Search placeholder='Search for a component (e.g., Testimonial 9)' onSearch={handleSearch} />
+      <Search
+        placeholder="Search for a component (e.g., Testimonial 9)"
+        onSearch={handleSearch}
+      />
 
-      <section className='mb-4'>
-        {testimonialComponents.map(({ component: TestimonialComponent, title }, index) => (
-          <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
-              {title}
-              <a
-                href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
-              >
-                View Code
-              </a>
-            </h2>
-            {/* Render the component */}
-            <TestimonialComponent />
-          </div>
-        ))}
+      <section className="mb-4">
+        {testimonialComponents.map(
+          ({ component: TestimonialComponent, title }, index) => (
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              {/* Render the component */}
+              <TestimonialComponent />
+            </div>
+          )
+        )}
       </section>
       <ScrollUp />
     </div>

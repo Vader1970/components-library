@@ -43,7 +43,7 @@ export default function Manual() {
                   <li>
                     Click on{" "}
                     <a
-                      href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
+                      href='https://www.figma.com/design/1DhHtXsrJ2UildQ6E6hAUz/Component-Library?node-id=0-1&t=viG7IQY7xWsnDene-1'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'

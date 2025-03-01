@@ -143,6 +143,14 @@ import { Header141 } from "@/components/Header141";
 // import { Header142 } from "@/components/Header142"; needs work
 import { Header144 } from "@/components/Header144";
 import { Header143 } from "@/components/Header143";
+import { Header145 } from "@/components/Header145";
+import { Header146 } from "@/components/Header146";
+import { Header147 } from "@/components/Header147";
+import { Header148 } from "@/components/Header148";
+import { Header149 } from "@/components/Header149";
+import { Header150 } from "@/components/Header150";
+import { Header151 } from "@/components/Header151";
+import { Header152 } from "@/components/Header152";
 
 const headerComponents = [
   { component: Header1, title: "Header 1" },
@@ -284,6 +292,14 @@ const headerComponents = [
   // { component: Header142, title: "Header 142" }, Needs work
   { component: Header143, title: "Header 143" },
   { component: Header144, title: "Header 144" },
+  { component: Header145, title: "Header 145" },
+  { component: Header146, title: "Header 146" },
+  { component: Header147, title: "Header 147" },
+  { component: Header148, title: "Header 148" },
+  { component: Header149, title: "Header 149" },
+  { component: Header150, title: "Header 150" },
+  { component: Header151, title: "Header 151" },
+  { component: Header152, title: "Header 152" },
   // Add more headers as necessary
 ];
 
