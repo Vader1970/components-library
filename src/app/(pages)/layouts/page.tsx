@@ -482,7 +482,7 @@ import { Layout480 } from "@/components/Layout480";
 import { Layout481 } from "@/components/Layout481";
 import { Layout482 } from "@/components/Layout482";
 import { Layout483 } from "@/components/Layout483";
-// import { Layout484 } from "@/components/Layout484";
+import { Layout484 } from "@/components/Layout484";
 import { Layout485 } from "@/components/Layout485";
 // import { Layout486 } from "@/components/Layout486";
 import { Layout487 } from "@/components/Layout487";
@@ -1007,7 +1007,7 @@ const layoutComponents = [
   { component: Layout481, title: "Layout 481" },
   { component: Layout482, title: "Layout 482" },
   { component: Layout483, title: "Layout 483" },
-  // { component: Layout484, title: "Layout 484" },
+  { component: Layout484, title: "Layout 484" },
   { component: Layout485, title: "Layout 485" },
   // { component: Layout486, title: "Layout 486" },
   { component: Layout487, title: "Layout 487" },

@@ -27,6 +27,9 @@ import { Gallery17 } from "@/components/Gallery17";
 import { Gallery18 } from "@/components/Gallery18";
 import { Gallery20 } from "@/components/Gallery20";
 import { Gallery22 } from "@/components/Gallery22";
+import { Gallery25 } from "@/components/Gallery25";
+import { Gallery26 } from "@/components/Gallery26";
+import { Gallery27 } from "@/components/Gallery27";
 
 const galleryComponents = [
   { component: Gallery1, title: "Gallery 1" },
@@ -52,6 +55,9 @@ const galleryComponents = [
   { component: Gallery22, title: "Gallery 22" },
   { component: Gallery23, title: "Gallery 23" },
   { component: Gallery24, title: "Gallery 24" },
+  { component: Gallery25, title: "Gallery 25" },
+  { component: Gallery26, title: "Gallery 26" },
+  { component: Gallery27, title: "Gallery 27" },
 
   // Add more gallerys as necessary
 ];
@@ -68,32 +74,37 @@ const GallerysPage = () => {
 
   return (
     <div>
-      <h1 className='text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl'>
+      <h1 className="text-white bg-black text-4xl text-center tracking-tighter font-bold border-b py-4 sm:5xl">
         Gallery
       </h1>
 
       {/* Search Section */}
-      <Search placeholder='Search for a component (e.g., Gallery 9)' onSearch={handleSearch} />
+      <Search
+        placeholder="Search for a component (e.g., Gallery 9)"
+        onSearch={handleSearch}
+      />
 
-      <section className='mb-4'>
-        {galleryComponents.map(({ component: GalleryComponent, title }, index) => (
-          <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
-            {/* Render the title as an h2 element */}
-            <h2 className='bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center'>
-              {title}
-              <a
-                href={`/view-code/${title.replace(/\s+/g, "")}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200'
-              >
-                View Code
-              </a>
-            </h2>
-            {/* Render the component */}
-            <GalleryComponent />
-          </div>
-        ))}
+      <section className="mb-4">
+        {galleryComponents.map(
+          ({ component: GalleryComponent, title }, index) => (
+            <div key={index} id={title.toLowerCase().replace(/\s+/g, "")}>
+              {/* Render the title as an h2 element */}
+              <h2 className="bg-black text-white text-base sm:text-2xl font-bold text-center py-10 px-[5%] flex justify-between items-center">
+                {title}
+                <a
+                  href={`/view-code/${title.replace(/\s+/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white text-base px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+                >
+                  View Code
+                </a>
+              </h2>
+              {/* Render the component */}
+              <GalleryComponent />
+            </div>
+          )
+        )}
       </section>
       <ScrollUp />
     </div>

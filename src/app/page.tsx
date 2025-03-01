@@ -8,7 +8,7 @@ export default function Home() {
       <div className='flex flex-col space-y-4'>
         <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl'>Welcome to the Component Library</h1>
         <p className='mx-auto max-w-[700px] text-muted-foreground'>
-          Browse our collection of beautiful and reusable components. Explore our library of 1,292 components built with
+          Browse our collection of beautiful and reusable components. Explore our library of 1,307 components built with
           Next.js, Tailwind CSS, and TypeScript. Click on any category to dive in and discover the perfect components
           for your project.
         </p>
@@ -30,7 +30,7 @@ export default function Home() {
           {/* Figma File Link */}
           <div>
             <a
-              href='https://www.figma.com/design/OzXV7Kp6RssxYySJBpZO1N/Next-JS-Component-Library?node-id=2-33&t=qXOwuMIvRA1Mu8HT-1'
+              href='https://www.figma.com/design/1DhHtXsrJ2UildQ6E6hAUz/Component-Library?node-id=0-1&t=viG7IQY7xWsnDene-1'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-block text-base font-bold text-blue-500 hover:text-blue-400 underline'
